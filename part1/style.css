@@ -1,0 +1,206 @@
+  html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+article, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display:block;
+}
+
+nav ul, nav li { margin: 0; }
+nav ul, ul { list-style:none; }
+
+.span1, .span2, .span3, .span4{
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.col{
+  margin-left: 2.5%;
+}
+
+.col:first-child {
+  margin-left:0;
+}
+
+.span1{
+  width: 23.125%;
+  
+}
+.span2{
+  width: 48.75%;
+  
+}
+
+body{
+  font-size: 87.5%;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5em;
+  overflow-x: hidden;
+}
+
+h1{
+    font-size: 1.714285714em; /* 24 / 14 */
+    line-height: 1.5em; /* 21 / 14 */
+}
+
+h2{
+  font-size: 1.5em; /* 21 / 14 */
+  font-weight: 900;
+  line-height: 1.5em; /* 21 / 14 */
+}
+
+p{
+    font-size: 1em; /* 14 / 14 */
+    font-weight:400;
+    line-height: 1.5em; /* 21 / 14 */
+    margin-bottom: 1.5em; /* 21 / 14 */
+}
+
+#container, .inner{
+  margin: 10px auto;
+  padding:0 0 0 30px;
+  width: 88%;
+}
+
+header{
+  background: #262F37;
+}
+
+header h1{
+  margin: 7px 0 0 0;
+}
+
+#container{
+  clear: both;
+  padding-top: 20px;
+  max-width: 1200px;
+}
+
+.alt{
+  color: #fff;
+  color: rgba(255,255,255, 0.9);
+  letter-spacing: 0.05em;
+}
+
+section{
+  display: inline-block;
+}
+
+article{
+  overflow: hidden;
+  margin: 4px;
+  padding: 7px;
+}
+img{
+  max-width:100%;
+}
+.span2 img{
+  width: -webkit-fill-available;
+}
+.img-container.break img{
+ height: max-content; 
+}
+.text-container.break{
+  display: none;
+}
+/* NAVIGATION */
+
+nav{
+  margin: 7px 0 7px 0;
+}
+
+nav ul{
+  text-align: right;
+  overflow: auto;
+  width: 100%;
+}
+
+nav ul li{
+  margin: 0 0 0 0;
+  text-align: center;
+  overflow: auto;
+  float: left;
+  width: 33%;
+}
+
+nav a{
+  text-decoration: none;
+  margin: 0;
+  display: block;
+  padding: 7px 0 7px 5%;
+  margin: 0 0 0 4%;
+  background-color: rgba(255,255,255,0.1);
+}
+  
+  /* Micro Clearfix */
+
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    *zoom:1;
+}
+
+
+@media screen and (max-width:1024px) and (min-width:641px) {
+  .span2{
+    width: 30.125%;
+  }
+  .span1{
+    width: 30.125%;
+  }
+  .img-container.break img{
+    height: initial;
+}
+  .text-container.break{
+  display: contents;
+  }
+  .text-container.disappear{
+  display: none;
+  }
+}
+
+@media screen and (max-width: 640px){
+  
+  .span2, section{
+    width: 100%;
+  }
+  .span1, section{
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  #container, .inner{
+    width: 90%;
+    padding: 0 5% 0 5%;
+  }
+}
