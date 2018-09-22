@@ -3,6 +3,25 @@ body {
   margin: 0 auto;
 }
 
+.image {
+  background: url("../assets/images/placeholder500x500.png") no-repeat center center;
+  height: 250px;
+}
+
+@media only screen and (min-width: 1025px) {
+  .landscape {
+    width: 40%;
+    height: 200px;
+    background: #ccc;
+  }
+
+  .portrait {
+    width: 20%;
+    height: 200px;
+    background: #ccc;
+  }
+}
+
 .clearfix::after {
     content: "";
     clear: both;
