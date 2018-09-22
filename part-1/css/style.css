@@ -15,6 +15,11 @@ section {
   overflow: auto;
 }
 
+.grid-heading {
+  font-weight: 900;
+  margin: 10px 0;
+}
+
 .image {
   background: url("../assets/images/placeholder500x500.png") no-repeat center center;
   height: 250px;
