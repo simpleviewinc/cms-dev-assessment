@@ -17,7 +17,7 @@ section {
 
 .grid-heading {
   font-weight: 900;
-  margin: 10px 0;
+  margin-bottom: 15px;
 }
 
 .grid-text {
@@ -27,6 +27,7 @@ section {
 .image {
   background: url("../assets/images/placeholder500x500.png") no-repeat center center;
   height: 250px;
+  margin-bottom: 15px;
 }
 
 .col {
