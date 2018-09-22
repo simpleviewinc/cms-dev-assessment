@@ -20,6 +20,10 @@ section {
   margin: 10px 0;
 }
 
+.grid-text {
+  font-size: 14px;
+}
+
 .image {
   background: url("../assets/images/placeholder500x500.png") no-repeat center center;
   height: 250px;
