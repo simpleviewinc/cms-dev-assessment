@@ -30,6 +30,12 @@ section {
   height: 100%;
 }
 
+.inner-col-txt {
+  float: left;
+  width: 47%;
+  padding-left: 2%;
+}
+
 .text p:before {
   content:'';
   width:100%;
