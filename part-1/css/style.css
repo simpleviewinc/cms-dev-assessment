@@ -172,4 +172,8 @@ section {
     width: initial;
     padding-left: initial;
   }
+
+  .text.inner-col-txt p:before {
+    left: 0;
+  }
 }
