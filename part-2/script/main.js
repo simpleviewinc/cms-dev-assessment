@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 // MANIPULATE DOM - ADD DATA TO DOM
 const manipulateDom = function(index,title,description){
-  let moduleX = `#module${index}`
+  let moduleX = `#module${index}`;
   $(`${moduleX} .grid-heading`).text(title);
   $(`${moduleX} .grid-text`).text(description);
 }
