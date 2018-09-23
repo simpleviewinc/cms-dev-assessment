@@ -89,6 +89,13 @@ section {
   .landscape, .portrait {
     width: 31%;
   }
+
+  .inner-col-img {
+    float: initial;
+    width: 100%;
+    margin-right: initial;
+    height: 250px;
+  }
 }
 
 .clearfix::after {
