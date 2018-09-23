@@ -4,7 +4,7 @@ $(document).ready(function() {
   makeCall();
 });
 
-let allData = null;
+let allData = null, index =0;
 
 // MANIPULATE DOM - ADD DATA TO DOM
 const manipulateDom = function(index,title,description){
@@ -15,7 +15,6 @@ const manipulateDom = function(index,title,description){
 
 // PROCESS THE DATA COMING FROM API
 const processData = function(){
-  let index = 0;
   let title = allData.data[index].title;
   let description = allData.data[index].description;
 
