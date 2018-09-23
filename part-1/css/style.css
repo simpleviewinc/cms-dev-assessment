@@ -85,6 +85,12 @@ section {
   }
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 641px) {
+  .landscape, .portrait {
+    width: 31%;
+  }
+}
+
 .clearfix::after {
   color: transparent;
   content: ".";
