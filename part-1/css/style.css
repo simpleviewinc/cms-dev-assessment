@@ -96,6 +96,10 @@ section {
     margin-right: initial;
     height: 250px;
   }
+
+  .image.inner-col-img {
+    margin-bottom: 15px;
+  }
 }
 
 .clearfix::after {
