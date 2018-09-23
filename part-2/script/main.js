@@ -6,6 +6,14 @@ $(document).ready(function() {
 
 let allData = null, index =0;
 
+// MAKE CALLS TO ADD CONTENT TO DOM
+const populateDOM = function() {
+  while(index <= 2) {
+    processData();
+    index += 1;
+  }
+}
+
 // MANIPULATE DOM - ADD DATA TO DOM
 const manipulateDom = function(index,title,description){
   let moduleX = `#module${index}`;
@@ -29,6 +37,6 @@ const makeCall = function(){
     dataType: 'json'
   }).then(function(response){
     allData = response;
-    processData();
+    populateDOM();
   })
 }
