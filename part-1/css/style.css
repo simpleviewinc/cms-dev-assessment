@@ -136,4 +136,25 @@ section {
   .clearfix::after {
     content: "";
   }
+
+  .inner-col-img {
+    float: initial;
+    width: 100%;
+    margin-right: initial;
+    height: 250px;
+  }
+
+  .image.inner-col-img {
+    margin-bottom: 15px;
+  }
+
+  .text.inner-col-txt {
+    height: 200px;
+  }
+
+  .inner-col-txt {
+    float: initial;
+    width: initial;
+    padding-left: initial;
+  }
 }
