@@ -4,13 +4,19 @@ $(document).ready(function() {
   makeCall();
 });
 
+// MANIPULATE DOM - ADD DATA TO DOM
+const manipulateDom = function(index,city,zip){
+  $('.image').first().text(city);
+  $('.text').first().text(zip);
+}
+
 // PROCESS THE DATA COMING FROM API
 const processData = function(response){
   let index = 0;
   let city = response.data[index].city;
   let zip = response.data[index].zip;
 
-  console.log(index,city,zip);
+  manipulateDom(index,city,zip);
 }
 
 // MAKE AJAX CALL TO PROVIDED API
