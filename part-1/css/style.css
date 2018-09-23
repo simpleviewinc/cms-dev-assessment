@@ -75,6 +75,13 @@ section {
   background:linear-gradient(transparent 370px, white);
 }*/
 
+.clearfix::after {
+  color: transparent;
+  content: ".";
+  clear: both;
+  display: table;
+}
+
 @media only screen and (min-width: 1025px) {
   .landscape {
     width: 48%;
@@ -125,11 +132,4 @@ section {
     width: initial;
     margin-bottom: 25px;
   }
-}
-
-.clearfix::after {
-  color: transparent;
-  content: ".";
-  clear: both;
-  display: table;
 }
