@@ -16,8 +16,8 @@ const manipulateDom = function(index,title,description){
 // PROCESS THE DATA COMING FROM API
 const processData = function(){
   let index = 0;
-  let title = response.data[index].title;
-  let description = response.data[index].description;
+  let title = allData.data[index].title;
+  let description = allData.data[index].description;
 
   manipulateDom(index,title,description);
 }
