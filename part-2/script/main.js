@@ -6,8 +6,9 @@ $(document).ready(function() {
 
 // MANIPULATE DOM - ADD DATA TO DOM
 const manipulateDom = function(index,title,description){
-  $('.grid-heading').first().text(title);
-  $('.grid-text').first().text(description);
+  let moduleX = `#module${index}`
+  $(`${moduleX} .grid-heading`).text(title);
+  $(`${moduleX} .grid-text`).text(description);
 }
 
 // PROCESS THE DATA COMING FROM API
