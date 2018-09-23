@@ -38,7 +38,7 @@ button:hover {
 section:hover button{
   opacity: 1;
   bottom: 20px;
-  transition: all 0.7s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .grid-heading {
