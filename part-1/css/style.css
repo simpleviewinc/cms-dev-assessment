@@ -16,8 +16,7 @@ main {
 
 section {
   position: relative;
-  height: 450px;
-  /*overflow: auto;*/
+  height: 460px;
 }
 
 .grid-heading {
@@ -33,6 +32,10 @@ section {
   background: url("../assets/images/placeholder500x500.png") no-repeat center center;
   height: 250px;
   margin-bottom: 15px;
+}
+
+.image.inner-col-img {
+  margin-bottom: initial;
 }
 
 .text {
