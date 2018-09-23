@@ -5,6 +5,11 @@ body {
   line-height: 1.3;
 }
 
+main {
+  max-width: 1025px;
+  margin: 0 auto;
+}
+
 .wrapper {
   margin: 20px 0;
 }
@@ -60,11 +65,11 @@ section {
 
 @media only screen and (min-width: 1025px) {
   .landscape {
-    width: 42%;
+    width: 48%;
   }
 
   .portrait {
-    width: 20%;
+    width: 23%;
   }
 }
 
