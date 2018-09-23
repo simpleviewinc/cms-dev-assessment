@@ -4,13 +4,22 @@ $(document).ready(function() {
   makeCall();
 });
 
+// PROCESS THE DATA COMING FROM API
+const processData = function(response){
+  let index = 0;
+  let city = response.data[index].city;
+  let zip = response.data[index].zip;
+
+  console.log(index,city,zip);
+}
+
+// MAKE AJAX CALL TO PROVIDED API
 const makeCall = function(){
-  // MAKE AJAX CALL TO PROVIDED API
   $.ajax({
     url: 'https://sv-reqres.now.sh/api/listings/?per_page=2',
     type: "Get",
     dataType: 'json'
   }).then(function(response){
-    console.log(response);
+    processData(response);
   })
 }
