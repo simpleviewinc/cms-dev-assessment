@@ -112,6 +112,12 @@ section {
   }
 }
 
+@media only screen and (max-width: 640px) {
+  .landscape, .portrait {
+    width: initial;
+  }
+}
+
 .clearfix::after {
   color: transparent;
   content: ".";
