@@ -63,6 +63,9 @@ section:hover button{
 .text {
   overflow: auto;
   height: 200px;
+}
+
+.bttn {
   display: flex;
   flex-direction: column;
   align-items: center;
