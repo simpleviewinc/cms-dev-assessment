@@ -29,7 +29,7 @@ section {
 }
 
 .image {
-  background: url("../assets/images/placeholder500x500.png") no-repeat center center;
+  background: #eee;
   height: 250px;
   margin-bottom: 15px;
   background-size: cover;
