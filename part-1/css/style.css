@@ -119,6 +119,7 @@ section {
 
   .landscape, .portrait {
     width: initial;
+    margin-bottom: 25px;
   }
 }
 
