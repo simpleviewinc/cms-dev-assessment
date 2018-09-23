@@ -117,6 +117,10 @@ section {
     max-width: 80%;
   }
 
+  .wrapper {
+    margin-bottom: initial;
+  }
+
   .landscape, .portrait {
     width: initial;
     margin-bottom: 25px;
