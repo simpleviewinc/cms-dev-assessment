@@ -132,4 +132,8 @@ section {
     width: initial;
     margin-bottom: 25px;
   }
+
+  .clearfix::after {
+    content: "";
+  }
 }
