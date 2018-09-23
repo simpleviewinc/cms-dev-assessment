@@ -8,7 +8,7 @@ let allData = null, index =0;
 
 // MAKE CALLS TO ADD CONTENT TO DOM
 const populateDOM = function() {
-  while(index <= 2) {
+  while(index <= 5) {
     processData();
     index += 1;
   }
@@ -32,7 +32,7 @@ const processData = function(){
 // MAKE AJAX CALL TO PROVIDED API
 const makeCall = function(){
   $.ajax({
-    url: 'https://sv-reqres.now.sh/api/listings/?per_page=2',
+    url: 'https://sv-reqres.now.sh/api/listings/?per_page=6',
     type: "Get",
     dataType: 'json'
   }).then(function(response){
