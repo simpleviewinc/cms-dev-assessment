@@ -4,6 +4,8 @@ $(document).ready(function() {
   makeCall();
 });
 
+let allData = null;
+
 // MANIPULATE DOM - ADD DATA TO DOM
 const manipulateDom = function(index,title,description){
   let moduleX = `#module${index}`;
@@ -12,7 +14,7 @@ const manipulateDom = function(index,title,description){
 }
 
 // PROCESS THE DATA COMING FROM API
-const processData = function(response){
+const processData = function(){
   let index = 0;
   let title = response.data[index].title;
   let description = response.data[index].description;
@@ -27,6 +29,7 @@ const makeCall = function(){
     type: "Get",
     dataType: 'json'
   }).then(function(response){
-    processData(response);
+    allData = response;
+    processData();
   })
 }
