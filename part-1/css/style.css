@@ -17,7 +17,7 @@ main {
 section {
   position: relative;
   height: 450px;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 .grid-heading {
@@ -33,6 +33,11 @@ section {
   background: url("../assets/images/placeholder500x500.png") no-repeat center center;
   height: 250px;
   margin-bottom: 15px;
+}
+
+.text {
+  overflow: auto;
+  height: 200px;
 }
 
 .col {
@@ -51,6 +56,10 @@ section {
   float: left;
   width: 47%;
   padding-left: 2%;
+}
+
+.text.inner-col-txt {
+  height: 100%;
 }
 
 /*.text p:before {
@@ -74,7 +83,8 @@ section {
 }
 
 .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+  color: transparent;
+  content: ".";
+  clear: both;
+  display: table;
 }
