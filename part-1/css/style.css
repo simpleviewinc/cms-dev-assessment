@@ -100,6 +100,16 @@ section {
   .image.inner-col-img {
     margin-bottom: 15px;
   }
+
+  .text.inner-col-txt {
+    height: 200px;
+  }
+
+  .inner-col-txt {
+    float: initial;
+    width: initial;
+    padding-left: initial;
+  }
 }
 
 .clearfix::after {
