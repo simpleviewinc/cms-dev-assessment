@@ -11,8 +11,8 @@ const populateDOM = function() {
   while(index <= 5) {
     processData();
     index += 1;
-  }
-}
+  };
+};
 
 // MANIPULATE DOM - ADD DATA TO DOM
 const manipulateDom = function(imageUrl,title,description){
@@ -20,16 +20,15 @@ const manipulateDom = function(imageUrl,title,description){
   $(`${moduleX} .image`).css('background-image', `url(${imageUrl})`);
   $(`${moduleX} .grid-heading`).text(title);
   $(`${moduleX} .grid-text`).text(description);
-}
+};
 
 // PROCESS THE DATA COMING FROM API
 const processData = function(){
   let imageUrl = allData.data[2].mediaurl;
   let title = allData.data[index].title;
   let description = allData.data[index].description;
-
   manipulateDom(imageUrl,title,description);
-}
+};
 
 // MAKE AJAX CALL TO PROVIDED API
 const makeCall = function(){
@@ -40,5 +39,5 @@ const makeCall = function(){
   }).then(function(response){
     allData = response;
     populateDOM();
-  })
-}
+  });
+};
