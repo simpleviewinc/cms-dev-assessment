@@ -5,18 +5,18 @@ $(document).ready(function() {
 });
 
 // MANIPULATE DOM - ADD DATA TO DOM
-const manipulateDom = function(index,city,zip){
-  $('.image').first().text(city);
-  $('.text').first().text(zip);
+const manipulateDom = function(index,title,description){
+  $('.grid-heading').first().text(title);
+  $('.grid-text').first().text(description);
 }
 
 // PROCESS THE DATA COMING FROM API
 const processData = function(response){
   let index = 0;
-  let city = response.data[index].city;
-  let zip = response.data[index].zip;
+  let title = response.data[index].title;
+  let description = response.data[index].description;
 
-  manipulateDom(index,city,zip);
+  manipulateDom(index,title,description);
 }
 
 // MAKE AJAX CALL TO PROVIDED API
