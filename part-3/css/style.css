@@ -23,7 +23,7 @@ section {
   height: 460px;
 }
 
-/*button {
+button {
   position: absolute;
   bottom: 0;
   padding: 10px 15px;
@@ -43,22 +43,39 @@ section:hover button{
   opacity: 1;
   bottom: 20px;
   transition: all 0.4s ease-out;
-}*/
+}
 
 .nav-list {
   list-style: none;
 }
 
-.nav-list li {
+.nav-item {
   display: inline-block;
+}
+
+.nav-item.active {
+  margin: 0 5px;
+  padding: 13px 2px;
   border-radius: 6px;
   background-color: #7503c1;
   color: #fff;
   cursor: pointer;
+  font-size: 12px;
 }
 
-.nav-bttn {
-  margin: 3px 4px;
+a.nav-bttn {
+  margin: 0 5px;
+  padding: 10px 12px;
+  background: #eee;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+a.nav-bttn:hover {
+  background: #ccc;
+}
+
+.nav-bttn.active {
   padding: 10px 15px;
   border-radius: 5px;
   background-color: #7503c1;
