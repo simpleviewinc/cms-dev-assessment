@@ -1,6 +1,6 @@
 $(document).ready(function() {
   console.log('main.js is connected!');
-  displayAll('listings');
+  displayAll('listings', true);
 });
 
 let allData = null, index =0;
@@ -51,20 +51,24 @@ const checkDOM = function(response){
 };
 
 // MAKE AJAX CALL TO PROVIDED API
-const makeCall = function(eventType){
+const makeCall = function(eventType,keyword){
   $.ajax({
     url: `https://sv-reqres.now.sh/api/${eventType}/?per_page=6`,
     type: "Get",
     dataType: 'json'
   }).then(function(response){
     allData = response;
-    checkDOM();
+    if(keyword){
+      console.log(keyword);
+    } else {
+      checkDOM();
+    }
   })
 }
 
 // DISPLAY ALL LISTINGS
-const displayAll = function(s){
-  makeCall(s);
+const displayAll = function(eventType,keyword){
+  makeCall(eventType,keyword);
 }
 
 //  ADD ELEMENTS TO DOM
