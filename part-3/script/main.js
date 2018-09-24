@@ -1,6 +1,5 @@
 $(document).ready(function() {
   console.log('main.js is connected!');
-  displayAll('listings', true);
 });
 
 let allData = null, index =0;
@@ -42,33 +41,24 @@ const processData = function(){
 
 
 // CHECK DOM FOR ALREADY EXISTING ELEMENTS
-const checkDOM = function(){
+const checkDOM = function(response){
   if ($('article').length) {
     $('article').remove();
     index = 0;
   }
-  buildDOM();
+  buildDOM(response);
 };
 
 // MAKE AJAX CALL TO PROVIDED API
-const makeCall = function(eventType,keyword){
+const makeCall = function(eventType){
   $.ajax({
     url: `https://sv-reqres.now.sh/api/${eventType}/?per_page=6`,
     type: "Get",
     dataType: 'json'
   }).then(function(response){
-    allData = response;
-    if(keyword){
-      buildDOM();
-    } else {
-      checkDOM();
-    }
+    allData = response
+    checkDOM();
   })
-}
-
-// DISPLAY ALL LISTINGS
-const displayAll = function(eventType,keyword){
-  makeCall(eventType,keyword);
 }
 
 //  ADD ELEMENTS TO DOM
