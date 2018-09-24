@@ -31,7 +31,7 @@ const manipulateDom = function(imgUrl,title,description){
   $(`${module} .image`).css('background-image', `url(${imgUrl})`);
   $(`${module} .grid-heading`).text(title);
   $(`${module} .grid-text`).text(description);
-}
+};
 
 // PROCESS THE DATA COMING FROM API
 const processData = function(){
@@ -60,8 +60,8 @@ const makeCall = function(eventType){
   }).then(function(response){
     allData = response
     checkDOM();
-  })
-}
+  });
+};
 
 //  ADD ELEMENTS TO DOM
 const buildDOM = function(){
@@ -130,5 +130,5 @@ const buildDOM = function(){
         </div>
       </section>
     </article>`);
-  populateDOM()
+  populateDOM();
 }
