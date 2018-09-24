@@ -2,6 +2,8 @@ $(document).ready(function() {
   console.log('main.js is connected!');
 });
 
+let allData = null, index =0;
+
 // TOGGLE ACTIVE CLASS NAVIGATION
 $('.nav-item').click(function(){
   $('.nav-item').removeClass('active');
@@ -21,6 +23,7 @@ const makeCall = function(eventType){
     type: "Get",
     dataType: 'json'
   }).then(function(response){
-    console.log(response);
+    allData = response
+    console.log('all data ',allData);
   })
 }
