@@ -17,11 +17,19 @@ $('.nav-bttn').click(function(){
   $(this).addClass('active');
 });
 
+// MANIPULATE DOM - ADD DATA TO DOM
+const manipulateDom = function(title,description){
+  let module = `#module${index}`
+  $(`${module} .grid-heading`).text(title);
+  $(`${module} .grid-text`).text(description);
+  console.log(title, ' ', description);
+}
+
 // PROCESS THE DATA COMING FROM API
 const processData = function(){
   let title = allData.data[index].title;
   let description = allData.data[index].description;
-  console.log(title,description);
+  manipulateDom(title,description);
 }
 
 //  ADD ELEMENTS TO DOM
