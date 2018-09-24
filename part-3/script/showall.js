@@ -7,17 +7,6 @@ let allListData = [], index2 = 0, count = 0, modIndex = 0, modIdNum = 0, arrInd 
 const $main = $('main');
 const categories = ['listings', 'events', 'offers'];
 
-// TOGGLE ACTIVE CLASS NAVIGATION
-$('.nav-item').click(function(){
-  $('.nav-item').removeClass('active');
-  $(this).addClass('active');
-});
-
-// TOGGLE ACTIVE CLASS NAVIGATION
-$('.nav-bttn').click(function(){
-  $('.nav-bttn').removeClass('active');
-  $(this).addClass('active');
-});
 
 // MAKE CALLS TO ADD CONTENT TO DOM
 const populateDOMallLsit = function() {
