@@ -17,10 +17,17 @@ $('.nav-bttn').click(function(){
   $(this).addClass('active');
 });
 
+// PROCESS THE DATA COMING FROM API
+const processData = function(){
+  let title = allData.data[index].title;
+  let description = allData.data[index].description;
+  console.log(title,description);
+}
+
 //  ADD ELEMENTS TO DOM
 const buildDOM = function(response){
   main.append('<article class="clearfix wrapper"><section id="module0" class="place"><div><div class="city"></div><div class="zip"></div></div></section></article>');
-  console.log(allData)
+  processData();
 }
 
 // MAKE AJAX CALL TO PROVIDED API
