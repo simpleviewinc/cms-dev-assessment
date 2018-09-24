@@ -13,6 +13,24 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
 </head>
 <body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li>
+          <button class="nav-bttn" type="button">All</button>
+        </li>
+        <li>
+          <button class="nav-bttn" type="button" onclick="makeCall('listings')">Listings</button>
+        </li>
+        <li>
+          <button class="nav-bttn" type="button" onclick="makeCall('events')">Events</button>
+        </li>
+        <li>
+          <button class="nav-bttn" type="button" onclick="makeCall('offers')">Offers</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <main class="clearfix"></main>
   <script src='./script/main.js'></script>
 </body>
