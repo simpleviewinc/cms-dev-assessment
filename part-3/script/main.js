@@ -17,12 +17,19 @@ $('.nav-bttn').click(function(){
   $(this).addClass('active');
 });
 
+// MAKE CALLS TO ADD CONTENT TO DOM
+const populateDOM = function() {
+  while(index <= 1) {
+    processData();
+    index += 1;
+  };
+};
+
 // MANIPULATE DOM - ADD DATA TO DOM
 const manipulateDom = function(title,description){
   let module = `#module${index}`
   $(`${module} .grid-heading`).text(title);
   $(`${module} .grid-text`).text(description);
-  console.log(title, ' ', description);
 }
 
 // PROCESS THE DATA COMING FROM API
@@ -79,5 +86,5 @@ const buildDOM = function(){
         </div>
       </section>
     </article>`);
-  processData()
+  populateDOM()
 }
