@@ -26,17 +26,19 @@ const populateDOM = function() {
 };
 
 // MANIPULATE DOM - ADD DATA TO DOM
-const manipulateDom = function(title,description){
-  let module = `#module${index}`
+const manipulateDom = function(imgUrl,title,description){
+  let module = `#module${index}`;
+  $(`${module} .image`).css('background-image', `url(${imgUrl})`);
   $(`${module} .grid-heading`).text(title);
   $(`${module} .grid-text`).text(description);
 }
 
 // PROCESS THE DATA COMING FROM API
 const processData = function(){
+  let imgUrl = allListData[0].data[2].mediaurl;
   let title = allData.data[index].title;
   let description = allData.data[index].description;
-  manipulateDom(title,description);
+  manipulateDom(imgUrl,title,description);
 };
 
 
