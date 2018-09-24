@@ -42,12 +42,12 @@ const processData = function(){
 
 
 // CHECK DOM FOR ALREADY EXISTING ELEMENTS
-const checkDOM = function(response){
+const checkDOM = function(){
   if ($('article').length) {
     $('article').remove();
     index = 0;
   }
-  buildDOM(response);
+  buildDOM();
 };
 
 // MAKE AJAX CALL TO PROVIDED API
@@ -59,7 +59,7 @@ const makeCall = function(eventType,keyword){
   }).then(function(response){
     allData = response;
     if(keyword){
-      console.log(keyword);
+      buildDOM();
     } else {
       checkDOM();
     }
