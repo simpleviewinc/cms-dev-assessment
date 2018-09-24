@@ -1,10 +1,11 @@
 $(document).ready(function() {
   console.log('showall.js is connected!');
-  displayAll('listings', true);
+  buildAllListings(true);
 });
 
-let allData2 = null, index2 =0;
-const main2 = $('main');
+let allListData = [], index2 = 0, count = 0, modIndex = 0, modIdNum = 0, arrInd = 0;
+const $main = $('main');
+const categories = ['listings', 'events', 'offers'];
 
 // TOGGLE ACTIVE CLASS NAVIGATION
 $('.nav-item').click(function(){
@@ -19,74 +20,93 @@ $('.nav-bttn').click(function(){
 });
 
 // MAKE CALLS TO ADD CONTENT TO DOM
-const populateDOM2 = function() {
+const populateDOMallLsit = function() {
   while(index2 <= 5) {
-    processData2();
+    processDataAllList();
+    modIdNum += 1;
     index2 += 1;
   };
+  arrInd += 1;
 };
 
 // MANIPULATE DOM - ADD DATA TO DOM
-const manipulateDom2 = function(title,description){
-  let module = `#module${index2}`;
+const manipulateDomAllList = function(imgUrl,title,description){
+  let module = `#module${modIdNum}`;
+  $(`${module} .image`).css('background-image', `url(${imgUrl})`);
   $(`${module} .grid-heading`).text(title);
   $(`${module} .grid-text`).text(description);
 }
 
 // PROCESS THE DATA COMING FROM API
-const processData2 = function(){
-  let title = allData2.data[index2].title;
-  let description = allData2.data[index2].description;
-  manipulateDom2(title,description);
+const processDataAllList = function(){
+  let imgUrl = allListData[0].data[2].mediaurl;
+  let title = allListData[arrInd].data[index2].title;
+  let description = allListData[arrInd].data[index2].description;
+  manipulateDomAllList(imgUrl,title,description);
 };
 
 
 // CHECK DOM FOR ALREADY EXISTING ELEMENTS
-const checkDOM2 = function(){
+const checkDOMAllList = function(){
   if ($('article').length) {
     $('article').remove();
-    index2 = 0;
+    index2 = 0; modIndex = 0; modIdNum = 0; arrInd = 0;
   }
-  buildDOM2();
+  buildDOMallList();
 };
 
 // MAKE AJAX CALL TO PROVIDED API
-const makeCall2 = function(eventType,keyword){
+const makeCallAllList = function(eventType,keyword){
   $.ajax({
     url: `https://sv-reqres.now.sh/api/${eventType}/?per_page=6`,
     type: "Get",
     dataType: 'json'
   }).then(function(response){
-    allData2 = response;
+    allListData.push(response);
     if(keyword){
-      buildDOM2();
+      buildDOMallList();
     } else {
-      checkDOM2();
+      checkDOMAllList();
     }
   })
 }
 
 // DISPLAY ALL LISTINGS
 const displayAll = function(eventType,keyword){
-  makeCall2(eventType,keyword);
+  makeCallAllList(eventType,keyword);
+}
+
+// RECURSIVE CALL TO DISPLY ALL LISTINGS
+const buildAllListings = function(boolean){
+  setTimeout(function(){
+    displayAll(categories[count], boolean);
+    count += 1;
+  }, 1000);
+  setTimeout(function(){
+    displayAll(categories[count], boolean);
+    count += 1;
+  }, 2000);
+  setTimeout(function(){
+    displayAll(categories[count], boolean);
+    count = 0;
+  }, 3000);
 }
 
 //  ADD ELEMENTS TO DOM
-const buildDOM2 = function(){
-  let i = 0;
+const buildDOMallList = function(){
   while(index2 <= 2){
-    let module0 = `module${i}`;
-    i+=1;
-    let module1 = `module${i}`;
-    i+=1;
-    let module2 = `module${i}`;
-    i+=1;
-    let module3 = `module${i}`;
-    i+=1;
-    let module4 = `module${i}`;
-    i+=1;
-    let module5 = `module${i}`;
-    main2.append(`
+    let module0 = `module${modIndex}`;
+    modIndex+=1;
+    let module1 = `module${modIndex}`;
+    modIndex+=1;
+    let module2 = `module${modIndex}`;
+    modIndex+=1;
+    let module3 = `module${modIndex}`;
+    modIndex+=1;
+    let module4 = `module${modIndex}`;
+    modIndex+=1;
+    let module5 = `module${modIndex}`;
+    $main.append(`
       <article class="clearfix wrapper">
         <section id="${module0}" class="landscape col">
           <div class="image"></div>
@@ -151,9 +171,9 @@ const buildDOM2 = function(){
           </div>
         </section>
       </article>`);
-    i+=1;
+    modIndex += 1;
     index2 += 1;
   }
   index2 = 0;
-  populateDOM2()
+  populateDOMallLsit();
 }
