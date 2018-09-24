@@ -19,7 +19,7 @@ $('.nav-bttn').click(function(){
 
 // MAKE CALLS TO ADD CONTENT TO DOM
 const populateDOM = function() {
-  while(index <= 1) {
+  while(index <= 5) {
     processData();
     index += 1;
   };
@@ -52,7 +52,7 @@ const checkDOM = function(response){
 // MAKE AJAX CALL TO PROVIDED API
 const makeCall = function(eventType){
   $.ajax({
-    url: `https://sv-reqres.now.sh/api/${eventType}/?per_page=2`,
+    url: `https://sv-reqres.now.sh/api/${eventType}/?per_page=6`,
     type: "Get",
     dataType: 'json'
   }).then(function(response){
