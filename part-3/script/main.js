@@ -3,6 +3,7 @@ $(document).ready(function() {
 });
 
 let allData = null, index =0;
+const main = $('main');
 
 // TOGGLE ACTIVE CLASS NAVIGATION
 $('.nav-item').click(function(){
@@ -16,6 +17,12 @@ $('.nav-bttn').click(function(){
   $(this).addClass('active');
 });
 
+//  ADD ELEMENTS TO DOM
+const buildDOM = function(response){
+  main.append('<article class="clearfix wrapper"><section id="module0" class="place"><div><div class="city"></div><div class="zip"></div></div></section></article>');
+  console.log(allData)
+}
+
 // MAKE AJAX CALL TO PROVIDED API
 const makeCall = function(eventType){
   $.ajax({
@@ -24,6 +31,6 @@ const makeCall = function(eventType){
     dataType: 'json'
   }).then(function(response){
     allData = response
-    console.log('all data ',allData);
+    buildDOM();
   })
 }
