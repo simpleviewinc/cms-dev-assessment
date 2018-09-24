@@ -28,7 +28,7 @@ const populateDOM2 = function() {
 
 // MANIPULATE DOM - ADD DATA TO DOM
 const manipulateDom2 = function(title,description){
-  let module = `#module${index2}`
+  let module = `#module${index2}`;
   $(`${module} .grid-heading`).text(title);
   $(`${module} .grid-text`).text(description);
 }
@@ -73,70 +73,87 @@ const displayAll = function(eventType,keyword){
 
 //  ADD ELEMENTS TO DOM
 const buildDOM2 = function(){
-  main2.append(`
-    <article class="clearfix wrapper">
-      <section id="module0" class="landscape col">
-        <div class="image"></div>
-        <div class="text">
-          <h1 class="grid-heading"></h1>
-          <p class="grid-text"></p>
-          <div class="bttn">
-            <button type="button">Read More</button>
+  let i = 0;
+  while(index2 <= 2){
+    let module0 = `module${i}`;
+    i+=1;
+    let module1 = `module${i}`;
+    i+=1;
+    let module2 = `module${i}`;
+    i+=1;
+    let module3 = `module${i}`;
+    i+=1;
+    let module4 = `module${i}`;
+    i+=1;
+    let module5 = `module${i}`;
+    main2.append(`
+      <article class="clearfix wrapper">
+        <section id="${module0}" class="landscape col">
+          <div class="image"></div>
+          <div class="text">
+            <h1 class="grid-heading"></h1>
+            <p class="grid-text"></p>
+            <div class="bttn">
+              <button type="button">Read More</button>
+            </div>
           </div>
-        </div>
-      </section>
-      <section id="module1" class="portrait col">
-        <div class="image"></div>
-        <div class="text">
-          <h1 class="grid-heading"></h1>
-          <p class="grid-text"></p>
-          <div class="bttn">
-            <button type="button">Read More</button>
+        </section>
+        <section id="${module1}" class="portrait col">
+          <div class="image"></div>
+          <div class="text">
+            <h1 class="grid-heading"></h1>
+            <p class="grid-text"></p>
+            <div class="bttn">
+              <button type="button">Read More</button>
+            </div>
           </div>
-        </div>
-      </section>
-      <section id="module2" class="portrait col">
-        <div class="image"></div>
-        <div class="text">
-          <h1 class="grid-heading"></h1>
-          <p class="grid-text"></p>
-          <div class="bttn">
-            <button type="button">Read More</button>
+        </section>
+        <section id="${module2}" class="portrait col">
+          <div class="image"></div>
+          <div class="text">
+            <h1 class="grid-heading"></h1>
+            <p class="grid-text"></p>
+            <div class="bttn">
+              <button type="button">Read More</button>
+            </div>
           </div>
-        </div>
-      </section>
-    </article>
-    <article class="clearfix">
-      <section id="module3" class="portrait col">
-        <div class="image"></div>
-        <div class="text">
-          <h1 class="grid-heading"></h1>
-          <p class="grid-text"></p>
-          <div class="bttn">
-            <button type="button">Read More</button>
+        </section>
+      </article>
+      <article class="clearfix">
+        <section id="${module3}" class="portrait col">
+          <div class="image"></div>
+          <div class="text">
+            <h1 class="grid-heading"></h1>
+            <p class="grid-text"></p>
+            <div class="bttn">
+              <button type="button">Read More</button>
+            </div>
           </div>
-        </div>
-      </section>
-      <section id="module4" class="portrait col">
-        <div class="image"></div>
-        <div class="text">
-          <h1 class="grid-heading"></h1>
-          <p class="grid-text"></p>
-          <div class="bttn">
-            <button type="button">Read More</button>
+        </section>
+        <section id="${module4}" class="portrait col">
+          <div class="image"></div>
+          <div class="text">
+            <h1 class="grid-heading"></h1>
+            <p class="grid-text"></p>
+            <div class="bttn">
+              <button type="button">Read More</button>
+            </div>
           </div>
-        </div>
-      </section>
-      <section id="module5" class="landscape col">
-        <div class="image inner-col-img"></div>
-        <div class="text inner-col-txt">
-          <h1 class="grid-heading"></h1>
-          <p class="grid-text"></p>
-          <div class="bttn">
-            <button type="button">Read More</button>
+        </section>
+        <section id="${module5}" class="landscape col">
+          <div class="image inner-col-img"></div>
+          <div class="text inner-col-txt">
+            <h1 class="grid-heading"></h1>
+            <p class="grid-text"></p>
+            <div class="bttn">
+              <button type="button">Read More</button>
+            </div>
           </div>
-        </div>
-      </section>
-    </article>`);
+        </section>
+      </article>`);
+    i+=1;
+    index2 += 1;
+  }
+  index2 = 0;
   populateDOM2()
 }
