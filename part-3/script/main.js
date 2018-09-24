@@ -95,6 +95,38 @@ const buildDOM = function(){
           </div>
         </div>
       </section>
+    </article>
+    <article class="clearfix">
+      <section id="module3" class="portrait col">
+        <div class="image"></div>
+        <div class="text">
+          <h1 class="grid-heading"></h1>
+          <p class="grid-text"></p>
+          <div class="bttn">
+            <button type="button">Read More</button>
+          </div>
+        </div>
+      </section>
+      <section id="module4" class="portrait col">
+        <div class="image"></div>
+        <div class="text">
+          <h1 class="grid-heading"></h1>
+          <p class="grid-text"></p>
+          <div class="bttn">
+            <button type="button">Read More</button>
+          </div>
+        </div>
+      </section>
+      <section id="module5" class="landscape col">
+        <div class="image inner-col-img"></div>
+        <div class="text inner-col-txt">
+          <h1 class="grid-heading"></h1>
+          <p class="grid-text"></p>
+          <div class="bttn">
+            <button type="button">Read More</button>
+          </div>
+        </div>
+      </section>
     </article>`);
   populateDOM()
 }
