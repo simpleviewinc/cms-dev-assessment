@@ -37,7 +37,17 @@ const processData = function(){
   let title = allData.data[index].title;
   let description = allData.data[index].description;
   manipulateDom(title,description);
-}
+};
+
+
+// CHECK DOM FOR ALREADY EXISTING ELEMENTS
+const checkDOM = function(response){
+  if ($('article').length) {
+    $('article').remove();
+    index = 0;
+  }
+  buildDOM(response);
+};
 
 // MAKE AJAX CALL TO PROVIDED API
 const makeCall = function(eventType){
@@ -47,7 +57,7 @@ const makeCall = function(eventType){
     dataType: 'json'
   }).then(function(response){
     allData = response
-    buildDOM();
+    checkDOM();
   })
 }
 
