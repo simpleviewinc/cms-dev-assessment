@@ -1,5 +1,6 @@
 $(document).ready(function() {
   console.log('main.js is connected!');
+  displayAll('listings');
 });
 
 let allData = null, index =0;
@@ -56,9 +57,14 @@ const makeCall = function(eventType){
     type: "Get",
     dataType: 'json'
   }).then(function(response){
-    allData = response
+    allData = response;
     checkDOM();
   })
+}
+
+// DISPLAY ALL LISTINGS
+const displayAll = function(s){
+  makeCall(s);
 }
 
 //  ADD ELEMENTS TO DOM
