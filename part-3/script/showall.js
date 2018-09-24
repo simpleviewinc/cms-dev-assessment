@@ -35,7 +35,7 @@ const manipulateDomAllList = function(imgUrl,title,description){
   $(`${module} .image`).css('background-image', `url(${imgUrl})`);
   $(`${module} .grid-heading`).text(title);
   $(`${module} .grid-text`).text(description);
-}
+};
 
 // PROCESS THE DATA COMING FROM API
 const processDataAllList = function(){
@@ -51,7 +51,7 @@ const checkDOMAllList = function(){
   if ($('article').length) {
     $('article').remove();
     index2 = 0; modIndex = 0; modIdNum = 0; arrInd = 0;
-  }
+  };
   buildDOMallList();
 };
 
@@ -67,14 +67,14 @@ const makeCallAllList = function(eventType,keyword){
       buildDOMallList();
     } else {
       checkDOMAllList();
-    }
-  })
-}
+    };
+  });
+};
 
 // DISPLAY ALL LISTINGS
 const displayAll = function(eventType,keyword){
   makeCallAllList(eventType,keyword);
-}
+};
 
 // RECURSIVE CALL TO DISPLY ALL LISTINGS
 const buildAllListings = function(boolean){
@@ -90,7 +90,7 @@ const buildAllListings = function(boolean){
     displayAll(categories[count], boolean);
     count = 0;
   }, 3000);
-}
+};
 
 //  ADD ELEMENTS TO DOM
 const buildDOMallList = function(){
@@ -173,7 +173,7 @@ const buildDOMallList = function(){
       </article>`);
     modIndex += 1;
     index2 += 1;
-  }
+  };
   index2 = 0;
   populateDOMallLsit();
-}
+};
