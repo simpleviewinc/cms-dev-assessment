@@ -32,12 +32,6 @@ const processData = function(){
   manipulateDom(title,description);
 }
 
-//  ADD ELEMENTS TO DOM
-const buildDOM = function(response){
-  main.append('<article class="clearfix wrapper"><section id="module0" class="place"><div><div class="city"></div><div class="zip"></div></div></section></article>');
-  processData();
-}
-
 // MAKE AJAX CALL TO PROVIDED API
 const makeCall = function(eventType){
   $.ajax({
@@ -48,4 +42,42 @@ const makeCall = function(eventType){
     allData = response
     buildDOM();
   })
+}
+
+//  ADD ELEMENTS TO DOM
+const buildDOM = function(){
+  main.append(`
+    <article class="clearfix wrapper">
+      <section id="module0" class="landscape col">
+        <div class="image"></div>
+        <div class="text">
+          <h1 class="grid-heading"></h1>
+          <p class="grid-text"></p>
+          <div class="bttn">
+            <button type="button">Read More</button>
+          </div>
+        </div>
+      </section>
+      <section id="module1" class="portrait col">
+        <div class="image"></div>
+        <div class="text">
+          <h1 class="grid-heading"></h1>
+          <p class="grid-text"></p>
+          <div class="bttn">
+            <button type="button">Read More</button>
+          </div>
+        </div>
+      </section>
+      <section id="module2" class="portrait col">
+        <div class="image"></div>
+        <div class="text">
+          <h1 class="grid-heading"></h1>
+          <p class="grid-text"></p>
+          <div class="bttn">
+            <button type="button">Read More</button>
+          </div>
+        </div>
+      </section>
+    </article>`);
+  processData()
 }
