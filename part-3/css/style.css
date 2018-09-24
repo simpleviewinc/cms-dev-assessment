@@ -47,16 +47,25 @@ section:hover button{
 
 .nav-list {
   list-style: none;
+  width: 350px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .nav-item {
-  display: inline-block;
+  padding: 13px 3px;
+  background: #eee;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.nav-item:hover {
+  background: #ccc;
 }
 
 .nav-item.active {
-  margin: 0 5px;
-  padding: 13px 2px;
-  border-radius: 6px;
+  padding: 13px 3px;
+  border-radius: 5px;
   background-color: #7503c1;
   color: #fff;
   cursor: pointer;
@@ -64,15 +73,18 @@ section:hover button{
 }
 
 a.nav-bttn {
-  margin: 0 5px;
-  padding: 10px 12px;
-  background: #eee;
+  padding: 10px 15px;
   cursor: pointer;
-  font-size: 14px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+a.nav-bttn.active:hover {
+  background: #7503c1;
 }
 
 a.nav-bttn:hover {
-  background: #ccc;
+  border-color: #ccc;
 }
 
 .nav-bttn.active {
