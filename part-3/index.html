@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>All</title>
+		<!-- STYLE SHEET -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+	</head>
+
+	<body>
+		<nav>
+			<div class="navbar">
+				<ul>
+					<li><a href="#" class="active">All</a></li>
+					<li><a href="listings.html">Listings</a></li>
+					<li><a href="events.html">Events</a></li>
+					<li><a href="offers.html">Offers</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Container to wrap items -->
+		<div class="container" id="all"></div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			// Ajax call to fetch all data
+			$.when(
+				$.ajax({
+				  url: "https://sv-reqres.now.sh/api/listings",
+				  method: "GET"
+				}),
+				$.ajax({
+				  url: "https://sv-reqres.now.sh/api/events",
+				  method: "GET"
+				}),
+				$.ajax({
+				  url: "https://sv-reqres.now.sh/api/offers",
+				  method: "GET"
+				})
+			).then((res1, res2, res3) => {
+					// Store data in variables
+					const data = []; 
+					data.push(res1[0].data);
+					data.push(res2[0].data);
+					data.push(res3[0].data);
+
+					for (var i = 0; i < data.length; i++) {
+						// Loop through data array to create display items
+						data[i].forEach(data => {
+							const item = $(`
+								<div class="item">
+									<div class="img" style="background-image:url(${data.mediaurl}), url(https://via.placeholder.com/500x500)"></div>
+									<div class="text">
+										<h3>${data.title}</h3>
+										<p>${data.description}</p>
+										<a href="#" class="tooltip">Read more</a>
+									</div>
+								</div>
+							`);
+
+							// Append each item to the container class
+							$('#all').append(item);
+						});
+					}
+			});
+		</script>
+	</body>
+</html>

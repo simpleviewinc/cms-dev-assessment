@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Listings API</title>
+		<!-- STYLE SHEET -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+	</head>
+
+	<body>
+		<!-- Container to wrap items -->
+		<div class="container"></div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			// Ajax call to fetch listings data
+			$.ajax({
+			  url: "https://sv-reqres.now.sh/api/listings",
+			  method: "GET"
+			})
+			.done(res => {
+				// Store data in data variable
+				const data = res.data;
+
+				// Loop through data array to create display items
+				data.forEach(data => {
+					const item = $(`
+						<div class="item">
+							<div class="img" style="background-image:url(${data.mediaurl}), url(https://via.placeholder.com/500x500)"></div>
+							<div class="text">
+								<h3>${data.title}</h3>
+								<p>${data.description}</p>
+							</div>
+						</div>
+					`);
+
+					// Append each item to the container class
+					$('.container').append(item);
+				});
+			});
+		</script>
+	</body>
+</html>
