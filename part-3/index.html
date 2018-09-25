@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Part 3: Dev Assessment</title>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  <link rel='stylesheet' type='text/css' href='./css/reset.css'>
+  <link rel='stylesheet' type='text/css' href='./css/style.css'>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item active">
+          <a class="nav-bttn active" onclick="checkDOMAllList()">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-bttn" onclick="makeCall('listings')">Listings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-bttn" onclick="makeCall('events')">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-bttn" onclick="makeCall('offers')">Offers</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="clearfix"></main>
+  <script src='./script/showall.js'></script>
+  <script src='./script/main.js'></script>
+</body>
+</html>
