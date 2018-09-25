@@ -1,0 +1,282 @@
+:root {
+    --colNum: 4;
+}
+
+.btn-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    overflow: auto;
+}
+
+.btn-container>ul {
+    height: 25px;
+    padding-left: 0;
+}
+.btn-container>ul>li {
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.sort-btn {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding: 10px 24px;
+    border-radius: 4px;
+    border: none;
+}
+
+.selected {
+    background-color: purple;
+    color: white;
+}
+
+.sort-btn:not(.selected):hover {
+    background-color: grey;
+}
+
+
+.grid-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(var(--colNum), 1fr);
+    grid-auto-rows: 25rem;
+    grid-gap: 30px;
+}
+
+.grid-item>img {
+    width: 100%;
+    height: 60%;
+    
+}
+
+
+.grid-item {
+    overflow: hidden;
+    position: relative;
+}
+
+#grid-item-narrow > .moreBtn {
+    position: absolute;
+    bottom: 5px;
+    margin-left: 52%;
+    z-index: 100;
+}
+
+.moreBtn{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    z-index: 100;
+}
+
+.grid-item:hover .moreBtn{
+    visibility: visible !important; 
+}
+
+.moreBtn > button {
+    color: white;
+    background-color: red;
+    padding: 10px 24px;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.moreBtn > button:hover {
+    cursor: pointer;
+    background-color: rgb(150,0,0);
+}
+
+.grid-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(180deg, transparent, white);
+}
+
+#grid-item-wide {
+    grid-column: 1/3;
+    
+}
+
+#grid-item-narrow {
+    grid-column: 3/5;
+}
+
+#grid-item-narrow>img {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#grid-item-narrow>.card-content {
+   margin-left: 52%; 
+}
+
+#grid-item-narrow>.card-content::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 20%;
+    width: 48%;
+    content: "";
+    background: linear-gradient(180deg, transparent, white);
+ }
+
+#grid-item-narrow>.card-header {
+    margin-left: 52%; 
+ }
+
+#grid-item-narrow::after {
+    background: none;
+    height: 0;
+    width: 0;
+}
+
+.card-header {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+@media (max-width: 640px){
+    .grid-container {
+        grid-template-columns: 0.7fr;
+        grid-auto-rows: 34rem;
+        justify-content: space-around;
+    }
+
+    #grid-item-wide {
+        grid-column: 1/1;
+    }
+
+    #grid-item-narrow {
+        grid-column: 1/1;
+    }
+
+    #grid-item-narrow>img {
+        width: 100%;
+        height: 60%;
+        float: none;
+    }
+     
+    #grid-item-narrow>.card-content {
+       margin-left: auto; 
+    }
+    
+    #grid-item-narrow>.card-content::after {
+        position: none;
+        bottom: 0;
+        right: 0;
+        height: 0;
+        width: 0;
+        content: "";
+        background: none;
+     }
+    
+    #grid-item-narrow>.card-header {
+        margin-left: auto; 
+     }
+
+    #grid-item-narrow > .moreBtn {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        z-index: 100;
+    }
+    
+    #grid-item-narrow::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 20%;
+        width: 100%;
+        content: "";
+        background: linear-gradient(180deg, transparent, white);
+    }
+}
+
+@media (min-width:641px) and (max-width: 1024px){
+    .grid-container {
+        grid-template-columns: repeat(3, 0.8fr);
+        grid-auto-rows: 21rem;
+    }
+
+    #grid-item-wide {
+        grid-column: 1/1;
+    }
+    
+    #grid-item-narrow {
+        grid-column: 3/4;
+    }
+
+    #grid-item-narrow>img {
+        width: 100%;
+        height: 60%;
+        float: none;
+    }
+     
+    #grid-item-narrow>.card-content {
+       margin-left: auto; 
+    }
+    
+    #grid-item-narrow>.card-content::after {
+        position: none;
+        bottom: 0;
+        right: 0;
+        height: 0;
+        width: 0;
+        content: "";
+        background: none;
+     }
+    
+    #grid-item-narrow>.card-header {
+        margin-left: auto; 
+     }
+
+     #grid-item-narrow > .moreBtn {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        z-index: 100;
+    }
+    
+    #grid-item-narrow::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 20%;
+        width: 100%;
+        content: "";
+        background: linear-gradient(180deg, transparent, white);
+    }
+}
