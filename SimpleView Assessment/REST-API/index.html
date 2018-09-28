@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/gallery.js"></script>
+  <script src="js/api.js"></script>
+</head>
+
+<body>
+<h2>Part 2: Rest-API</h2>
+<p> Click "Show All" to Begin </p>
+
+<!-- Button Cycle -->
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('listings')"> Listings</button>
+  <button class="btn" onclick="filterSelection('events')"> Events</button>
+  <button class="btn" onclick="filterSelection('offers')"> Offers</button>
+</div>
+
+<!-- Gallery Grid -->
+<div class="row">
+ <div id="response">
+ </div>
+  
+  </div>
+<!-- Eng Grid -->
+</div>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script>
+$(function(){
+
+   $.get("rest.php", function(data, status){
+       $('#response').html(data);
+    });
+
+});
+</script>
+
+
+</body>
+
+</html>
