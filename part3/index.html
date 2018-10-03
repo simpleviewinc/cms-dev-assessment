@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Dev Solution</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/foundation.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  </head>
+  <body>
+    <div id="container">  
+      <ul class="tabs" data-tabs id="example-tabs">
+  <li class="tabs-title"><a href="#panel1">All</a></li>
+  <li class="tabs-title is-active"><a href="#panel2" aria-selected="true">Listings</a></li>
+  <li class="tabs-title"><a href="#panel3">Events</a></li>
+  <li class="tabs-title"><a href="#panel4">Offers</a></li>
+</ul>
+<div class="tabs-content" data-tabs-content="example-tabs">
+  <div class="tabs-panel" id="panel1">
+<!--
+    <section id="app" class="cf">
+      <article class="span1" v-for=" listings in info">
+        <div class="img-container">
+          <img :src="listings.mediaurl" @error="PlaceHolderImg"/>
+        </div>
+        <div class="text-container">
+            <h3>{{ listings.title }}</h3> 
+            <p>{{ listings.description }}</p>   
+            <a class="button" :href="listings.weburl" :title="title">Read More</a>
+          </div>
+      </article>
+      </section>
+-->
+  </div>
+  <div class="tabs-panel is-active" id="panel2">
+    <section id="app" class="cf">
+      <article class="span1" v-for=" listings in info">
+        <div class="img-container">
+          <img :src="listings.mediaurl" @error="PlaceHolderImg"/>
+        </div>
+        <div class="text-container">
+            <h3>{{ listings.title }}</h3> 
+            <p>{{ listings.description }}</p>   
+            <a class="button" :href="listings.weburl" :title="title">Read More</a>
+          </div>
+      </article>
+      </section>
+  </div>
+  <div class="tabs-panel" id="panel3">
+    <section id="app2" class="cf">
+      <article class="span1" v-for=" events in info">
+        <div class="img-container">
+          <img :src="events.mediaurl" @error="PlaceHolderImg"/>
+        </div>
+        <div class="text-container">
+            <h3>{{ events.title }}</h3>
+            <p>{{ events.description }}</p>
+            <a class="button" :href="events.weburl" :title="title">Read More</a>
+          </div>
+        </article>
+      </section>
+  </div>
+  <div class="tabs-panel" id="panel4">
+    <section id="app3" class="cf">
+      <article class="span1" v-for=" offers in info">
+        <div class="img-container">
+          <img :src="offers.mediaurl" @error="PlaceHolderImg"/>
+        </div>
+        <div class="text-container">
+            <h3>{{ offers.title }}</h3>
+            <p>{{ offers.description }}</p>
+            <a class="button" :href="offers.weburl" :title="title">Read More</a>
+          </div>
+        </article>
+      </section>
+  </div>
+      </div>
+  </div> <!--! end of #container -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="assets/main.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+    <script>
+    $(document).foundation();
+    </script>
+  </body>
+</html>

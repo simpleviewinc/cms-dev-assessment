@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Dev Solution</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/foundation.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  </head>
+  <body>
+    <div id="container" class="cf">  
+      
+  	<section id="app" class="cf">
+      <article class="span1" v-for=" listings in info">
+        <div class="img-container">
+          <img :src="listings.mediaurl" @error="PlaceHolderImg"/>
+        </div>
+        <div class="text-container">
+            <h3>{{ listings.title }}</h3>
+            <p>{{ listings.description }}</p>
+            <a class="button" :href="listings.weburl" :title="title">Read More</a>
+          </div>
+        </article>
+      </section>
+
+  </div> <!--! end of #container -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="assets/main.js"></script>
+  </body>
+</html>
