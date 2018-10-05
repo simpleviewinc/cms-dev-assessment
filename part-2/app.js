@@ -29,12 +29,11 @@ $(document).ready(function(){
       };
       console.log( 'List Image - ' + i + '  ' + listingImage );
       // Dynamically create the  divs and other elements for the web page.
-      const gridDiv = $('<div>').addClass('grid-item id= item'+[i+1] );
-      const imgDiv = $('<img>').addClass('item-img')
-                               .css('background-image', 'url("' + "https://via.placeholder.com/500x500" + '")')
+      const gridDiv = $('<div>').addClass('grid-item id=item'+[i+1] );
+      const imgDiv = $('<img>').addClass('item-img id=item-img-'+[i+1] )
                                .attr('src', listingImage);
       const textDiv = $('<div>').addClass('text');
-      const title = $('<h3>').text((i+1) + ' '  + listingArray[i].title);
+      const title = $('<h3>').text(listingArray[i].title);
       const description = $('<p>').text(listingArray[i].description);
       //
       gridDiv.append(imgDiv);
@@ -42,6 +41,12 @@ $(document).ready(function(){
       gridDiv.append(title);
       gridDiv.append(description);
       $('#main').append(gridDiv);
+      //
+      // This function will load a fallback image if there is an error loading
+      // the image selected from the API.
+      $("img").on("error", function(){
+        $(this).attr( "src", '../comps/fallback.jpg' );
+      });
       //
       listingImage = null;
    };

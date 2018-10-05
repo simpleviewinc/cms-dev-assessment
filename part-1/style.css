@@ -64,7 +64,7 @@ body {
     display: block;
     position: absolute;
     background: rgba(255, 255, 255, 1);
-    background: -webkit-gradient(linear, 0% 0% 0% 100%, fromrgba(255, 255, 255, .1)), to(rgba(150, 123, 19, 1)));
+    background: -webkit-gradient(linear, 0% 0% 0% 100%, fromrgba(255, 255, 255, .1)), to(rgba(150, 123, 19, 1));
     background: -webkit-linear-gradient(top, rgba(150, 123, 19, 0), rgba(255, 255, 255, 1));
     background: -moz-linear-gradient(top, rgba(150, 123, 19, 0), rgba(255, 255, 255, 1));
     background: -ms-linear-gradient(top, rgba(150, 123, 19, 0), rgba(255, 255, 255, 1));
@@ -107,7 +107,7 @@ body {
 @media (max-width: 1025px) and (min-width: 641px) {
   .grid-container {
     display: grid;
-    grid-columns: 1fr 1fr 1fr;
+    grid-column: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, 400px);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -159,7 +159,7 @@ body {
 /* For Small Screens */
 @media (max-width: 640px) {
   .grid-container {
-    grid-columns: 1fr;
+    grid-column: 1fr;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 400px);
     grid-gap: 20px;
