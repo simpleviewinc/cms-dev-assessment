@@ -8,7 +8,6 @@ $(document).ready(function(){
     url: queryURL,
     method: 'GET'
   }).done( results => {
-    console.log(results);
     //
     // Create a variable to store the resulting array of data.
     // and the listing image.
@@ -24,22 +23,20 @@ $(document).ready(function(){
         listingImage = listingArray[i].mediaurl;
       }
       else {
-        console.log( 'Image is null');
-        listingImage = '../comps/fallback.jpg';
+           listingImage = '../comps/fallback.jpg';
       };
-      console.log( 'List Image - ' + i + '  ' + listingImage );
-      // Dynamically create the  divs and other elements for the web page.
+        // Dynamically create the  divs and other elements for the web page.
       const gridDiv = $('<div>').addClass('grid-item id=item'+[i+1] );
       const imgDiv = $('<img>').addClass('item-img id=item-img-'+[i+1] )
-                               .attr('src', listingImage);
+                               .attr('src', listingImage)
+                               .attr('id', 'item-img-' + (i+1));
       const textDiv = $('<div>').addClass('text');
-      const title = $('<h3>').text(listingArray[i].title);
-      const description = $('<p>').text(listingArray[i].description);
+      const title = $('<h3>').text(listingArray[i].title).appendTo(textDiv);
+      const description = $('<p>').text(listingArray[i].description)
+                                  .attr('id', 'text' + (i+1)).appendTo(textDiv);
       //
-      gridDiv.append(imgDiv);
-      gridDiv.append(textDiv);
-      gridDiv.append(title);
-      gridDiv.append(description);
+      gridDiv.append(imgDiv);  
+      gridDiv.append(textDiv);    
       $('#main').append(gridDiv);
       //
       // This function will load a fallback image if there is an error loading
