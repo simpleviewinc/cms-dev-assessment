@@ -1,5 +1,5 @@
 $(document).ready(function(){
-//
+ // Define the variables.
   var results = [];
   var selection = '';
 
@@ -95,10 +95,11 @@ $(document).ready(function(){
     })
   });
 
-
+  //
+  // This function displays the results of the api calls.
   function displayData( results, selection ){
-  // Create a variable to store the resulting array of data.
-  // and the listing image.
+    // Create a variable to store the resulting array of data.
+    // and the listing image.
     const listingArray = results;
     var listingImage = null;
     $('h1').text(selection);
