@@ -1,0 +1,167 @@
+/*******************************
+GENERAL
+********************************/
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: .9em;
+    line-height: 1.5;
+}
+
+h3 {
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+p {
+    font-weight: 400;
+}
+
+.wrapper {
+    margin: auto;
+}
+
+
+
+/*******************************
+GRID
+********************************/
+
+.grid-container > div {
+    background-color: #fff;
+    height: auto;
+    overflow: hidden;
+}
+
+
+
+/*******************************
+CONTENT
+********************************/
+
+/* Image display */
+.image-container {
+    max-width: 100%;
+}
+
+.cover {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Text fade */
+.text{
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    max-height:170px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    content: "";
+    position: relative;
+}
+
+.text:before {
+    content:'';
+    width:100%;
+    height:100%;    
+    position:absolute;
+    left:0;
+    top:0;
+    background:linear-gradient(transparent 120px, white);
+}
+
+
+
+/*******************************
+641px and larger (medium screen)
+********************************/
+@media screen and (min-width: 641px) {
+
+    /* 3 column grid */
+    .grid-container {
+        display: grid;
+        grid-gap: 25px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px;
+        counter-reset: div;
+      }
+
+}
+
+
+
+/*******************************
+1025px and larger (large screen)
+********************************/
+
+@media screen and (min-width: 1025px) {
+
+    .wrapper {
+        max-width: 1200px;
+    }
+
+    /* 4 column grid */
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        counter-reset: div;
+    }
+
+    /* Set every 1st and 6th grid to double width */
+    .item:nth-child(6n + 6),
+    .item:nth-child(6n + 1) {
+        grid-column: auto /span 2;
+    }
+
+    /* Image display */
+    .image-container {
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .cover {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    /* Set every 6th image vertical column */
+    .item:nth-of-type(6n+6) .image-container {
+        background-color: #ddd;
+        width: 48%;
+        height: 100%;
+        margin-right: 15px;
+        float: left;
+    }
+    
+    .item:nth-of-type(6n+6) .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Set every 6th text block to vertical column */
+    .item:nth-of-type(6n+6) h3 {
+        margin-top: 0;
+    }
+
+    .item:nth-of-type(6n+6) p {
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        max-height: 485px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        content: "";
+        position: relative;
+    }
+
+    .item:nth-of-type(6n+6) p:before {
+        content:'';
+        width:100%;
+        height:100%;    
+        position:absolute;
+        left:0;
+        top:0;
+        background:linear-gradient(transparent 400px, white);
+    }
+
+}
