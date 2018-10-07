@@ -1,0 +1,106 @@
+.grid-view {
+        display: grid;
+        column-gap: 12px;
+        grid-template-columns: repeat(auto-fill, 1fr);
+}
+
+
+.grid-view__item {
+        overflow: hidden;
+        position: relative;
+        height: 90%;
+        object-fit: cover;
+}
+
+.grid-view__item_first {
+        overflow: hidden;
+        position: relative;
+        height: 90%;
+        object-fit: cover;
+}
+
+
+.grid-view__item_last {
+        overflow: hidden;
+        position: relative;
+        height: 90%;
+        object-fit: cover;
+
+}
+
+.grid-view__fade_out {
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        height: 10%;
+        width: 100%;
+        background: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        /* For Safari */
+        background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+
+}
+
+@media (min-width: 641px) {
+        .grid-view {
+                display: grid;
+                column-gap: 20px;
+                row-gap: 1px;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: minmax(100px, 500px);
+
+        }
+
+}
+
+@media (min-width: 800px) {
+        .grid-view {
+                display: grid;
+                column-gap: 20px;
+                grid-template-columns: repeat(4, 1fr);
+
+        }
+
+        img {
+                max-height: 60%;
+                width: 100%;
+                align-self: center;
+                position: relative;
+        }
+
+        .grid-view__item_first {
+                grid-area: 1 / 1 / span 1 / span 2;
+
+                position: relative;
+                height: 90%;
+                object-fit: cover;
+
+        }
+
+
+        .grid-view__item_last {
+                grid-area: 2 / 3 / span 1 / span 2;
+                height: 90%;
+                position: relative;
+
+        }
+
+        .grid-view__item_last .item-body {
+                grid-area: 2 / 4 / span 1 / span 1;
+                width: 50%;
+                float: right;
+                padding: 5px;
+
+        }
+
+        .grid-view__item_last img {
+                grid-area: 2 / 3 / span 1 / span 1;
+                float: left;
+                position: absolute;
+                min-height: 100%;
+                width: 50%;
+                align-self: center;
+        }
+
+
+}
