@@ -1,0 +1,165 @@
+body {
+    font-family: 'Lato';
+    margin: 20px;
+}
+
+h2, h3 {
+    margin: 0 0 15px 0;
+}
+
+/* Grid Container defined here */
+.grid-container {
+    display: grid;
+    max-width: 1200px;
+    max-height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 500px;
+    grid-template-rows: repeat(2, 500px);
+    justify-content: space-evenly;
+}
+
+.grid-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Using a formula (an + b). Description: a represents a cycle size, 
+   n is a counter (starts at 0), and b is an offset value. */
+.grid-item:nth-child(6n + 1) {
+    grid-column: 1 / span 2;
+}
+
+.grid-item:nth-child(6n + 6) {
+    grid-column: 3 / span 2;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.image {
+    background: url("https://via.placeholder.com/500x500") no-repeat center center;
+    min-height: 250px;
+    margin: 0 0 15px 0;
+    background-size: cover;
+}
+
+/* .text:before {
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient( rgba(255,255,255,0) 350px,  rgba(255,255,255,1));
+    pointer-events: none;
+} */
+
+.grid-item:nth-child(6n + 6) p:before{
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    margin: 0; 
+    padding: 0; 
+    background: linear-gradient( rgba(255,255,255,0) 250px,  rgba(255,255,255,1));
+    pointer-events: none;
+}
+
+.grid-item:nth-child(6n + 6) .image{
+    width: 100%;
+    height: auto;
+    float: left;
+    position: relative;
+}
+
+.text6 {
+    width: auto;
+    height: 100%;
+    float: right;
+    position: relative;
+} 
+
+/*               */
+/* Media Queries */
+/*               */
+
+/* Medium Screens  */
+@media (max-width: 1025px) and (min-width: 641px) {
+    .grid-container {
+        display: grid;
+        grid-column: 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 500px);
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+
+    .grid-item:nth-child(6n + 1) {
+        grid-column: 1 / span 1;
+    }
+  
+    .grid-item:nth-child(6n + 6) {
+        grid-column: 3;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 265px;
+        float: none;
+    }
+
+    .grid-item:nth-child(6n + 6) .image{
+      width: 100%;
+      height: auto;
+      float: none;
+      position: relative;
+  }
+  
+  .text6 {
+      width: 100%;
+      height: 100%;
+      float: none;
+      position: relative;
+  } 
+  .grid-item:nth-child(6n + 6) p:before{
+    content:'';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 15px;
+    margin: 0; 
+    padding: 0; 
+    background: linear-gradient( rgba(255,255,255,0) 250px,  rgba(255,255,255,1));
+    pointer-events: none;
+}
+
+}
+
+/* For Small Screens */
+@media (max-width: 640px) {
+    .grid-container {
+        grid-column: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 400px);
+        grid-gap: 20px;
+    }
+
+    .grid-item:nth-child(6n + 1) {
+        grid-column: 1 / span 1;
+    }
+    
+    .grid-item:nth-child(6n + 6) {
+        grid-column: 1 / span 1;
+    }
+
+    .grid-item:nth-child(6n + 6) .image{
+      width: 100%;
+      height: 100%;
+      float: none;
+      /* position: relative; */
+  }
+  
+
+}
