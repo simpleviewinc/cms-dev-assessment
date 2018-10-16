@@ -1,27 +1,44 @@
-var queryURL = "https://sv-reqres.now.sh/api/listings/";
+var queryUrlListings = "https://sv-reqres.now.sh/api/listings/";
+var queryUrlEvents = "https://sv-reqres.now.sh/api/events/";
+var queryUrlOffers = "https://sv-reqres.now.sh/api/offers/";
 
-$(document).ready(function() {
-    
-  // Here we use jQuery to select the header with "click-me" as its ID.
-  // Notice that its #clickMe, click, and then the function
-  // So $("id|class|element").on("action", function(){});
-    console.log("script.js is running");
+$(document).ready(function () {
+
+  console.log("script.js is running");
+
+  var placeHold = 'https://via.placeholder.com/500x500';
+
+  var handleButton = function (queryURL) {
+
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(answer => {
-      var placeHold = 'https://via.placeholder.com/500x500';
-      var listings = answer.data;
-      for (var i = 0; i<6; i++){
-      var listing = answer.data[i]
+      var datum = answer.data;
 
-      $(".img"+i).css("background-image", "url("+listing.mediaurl+")");
-      $(".img"+i).css("background-size", "cover")
-      
-      console.log(listing.mediaurl)
-      
-      $(".fillHeader_"+i).text(listing.title);
-      $(".fillText_"+i).text(listing.description);
-      }
+      for (var i = 0; i < 6; i++) {
+        var _event = datum[i]
+        $(".img" + i).css("background-image", "url(" + _event.mediaurl + ")");
+        $(".img" + i).css("background-size", "cover")
+        // console.log(_event.mediaurl)
+        $(".fillHeader_" + i).text(_event.title);
+        $(".fillText_" + i).text(_event.description);
+      };
     });
+  };
+
+  $("#listButton").click(event => {
+    // show all listing items
+    handleButton(queryUrlListings);
   });
+
+  $("#eventButton").click(event => {
+    // show all listing items
+    handleButton(queryUrlEvents);
+  });
+
+  $("#offersButton").click(event => {
+    // show all listing items
+    handleButton(queryUrlOffers);
+  });
+});
