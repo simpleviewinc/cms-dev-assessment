@@ -119,6 +119,7 @@ position:relative;
 
 h4{
     display: block;
+    font-size: 1em!important;
     margin-top: 10px!important;
     margin-bottom: 10px!important;
     font-weight: 900!important;
@@ -190,6 +191,7 @@ position:relative;
 
 h4{
     display: block;
+    font-size: 1em!important;
     margin-top: 10px!important;
     margin-bottom: 10px!important;
     font-weight: 900!important;
@@ -260,6 +262,7 @@ p{
     
     h4{
         display: block;
+        font-size: 1em!important;
         margin-top: 10px!important;
         margin-bottom: 10px!important;
         font-weight: 900!important;
