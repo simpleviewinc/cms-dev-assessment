@@ -38,11 +38,15 @@
     grid-column: span 2;
  }
 
+ .container div:nth-child(7n){
+    grid-column: span 2;
+ }
+
  .container div:nth-child(6){
      grid-column: span 2;
  }
 
-.nested{
+.nested, .container div:nth-child(6n){
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
