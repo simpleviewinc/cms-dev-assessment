@@ -32,6 +32,17 @@
      grid-column: span 2;
  }
 
+.nested{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.nestedText {
+    grid-column: 2/3;
+    grid-row: 1;
+}
+
 section{
     height: 100%;
 }
@@ -40,6 +51,16 @@ section{
     background-image: url(https://via.placeholder.com/500x500);
     background-position: center center;
     height: 60%;
+ }
+
+ .nestedImg{
+    background-image: url(https://via.placeholder.com/500x500);
+    background-position: center center;
+    grid-column: 1/2!important;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    margin-right: 5px; 
  }
 
 .text {
@@ -174,15 +195,15 @@ p{
         position: relative;
         overflow: hidden;
         max-height: 100%;
-      }
+      }  
 
-      section{
-        height: 100%;
+    section{
+    height: 100%;
     }
 
     .shadow {
         position:absolute;
-        top:5em;
+        top:3em;
         width:100%;
         height: 4em;
         background: -webkit-linear-gradient(transparent, white);
@@ -194,7 +215,7 @@ p{
      .containerImg{
         background-image: url(https://via.placeholder.com/500x500);
         background-position: center center;
-        height: 50%;
+        height: 60%;
      }
     
     .text {
