@@ -15,7 +15,26 @@ $(document).ready(function () {
       method: "GET"
     }).then(answer => {
       var datum = answer.data;
-      // var sixData = [];
+      $(".container").empty();
+
+      for (var i = 0; i < 6; i++) {
+          var div1 = $("<div class='containerItem'>");
+          var sec = $("<section>");
+          div1.append(sec);
+          var div2 = $("<div class='defaultImg'>");
+          sec.append(div2);
+          var div3 = $("<div class='containerImg img"+i+"'>")
+          div2.append(div3);
+          var div4 = $("<div class='text'>");
+          sec.append(div4);
+          var div5 = $("<div class='shadow'>");
+          div4.append(div5);
+          var header4 = $("<h4 class='fillHeader_"+i+"'>");
+          div4.append(header4);
+          var textP = $("<p class='fillText_"+i+"'>")
+          div4.append(textP);
+          $(".container").append(div1);
+      }
 
       for (var i = 0; i < 6; i++) {
         var _event = datum[i]
