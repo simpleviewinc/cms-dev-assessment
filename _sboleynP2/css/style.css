@@ -6,6 +6,14 @@
     max-width: 1200px;
 }
 
+.buttonRow{
+    padding: 15px;
+}
+
+.w3-button.w3-black{
+    margin-right: 10px;
+}
+
 .container {
     display: grid;
     margin-top: 15px;
@@ -137,6 +145,13 @@ p{
     margin: auto;
 }
 
+.buttonRow{
+    padding: 15px;
+}
+
+.w3-button.w3-black{
+    margin-right: 10px;
+}
 .container {
     display: grid;
     margin-top: 15px;
@@ -208,6 +223,13 @@ p{
         margin: auto;
     }
     
+    .buttonRow{
+        padding: 15px;
+    }
+    
+    .w3-button.w3-black{
+        margin-right: 10px;
+    }
     .container {
         display: grid;
         margin-top: 15px;
