@@ -55,32 +55,6 @@ $(document).ready(function () {
     });
   };
 
-  function load() {
-    handleButton(queryUrlListings);
-    handleButton(queryUrlEvents);
-    handleButton(queryUrlOffers);
-  }
-
-  $("#listButton").click(event => {
-    // show all listing items
-    handleButton(queryUrlListings);
-  });
-
-  $("#eventButton").click(event => {
-    // show all listing items
-    handleButton(queryUrlEvents);
-  });
-
-  $("#offersButton").click(event => {
-    // show all listing items
-    handleButton(queryUrlOffers);
-  });
-
-  $("#allButton").click(event => {
-    // show all listing items
-    handleAll();
-  });
-
   var handleAll = function () {
     $(".container").empty();
 
@@ -129,6 +103,37 @@ $(document).ready(function () {
     })
   }
 
+  function load() {
+    handleButton(queryUrlListings);
+    handleButton(queryUrlEvents);
+    handleButton(queryUrlOffers);
+  }
+
+  $("body").on("hover", ".containerItem", function () {
+    console.log('im hover')
+  })
+
+
+
+  $("#listButton").click(event => {
+    // show all listing items
+    handleButton(queryUrlListings);
+  });
+
+  $("#eventButton").click(event => {
+    // show all listing items
+    handleButton(queryUrlEvents);
+  });
+
+  $("#offersButton").click(event => {
+    // show all listing items
+    handleButton(queryUrlOffers);
+  });
+
+  $("#allButton").click(event => {
+    // show all listing items
+    handleAll();
+  });
 
   load();
 });

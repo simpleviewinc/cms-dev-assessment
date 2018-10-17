@@ -10,6 +10,26 @@
     padding: 15px;
 }
 
+button:visited{
+    border-style: solid;
+    border-color:  rgb(0, 77, 128);
+    border-width: 2px;
+}
+button{
+    background-color: rgba(66, 0, 128, 0.3);
+    border: solid;
+    border-color:  rgba(66, 0, 128, 0.3);
+    border-width: 2px;
+}
+
+button:hover{
+    background-color: rgba(66, 0, 128, 0.7);
+    border-style: dashed;
+    border-color:  rgb(66, 0, 128);
+}
+
+
+
 .w3-button.w3-black{
     margin-right: 10px;
 }
@@ -115,7 +135,7 @@ position:relative;
     background: linear-gradient(transparent, white);
 }
 
-.shadow2 {
+.shadow2, .container div:nth-child(6n) div.text>div.shadow {
     position:absolute;
     top:15em;
     width:100%;
@@ -169,7 +189,7 @@ p{
 
 .containerItem{
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     max-height: 100%;
   }
 
@@ -192,6 +212,7 @@ section{
 
 .text {
 position:relative;
+/* overflow: hidden; */
 }
 
 .shadow {
@@ -245,11 +266,11 @@ p{
         font-family: 'Lato', sans-serif;
     }
     
-    .containerItem{
+    /* .containerItem{
         position: relative;
         overflow: hidden;
         max-height: 100%;
-      }
+      } */
     
     section{
         height: 100%;
