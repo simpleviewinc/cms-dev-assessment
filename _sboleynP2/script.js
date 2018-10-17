@@ -109,7 +109,7 @@ $(document).ready(function () {
     handleButton(queryUrlOffers);
   }
 
-  // This part of the code would work to expand each section on hover so the end user can see more info
+  // This part of the code would work to expand each section on hover so the end user can see more info but it needs more work
   // $("body").on("mouseenter", ".containerItem", function () {
   //   $(this).parent().css('grid-auto-rows', 'minmax(100px, auto)')
   //   console.log($(this).parent())})
