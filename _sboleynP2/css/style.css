@@ -23,6 +23,7 @@ button{
 }
 
 button:hover{
+    color: white;
     background-color: rgba(66, 0, 128, 0.7);
     border-style: dashed;
     border-color:  rgb(66, 0, 128);
@@ -30,9 +31,19 @@ button:hover{
 
 .readMore{
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
+    bottom: 0px;
     left: 0px;
-    background-color: darkorange;
+    background-color: rgb(255, 94, 0);
+    color: white;
+}
+
+.readMore:hover{
+    /* top: 50%; */
+    bottom: 0px;
+    left: 0px;
+    background-color: rgb(255, 51, 0);
+    color: white;
 }
 
 .w3-button.w3-black{
@@ -157,7 +168,7 @@ position:relative;
 
 h4{
     display: block;
-    font-size: 1em!important;
+    font-size: 0.9em!important;
     margin-top: 10px!important;
     margin-bottom: 10px!important;
     font-weight: 900!important;
@@ -192,6 +203,7 @@ button{
 }
 
 button:hover{
+    color: white;
     background-color: rgba(66, 0, 128, 0.7);
     border-style: dashed;
     border-color:  rgb(66, 0, 128);
@@ -199,9 +211,19 @@ button:hover{
 
 .readMore{
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
+    bottom: 0px;
     left: 0px;
-    background-color: darkorange;
+    background-color: rgb(255, 94, 0);
+    color: white;
+}
+
+.readMore:hover{
+    /* top: 50%; */
+    bottom: 0px;
+    left: 0px;
+    background-color: rgb(255, 51, 0);
+    color: white;
 }
 
 .w3-button.w3-black{
@@ -263,7 +285,7 @@ position:relative;
 
 h4{
     display: block;
-    font-size: 1em!important;
+    font-size: 0.9em!important;
     margin-top: 10px!important;
     margin-bottom: 10px!important;
     font-weight: 900!important;
@@ -297,6 +319,7 @@ p{
     }
     
     button:hover{
+        color: white;
         background-color: rgba(66, 0, 128, 0.7);
         border-style: dashed;
         border-color:  rgb(66, 0, 128);
@@ -304,9 +327,19 @@ p{
 
     .readMore{
         position: absolute;
-        top: 50%;
+        /* top: 50%; */
+        bottom: 0px;
         left: 0px;
-        background-color: darkorange;
+        background-color: rgb(255, 94, 0);
+        color: white;
+    }
+    
+    .readMore:hover{
+        /* top: 50%; */
+        bottom: 0px;
+        left: 0px;
+        background-color: rgb(255, 51, 0);
+        color: white;
     }
     
     .w3-button.w3-black{
@@ -367,7 +400,7 @@ p{
     
     h4{
         display: block;
-        font-size: 0.8em!important;
+        font-size: 0.9em!important;
         margin-top: 10px!important;
         margin-bottom: 10px!important;
         font-weight: 900!important;

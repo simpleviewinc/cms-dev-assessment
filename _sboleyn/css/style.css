@@ -12,10 +12,10 @@
     margin-bottom: 15px;
     grid-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: calc(50vh - 30px);
+    /* grid-auto-rows: calc(50vh - 30px);
     grid-auto-rows: -webkit-calc(50vh - 30px);
     grid-auto-rows: -moz-calc(50vh - 30px);
-    grid-auto-rows: -o-calc(50vh - 30px);
+    grid-auto-rows: -o-calc(50vh - 30px); */
     
     font-family: 'Lato', sans-serif;
 }
