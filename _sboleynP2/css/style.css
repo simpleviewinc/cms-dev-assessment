@@ -10,24 +10,31 @@
     padding: 15px;
 }
 
-button:visited{
-    border-style: solid;
-    border-color:  rgb(0, 77, 128);
-    border-width: 2px;
-}
 button{
-    background-color: rgba(66, 0, 128, 0.3);
+    background-color: rgb(165, 159, 170);
     border: solid;
-    border-color:  rgba(66, 0, 128, 0.3);
+    /* border-color:  rgba(66, 0, 128, 0.3); */
     border-width: 2px;
     border-radius: 4px!important;
 }
 
-button:hover{
+.w3-button:active{
+    border-style: solid;
     color: white;
-    background-color: rgba(66, 0, 128, 0.7);
-    border-style: dashed;
-    border-color:  rgb(66, 0, 128);
+    background-color:  rgb(86, 6, 110);
+    border-width: 2px;
+}
+
+.w3-button:visited{
+    border-style: solid;
+    color: white;
+    background-color:   rgb(86, 6, 110);
+    border-width: 2px;
+}
+
+
+button:hover{
+    background-color: rgb(99, 95, 102);
 }
 
 .readMore{
@@ -192,24 +199,31 @@ p{
     padding: 15px;
 }
 
-button:visited{
-    border-style: solid;
-    border-color:  rgb(0, 77, 128);
-    border-width: 2px;
-}
 button{
-    background-color: rgba(66, 0, 128, 0.3);
+    background-color: rgb(165, 159, 170);
     border: solid;
-    border-color:  rgba(66, 0, 128, 0.3);
+    /* border-color:  rgba(66, 0, 128, 0.3); */
     border-width: 2px;
     border-radius: 4px!important;
 }
 
-button:hover{
+.w3-button:active{
+    border-style: solid;
     color: white;
-    background-color: rgba(66, 0, 128, 0.7);
-    border-style: dashed;
-    border-color:  rgb(66, 0, 128);
+    background-color:  rgb(86, 6, 110);
+    border-width: 2px;
+}
+
+.w3-button:visited{
+    border-style: solid;
+    color: white;
+    background-color:   rgb(86, 6, 110);
+    border-width: 2px;
+}
+
+
+button:hover{
+    background-color: rgb(99, 95, 102);
 }
 
 .readMore{
@@ -310,24 +324,31 @@ p{
         padding: 15px;
     }
 
-    button:visited{
-        border-style: solid;
-        border-color:  rgb(0, 77, 128);
-        border-width: 2px;
-    }
     button{
-        background-color: rgba(66, 0, 128, 0.3);
+        background-color: rgb(165, 159, 170);
         border: solid;
-        border-color:  rgba(66, 0, 128, 0.3);
+        /* border-color:  rgba(66, 0, 128, 0.3); */
         border-width: 2px;
         border-radius: 4px!important;
     }
     
-    button:hover{
+    .w3-button:active{
+        border-style: solid;
         color: white;
-        background-color: rgba(66, 0, 128, 0.7);
-        border-style: dashed;
-        border-color:  rgb(66, 0, 128);
+        background-color:  rgb(86, 6, 110);
+        border-width: 2px;
+    }
+    
+    .w3-button:visited{
+        border-style: solid;
+        color: white;
+        background-color:   rgb(86, 6, 110);
+        border-width: 2px;
+    }
+    
+    
+    button:hover{
+        background-color: rgb(99, 95, 102);
     }
 
     .readMore{
