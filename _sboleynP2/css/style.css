@@ -25,16 +25,15 @@ button{
     border-width: 2px;
 }
 
+button:hover{
+    background-color: rgb(99, 95, 102);
+}
+
 .w3-button:visited{
     border-style: solid;
     color: white;
     background-color:   rgb(86, 6, 110);
     border-width: 2px;
-}
-
-
-button:hover{
-    background-color: rgb(99, 95, 102);
 }
 
 .readMore{
