@@ -216,7 +216,8 @@ button:hover{
     position: absolute;
     /* top: 50%; */
     bottom: 0px;
-    left: 0px;
+    left: 40%;
+    right: 40%;
     background-color: rgb(255, 94, 0);
     color: white;
 }
@@ -224,7 +225,7 @@ button:hover{
 .readMore:hover{
     /* top: 50%; */
     bottom: 0px;
-    left: 0px;
+    /* left: 0px; */
     background-color: rgb(255, 51, 0);
     color: white;
 }
@@ -333,7 +334,8 @@ p{
         position: absolute;
         /* top: 50%; */
         bottom: 0px;
-        left: 0px;
+        left: 40%;
+        right: 40%;
         background-color: rgb(255, 94, 0);
         color: white;
     }
@@ -341,7 +343,7 @@ p{
     .readMore:hover{
         /* top: 50%; */
         bottom: 0px;
-        left: 0px;
+        /* left: 0px; */
         background-color: rgb(255, 51, 0);
         color: white;
     }
