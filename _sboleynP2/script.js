@@ -109,10 +109,15 @@ $(document).ready(function () {
     handleButton(queryUrlOffers);
   }
 
-  $("body").on("hover", ".containerItem", function () {
-    console.log('im hover')
-  })
+  // This part of the code would work to expand each section on hover so the end user can see more info
+  // $("body").on("mouseenter", ".containerItem", function () {
+  //   $(this).parent().css('grid-auto-rows', 'minmax(100px, auto)')
+  //   console.log($(this).parent())})
 
+  // $("body").on("mouseleave", ".containerItem", function () {
+  //   // this.last().remove();
+  //   $(this).parent().css('grid-auto-rows', 'calc(50vh - 30px)')
+  // })
 
 
   $("#listButton").click(event => {

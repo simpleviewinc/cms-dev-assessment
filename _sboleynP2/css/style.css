@@ -54,7 +54,11 @@ button:hover{
     max-height: 100%;
   }
 
-  .container div:nth-child(1){
+.containerItem:hover{
+    opacity: 0.7;
+  }
+
+ .container div:nth-child(1){
     grid-column: span 2;
  }
 
