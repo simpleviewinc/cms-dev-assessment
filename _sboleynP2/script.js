@@ -47,12 +47,10 @@ $(document).ready(function () {
         $(".img" + i).css("background-image", "url(" + _event.mediaurl + ")");
         $(".img" + i).css("background-size", "cover")
 
-        // console.log(_event.mediaurl)
         $(".fillHeader_" + i).text(_event.title);
         $(".fillText_" + i).text(_event.description);
       };
       console.log(allData);
-      // return (sixData);
     });
   };
   var getListings = handleButton(queryUrlListings);
