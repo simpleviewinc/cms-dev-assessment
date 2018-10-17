@@ -8,6 +8,7 @@ $(document).ready(function () {
 
   var placeHold = 'https://via.placeholder.com/500x500';
   var allData = []
+
   var handleButton = function (queryURL) {
 
     $.ajax({
@@ -18,22 +19,22 @@ $(document).ready(function () {
       $(".container").empty();
 
       for (var i = 0; i < 6; i++) {
-          var div1 = $("<div class='containerItem'>");
-          var sec = $("<section>");
-          div1.append(sec);
-          var div2 = $("<div class='defaultImg'>");
-          sec.append(div2);
-          var div3 = $("<div class='containerImg img"+i+"'>")
-          div2.append(div3);
-          var div4 = $("<div class='text'>");
-          sec.append(div4);
-          var div5 = $("<div class='shadow'>");
-          div4.append(div5);
-          var header4 = $("<h4 class='fillHeader_"+i+"'>");
-          div4.append(header4);
-          var textP = $("<p class='fillText_"+i+"'>")
-          div4.append(textP);
-          $(".container").append(div1);
+        var div1 = $("<div class='containerItem'>");
+        var sec = $("<section>");
+        div1.append(sec);
+        var div2 = $("<div class='defaultImg'>");
+        sec.append(div2);
+        var div3 = $("<div class='containerImg img" + i + "'>")
+        div2.append(div3);
+        var div4 = $("<div class='text'>");
+        sec.append(div4);
+        var div5 = $("<div class='shadow'>");
+        div4.append(div5);
+        var header4 = $("<h4 class='fillHeader_" + i + "'>");
+        div4.append(header4);
+        var textP = $("<p class='fillText_" + i + "'>")
+        div4.append(textP);
+        $(".container").append(div1);
       }
 
       for (var i = 0; i < 6; i++) {
@@ -53,9 +54,12 @@ $(document).ready(function () {
       console.log(allData);
     });
   };
-  var getListings = handleButton(queryUrlListings);
-  var getEvents = handleButton(queryUrlEvents);
-  var getOffers = handleButton(queryUrlOffers);
+
+  function load() {
+    handleButton(queryUrlListings);
+    handleButton(queryUrlEvents);
+    handleButton(queryUrlOffers);
+  }
 
   $("#listButton").click(event => {
     // show all listing items
@@ -77,11 +81,21 @@ $(document).ready(function () {
     handleAll();
   });
 
-  var handleAll = function(){
-    $(".container").empty(); 
+  var handleAll = function () {
+    $(".container").empty();
 
     console.log(allData);
 
+    allData = allData.sort(
+      function compare(a,b) {
+        if (a.title < b.title)
+          return -1;
+        if (a.title> b.title)
+          return 1;
+        return 0;
+      }
+    );
+    
     allData.forEach(item => {
       console.log(item.title);
       var itsy = allData.indexOf(item);
@@ -90,20 +104,20 @@ $(document).ready(function () {
       div1.append(sec);
       var div2 = $("<div class='defaultImg'>");
       sec.append(div2);
-      var div3 = $("<div class='containerImg img"+itsy+"'>")
+      var div3 = $("<div class='containerImg img" + itsy + "'>")
       div2.append(div3);
       var div4 = $("<div class='text'>");
       sec.append(div4);
       var div5 = $("<div class='shadow'>");
       div4.append(div5);
-      var header4 = $("<h4 class='fillHeader_"+itsy+"'>");
+      var header4 = $("<h4 class='fillHeader_" + itsy + "'>");
       div4.append(header4);
-      var textP = $("<p class='fillText_"+itsy+"'>")
+      var textP = $("<p class='fillText_" + itsy + "'>")
       div4.append(textP);
       $(".container").append(div1);
     })
-    
-    allData.forEach(item =>{
+
+    allData.forEach(item => {
       var itsy = allData.indexOf(item);
       console.log(itsy);
       $(".img" + itsy).css("background-image", "url(" + item.url + ")");
@@ -115,5 +129,7 @@ $(document).ready(function () {
     })
   }
 
+
+  load();
 });
 
