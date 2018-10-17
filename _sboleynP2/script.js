@@ -106,12 +106,12 @@ $(document).ready(function () {
     allData.forEach(item =>{
       var itsy = allData.indexOf(item);
       console.log(itsy);
-      $(".img" + itsy).css("background-image", "url(" + item.mediaurl + ")");
+      $(".img" + itsy).css("background-image", "url(" + item.url + ")");
       $(".img" + itsy).css("background-size", "cover")
 
       // console.log(_event.mediaurl)
       $(".fillHeader_" + itsy).text(item.title);
-      $(".fillText_" + itsy).text(item.description);
+      $(".fillText_" + itsy).text(item.desc);
     })
   }
 
