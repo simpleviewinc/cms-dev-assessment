@@ -274,6 +274,7 @@ section{
     background-image: url(https://via.placeholder.com/500x500);
     height: 60%;
     background-position: center center;
+    background-size: cover;
 }
 
 
@@ -399,6 +400,7 @@ p{
         background-image: url(https://via.placeholder.com/500x500);
         height: 60%;
         background-position: center center;
+        background-size: cover;
     }
     
     
