@@ -110,15 +110,20 @@ $(document).ready(function () {
   }
 
   // This part of the code would work to expand each section on hover so the end user can see more info but it needs more work
-  // $("body").on("mouseenter", ".containerItem", function () {
-  //   $(this).parent().css('grid-auto-rows', 'minmax(100px, auto)')
-  //   console.log($(this).parent())})
+  $("body").on("mouseenter", ".containerItem", function () {
+    // $(this).parent().css('grid-auto-rows', 'minmax(100px, auto)')
+    $(this).append("<button class='readMore'>Read More</button>");
+    // $(".readMore").css('background', '0')
+    // $(".readMore").css('top', '0')
+    console.log($(this).parent())})
 
-  // $("body").on("mouseleave", ".containerItem", function () {
-  //   // this.last().remove();
-  //   $(this).parent().css('grid-auto-rows', 'calc(50vh - 30px)')
-  // })
-
+  $("body").on("mouseleave", ".containerItem", function () {
+    // this.last().remove();
+    // this.removeChild($(".readMore"));
+    var index = this.childNodes.length;
+    this.removeChild(this.childNodes[index-1]);
+    // console.log(this.childNodes[index]);
+  })
 
   $("#listButton").click(event => {
     // show all listing items

@@ -28,6 +28,13 @@ button:hover{
     border-color:  rgb(66, 0, 128);
 }
 
+.readMore{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    background-color: darkorange;
+}
+
 .w3-button.w3-black{
     margin-right: 10px;
 }
@@ -50,6 +57,7 @@ button:hover{
     position: relative;
     overflow: hidden;
     max-height: 100%;
+    text-align: center;
   }
 
 .containerItem:hover{
@@ -190,6 +198,13 @@ button:hover{
     border-color:  rgb(66, 0, 128);
 }
 
+.readMore{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    background-color: darkorange;
+}
+
 .w3-button.w3-black{
     margin-right: 10px;
 }
@@ -285,6 +300,13 @@ p{
         background-color: rgba(66, 0, 128, 0.7);
         border-style: dashed;
         border-color:  rgb(66, 0, 128);
+    }
+
+    .readMore{
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        background-color: darkorange;
     }
     
     .w3-button.w3-black{
