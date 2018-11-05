@@ -1,0 +1,81 @@
+.App {
+  max-width: 1200px;
+}
+
+.container {
+    max-width: 1200px;
+  }
+
+.article {
+  height: 500px;
+}
+
+.article-content {
+  overflow: hidden;
+}
+
+.article-title {
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+.article-body {
+  font-weight: 400;
+}
+
+.overlay {
+  position: absolute;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+.vertical-card {
+  height: 50%;
+}
+
+.button-list button {
+  text-transform: capitalize;
+  background-color: lightgray;
+  border-style: double;
+}
+
+.button-list button.selected {
+  background-color: rebeccapurple;
+  color: white;
+  border-color: white;
+  border-width: 5px;
+}
+
+.article-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+@media (min-width: 1025px) {
+  .vertical-card {
+    height: 100%;
+  }
+
+  .vertical-card .article-title {
+    margin-top: 0!important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 641px) {
+  .col-md-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
