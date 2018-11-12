@@ -1,3 +1,9 @@
+Update: To Download Submission
+======
+Git was being funky, all you need is submission.zip and then you can unzip and in each folder individully (except html/css only folder) you will need to ```npm install``` and then ```npm start```. 
+
+Thank you!
+
 Simpleview CMS Developer Assessment
 ======
 Welcome to the Simpleview Developer Assessment.
