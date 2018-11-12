@@ -1,0 +1,69 @@
+
+/*medium sizings
+ * Redefine the Bootstrap stylings such that 
+ * Bootstrap will use the README breakpoints. 
+ *  
+ *  Bootstrap standards already overlap much,
+ *  but the medium size needed editing.
+ */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .col-md-12 {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .col-md-4 {
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+}
+
+img{ /*fill the available space*/
+  width:100%;
+  height:100%
+}
+.post-image{
+  max-height: 425px; /*force same height */
+}
+.post-image-skinny{ /*no max height (just match everything on the row)*/
+  padding-bottom: 25px;
+}
+
+.post-body:before, .post-body-skinny:before {
+  content:'';
+  width:100%;
+  height:100%;    
+  position:absolute;
+  left:0;
+  top:0;
+  background:linear-gradient(transparent 75%, white);
+}
+
+.post-body{
+  height: 220px;
+}
+
+.post-body, .post-body-skinny{
+  overflow: hidden;
+}
+
+.post-title{
+  font-weight: 900;
+}
+
+.sort-header{
+  height: 30px; /*Change/REMOVE this later, TODO, just temporary for looks*/
+}
+
+
+.App-header {
+  background-color: #ffffff;
+  font-weight: 400;
+  color: white;
+}
+
+.App-link {
+  color: #000;
+}
