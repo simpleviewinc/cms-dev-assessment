@@ -1,9 +1,7 @@
 .card {
-  margin: 10px;
-  flex: 1 0 26%;
-  background-image: linear-gradient(white, white);
   background-position: center;
   background-attachment: fixed;
+  margin: 20px;
 }
 
 .card:hover button {
@@ -30,6 +28,9 @@ h3 {
 
 p {
   text-align: center;
+  background: -webkit-linear-gradient(#333, #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 button {

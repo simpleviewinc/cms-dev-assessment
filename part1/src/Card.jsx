@@ -13,8 +13,8 @@ const Card = () => {
         pharetra magna. Nulla pellentesque dignissim enim sit amet. Turpis cursus in hac habitasse.
         Vitae suscipit tellus mauris a. Sed blandit libero volutpat sed cras ornare arcu dui. Lorem
         dolor sed viverra ipsum nunc aliquet.
-        <button>Read More</button>
       </p>
+      <button>Read More</button>
     </div>
   )
 }
