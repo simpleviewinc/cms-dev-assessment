@@ -1,0 +1,29 @@
+/* Grid */
+.Grid {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Large - 1025px and up */
+@media (min-width: 1025px) {
+  .Grid > * {
+    flex: 1 0 26%;
+  }
+}
+
+/* Medium - 641px and up */
+@media (min-width: 641px) {
+  .Grid > * {
+    flex: 1 0 26%;
+  }
+}
+/* Small - 640px and below */
+@media only screen and (max-width: 640px) {
+  .Grid {
+    flex-direction: column;
+  }
+}
