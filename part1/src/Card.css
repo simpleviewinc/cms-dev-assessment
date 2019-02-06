@@ -1,13 +1,12 @@
 .card {
-  background-position: center;
-  background-attachment: fixed;
-  margin: 20px;
+  padding: 15px;
 }
 
+.card > div {
+  position: relative;
+}
 .card:hover button {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  display: block;
 }
 
 .card-header {
@@ -35,6 +34,10 @@ p {
 
 button {
   display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
   background-color: red;
   color: white;
   text-align: center;
