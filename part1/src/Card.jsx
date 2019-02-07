@@ -13,7 +13,11 @@ const Card = () => {
           ante metus dictum. Imperdiet proin fermentum leo vel orci. Enim eu turpis egestas pretium
           aenean pharetra magna. Nulla pellentesque dignissim enim sit amet. Turpis cursus in hac
           habitasse. Vitae suscipit tellus mauris a. Sed blandit libero volutpat sed cras ornare
-          arcu dui. Lorem dolor sed viverra ipsum nunc aliquet.
+          arcu dui. Lorem dolor sed viverra ipsum nunc aliquet. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Quis hendrerit dolor magna eget est. Risus feugiat in ante metus dictum. Imperdiet
+          proin fermentum leo vel orci. Enim eu turpis egestas pretium aenean pharetra magna. Nulla
+          pellentesque dignissim enim sit amet.
         </p>
         <button type="submit">Read More</button>
       </div>

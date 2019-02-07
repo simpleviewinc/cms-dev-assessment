@@ -1,5 +1,6 @@
 .card {
-  padding: 15px;
+  height: 425px;
+  overflow-y: hidden;
 }
 
 .card > div {
@@ -26,8 +27,9 @@ h3 {
 }
 
 p {
-  text-align: center;
+  text-align: left;
   background: -webkit-linear-gradient(#333, #eee);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -36,7 +38,7 @@ button {
   display: none;
   position: absolute;
   left: 50%;
-  bottom: 10px;
+  top: 120px;
   transform: translateX(-50%);
   background-color: red;
   color: white;

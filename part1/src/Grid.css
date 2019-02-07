@@ -10,28 +10,29 @@
 }
 
 /* Large - 1025px and up */
-/* affects children 1,7,13,19 etc */
-
 @media (min-width: 1025px) {
-  .Grid > div:nth-child(6n + 1) {
-    flex: 3 3 26%;
+  .Grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  /* affects children 1,7,13,19 etc */
+  .Grid > *:nth-child(6n + 1) {
+    grid-column: span 2;
   }
 
   /* affects children 0,6,12,18 etc */
-  .Grid > div:nth-child(6n) {
-    flex: 3 3 26%;
-  }
-
-  .Grid > * {
-    padding: 20px;
-    flex: 0 1 26%;
+  .Grid > *:nth-child(6n) {
+    grid-column: span 2;
   }
 }
 
 /* Medium - 641px and up */
 @media (min-width: 641px) and (max-width: 1024px) {
-  .Grid > * {
-    flex: 1 0 26%;
+  .Grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
