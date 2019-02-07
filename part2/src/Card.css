@@ -1,0 +1,49 @@
+.card {
+  height: 425px;
+  overflow-y: hidden;
+}
+
+.card > div {
+  position: relative;
+}
+.card:hover button {
+  display: block;
+}
+
+.card-header {
+  display: block;
+  position: relative;
+  height: 175px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-image: url('https://via.placeholder.com/500.gif');
+}
+
+h3 {
+  justify-content: left;
+}
+
+p {
+  text-align: left;
+  background: -webkit-linear-gradient(#333, #eee);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px;
+  font-weight: 900;
+}

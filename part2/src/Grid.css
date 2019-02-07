@@ -1,0 +1,44 @@
+/* Grid */
+.Grid {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Large - 1025px and up */
+@media (min-width: 1025px) {
+  .Grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  /* affects children 1,7,13,19 etc */
+  .Grid > *:nth-child(6n + 1) {
+    grid-column: span 2;
+  }
+
+  /* affects children 0,6,12,18 etc */
+  .Grid > *:nth-child(6n) {
+    grid-column: span 2;
+  }
+}
+
+/* Medium - 641px and up */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .Grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Small - 640px and below */
+@media only screen and (max-width: 640px) {
+  .Grid {
+    flex-direction: column;
+  }
+}
