@@ -7,28 +7,61 @@ class Grid extends Component {
     data: [],
   }
 
-  // filter functions for buttons
-  showAll() {
-    console.log('All')
-  }
-
-  showListings() {
-    console.log('Listings')
-  }
-
-  showEvents() {
-    console.log('Events')
-  }
-
-  showOffers() {
-    console.log('Offers')
-  }
-
   // Code is invoked after the component is mounted/inserted into the DOM tree.
   componentDidMount() {
     const url = 'https://sv-reqres.now.sh/api/listings/'
 
     fetch(url)
+      .then(result => result.json())
+      .then(result => {
+        this.setState({
+          data: result.data,
+        })
+      })
+  }
+
+  // filter functions for buttons -  bind functions to class w/ "functionName= () => { ... }"
+
+  showAll = () => {
+    const urlAll = 'https://sv-reqres.now.sh/api/listings/'
+
+    fetch(urlAll)
+      .then(result => result.json())
+      .then(result => {
+        this.setState({
+          data: result.data,
+        })
+      })
+  }
+
+  showListings = () => {
+    const urlListings = 'https://sv-reqres.now.sh/api/listings/'
+
+    fetch(urlListings)
+      .then(result => result.json())
+      .then(result => {
+        this.setState({
+          data: result.data,
+        })
+      })
+  }
+
+  showEvents = () => {
+    const urlEvents = 'https://sv-reqres.now.sh/api/events/'
+
+    fetch(urlEvents)
+      .then(result => result.json())
+      .then(result => {
+        this.setState({
+          data: result.data,
+        })
+      })
+  }
+
+  showOffers = () => {
+    const urlOffers = 'https://sv-reqres.now.sh/api/offers/?'
+
+    fetch(urlOffers)
       .then(result => result.json())
       .then(result => {
         this.setState({
