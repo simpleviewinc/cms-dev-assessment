@@ -2,7 +2,7 @@ Simpleview CMS Developer Assessment
 ======
 Welcome to the Simpleview Developer Assessment.
 
-The assessment is in three (4) parts that increase in complexity and scope. You may use any approach you feel comfortable with to complete each section. The assessment period is two (2) days; at the end of the assessment period turn in any and all work including any incomplete work for review.
+The assessment is in four (4) parts that increase in complexity and scope. You may use any approach you feel comfortable with to complete each section. The assessment period is two (2) days; at the end of the assessment period turn in any and all work including any incomplete work for review.
 
 Although each part builds off the previous, you are expected (unless otherwise directed) to turn in four (4) sets of solutions; one for each part.
 
@@ -55,4 +55,4 @@ Whenever the user refreshes the page, they should see a different set of items o
 
 Submitting Your Assessment For Review
 ------
-When you've completed the assessment, submit your work via a Pull Request to this repo. Your Pull Request should contain three (3) folders that contain your solution; one (1) for each part of the assessment.
+When you've completed the assessment, submit your work via a Pull Request to this repo. Your Pull Request should contain four (4) folders that contain your solution; one (1) for each part of the assessment.
