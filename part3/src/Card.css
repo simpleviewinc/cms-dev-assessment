@@ -2,6 +2,14 @@
   height: 425px;
   overflow-y: hidden;
 }
+
+.card > div {
+  position: relative;
+}
+.card:hover button {
+  display: block;
+}
+
 .card button {
   display: none;
   position: absolute;
@@ -14,12 +22,6 @@
   border-radius: 8px;
   padding: 20px;
   font-weight: 900;
-}
-.card > div {
-  position: relative;
-}
-.card:hover button {
-  display: block;
 }
 
 .card-header {

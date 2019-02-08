@@ -14,6 +14,7 @@ class Grid extends Component {
     fetch(url)
       .then(result => result.json())
       .then(result => {
+        console.log(JSON.stringify(result, null, 4))
         this.setState({
           data: result.data,
         })

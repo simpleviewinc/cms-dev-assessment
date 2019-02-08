@@ -17,9 +17,7 @@ const Card = ({ title, description, img }) => {
       <h3>{title}</h3>
       <div>
         <p>{description}</p>
-        <button className="button" type="submit">
-          Read More
-        </button>
+        <button type="submit">Read More</button>
       </div>
     </div>
   )
