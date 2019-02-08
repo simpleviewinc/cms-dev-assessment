@@ -4,19 +4,19 @@ import './Nav.css'
 // each show() will hit API and filter based on
 class Nav extends Component {
   showAll() {
-    alert('All')
+    console.log('All')
   }
 
   showListings() {
-    alert('Listings')
+    console.log('Listings')
   }
 
   showEvents() {
-    alert('Events')
+    console.log('Events')
   }
 
   showOffers() {
-    alert('Offers')
+    console.log('Offers')
   }
 
   render() {
