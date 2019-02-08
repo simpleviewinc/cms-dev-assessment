@@ -42,6 +42,22 @@ Build the component a final time with data from the API. Include listings, event
 
 Some listings/evensts/offers will have broken images, please use the provided fallback image as needed to ensure an image is always rendered.
 
+**Part 4 - Paging & Dynamic Layouts**
+See the demo in `/comps/part 4-5/demo.mp4`. You need will need to build this component.
+
+As the user pages through, the layout of the grid and the number of items in the grid changes. The layouts are in a repeatable pattern. When the user gets to the last page, clicking the next button takes the user back to the beginning of the list. Similarly, clicking the prev button when on the first page of the list takes the user to the last page of the list. Your component should have all that same functionality.
+
+You should fill your component with data from the API you used in the previous parts.
+
+You do **NOT** need to include the animation seen in the demo. That is a "nice-to-have" feature, but is not an expected part of the assessment. If you chose to include it, we advise you only do so after completing Part 5. Part 5 is an expected part of the assessment.
+
+**Part 5 - Randomizing**
+Continuing with the component you built in Part 4, you will need to randomize the items retrieved from the API.
+
+The API does not offer any randomized sorting options. It does support paging via the `page` and `per_page` properties, however merely getting a page of results and shuffling them is **NOT** sufficient. You randomization function should randomize items across all pages of data available via the API.
+
+Whenever the user refreshes the page, they should see a different set of items on each page of the component.
+
 Submitting Your Assessment For Review
 ------
 When you've completed the assessment, submit your work via a Pull Request to this repo. Your Pull Request should contain three (3) folders that contain your solution; one (1) for each part of the assessment.
