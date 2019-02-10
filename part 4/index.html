@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simpleview Assessment Part 4 - Crawford Forbes</title>
+	<link rel="stylesheet" href="./styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./scripts/index.js"></script>
+</head>
+<body>
+
+	<div data-remove>
+
+		<div class="template" data-item-template>
+			<div class="item">
+					<div class="title-cont">
+						<p></p>
+						<h2></h2>
+					</div>
+			</div>
+		</div>
+
+		<div class="template" data-layout-1>
+			<div class="template-cont show" data-page="1">
+					<div class="column rows-2"></div>
+					<div class="column rows-3"></div>
+			</div>
+		</div>
+
+		<div class="template" data-layout-2>
+			<div class="template-cont hide" data-page="2">
+					<div class="column rows-2"></div>
+					<div class="column rows-2"></div>
+					<div class="column rows-1"></div>
+			</div>
+		</div>
+
+		<div class="template" data-layout-3>
+			<div class="template-cont hide" data-page="3">
+					<div class="column rows-2"></div>
+					<div class="column rows-1"></div>
+			</div>
+		</div>
+
+		<div class="template" data-layout-4>
+			<div class="template-cont hide" data-page="4">
+					<div class="column rows-1"></div>
+					<div class="column rows-1"></div>
+			</div>
+		</div>
+
+	</div>
+	
+	<div class="page-cont">
+
+		<div data-items></div>
+		
+		<div class="pagination">
+			<span class="prev"><i class="fas fa-long-arrow-alt-left"></i> Prev.</span><span class="next">Next <i class="fas fa-long-arrow-alt-right"></i></span>
+		</div>
+
+	</div>
+
+</body>
+</html>
