@@ -1,0 +1,72 @@
+/* above this was on app.css */
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: black;
+    /*black*/
+    /*font-weight:400 /normal */
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; 
+    font-family: Lato;    
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+/* BREAKPOINTS */
+
+.container {
+    background-size: auto;
+}
+
+@media (max-width: 640px) {
+    body {
+        background-size: auto;
+        background-color: #ffcc00;
+    }
+    .container {
+        /* background-color: red;  */
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 641px) {
+    body {
+        background-size: auto;
+        background-color: purple;
+    }
+    .container {
+        /* background-color: red;  */
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1025px) {
+    body {
+        background-size: auto;
+        background-color: violet;
+    }
+    .container {
+        /* background-color: red;  */
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        background-size: auto;
+    }
+    .container {
+        /* background-color: red;  */
+        width: 1200px;
+        font-size: 1em;
+        margin: auto;
+        border: 3px solid purple;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,129 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: black;
+    /*black*/
+    /*font-weight:400 /normal */
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; 
+    font-family: Lato;    
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+
+ @media (max-width: 1024px) and (min-width: 641px) {
+    .col-md-12 {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .col-md-4 {
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+}
+
+img{ 
+ object-fit: cover;
+  width:100%;
+  height:300px; 
+}
+.post-image{
+  max-height: 300px; /*force same height */
+  
+}
+.post-image-smaller{ /*no max height (just match everything on the row)*/
+  padding-bottom: 25px;
+}
+
+
+.post-image-cover { /*this isn't good on ie11 but gets the image looking correct no matter what the height */
+  object-fit: cover;
+}
+
+/* .post-body:before, .post-body-smaller:before {
+  content:'';
+  width:10%;
+  height:100%;    
+  position:absolute;
+  left:0;
+  top:0;
+  background:linear-gradient(transparent 100%, red);
+  /*jsx syntax: background: 'linear-gradient(to right bottom, #430089, #82ffa1)', */
+
+
+
+.post-body{
+  height: 300px;
+  margin-bottom: 5px;
+
+}
+
+.post-body2{
+  height: 300px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+
+.post-body2:before {
+  content:'';
+  width:100%;
+  height:100%;    
+  position:absolute;
+  left:0;
+  top:0;
+  background:linear-gradient(transparent 50%, white);
+  /*jsx syntax: background: 'linear-gradient(to right bottom, #430089, #82ffa1)', */
+
+}
+
+
+.post-body, .post-body-smaller{
+  overflow: hidden;
+}
+
+.post-title{
+  font-weight: 900;
+  margin-top: 12px;
+}
+
+.sort-header{
+  height: 75px; /* making room for buttons eventually */
+  padding-top: 10px;
+}
+
+
+.card:hover button {
+  display: block;
+}
+
+.card > div {
+  position: relative;
+}
+
+/* button {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px;
+  font-weight: 900;
+} */
+
+
