@@ -1,0 +1,163 @@
+body{
+  font-family: "Lato";
+  padding: 50px 20px 0;
+  background: #fff;
+  color: #444;
+  margin: 0;
+}
+
+h1{
+  font-size: 65px;
+  line-height: 1.2em;
+  border-bottom: #CCC solid 1px;
+  padding: 20px 0;
+}
+
+h3{
+  font-weight: 300;
+}
+
+
+.card{
+  border: 0;
+}
+
+
+
+.text-box {
+  min-height: 250px;
+  max-height: 300px;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0 0 0;
+}
+.text-box .read-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0; padding: 50px 0;
+
+  /* "transparent" only works here because == rgba(0,0,0,0) */
+  background-image: linear-gradient(to bottom, transparent, #fff);
+}
+
+.text-box .read-more a{
+  transform: translateY(160px);
+  transition: all 0.3s;
+}
+
+.text-box:hover .read-more a{
+  transform: translateY(-40px);
+}
+
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+[v-cloak] {
+  display: none;
+}
+
+[v-cloak]::before { content: "loading…" }
+
+
+.imgcontainer {
+  position: relative;
+  color: #000;
+  //text-align: center;
+}
+
+.loader{
+  object-fit: contain;
+}
+
+.fade-enter-active {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: white;
+  color: #000;
+  font-size: 22px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+
+.item-img-flex{
+  object-fit: cover;
+  width: 100%;
+}
+
+.h250{
+  height: 250px;
+}
+
+.h375{
+  height: 350px;
+}
+
+.h500{
+  height: 500px;
+}
+
+.h750{
+  height: 750px;
+}
+
+
+
+@media (min-width:1025px){
+  img.cropped-lg{
+  object-fit: cover;
+  object-position: 50% 0;
+  height: 530px;
+  }
+  img.item-img{
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 641px){
+  img.cropped-lg{
+    object-fit: cover;
+    object-position: 50% 0;
+    height: 200px;
+  }
+  img.item-img{
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width:640px){
+  img.cropped-lg{
+    object-fit: unset;
+  }
+  img.item-img{
+    object-fit: unset;
+  }
+}

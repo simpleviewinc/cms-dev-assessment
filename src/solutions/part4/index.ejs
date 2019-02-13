@@ -1,0 +1,46 @@
+<!-- Random component (Didn't complete for all pages but it's stored in array and if you prev page, the images wont refresh) -->
+  <section>
+    <div class="row" v-if="randomApi[page-1]">
+      <div :class="randomizeCol(3,4)" v-for="(item, key, id) in randomApi[page-1]">
+            <div class="imgcontainer">
+              <image-loader
+                  :src="randomizeSrc(1200,640)"
+                  load-src="img/spin2.apng"
+                  h-size="h375"
+                  img-set="item-img-flex"
+              ></image-loader>
+              <div class="top-left">
+              <p>{{item.title}}</p>
+              <p><small>{{item.address1}}</small></p>
+              </div>
+            </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <!-- Randomize Button -->
+  <div class="my-5 text-center">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <!-- <button type="button" class="btn btn-secondary" v-on:click="prevBtn" :disabled="page === 1">Previous</button> -->
+      <button type="button" class="btn btn-secondary" v-on:click="nextBtn">Randomize</button>
+    </div>
+  </div>
+  <hr>
+  <br>
+
+<!-- Data result -->
+<section>
+  <div >
+    <p><i>Current page: </i>{{page}}</p>
+    <!-- <p><i>Total pages: </i>{{totalPages}}</p> -->
+    <!-- <p><i>Current layout: </i>{{layoutPattern}}</p> -->
+    <p><i>Request per page: </i>{{api.per_page}}</p>
+    <p><i>Total of pages: </i>{{api.total_pages}}</p>
+    <p><i>Data total: </i>{{api.total}}</p>
+  </div>
+  <div>
+    <p><b>Data from API output:</b></p>
+    <pre>{{randomApi}}</pre>
+  </div>
+</section>

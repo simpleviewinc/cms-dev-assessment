@@ -1,0 +1,40 @@
+{
+	"index": {
+		"pageTitle": "Home"
+	},
+	"about": {
+		"pageTitle": "ABOOOOOUUUUTTT",
+		"tags": ["intro", "personal", "welcome"],
+		"obj": [
+		{"new": "object", "type": "data"},
+		{"new": "object1", "type": "data1"}
+		]
+	},
+	"faq": {
+
+	},
+	"contact": {
+
+	},
+	"elements": {
+
+	},
+	"payment_uncompleted": {
+
+	},
+	"resources": {
+
+	},
+	"sitemap": {
+
+	},
+	"terms-privacy": {
+
+	},
+	"thank-you": {
+		
+	},
+	"reviews": {
+
+	}
+}

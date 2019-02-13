@@ -1,0 +1,47 @@
+<!-- End result from the screenshots large.png, medium.png, small.png -->
+<section>
+  <div class="row" v-for="items in chunkedApiSingle">
+    <div class="mb-1 col-md-4 col-sm-12" v-for="(item, key) in items" :class="{'col-lg-6': key % 5 === 0, 'col-lg-3': key % 5 !== 0}" :key=key :id=item.recid >
+      <div v-if="key !== 5" class="card">
+        <img class="card-img-top item-img" src=https://via.placeholder.com/500 alt="Picture" v-on:error="fallBackimage">
+        <div class="card-body text-box">
+          <h5 class="card-title font-weight-bold">{{item.title}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <p class="card-text"><b>Link: </b><a :href="item.weburl">{{item.weburl}}</a></p>
+          <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+        </div>
+      </div>
+      <div v-else class="row">
+        <div class="col-lg-6 col-md-12">
+          <!-- <div :style="{ backgroundImage: 'url(' + fallbackImg + ')' }"></div> -->
+          <img class="cropped-lg card-img-top" src=https://via.placeholder.com/500 alt="Picture" v-on:error="fallBackimage">
+        </div>
+        <div class="mb-1 col-lg-6 ">
+          <div class="text-box">
+            <h5 class="font-weight-bold">{{item.title}}</h5>
+              <p class="card-text">{{item.description}}</p>
+              <p class="card-text"><b>Link: </b><a :href="item.weburl">{{item.weburl}}</a></p>
+            <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<hr>
+
+<!-- Data result -->
+<div>
+  <p><i>Current page: </i>{{api.page}}</p>
+  <p><i>Request per page: </i>{{api.per_page}}</p>
+  <p><i>Total of pages: </i>{{api.total_pages}}</p>
+  <p><i>Data total: </i>{{api.total}}</p>
+</div>
+
+<div>
+  <p><b>Data from API output:</b></p>
+  <pre>{{api}}</pre>
+
+</div>

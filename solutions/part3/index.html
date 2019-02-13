@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Solution for Part 3, Ivan Perez</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+
+ <link rel="stylesheet" href="../../css/lib/bootstrap/bootstrap-customized.min.css">
+ <link rel="stylesheet" href="../../css/main.css">
+
+
+</head>
+<body>
+
+</div>
+<main class="container">
+
+
+  <div v-cloak>
+    <!-- All section -->
+  <section>
+    <!-- Layout #1 -->
+    <div class="row" v-if="layoutPattern === 1 & singleChunk.length > 0">
+      <div class="col-8 d-flex flex-column">
+        <div class="row flex-fill justify-content-between">
+          <div class="col-12 mb-1">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/840/640" load-src="img/spin2.apng" h-size="h375" img-set="item-img-flex"></image-loader>
+              <div class="top-left">{{fetchValue[0].title}}</div>
+            </div>
+          </div>
+          <div class="col-12 d-flex align-items-end">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/960/720" load-src="img/spin2.apng" h-size="h375" img-set="item-img-flex"></image-loader>
+              <div class="top-left">{{fetchValue[1].title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column">
+          <div class="row flex-fill justify-content-between">
+              <div class="col-12 mb-1">
+                  <div class="imgcontainer">
+                    <image-loader src="https://loremflickr.com/560/640" load-src="img/spin2.apng" h-size="h250" img-set="item-img-flex"></image-loader>
+                    <div class="top-left">{{fetchValue[2].title}}</div>
+                  </div>
+              </div>
+              <div class="col-12 mb-1">
+                  <div class="imgcontainer">
+                    <image-loader src="https://loremflickr.com/480/470" load-src="img/spin2.apng" h-size="h250" img-set="item-img-flex"></image-loader>
+                    <div class="top-left">{{fetchValue[3].title}}</div>
+                  </div>
+              </div>
+              <div class="col-12 d-flex align-items-end">
+                  <div class="imgcontainer">
+                    <image-loader src="https://loremflickr.com/350/560" load-src="img/spin2.apng" h-size="h250" img-set="item-img-flex" :caption="singleChunk[page-1][4]"></image-loader>
+                    <div class="top-left">{{fetchValue[4].title}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+<!-- Layout #2 -->
+    <div class="row" v-if="layoutPattern === 2">
+      <div class="col-8 d-flex flex-column">
+        <div class="row flex-fill justify-content-between">
+          <div class="col-6 mb-2">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/500/400" load-src="img/spin2.apng" h-size="h375" img-set="item-img-flex"></image-loader>
+              <div class="top-left">{{fetchValue[0].title}}</div>
+            </div>
+          </div>
+          <div class="col-6 mb-2">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/400/375" load-src="img/spin2.apng" h-size="h375" img-set="item-img-flex"></image-loader>
+              <div class="top-left">{{fetchValue[1].title}}</div>
+            </div>
+          </div>
+          <div class="col-6 d-flex align-items-end">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/860/920" load-src="img/spin2.apng" h-size="h375" img-set="item-img-flex"></image-loader>
+              <div class="top-left">{{fetchValue[2].title}}</div>
+            </div>
+          </div>
+          <div class="col-6 d-flex align-items-end">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/720/640" load-src="img/spin2.apng" h-size="h375" img-set="item-img-flex"></image-loader>
+              <div class="top-left">{{fetchValue[3].title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column">
+          <div class="row flex-fill justify-content-between">
+              <div class="col-12 d-flex align-items-end">
+                  <div class="imgcontainer">
+                    <image-loader src="https://loremflickr.com/1280/600" load-src="img/spin2.apng" h-size="h750" img-set="item-img-flex"></image-loader>
+                    <div class="top-left">{{fetchValue[4].title}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+<!-- Layout #3 -->
+    <div class="row" v-if="layoutPattern === 3">
+      <div class="col-8 d-flex flex-column">
+        <div class="row flex-fill justify-content-between">
+          <div class="col-12 mb-2">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/640/610" load-src="img/spin2.apng" h-size="h375" img-set="item-img-flex" :caption="singleChunk[page-1][0]"></image-loader>
+              <div class="top-left">{{fetchValue[0].title}}</div>
+            </div>
+          </div>
+          <div class="col-12 mb-2">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/540/810" load-src="img/spin2.apng" h-size="h375" img-set="item-img-flex" :caption="singleChunk[page-1][0]"></image-loader>
+              <div class="top-left">{{fetchValue[1].title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column">
+          <div class="row flex-fill justify-content-between">
+              <div class="col-12 d-flex align-items-end">
+                  <div class="imgcontainer">
+                    <image-loader src="https://loremflickr.com/1390/952" load-src="img/spin2.apng" h-size="h750" img-set="item-img-flex"></image-loader>
+                      <div class="top-left">{{fetchValue[2].title}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+<!-- Layout #4 -->
+    <div class="row" v-if="layoutPattern === 4">
+      <div class="col-6 d-flex flex-column">
+        <div class="row flex-fill justify-content-between">
+          <div class="col-12 d-flex align-items-end">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/1296/758" load-src="img/spin2.apng" h-size="h750" img-set="item-img-flex"></image-loader>
+              <div class="top-left">{{fetchValue[0].title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 d-flex flex-column">
+          <div class="row flex-fill justify-content-between">
+              <div class="col-12 d-flex align-items-end">
+                  <div class="imgcontainer">
+                    <image-loader src="https://loremflickr.com/1490/910" load-src="img/spin2.apng" h-size="h750" img-set="item-img-flex"></image-loader>
+                      <div class="top-left">{{fetchValue[1].title}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+<!-- Layout #5 -->
+    <div class="row" v-if="layoutPattern === 5">
+      <div class="col-4 d-flex flex-column">
+        <div class="row flex-fill justify-content-between">
+          <div class="col-12 d-flex align-items-end">
+            <div class="imgcontainer">
+              <image-loader src="https://loremflickr.com/1270/890" load-src="img/spin2.apng" h-size="h750" img-set="item-img-flex"></image-loader>
+              <div class="top-left">{{fetchValue[2].title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column">
+          <div class="row flex-fill justify-content-between">
+              <div class="col-12 d-flex align-items-end">
+                  <div class="imgcontainer">
+                    <image-loader src="https://loremflickr.com/997/848" load-src="img/spin2.apng" h-size="h750" img-set="item-img-flex"></image-loader>
+                      <div class="top-left">{{fetchValue[3].title}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-4 d-flex flex-column">
+          <div class="row flex-fill justify-content-between">
+              <div class="col-12 d-flex align-items-end">
+                  <div class="imgcontainer">
+                    <image-loader src="https://loremflickr.com/1190/680" load-src="img/spin2.apng" h-size="h750" img-set="item-img-flex"></image-loader>
+                      <div class="top-left">{{fetchValue[4].title}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <div class="my-5 text-center">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary" v-on:click="prevBtn">Previous</button>
+      <button type="button" class="btn btn-secondary" v-on:click="nextBtn">Next</button>
+    </div>
+  </div>
+  <hr>
+  <br>
+
+
+<!-- Data result -->
+<section>
+  <div>
+    <p><i>Current page: </i>{{page}}</p>
+    <p><i>Total pages: </i>{{totalPages}}</p>
+    <p><i>Current layout: </i>{{layoutPattern}}</p>
+    <p><i>Request per page: </i>{{api.per_page}}</p>
+    <p><i>Total of pages: </i>{{api.total_pages}}</p>
+    <p><i>Data total: </i>{{api.total}}</p>
+  </div>
+  <div>
+    <p><b>Data from API output:</b></p>
+    <pre>{{singleChunk}}</pre>
+  </div>
+</section>
+  </div>
+
+
+  <div v-if="!$data">
+  Loading..... (spinner)
+  </div>
+
+
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="js/part3.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!-- Filter buttons -->
+<div class="mb-5">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" :class="{active: selectedFilter === 'all' }" v-on:click="selectFilter('all')">All</button>
+    <button type="button" class="btn btn-secondary" :class="{active: selectedFilter === 'listings' }" v-on:click="selectFilter('listings')">Listings</button>
+    <button type="button" class="btn btn-secondary" :class="{active: selectedFilter === 'events' }" v-on:click="selectFilter('events')">Events</button>
+    <button type="button" class="btn btn-secondary" :class="{active: selectedFilter === 'offers' }" v-on:click="selectFilter('offers')">Offers</button>
+  </div>
+</div>
+
+<!-- Current filter -->
+<h2 class="text-capitalize">{{selectedFilter}}</h2>
+
+<!-- All section -->
+<div v-if="selectedFilter === 'all'">
+  <section>
+    <div class="row" v-for="items in chunkedApiAll">
+      <div class="mb-1 col-md-4 col-sm-12" v-for="(item, key) in items" :class="{'col-lg-6': key % 5 === 0, 'col-lg-3': key % 5 !== 0}" :key=key :id=item.recid >
+        <div v-if="key !== 5" class="card">
+          <img class="card-img-top item-img" :src=item.mediaurl alt="Picture" v-on:error="fallBackimage">
+          <div class="card-body text-box">
+            <h5 class="card-title font-weight-bold">{{item.title}}</h5>
+            <p class="card-text">{{item.description}}</p>
+            <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+          </div>
+        </div>
+        <div v-else class="row">
+          <div class="col-lg-6 col-md-12">
+            <img class="cropped-lg card-img-top" :src=item.mediaurl alt="Picture" v-on:error="fallBackimage">
+          </div>
+          <div class="mb-1 col-lg-6 ">
+            <div class="text-box">
+              <h5 class="font-weight-bold">{{item.title}}</h5>
+              <p>{{item.description}}</p>
+              <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <br>
+</div>
+
+<!-- Listing section -->
+<div v-if="selectedFilter === 'listings'">
+  <section>
+    <div class="row" v-for="items in chunkedApiSingle">
+      <div class="mb-1 col-md-4 col-sm-12" v-for="(item, key) in items" :class="{'col-lg-6': key % 5 === 0, 'col-lg-3': key % 5 !== 0}" :key=key :id=item.recid >
+        <div v-if="key !== 5" class="card">
+          <img class="card-img-top item-img" :src=item.mediaurl alt="Picture" v-on:error="fallBackimage">
+          <div class="card-body text-box">
+            <h5 class="card-title font-weight-bold">{{item.title}}</h5>
+            <p class="card-text"><b>Category: </b>{{item.category.catname}} / {{item.category.subcatname}}</p>
+            <p class="card-text"><b>Address: </b>{{item.address1}}</p>
+            <p class="card-text"><b>City: </b>{{item.city}}</p>
+            <p class="card-text"><b>State: </b>{{item.state}}</p>
+            <p class="card-text"><b>Link: </b><a :href="item.weburl">{{item.weburl}}</a></p>
+            <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+          </div>
+        </div>
+        <div v-else class="row">
+          <div class="col-lg-6 col-md-12">
+            <img class="cropped-lg card-img-top" :src=item.mediaurl alt="Picture" v-on:error="fallBackimage">
+          </div>
+          <div class="mb-1 col-lg-6 ">
+            <div class="text-box">
+              <h5 class="font-weight-bold">{{item.title}}</h5>
+                  <p class="card-text"><b>Category: </b>{{item.category.catname}} / {{item.category.subcatname}}</p>
+                  <p class="card-text"><b>Address: </b>{{item.address1}}</p>
+                  <p class="card-text"><b>City: </b>{{item.city}}</p>
+                  <p class="card-text"><b>State: </b>{{item.state}}</p>
+                  <p class="card-text"><b>Link: </b><a :href="item.weburl">{{item.weburl}}</a></p>
+              <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <br>
+</div>
+
+<!-- Events section -->
+<div v-if="selectedFilter === 'events'">
+  <section>
+    <div class="row" v-for="items in chunkedApiSingle">
+      <div class="mb-1 col-md-4 col-sm-12" v-for="(item, key) in items" :class="{'col-lg-6': key % 5 === 0, 'col-lg-3': key % 5 !== 0}" :key=key :id=item.recid >
+        <div v-if="key !== 5" class="card">
+          <img class="card-img-top item-img" :src=item.mediaurl alt="Picture" v-on:error="fallBackimage">
+          <div class="card-body text-box">
+            <h5 class="card-title font-weight-bold">{{item.title}}</h5>
+            <p class="card-text"><b>Category: </b>{{item.category.catname}}</p>
+            <p class="card-text"><b>Recurrence: </b>{{item.recurrence}}</p>
+            <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+          </div>
+        </div>
+        <div v-else class="row">
+          <div class="col-lg-6 col-md-12">
+            <img class="cropped-lg card-img-top" :src=item.mediaurl alt="Picture" v-on:error="fallBackimage">
+          </div>
+          <div class="mb-1 col-lg-6 ">
+            <div class="text-box">
+              <h5 class="font-weight-bold">{{item.title}}</h5>
+              <p class="card-text"><b>Category: </b>{{item.category.catname}}</p>
+              <p class="card-text"><b>Recurrence: </b>{{item.recurrence}}</p>
+              <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <br>
+</div>
+
+<!-- Offers section -->
+<div v-if="selectedFilter === 'offers'">
+  <section>
+    <div class="row" v-for="items in chunkedApiSingle">
+      <div class="mb-1 col-md-4 col-sm-12" v-for="(item, key) in items" :class="{'col-lg-6': key % 5 === 0, 'col-lg-3': key % 5 !== 0}" :key=key :id=item.recid >
+        <div v-if="key !== 5" class="card">
+          <img class="card-img-top item-img" :src=item.mediaurl alt="Picture" v-on:error="fallBackimage">
+          <div class="card-body text-box">
+            <h5 class="card-title font-weight-bold">{{item.title}}</h5>
+            <p class="card-text"><b>Category: </b>{{item.category.catname}}</p>
+            <p class="card-text"><b>Redeem start: </b>{{item.redeemstart}}</p>
+            <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+          </div>
+        </div>
+        <div v-else class="row">
+          <div class="col-lg-6 col-md-12">
+            <img class="cropped-lg card-img-top" :src=item.mediaurl alt="Picture" v-on:error="fallBackimage">
+          </div>
+          <div class="mb-1 col-lg-6 ">
+            <div class="text-box">
+              <h5 class="font-weight-bold">{{item.title}}</h5>
+              <p class="card-text"><b>Category: </b>{{item.category.catname}}</p>
+              <p class="card-text"><b>Redeem start: </b>{{item.redeemstart}}</p>
+              <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <br>
+</div>
+
+<!-- Data result -->
+<section v-if="selectedFilter === 'all'">
+  <div >
+    <p><i>Current page: </i>{{apiAll.page}}</p>
+    <p><i>Request per page: </i>{{apiAll.per_page}}</p>
+    <p><i>Total of pages: </i>{{apiAll.total_pages}}</p>
+    <p><i>Data total: </i>{{apiAll.total}}</p>
+  </div>
+  <div>
+    <p><b>Data from API output:</b></p>
+    <pre>{{apiAll}}</pre>
+  </div>
+</section>
+
+<section v-else>
+  <div >
+    <p><i>Current page: </i>{{api.page}}</p>
+    <p><i>Request per page: </i>{{api.per_page}}</p>
+    <p><i>Total of pages: </i>{{api.total_pages}}</p>
+    <p><i>Data total: </i>{{api.total}}</p>
+  </div>
+  <div>
+    <p><b>Data from API output:</b></p>
+    <pre>{{api}}</pre>
+  </div>
+</section>
