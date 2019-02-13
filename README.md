@@ -1,6 +1,6 @@
 #Assessment completed
 
-##Check out "www" folder and run with your localhost.
+##Simply run with your localhost in current folder.
 
 ======
 
