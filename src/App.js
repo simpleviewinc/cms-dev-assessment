@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import ListingsProvider, { ListingsContext } from "./comps/contexts/listingsProvider";
 
-import "./App.css";
+import "./comps/css/index.css"
 import { Route, Link } from "react-router-dom";
 
 import Listings from "./comps/part 1-2/listings"
