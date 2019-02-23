@@ -1,6 +1,7 @@
 import React from "react";
 
 const Listings = props => {
-  return <div>test</div>;
+
+  return <div>{props.context.listingsInfo.userName}</div>;
 };
 export default Listings;
