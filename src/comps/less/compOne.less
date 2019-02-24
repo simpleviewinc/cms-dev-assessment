@@ -1,0 +1,191 @@
+@import "breakpoints";
+.listings-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .box {
+    height: 750px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-bottom: 3vh;
+    position: relative;
+  }
+
+  .show-content {
+    overflow: visible;
+    height: auto;
+  }
+  button {
+    font-size: .9rem;
+    height: 4vh;
+    width: 32%;
+    position: absolute;
+    background: rgb(255, 72, 0);
+    border: none;
+    z-index: 0;
+    color: white;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3%;
+  }
+
+  .read-more {
+    background: transparent;
+    color: transparent;
+  }
+  .box:hover {
+    .read-more {
+      background: rgb(255, 72, 0);
+      color: white;
+    }
+  }
+  .btn:hover {
+    background: rgb(226, 66, 2) !important;
+  }
+  .read-more:focus {
+    box-shadow: none;
+  }
+  .text-container {
+    padding-top: 2vh;
+    text-align: left;
+
+    p {
+      padding-top: 2vh;
+      font-size: 1rem;
+    }
+  }
+}
+
+.one {
+  display: flex;
+  flex-direction: column;
+  width: 49.5%;
+  
+}
+
+.one img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.two {
+  width: 24.5%;
+}
+
+.two img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.three {
+  width: 24.5%;
+}
+
+.three img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.four {
+  width: 24.5%;
+}
+
+.four img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.five {
+  width: 24.5%;
+}
+
+.five img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.six {
+  display: flex;
+  flex-direction: row;
+  width: 49.5%;
+}
+
+.six img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media @medium {
+  .one {
+    width: 32.5%;
+  }
+
+  .two {
+    width: 32.5%;
+  }
+
+  .three {
+    width: 32.5%;
+  }
+
+  .four {
+    width: 32.5%;
+  }
+
+  .five {
+    width: 32.5%;
+  }
+
+  .six {
+    width: 32.5%;
+    display: block;
+  }
+
+  .six img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+}
+
+@media @small {
+  .one {
+    width: 100%;
+  }
+
+  .two {
+    width: 100%;
+  }
+
+  .three {
+    width: 100%;
+  }
+
+  .four {
+    width: 100%;
+  }
+
+  .five {
+    width: 100%;
+  }
+
+  .six {
+    width: 100%;
+    display: block;
+  }
+
+  .six img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+}
