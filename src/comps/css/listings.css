@@ -1,3 +1,102 @@
 .listings-container {
-  background: palegoldenrod;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.listings-container div {
+  border: 1px solid black;
+  height: 900px;
+  margin-bottom: 0.3vh;
+}
+.one {
+  display: flex;
+  flex-direction: column;
+  width: 49.5%;
+}
+.one img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.two {
+  width: 24.5%;
+}
+.two img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.three {
+  width: 24.5%;
+}
+.three img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.four {
+  width: 24.5%;
+}
+.four img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.five {
+  width: 24.5%;
+}
+.five img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.six {
+  display: flex;
+  flex-direction: row;
+  width: 49.5%;
+}
+.six img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  .one {
+    width: 32.5%;
+  }
+  .two {
+    width: 32.5%;
+  }
+  .three {
+    width: 32.5%;
+  }
+  .four {
+    width: 32.5%;
+  }
+  .five {
+    width: 32.5%;
+  }
+  .six {
+    width: 32.5%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .one {
+    width: 100%;
+  }
+  .two {
+    width: 100%;
+  }
+  .three {
+    width: 100%;
+  }
+  .four {
+    width: 100%;
+  }
+  .five {
+    width: 100%;
+  }
+  .six {
+    width: 100%;
+  }
 }
