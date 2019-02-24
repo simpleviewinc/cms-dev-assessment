@@ -1,27 +1,53 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
-import ListingsProvider, { ListingsContext } from "./comps/contexts/listingsProvider";
+import { Route } from "react-router-dom";
+import ListingsProvider, {
+  ListingsContext
+} from "./comps/contexts/listingsProvider";
 
-import "./comps/css/index.css"
-import { Route, Link } from "react-router-dom";
+import "./comps/css/index.css";
 
-import Listings from "./comps/part 1-2/listings"
+
+import Directory from "./directory";
+import Listings from "./comps/part 1-2/compOne";
+import Filter from "./comps/part 1-2/compTwo";
+import Pages from "./comps/part 3-4/compThree";
+import Random from "./comps/part 3-4/compFour";
 
 class App extends Component {
   render() {
+    //  render my routes pass them context
     return (
       <div className="App">
-        <Link to="/listings">
-          <Button color="primary">Part 1-2</Button>
-        </Link>
-        <Link to="/offers"> <Button color="warning">Part 3-4</Button></Link>
-        <ListingsProvider><ListingsContext.Consumer>
-          {context =>(
-             <Route exact path="/listings" render={() => <Listings context={context} />} />
-          )}
-          
-          </ListingsContext.Consumer></ListingsProvider>
-       
+        <Route exact path="/" render={() => <Directory />} />
+        <ListingsProvider>
+          <ListingsContext.Consumer>
+            {context => (
+              <>
+                <Route
+                  exact
+                  path="/listings"
+                  render={() => <Listings context={context} />}
+                />
+
+                <Route
+                  exact
+                  path="/filter"
+                  render={() => <Filter context={context} />}
+                />
+                <Route
+                  exact
+                  path="/pages"
+                  render={() => <Pages context={context} />}
+                />
+                <Route
+                  exact
+                  path="/random"
+                  render={() => <Random context={context} />}
+                />
+              </>
+            )}
+          </ListingsContext.Consumer>
+        </ListingsProvider>
       </div>
     );
   }
