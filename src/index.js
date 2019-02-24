@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
 
-
+//wrapped route in my router
 ReactDOM.render(
     <Router>
       <App />
