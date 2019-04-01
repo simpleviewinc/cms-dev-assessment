@@ -1,0 +1,227 @@
+
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  #wrapper {
+    display: flex;
+    flex-flow: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+  
+    app-card {
+      display: flex;
+      flex-flow: wrap;
+  
+      .viewSelect {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        height: 3em;
+        line-height: 3em;
+  
+        ul {
+          width: 360px;
+          display: flex;
+          flex-flow: row;
+          justify-content: space-between;
+  
+          li {
+            list-style: none;
+  
+            button {
+              background-color: rgb(160, 160, 160);
+              padding: 1em 1.25em;
+              font-size: .8em;
+              color: black;
+              text-decoration: none;
+  
+              &:hover {
+                cursor: pointer;
+              }
+  
+              &.active-link {
+                background: rgb(130, 84, 150);
+                color: white;
+                border-radius: 5px;
+                border: 1.5px solid rgb(130, 84, 150);
+                box-shadow: inset 0 0 0 1.5px white;
+              }
+            }
+          }
+        }
+      }
+  
+      .card {
+        padding: .5em;
+        display: inline-flex;
+        flex-flow: column;
+        width: 25%;
+        height: 50vh;
+  
+        &:nth-of-type(7n),
+        &:first-of-type {
+          width: 50%;
+        }
+  
+        &:nth-of-type(6n) {
+          flex-flow: row;
+          width: 50%;
+  
+          img {
+            height: 100%;
+            width: 50%;
+            padding-right: .5em;
+          }
+  
+          section.bottom {
+            height: 100%;
+            width: 50%;
+            padding-left: .5em;
+          }
+  
+        }
+  
+        img {
+          height: 50%;
+          overflow: hidden;
+        }
+  
+        section {
+          &.bottom {
+            overflow: hidden;
+            position: relative;
+            height: 50%;
+  
+            &:before {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background-image: linear-gradient(transparent 80%, white);
+                      }
+  
+                      &.scrollable {
+                          overflow: scroll;
+  
+                          &:before {
+                              content: unset;
+                              background-image: unset;
+                          }
+                      }
+  
+            h3 {
+              padding: .25em 0;
+            }
+                  }
+                  &:hover .readButtonDiv{
+                      display: flex;
+                  }
+                  .readButtonDiv {
+                      flex-flow: row;
+                      justify-content: space-around;
+                      width: 100%;
+                      position: sticky;
+                      bottom: 0;
+                      display: none;
+  
+                      .readMore {
+                          opacity: .7;
+                          background-color: rgb(160, 160, 160);
+                          padding: .75em 1.25em;
+                          height: 3em;
+                          &:hover {
+                              cursor: pointer;
+                          }
+                      }
+                      .readLess {
+                          opacity: .7;
+                          background-color: rgb(130, 84, 150);
+                          color: white;
+                          padding: .75em 1.25em;
+                          height: 3em;
+                          &:hover {
+                              cursor: pointer;
+                          }
+                      }
+                  }
+        }
+      }
+    }
+  
+  }
+  
+  @media (max-width: 1025px) {
+    #wrapper {
+      app-card {
+        .card {
+          padding: .5em;
+          display: inline-flex;
+          flex-flow: column;
+          width: calc(100% / 3);
+          height: 50vh;
+  
+          &:nth-of-type(7n),
+          &:first-of-type {
+            width: calc(100% / 3);
+          }
+  
+          &:nth-of-type(6n) {
+            flex-flow: column;
+            width: calc(100% / 3);
+  
+            img,
+            section.bottom {
+              height: 50%;
+              width: 100%;
+              padding: 0;
+            }
+  
+          }
+        }
+      }
+    }
+  
+  }
+  
+  @media (max-width: 640px) {
+    #wrapper {
+      app-card {
+        .card {
+          padding: .5em;
+          display: inline-flex;
+          flex-flow: column;
+          width: 100%;
+          height: calc(100vh / 3);
+  
+          &:nth-of-type(7n),
+          &:first-of-type {
+            width: 100%;
+          }
+  
+          &:nth-of-type(6n) {
+            flex-flow: column;
+            width: 100%;
+  
+            img,
+            section.bottom {
+              height: 50%;
+              width: 100%;
+              padding: 0;
+            }
+  
+          }
+        }
+      }
+    }
+  }

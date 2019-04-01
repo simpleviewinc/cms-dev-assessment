@@ -1,0 +1,67 @@
+<header class="viewSelect">
+    <ul>
+      <li class="action">
+        <button (click)="showAll()" [ngClass]="isListingsVisible && isEventsVisible && isOffersVisible ? 'active-link' : ''">
+          All
+        </button>
+      </li>
+      <li class="action">
+        <button (click)="showListings()" [ngClass]="isListingsVisible && !isEventsVisible && !isOffersVisible ? 'active-link' : ''">
+          Listings
+        </button>
+      </li>
+      <li class="action">
+        <button (click)="showEvents()" [ngClass]="!isListingsVisible && isEventsVisible && !isOffersVisible ? 'active-link' : ''">
+          Events
+        </button>
+      </li>
+      <li class="action">
+        <button (click)="showOffers()" [ngClass]="!isListingsVisible && !isEventsVisible && isOffersVisible ? 'active-link' : ''">
+          Offers
+        </button>
+      </li>
+    </ul>
+  </header>
+
+<div class="card" *ngFor="let listing of listings.data">
+  <img [src]="listing.mediaurl"
+  onerror="this.onerror=null; this.src='../../../assets/images/fallback.jpg';"
+  [alt]="listings.weburl" />
+  <section class="bottom" [ngClass]="isScrollable ? 'scrollable' : ''">
+    <div class="listings" *ngIf="isListingsVisible">
+      <h3 class="title listing">
+        {{listing.title}}
+      </h3>
+      <p class="description listing">
+        {{listing.description}}
+      </p>
+    </div>
+    <div *ngIf="isEventsVisible">
+        <div class="events" *ngFor="let event of events.data">
+            <h3 class="title events">
+              {{event.title}}
+            </h3>
+            <p class="description events">
+              {{event.description}}
+            </p>
+          </div>
+    </div>
+    <div *ngIf="isOffersVisible">
+        <div class="offers" *ngFor="let offer of offers.data">
+            <h3 class="title offers">
+              {{offer.title}}
+            </h3>
+            <p class="description offers">
+              {{offer.description}}
+            </p>
+          </div>
+    </div>
+    <div class="readButtonDiv">
+        <button (click)="scrollToggle()" [ngClass]="!isScrollable ? 'readMore' : 'readLess'">
+            {{ buttonName }}
+          </button>
+    </div>
+
+  </section>
+
+</div>
