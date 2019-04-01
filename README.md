@@ -1,3 +1,47 @@
+# Simpleview App
+Benjamin Weinberger
+benjaminweinberger@gmail.com
+216 903 5069
+
+This is unfortunately as far as I was able to make it with the given time.
+
+Next steps would have been to dive into pagination (maybe creating routes that are linked to params for the total number of results divided by the amount you want to display per page) and then randomization using math.random and ceil possibly (or look into finding a better answer for randomization that isn't so costly).
+
+
+
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+
+
+
+
 Simpleview CMS Developer Assessment
 ======
 Welcome to the Simpleview Developer Assessment.
@@ -56,3 +100,6 @@ Whenever the user refreshes the page, they should see a different set of items o
 Submitting Your Assessment For Review
 ------
 When you've completed the assessment, submit your work via a Pull Request to this repo. Your Pull Request should contain four (4) folders that contain your solution; one (1) for each part of the assessment.
+
+
+
