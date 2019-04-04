@@ -8,6 +8,7 @@ TODO:
 * fallback image is from local path and not URL
 * ReadMore button doesn't flicker on hover (Chrome Issue, works on Firefox)
 * ReadMore centering should be done by flexbox and not right
+  * ReadMore centering is off on Medium display
 * Make Title height grow but Details fixed (push extra Details text into overflow, instead of growing Details height)
 * 6th Card's Image needs to grow its height to fit CardContainer height
  */
@@ -15,9 +16,9 @@ TODO:
 const CardContainer = styled.div`
   min-height: 300px;
   max-height: 400px;
-  padding: 0.2em;
+  padding: 0.5em;
   box-sizing: border-box;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 
   // Large Screens
   @media screen and (min-width: 1025px) {
@@ -25,7 +26,7 @@ const CardContainer = styled.div`
     :first-child {
       width: 50%;
     }
-    :nth-child(6) {
+    :nth-child(6n) {
       // flex: 1 0 50%;
       width: 50%;
     }
@@ -46,7 +47,6 @@ const ImageCardContainer = styled.div`
   display: flex;
   flex: 1 0;
   align-items: center;
-  padding: 10px;
   overflow: hidden;
   :nth-child(6) {
     flex: 1 0;
@@ -74,6 +74,7 @@ const Details = styled.div`
   overflow: hidden;
   margin-bottom: 2rem;
   text-align: left;
+  cursor: pointer;
   &:after {
     content: "";
     position: absolute;
@@ -86,7 +87,7 @@ const Details = styled.div`
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
   }
 `;
-const ReadMore = styled.div`
+const ReadMore = styled.button`
   display: none;
   position: absolute;
   bottom: 10px;
@@ -101,18 +102,16 @@ const ReadMore = styled.div`
   filter: drop-shadow(2px 3px 4px palevioletred);
 `;
 const TextContainer = styled.div`
-  padding: 10px;
   max-height: 100px;
   position: relative;
-  cursor: pointer;
 
   & ${Details}:hover + ${ReadMore} {
     display: flex;
   }
 `;
 
-const Card = ({ listing }) => {
-  const { description, mediaurl, title } = listing;
+const Card = ({ card }) => {
+  const { description, mediaurl, title } = card;
   return (
     <CardContainer>
       <ImageCardContainer>

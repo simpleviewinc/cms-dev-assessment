@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import { Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -13,10 +12,10 @@ const Container = styled.div`
   display: flex;
   max-width: 1200px;
   text-align: center;
-  margin: 2em auto;
+  margin: 3em auto;
 `;
 
-class ContList extends Component {
+class Part1 extends Component {
   state = {
     listings: []
   };
@@ -35,12 +34,10 @@ class ContList extends Component {
     return (
       <Container>
         {listings &&
-          listings.map(listing => (
-            <Card key={listing.title} listing={listing} />
-          ))}
+          listings.map(listing => <Card key={listing.title} card={listing} />)}
       </Container>
     );
   }
 }
 
-export default ContList;
+export default Part1;
