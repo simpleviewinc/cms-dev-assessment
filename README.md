@@ -6,6 +6,12 @@ Built with
 
 👍
 
+```bash
+cd comps-jordan-lee
+yarn install
+yarn start
+```
+
 # Simpleview CMS Developer Assessment
 
 Welcome to the Simpleview Developer Assessment.
