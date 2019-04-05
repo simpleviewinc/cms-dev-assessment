@@ -6,6 +6,8 @@ Built with
 
 👍
 
+# Getting Started
+
 ```bash
 cd comps-jordan-lee
 yarn install
