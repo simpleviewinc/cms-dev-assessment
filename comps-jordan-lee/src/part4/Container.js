@@ -24,10 +24,10 @@ NOTE:
 
 //Static routing array
 const routes = [
-  { path: "/part3/page1" },
-  { path: "/part3/page2" },
-  { path: "/part3/page3" },
-  { path: "/part3/page4" }
+  { path: "/part4/page1" },
+  { path: "/part4/page2" },
+  { path: "/part4/page3" },
+  { path: "/part4/page4" }
 ];
 
 const Container = styled.div`
@@ -78,7 +78,7 @@ const Title = styled.div`
 `;
 
 // Big help from hinsxd at this CodeSandbox https://codesandbox.io/s/jj3768ono3
-class Part3Container extends Component {
+class Part4Container extends Component {
   static getDerivedStateFromProps(props, state) {
     // Find index of route that matches current path
     const index = routes.findIndex(
@@ -109,14 +109,36 @@ class Part3Container extends Component {
   }
 }
 
-const Part3WithRouter = withRouter(Part3Container);
+const Part4WithRouter = withRouter(Part4Container);
 
-class Part3 extends Component {
+class Part4 extends Component {
   state = { listings: [] };
+
+  // Using the Fisher-Yates (aka Knuth) Shuffle
+  // https://bost.ocks.org/mike/shuffle/
+  shuffle = array => {
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  };
   async componentDidMount() {
     const listings = await axios
       .get("https://sv-reqres.now.sh/api/listings/?per_page=15")
-      .then(response => response.data.data)
+      .then(response => this.shuffle(response.data.data))
       .catch(err => console.log(err));
 
     this.setState({ listings });
@@ -130,31 +152,31 @@ class Part3 extends Component {
           <>
             <Switch>
               <Route
-                path={"/part3/page1"}
+                path={"/part4/page1"}
                 render={props => {
                   return <Page1 listings={listings.slice(0, 5)} />;
                 }}
               />
               <Route
-                path={"/part3/page2"}
+                path={"/part4/page2"}
                 render={props => {
                   return <Page2 listings={listings.slice(5, 10)} />;
                 }}
               />
               <Route
-                path={"/part3/page3"}
+                path={"/part4/page3"}
                 render={props => {
                   return <Page3 listings={listings.slice(10, 13)} />;
                 }}
               />
               <Route
-                path={"/part3/page4"}
+                path={"/part4/page4"}
                 render={props => {
                   return <Page4 listings={listings.slice(13, 15)} />;
                 }}
               />
             </Switch>
-            <Part3WithRouter />
+            <Part4WithRouter />
           </>
         )}
       </>
@@ -162,4 +184,4 @@ class Part3 extends Component {
   }
 }
 
-export default Part3;
+export default Part4;

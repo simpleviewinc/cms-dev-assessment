@@ -5,7 +5,7 @@ import fallback from "../fallback.jpg";
 
 /*
 TODO:
-* fallback image is from local path and not URL
+* make fallback image is from local path and not URL
 * ReadMore button doesn't flicker on hover (Chrome Issue, works on Firefox)
 * ReadMore centering should be done by flexbox and not right
   * ReadMore centering is off on Medium display
@@ -27,7 +27,7 @@ const CardContainer = styled.div`
       width: 50%;
     }
     :nth-child(6n) {
-      // flex: 1 0 50%;
+      display: flex;
       width: 50%;
     }
   }
@@ -43,14 +43,13 @@ const CardContainer = styled.div`
   }
 `;
 const ImageCardContainer = styled.div`
-  max-height: 185px;
   display: flex;
-  flex: 1 0;
+  max-height: 185px;
+  flex: 1 0 50%;
   align-items: center;
   overflow: hidden;
-  :nth-child(6) {
-    flex: 1 0;
-    height: inherit;
+  :nth-child(6n) {
+    flex: 1 1 50%;
   }
 `;
 const Image = styled.img`
@@ -107,6 +106,9 @@ const TextContainer = styled.div`
 
   & ${Details}:hover + ${ReadMore} {
     display: flex;
+  }
+  :nth-child(6n) {
+    flex: 1 1 50%;
   }
 `;
 
