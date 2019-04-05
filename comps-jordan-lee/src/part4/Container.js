@@ -1,17 +1,10 @@
 import React, { Component } from "react";
 
 import styled from "styled-components";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  withRouter
-} from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import axios from "axios";
 
-// import Page1 from "./Pages";
-import { Page1, Page2, Page3, Page4 } from "./Pages";
+import { Page1, Page2, Page3, Page4 } from "../part3/Pages";
 
 /*
 NOTE:

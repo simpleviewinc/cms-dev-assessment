@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 
 import styled from "styled-components";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  withRouter
-} from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
+
 import axios from "axios";
 
 // import Page1 from "./Pages";
@@ -22,7 +17,6 @@ NOTE:
 * Assumption that there'll always be exactly 15 data items
 */
 
-//Static routing array
 const routes = [
   { path: "/part3/page1" },
   { path: "/part3/page2" },

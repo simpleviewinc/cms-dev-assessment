@@ -1,3 +1,11 @@
+Built with
+
+- react
+- react-router-dom
+- styled-components
+
+👍
+
 # Simpleview CMS Developer Assessment
 
 Welcome to the Simpleview Developer Assessment.
