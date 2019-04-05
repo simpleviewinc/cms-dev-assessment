@@ -1,19 +1,20 @@
-Simpleview CMS Developer Assessment
-======
+# Simpleview CMS Developer Assessment
+
 Welcome to the Simpleview Developer Assessment.
 
 The assessment is in four (4) parts that increase in complexity and scope. You may use any approach you feel comfortable with to complete each section. The assessment period is two (2) days; at the end of the assessment period turn in any and all work including any incomplete work for review.
 
 Although each part builds off the previous, you are expected (unless otherwise directed) to turn in four (4) sets of solutions; one for each part.
 
-Requirements
-------
+## Requirements
+
 In the `/comps/` folder you will find different screenshots and demo videos for the components you will be responsible for building. Each feature a grid of items in a repeatable pattern. You will be working with an API for 4 parts and it some parts you will need to manipulate the data in some way.
 
 **Brand Fonts**
 Google Fonts
-* Lato 400
-* Lato 900
+
+- Lato 400
+- Lato 900
 
 **Breakpoints**
 Large - 1025px and up
@@ -23,8 +24,8 @@ Small - 640px and below
 **Max Width**
 1200px
 
-Assessments
-------
+## Assessments
+
 **Part 1 - REST-API**
 Build the comped component found in `/comps/part 1-2/`.
 
@@ -38,7 +39,7 @@ Build the component a final time with data from the API. Include listings, event
 Some listings/evensts/offers will have broken images, please use the provided fallback image as needed to ensure an image is always rendered.
 
 **Part 3 - Paging & Dynamic Layouts**
-See the demo in `/comps/part 3-4/demo.mp4`. You need will need to build this component.
+See the demo in `/comps/part 3-4/demo.mp4`. You will need to build this component.
 
 As the user pages through, the layout of the grid and the number of items in the grid changes. The layouts are in a repeatable pattern. When the user gets to the last page, clicking the next button takes the user back to the beginning of the list. Similarly, clicking the prev button when on the first page of the list takes the user to the last page of the list. Your component should have all that same functionality.
 
@@ -53,6 +54,6 @@ The API does not offer any randomized sorting options. It does support paging vi
 
 Whenever the user refreshes the page, they should see a different set of items on each page of the component.
 
-Submitting Your Assessment For Review
-------
+## Submitting Your Assessment For Review
+
 When you've completed the assessment, submit your work via a Pull Request to this repo. Your Pull Request should contain four (4) folders that contain your solution; one (1) for each part of the assessment.

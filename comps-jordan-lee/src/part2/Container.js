@@ -7,43 +7,50 @@ import placeholder from "../500.jpg";
 import Card from "../part1/Card";
 import { theme } from "../theme/globalStyle";
 
+/*
+TODO:
+* API requests could be made in parallel
+* Reduce code written by choosing another method to filter results
+* 
+ */
+
 const Container = styled.div`
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
   max-width: 1200px;
-  text-align: center;
   margin: 0px auto;
+  text-align: center;
 `;
 const Button = styled.button`
   flex: 0 1 20%
-  cursor: pointer;
-  background: palevioletred;
-  color: white;
   padding: 5px;
   margin-right: 2em;
   margin-bottom: 1em;
   border-radius: 4px;
   font-weight: 900;
   font-size: 1.2em;
+  cursor: pointer;
+  color: white;
   letter-spacing: 0.1em;
+  background: palevioletred;
   filter: drop-shadow(2px 3px 4px palevioletred);
 `;
 const Navs = styled.div`
-  background: white;
   display: flex;
   flex: 1 0 100%;
   flex-wrap: wrap;
   justify-content: center;
+  background: white;
   z-index: 999;
 `;
 const Title = styled.div`
-  background: white;
   display: flex;
   flex: 1 0 100%;
   flex-wrap: wrap;
   justify-content: flext-start;
   margin-top: 2em;
   margin-bottom: 0.1em;
+  background: white;
   font-size: 2em;
   font-weight: 900;
   color: palevioletred;
@@ -63,9 +70,7 @@ class Part2 extends Component {
   };
   onGetListings = e => {};
   renderCards = e => {
-    // e.preventDefault();
     const category = e.target.name;
-    console.log(category);
 
     switch (category) {
       case "listings":
@@ -164,7 +169,5 @@ class Part2 extends Component {
     );
   }
 }
-
-// {listings.map(card => <Card key={card.title} card={card} />)}
 
 export default Part2;
