@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dev Asssesment: Part 4</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="shared.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    <div class="content-section">
+        <div id="app" v-cloak>
+            <div class="grid p1">
+                <div class="grid-item" v-for="i in current">
+                    <div class="img-cont" v-bind:style="{ background: 'url(' + i.mediaurl + ')' }">
+                        <div class="bg-fallback" style="background:url('images/default.jpg')center/cover no-repeat;"></div>
+                    </div>
+                    <div class="item-content">
+                        <h2 class="title">{{i.title}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="shared.js"></script>
+</body>
+</html>
