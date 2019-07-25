@@ -3,11 +3,13 @@
     grid-gap: 10px;
     background-color: #fff;
     color: #444;
+    max-width: 1200px;
 }
 
 .listing_item {
     height:150px;
-    overflow: hidden; padding: 20px;
+    overflow: hidden; 
+    padding: 20px;
     -webkit-mask-image: linear-gradient(to top, transparent 5%, black 25%);
    mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
 }

@@ -19,7 +19,7 @@ Vue.component('part1', {
     },
     mounted () {
         axios
-        .get('https://sv-reqres.now.sh/api/listings/?per_page=15')
+        .get('https://sv-reqres.now.sh/api/listings/')
         .then(response => (this.listings = response.data.data))
     },
     methods: {
