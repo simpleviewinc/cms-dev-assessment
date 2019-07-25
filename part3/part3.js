@@ -3,7 +3,7 @@ Vue.component('part3', {
     <div class="grid_container">
         <div v-for="(item, index) in visible" :class="layouts[current_page][index]">
             <div class="listing_header">
-                <span class="header_number">{{start_position+index+1}}.</span> <h2>&nbsp;&nbsp;{{item.title}}</h2>
+                <sup class="header_number">{{start_position+index+1 < 10 ? '0' : ''}}{{start_position+index+1}}.</sup> <h2>&nbsp;{{item.title}}</h2>
              </div>
             <img v-if="item.mediaurl" :src="item.mediaurl" class="thumbnail" alt="Featured Image" @error="setFallbackImageUrl"/>
             <img v-else src="../comps/fallback.jpg" />
@@ -53,7 +53,7 @@ Vue.component('part3', {
                 this.start_position -= elements_on_page;
             }
             else {
-                this.start_position = this.layouts.length - (elements_on_page - this.start_position);
+                this.start_position = this.listings.length - (elements_on_page - this.start_position);
             }
             this.end_position = (this.start_position + elements_on_page) % this.listings.length;
             if (this.end_position <= this.start_position) {
