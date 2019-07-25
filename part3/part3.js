@@ -66,10 +66,15 @@ Vue.component('part3', {
     },
     mounted () {
         axios
-        .get('https://sv-reqres.now.sh/api/listings/?per_page=20')
+        .get('https://sv-reqres.now.sh/api/listings/?per_page=1')
         .then(response => {
-            this.listings = response.data.data;
-            this.visible = this.listings.slice(0,5);
+            total = response.data.total;
+            axios
+            .get('https://sv-reqres.now.sh/api/listings/?per_page='+total)
+            .then(response => {
+                this.listings = response.data.data;
+                this.visible = this.listings.slice(0,5);
+            })
         })
     },
 })
