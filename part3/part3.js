@@ -9,8 +9,13 @@ Vue.component('part3', {
             <img v-else src="../comps/fallback.jpg" />
         </div>
         <div class="footer">
-            <button type="button" id="next" v-on:click="nextClicked($event)" class="toggle_button">Next</button>
-            <button type="button" id="prev" v-on:click="prevClicked($event)" class="toggle_button">Prev</button>
+        
+            <button type="button" id="next" v-on:click="nextClicked($event)">
+                <strong>Next</strong> <i class="fa fa-long-arrow-right" aria-hidden="true" style="color:teal;"></i>            
+            </button>
+            <button type="button" id="prev" v-on:click="prevClicked($event)">
+                <i class="fa fa-long-arrow-left" aria-hidden="true" style="color:teal;"></i> <strong>Prev.</strong>
+            </button>
         </div>
     </div>
     `,
