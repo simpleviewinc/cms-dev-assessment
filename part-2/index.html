@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+        <title>Luke Hewlett | CMS Dev Assessment | Simpleview</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script src="assets/js/handlebars/handlebars-v4.1.2.js"></script>
+    </head>
+    <body>
+        
+        <script>
+            var httpRequest = new XMLHttpRequest();
+            var listingUrl = "https://sv-reqres.now.sh/api/listings";
+            var svData = {};
+            httpRequest.open("GET", listingUrl, true);
+            httpRequest.onload = function() {
+                svData = httpRequest.responseText;
+            };
+            httpRequest.send();
+        </script>
+        
+        <section class="listing-grid">
+            <div class="wrapper">
+                <div class="filters">
+                    <ul>
+                        <li class="active">All</li>
+                        <li>Listings</li>
+                        <li>Events</li>
+                        <li>Offers</li>
+                    </ul>
+                </div>
+                <div class="grid" id="listingData">
+                    <!-- content populates here -->
+                </div>
+            </div>
+        </section>
+
+        <script src="assets/js/handlebars/handlebars-v4.1.2.js"></script>
+        
+        <script id="listing-template" type="text/x-handlebars-template">
+            {{#each listings}}
+                <article class="grid-item">
+                    <div class="img-cont">
+                        <img alt="" src="assets/img/fallback.jpg"/>
+                    </div>
+                    <div class="text-cont">
+                        <header>
+                            <h1>{{title}}</h1>
+                        </header>
+                        <p>{{description}}</p>
+                        <a href="#" class="button">Read More</a>
+                    </div>
+                </article>
+            {{/each}}
+        </script>
+
+        <script type="text/javascript">
+            var source = document.getElementById("listing-template").innerHTML;
+            var template = Handlebars.compile(source);
+            var context = {
+                listings: [
+                    {title: "Title 1 Goes Here", description: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus."},
+                    {title: "Title 2 Goes Here", description: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus."},
+                    {title: "Title 3 Goes Here", description: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus."},
+                    {title: "Title 4 Goes Here", description: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus."},
+                    {title: "Title 5 Goes Here", description: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus."},
+                    {title: "Title 6 Goes Here", description: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus."}
+                ]};
+            var html = template(context);
+
+            document.getElementById("listingData").innerHTML += html;
+        </script>
+
+    </body>
+</html>
