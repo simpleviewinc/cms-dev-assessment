@@ -1,68 +1,50 @@
 .grid_container {
     display: grid;
     grid-gap: 10px;
-    background-color: #fff;
     color: #444;
     max-width: 1200px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto repeat(6, 100px);
+    max-height:600px;
 }
 
 .listing_item {
-    height:150px;
     overflow: hidden; 
     padding: 20px;
-    -webkit-mask-image: linear-gradient(to top, transparent 5%, black 25%);
-    mask-image: linear-gradient(to top, transparent 5%, black 25%);
 }
 
-@media (min-width: 1024px) {
-    .listing_item_big1 {
-        grid-column: span 2;
-    }
-    
-    .listing_item_big2 {
-        grid-column: span 2;
-    }
-
-    .listing_item_big2 img {
-        width: 40%;
-        float: left;
-        height: 450px;
-    }
-    
-    .listing_item_big2 .listing_item {
-        float: left;
-        width: 40%;
-        height: 450px;
-    }
-    .grid_container {
-        grid-template-columns: 25% 25% 25% 25%;
-    }
-    .header {
-        grid-column: span 4;
-    }
+.listing_item_A {
+    grid-column: span 3;
+    grid-row: span 3;
 }
 
-@media (min-width: 641px) and (max-width: 1023px) {
-    .grid_container {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .header {
-        grid-column: span 3;
-    }
+.listing_item_B {
+    grid-column: span 3;
+    grid-row: span 2;
 }
 
-@media (max-width: 640px) {
-    .grid_container {
-        grid-template-columns: 100%;
-    }
-    .header {
-        grid-column: span 1;
-    }
+.listing_item_C {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.listing_item_D {
+    grid-column: span 2;
+    grid-row: span 6;
+}
+
+.listing_item_E {
+    grid-column: span 3;
+    grid-row: span 6;
+}
+
+.header {
+    grid-column: span 6;
 }
 
 .thumbnail {
     width: 100%;
-    height: 300px;
+    height: 100%;    
 }
 
 button {
@@ -76,37 +58,6 @@ button {
 
 .toggle_button:hover {
     background-color: lightgray;
-}
-
-.selected_button {
-    background-color: #6929b3;
-    color: white;
-    border-radius: 5px;
-    border-style: double;
-    border-width: 5px;
-}
-
-.selected_button:hover {
-    background-color: #6929b3 !important;
-}
-
-.read_more {
-    opacity: 0;
-    background-color: #fc4103;
-    color: white;
-    margin-left: 40%;
-    margin-top: -10px;
-    float: left;
-    clear: both;
-    z-index: 100;
-}
-
-.listing_wrapper:hover .read_more {
-    opacity: 1;
-}
-
-.read_more:hover {
-    background-color: #c23000;
 }
 
 a {

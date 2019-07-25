@@ -5,16 +5,13 @@ Vue.component('part3', {
             <button type="button" id="prev" v-on:click="prevClicked($event)" class="toggle_button">Prev</button>
             <button type="button" id="next" v-on:click="nextClicked($event)" class="toggle_button">Next</button>
         </div>
-        <div v-for="(item, index) in visible" class="listing_wrapper"
-        :class="[ index % 6 == 0 || index % 6 == 5 ? (index % 6 == 0 ? 'listing_item_big1' : 'listing_item_big2') : 'listing_item_small']">
+        <div v-for="(item, index) in visible" :class="layouts[current_page][index]">
             <img v-if="item.mediaurl" :src="item.mediaurl" class="thumbnail" alt="Featured Image" @error="setFallbackImageUrl"/>
             <img v-else src="../comps/fallback.jpg" />
 
             <div class="listing_item">
                 <p><strong>{{item.title}}</strong></p>
-                <p>{{ item.description }}</p>
             </div>
-            <button class="read_more" type="button">Read More</button>
         </div>
     </div>
     `,
@@ -26,10 +23,10 @@ Vue.component('part3', {
             end_position: 5,
             current_page: 0,
             layouts: [
-                ['A','B','B','A','B'],
-                ['C','C','D','C','C'],
-                ['A','E','A'],
-                ['E','E']
+                ['listing_item_A','listing_item_B','listing_item_B','listing_item_A','listing_item_B'],
+                ['listing_item_C','listing_item_C','listing_item_D','listing_item_C','listing_item_C'],
+                ['listing_item_A','listing_item_E','listing_item_A'],
+                ['listing_item_E','listing_item_E']
             ]
         }
     },
