@@ -63,14 +63,34 @@
     height: 300px;
 }
 
-.read_more {
-    opacity: 0;
+button {
     cursor: pointer;
-    background-color: #fc4103;
-    box-shadow: none;
     border-radius: 0px;
     border: 0;
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
+    margin: 5px;
+    box-shadow: none;
+}
+
+.toggle_button:hover {
+    background-color: lightgray;
+}
+
+.selected_button {
+    background-color: #6929b3;
+    color: white;
+    border-radius: 5px;
+    border-style: double;
+    border-width: 5px;
+}
+
+.selected_button:hover {
+    background-color: #6929b3 !important;
+}
+
+.read_more {
+    opacity: 0;
+    background-color: #fc4103;
     color: white;
     margin-left: 40%;
     margin-top: -10px;
