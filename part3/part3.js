@@ -2,12 +2,11 @@ Vue.component('part3', {
     template: `
     <div class="grid_container">
         <div v-for="(item, index) in visible" :class="layouts[current_page][index]">
+            <div class="listing_header">
+                <span class="header_number">{{start_position+index+1}}.</span> <h2>&nbsp;&nbsp;{{item.title}}</h2>
+             </div>
             <img v-if="item.mediaurl" :src="item.mediaurl" class="thumbnail" alt="Featured Image" @error="setFallbackImageUrl"/>
             <img v-else src="../comps/fallback.jpg" />
-
-            <div class="listing_item">
-                <p><strong>{{item.title}}</strong></p>
-            </div>
         </div>
         <div class="footer">
             <button type="button" id="next" v-on:click="nextClicked($event)" class="toggle_button">Next</button>
