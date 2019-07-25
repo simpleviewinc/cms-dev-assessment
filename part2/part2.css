@@ -7,7 +7,7 @@
 
 .listing_item {
     height:150px;
-    padding: 20px;
+    overflow: hidden; padding: 20px;
     -webkit-mask-image: linear-gradient(to top, transparent 5%, black 25%);
     mask-image: linear-gradient(to top, transparent 5%, black 25%);
 }
