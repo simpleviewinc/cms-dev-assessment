@@ -4,8 +4,7 @@
     color: #444;
     max-width: 1200px;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 130px) auto;
-    max-height:600px;
+    grid-template-rows: repeat(6, 75px) auto;
 }
 
 .listing_header {
@@ -83,6 +82,6 @@ img {
     object-fit: cover;
 }
 
-h2 {
+h3 {
     display: inline;
 }

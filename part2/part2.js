@@ -8,7 +8,7 @@ Vue.component('part2', {
             <button type="button" id="offers" v-on:click="toggleClicked($event,'offers')" class="toggle_button">Offers</button>
         </div>
         <div v-for="(item, index) in visible" class="listing_wrapper"
-        :class="[ index % 6 == 0 || index % 6 == 5 ? (index % 6 == 0 ? 'listing_item_big1' : 'listing_item_big2') : 'listing_itemx_small']">
+        :class="[ index % 6 == 0 || index % 6 == 5 ? (index % 6 == 0 ? 'listing_item_big1' : 'listing_item_big2') : 'listing_item_small']">
             <img v-if="item.mediaurl" :src="item.mediaurl" class="thumbnail" alt="Featured Image" @error="setFallbackImageUrl"/>
             <img v-else src="../comps/fallback.jpg" />
 
@@ -33,16 +33,16 @@ Vue.component('part2', {
         setFallbackImageUrl(event) {
             event.target.src = "../comps/fallback.jpg"
           },
-        getListings: function() {
+        getListings() {
             return axios.get('https://sv-reqres.now.sh/api/listings/?per_page=6')
         },
-        getEvents: function() {
+        getEvents() {
             return axios.get('https://sv-reqres.now.sh/api/events/?per_page=6')
         },
-        getOffers: function() {
+        getOffers() {
             return axios.get('https://sv-reqres.now.sh/api/offers/?per_page=6')
         },
-        toggleClicked: function(event, type) {
+        toggleClicked(event, type) {
             this.toggleButtonClass(type);
             switch(type) {
                 case 'all':

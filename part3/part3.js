@@ -3,7 +3,7 @@ Vue.component('part3', {
     <div class="grid_container">
         <div v-for="(item, index) in visible" :class="layouts[current_page][index]">
             <div class="listing_header">
-                <sup class="header_number">{{start_position+index+1 < 10 ? '0' : ''}}{{start_position+index+1}}.</sup> <h2>&nbsp;{{item.title}}</h2>
+                <sup class="header_number">{{start_position+index+1 < 10 ? '0' : ''}}{{start_position+index+1}}.</sup> <h3>&nbsp;{{item.title}}</h3>
              </div>
             <img v-if="item.mediaurl" :src="item.mediaurl" class="thumbnail" alt="Featured Image" @error="setFallbackImageUrl"/>
             <img v-else src="../comps/fallback.jpg" />
@@ -24,7 +24,6 @@ Vue.component('part3', {
             listings: [],
             visible: [],
             start_position: 0,
-            end_position: 5,
             current_page: 0,
             layouts: [
                 ['listing_item_A','listing_item_B','listing_item_B','listing_item_A','listing_item_B'],
@@ -43,12 +42,12 @@ Vue.component('part3', {
             this.current_page = (this.current_page + 1) % this.layouts.length;
             this.start_position = (this.start_position + elements_on_page) % this.listings.length;
             elements_on_page = this.layouts[this.current_page].length;
-            this.end_position = (this.start_position + elements_on_page) % this.listings.length;
-            if (this.end_position <= this.start_position) {
-                this.visible = this.listings.slice(this.start_position).concat(this.listings.slice(0,this.end_position));
+            end_position = (this.start_position + elements_on_page) % this.listings.length;
+            if (end_position <= this.start_position) {
+                this.visible = this.listings.slice(this.start_position).concat(this.listings.slice(0,end_position));
             }
             else {
-                this.visible = this.listings.slice(this.start_position, this.end_position);
+                this.visible = this.listings.slice(this.start_position, end_position);
             }
         },
         prevClicked(event) {
@@ -60,12 +59,12 @@ Vue.component('part3', {
             else {
                 this.start_position = this.listings.length - (elements_on_page - this.start_position);
             }
-            this.end_position = (this.start_position + elements_on_page) % this.listings.length;
-            if (this.end_position <= this.start_position) {
-                this.visible = this.listings.slice(this.start_position).concat(this.listings.slice(0,this.end_position));
+            end_position = (this.start_position + elements_on_page) % this.listings.length;
+            if (end_position <= this.start_position) {
+                this.visible = this.listings.slice(this.start_position).concat(this.listings.slice(0,end_position));
             }
             else {
-                this.visible = this.listings.slice(this.start_position, this.end_position);
+                this.visible = this.listings.slice(this.start_position, end_position);
             }
         },
     },

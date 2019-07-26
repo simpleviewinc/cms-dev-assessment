@@ -11,7 +11,6 @@
     overflow: hidden; 
     padding: 20px;
     -webkit-mask-image: linear-gradient(to top, transparent 5%, black 25%);
-    mask-image: linear-gradient(to top, transparent 5%, black 25%);
 }
 
 @media (min-width: 1024px) {
@@ -35,7 +34,7 @@
         height: 450px;
     }
     .grid_container {
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-columns: repeat(4,1fr);
     }
     .header {
         grid-column: span 4;
@@ -44,7 +43,7 @@
 
 @media (min-width: 641px) and (max-width: 1023px) {
     .grid_container {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3,1fr);
     }
     .header {
         grid-column: span 3;
@@ -53,7 +52,7 @@
 
 @media (max-width: 640px) {
     .grid_container {
-        grid-template-columns: 100%;
+        grid-template-columns: 1fr;
     }
     .header {
         grid-column: span 1;
@@ -87,7 +86,7 @@ button {
 }
 
 .selected_button:hover {
-    background-color: #6929b3 !important;
+    background-color: #6929b3;
 }
 
 .read_more {
