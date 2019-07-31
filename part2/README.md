@@ -1,0 +1,1 @@
+Rendered data from API onto the screen and added eventListeners. 

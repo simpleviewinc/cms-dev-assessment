@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* container */ 
+
+.container{
+    width: 95%;
+    margin: 20px auto;
+}
+
+/* Nav Buttons */
+nav{
+    display: flex;
+
+}
+nav li{
+    list-style: none;
+}
+.button{
+    margin-right: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    background: lightgray;
+    padding: 10px 20px;
+    color: black;
+}
+
+.active{
+    background: purple;
+    color: #fff;
+    border: 1px solid #fff;
+    outline: 1px solid blue;
+}
+
+/* L A R G E */
+
+@media(max-width: 1200px){}
+
+/* M E D I U M */
+
+@media(max-width: 1024px){}
+
+/* S M A L L */
+@media(max-width: 640px){}

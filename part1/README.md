@@ -1,0 +1,1 @@
+Set up HTML, used fetch to fetch the API, and did some basic CSS layout.
