@@ -1,0 +1,7 @@
+I know it isn't much, but I wanted to say thank you for the opportunity to do the assessment.
+
+
+I don't even have a year of javaScript experience under my belt, but this pushed me(plus ultra!) and I spent so much time researching!
+Looking back I wish I did SASS/Bootstrap instead to save me a lot of time/CSS headaches, but I wanted to see how much I remembered. I think css grid broke my heart in this assessment...
+
+I'm going to work hard to learn Vue.js and React.js to an intermediate level and on the chance I don't get this job, I hope to apply the next time one opens!
