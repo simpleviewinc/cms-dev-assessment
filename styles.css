@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900&display=swap");
+
+.container{
+  width: 90%;
+  margin: 20px auto;
+}
+
+@media (max-width: 1200px) {
+} /*large*/
+
+@media (max-width: 1024px) {
+} /*medium*/
+
+@media (max-width: 640px) {
+} /*small*/
