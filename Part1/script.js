@@ -1,6 +1,9 @@
 async function fetchListings() {
-    const res = await fetch('https://sv-reqres.now.sh/api/listings');
-    const data = await res.json();
+    let res = await fetch('https://sv-reqres.now.sh/api/listings');
+    let data = await res.json();
+    const total = data.total;
+    res = await fetch(`https://sv-reqres.now.sh/api/listings?per_page=${total}`)
+    data = await res.json();
     let output = '';
     data.data.forEach((listing) => {
         output += `

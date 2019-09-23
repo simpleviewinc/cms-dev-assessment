@@ -2,14 +2,14 @@ document.getElementById('getAll').addEventListener('click',fetchAllData);
 document.getElementById('getListings').addEventListener('click',fetchData);
 document.getElementById('getEvents').addEventListener('click',fetchData);
 document.getElementById('getOffers').addEventListener('click',fetchData);
+let allButton = document.getElementById('getAll');
+let listingsButton = document.getElementById("getListings");
+let eventsButton = document.getElementById("getEvents");
+let offersButton = document.getElementById("getOffers");
 
 async function fetchData() {
     let apiEndpoint = '';
     let element = document.getElementById(this.id);
-    let allButton = document.getElementById("getAll");
-    let listingsButton = document.getElementById("getListings");
-    let eventsButton = document.getElementById("getEvents");
-    let offersButton = document.getElementById("getOffers");
     element.classList.add("active");
     switch(this.id){
         case 'getListings':
@@ -53,10 +53,6 @@ async function fetchData() {
 
 async function fetchAllData(){
     try{
-        let allButton = document.getElementById('getAll');
-        let listingsButton = document.getElementById("getListings");
-        let eventsButton = document.getElementById("getEvents");
-        let offersButton = document.getElementById("getOffers");
         allButton.classList.add("active");
         listingsButton.classList.remove("active");
         eventsButton.classList.remove("active");
