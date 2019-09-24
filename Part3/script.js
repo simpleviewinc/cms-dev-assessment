@@ -102,7 +102,6 @@ function prevPage(){
     if(startIndex == 0){
         output = ``;
         let remainder = arrLength%15;
-
         switch(true){
             case(remainder>0 && remainder<=5):
                 layout = 1;
@@ -119,12 +118,10 @@ function prevPage(){
             default:
                 return;
         }
-
         startIndex = arrLength - remainder;
         endIndex = startIndex;
         buildLayout(); 
     } else {
-        
         switch(layout){
             case 1:
                 layout = 4;
