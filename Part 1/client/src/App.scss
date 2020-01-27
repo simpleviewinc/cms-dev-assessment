@@ -22,6 +22,10 @@ html {
   padding-top: 1rem;
 }
 
+.center {
+  text-align: center;
+}
+
 .sub-text {
   font-size: 1.6rem;
   padding-top: 1rem;
@@ -33,7 +37,11 @@ button {
   padding: 1rem;
 }
 
-// Breakpoints Large - 1025px and up Medium - 641px and up Small - 640px and below
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 1025px) {
   .container {
     width: 100%;

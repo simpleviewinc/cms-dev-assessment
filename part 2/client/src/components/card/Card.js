@@ -2,18 +2,13 @@ import React from 'react';
 import image from '../../asssets/fallback.jpg';
 import './Card.scss';
 
-const Card = ({ title, description, img, size, orientation }) => {
-  // Determines if the card will be horizontal or vertical.
-  let cardWidth = size === 'large' ? { width: '50%' } : { width: '25%' };
-  let cardClass =
-    orientation === 'horizontal' ? 'card horizontal' : 'card vertical';
-
+const Card = ({ title, description, img }) => {
   const onImageError = e => {
     e.target.src = image;
   };
 
   return (
-    <div className={cardClass} style={cardWidth}>
+    <div class="card">
       <div className="card__img-container">
         <img onError={onImageError} src={img} alt={title} />
       </div>

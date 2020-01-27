@@ -42,7 +42,11 @@ button {
   }
 }
 
-// Breakpoints Large - 1025px and up Medium - 641px and up Small - 640px and below
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 1025px) {
   .container {
     width: 100%;
@@ -52,7 +56,7 @@ button {
 
 @media only screen and (max-width: 641px) {
   .container {
-    width: 99%;
+    width: 90%;
   }
 
   .grid {
