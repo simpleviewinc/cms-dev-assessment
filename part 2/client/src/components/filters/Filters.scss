@@ -1,0 +1,27 @@
+.filter {
+  list-style-type: none;
+
+  &-option {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background: rgb(184, 184, 184);
+    text-transform: capitalize;
+    position: relative;
+  }
+}
+
+.active {
+  background: purple;
+  color: white;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 2px solid white;
+  }
+}

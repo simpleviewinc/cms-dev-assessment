@@ -1,0 +1,64 @@
+@import './components/card/Card.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 5rem;
+}
+
+.header-primary {
+  font-size: 2.5rem;
+  padding-top: 1rem;
+}
+
+.sub-text {
+  font-size: 1.6rem;
+  padding-top: 1rem;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1rem;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// Breakpoints Large - 1025px and up Medium - 641px and up Small - 640px and below
+@media only screen and (max-width: 1025px) {
+  .container {
+    width: 100%;
+  }
+  @include card-med();
+}
+
+@media only screen and (max-width: 641px) {
+  .container {
+    width: 99%;
+  }
+
+  .grid {
+    flex-direction: column;
+  }
+  .card {
+    width: 100% !important;
+  }
+}
