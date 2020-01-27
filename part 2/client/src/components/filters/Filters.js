@@ -15,7 +15,7 @@ const Filters = ({ currentFilter, changeFilter }) => {
                 : 'filter-option'
             }
             value={filter}
-            onClick={e => changeFilter(e)}
+            onClick={changeFilter}
           >
             {filter}
           </button>

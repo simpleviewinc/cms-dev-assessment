@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import LayoutWrapper from './hocs/LayoutWrapper';
 import Http from './hooks/Http';
+import _ from 'lodash';
 import './App.scss';
 
 function App() {
-  const [listings, isLoading] = Http();
+  const [listings, isLoading, setListings] = Http();
   const [currentLayout, setCurrentLayout] = useState(0);
 
   const nextPage = () => {
+    setListings(prev => _.shuffle(prev));
     if (currentLayout === 3) {
       setCurrentLayout(0);
     } else {
@@ -16,6 +18,7 @@ function App() {
   };
 
   const prevPage = () => {
+    setListings(prev => _.shuffle(prev));
     if (currentLayout === 0) {
       setCurrentLayout(3);
     } else {
@@ -38,7 +41,7 @@ function App() {
       </div>
     </div>
   ) : (
-    <div>
+    <div className="container">
       <h1>...Loading</h1>
     </div>
   );

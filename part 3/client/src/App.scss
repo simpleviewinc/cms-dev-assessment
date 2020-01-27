@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 20px;
+  right: 150px;
+}
+
+ul {
+  li {
+    display: inline;
+    list-style-type: none;
+    margin: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.header-primary {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.fas {
+  color: dodgerblue;
+}
+
+.fa-arrow-left {
+  padding-right: 1rem;
+}
+
+.fa-arrow-right {
+  padding-left: 1rem;
+}
