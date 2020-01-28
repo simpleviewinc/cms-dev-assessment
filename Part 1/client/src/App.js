@@ -11,9 +11,10 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="grid">
-          {listings.map(listing => {
+          {listings.map((listing, ind) => {
             return (
               <Card
+                key={ind}
                 title={listing.title}
                 description={listing.description}
                 img={listing.mediaurl}

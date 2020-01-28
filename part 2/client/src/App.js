@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Filters from './components/filters/Filters';
 import Card from './components/card/Card';
 import Http from './components/hooks/Http';
-
 import './App.scss';
 
 function App() {
@@ -18,9 +17,10 @@ function App() {
       <div className="container">
         <Filters currentFilter={currentFilter} changeFilter={changeFilter} />
         <div className="grid">
-          {data[currentFilter].map(listing => {
+          {data[currentFilter].map((listing, ind) => {
             return (
               <Card
+                key={ind}
                 title={listing.title}
                 description={listing.description}
                 img={listing.mediaurl}

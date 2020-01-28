@@ -8,7 +8,7 @@ const Card = ({ title, description, img }) => {
   };
 
   return (
-    <div class="card">
+    <div className="card">
       <div className="card__img-container">
         <img onError={onImageError} src={img} alt={title} />
       </div>

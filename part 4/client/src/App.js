@@ -32,10 +32,10 @@ function App() {
       <div className="btn-container">
         <ul>
           <li onClick={prevPage}>
-            <i class="fas fa-arrow-left"></i>Prev.
+            <i className="fas fa-arrow-left"></i>Prev.
           </li>
           <li onClick={nextPage}>
-            Next <i class="fas fa-arrow-right"></i>
+            Next <i className="fas fa-arrow-right"></i>
           </li>
         </ul>
       </div>
