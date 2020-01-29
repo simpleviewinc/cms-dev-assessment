@@ -23,16 +23,11 @@ function DataLoader() {
 
     }, [])
 
-    // load a part of the array by way of for loop 
-
-
     switch (styleType) {
         case 1:
             return (
-                <div>
-                    <StyleOne data={data} />
-                    <ButtonSwitch setStyleType={setStyleType} styleType={styleType} />
-                </div>)
+                <StyleOne data={data} setStyleType={setStyleType} styleType={styleType} />
+            )
             break;
         case 2:
             return (

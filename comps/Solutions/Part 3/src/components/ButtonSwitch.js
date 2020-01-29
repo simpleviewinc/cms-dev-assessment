@@ -3,6 +3,9 @@ import React from 'react';
 
 
 function ButtonSwitch({ setStyleType, styleType }) {
+    let arrowLeft = "<-";
+    let arrowRight = "->";
+
     const goNext = () => {
         if (styleType === 5) setStyleType(1)
         else setStyleType(styleType + 1)
@@ -12,8 +15,8 @@ function ButtonSwitch({ setStyleType, styleType }) {
         else setStyleType(styleType - 1)
     }
     return (
-        <div>
-            <button onClick={goPrev}>Prev</button><button onClick={goNext}>Next</button>
+        <div className="buttons">
+            <span><button onClick={goPrev}><p>{arrowLeft}</p>Prev</button><button onClick={goNext}>Next<p>{arrowRight}</p></button></span>
         </div>
     );
 }

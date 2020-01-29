@@ -1,4 +1,6 @@
 import React from 'react';
+import './scss/index.scss';
+
 // Component Imports
 import DataLoader from './components/DataLoader';
 
