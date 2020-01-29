@@ -1,5 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 .App {
   max-width: 1200px;
   text-align: center;
+  margin: auto;
+}
+
+.nav {
+  margin: 20px;
+  text-align: left;
+}
+
+button {
+  height: 30px;
+  width: 80px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  margin: 8px;
+  border: 0;
+  background-color: lightgrey;
+}
+
+button:focus {
+  background-color: purple;
+  color: white;
 }
 
