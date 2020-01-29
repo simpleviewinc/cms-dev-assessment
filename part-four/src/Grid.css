@@ -1,0 +1,35 @@
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 18px;
+  grid-row-gap: 18px;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .App {
+    padding: 0;
+  }
+  .card-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .card {
+    grid-column: span 2;
+  }
+  .largeCard,
+  .verticalCard {
+    grid-column: span 4;
+  }
+}

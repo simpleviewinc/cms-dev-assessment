@@ -1,0 +1,74 @@
+.grid-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-child {
+  position: relative;
+}
+
+.listing-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.photo-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+.five-column-left {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.five-column-left .grid-child {
+  grid-row: span 2;
+  overflow: hidden;
+}
+
+.five-column-left .grid-child:nth-child(1) {
+  grid-row: span 3;
+}
+.five-column-left .grid-child:nth-child(4) {
+  grid-row: span 3;
+}
+
+/*page 2 */
+.five-column-right {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.five-column-right .grid-child {
+  grid-row: span 1;
+}
+
+.five-column-right .grid-child:nth-child(3) {
+  grid-row: span 2;
+}
+
+/*page three */
+.three-column {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.three-column .grid-child {
+  grid-row: span 1;
+}
+.three-column .grid-child:nth-child(2) {
+  grid-row: span 2;
+}
+
+/*page three*/
+.two-column {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}

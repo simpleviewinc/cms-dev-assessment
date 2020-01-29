@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Grid from "./Grid";
 import "./App.css";
+import ListingsPager from "./part-two/listings-pager";
 
 class App extends Component {
   render() {
@@ -11,7 +12,6 @@ class App extends Component {
         <nav>
           <Nav />
         </nav>
-
         <main>
           <Switch>
             <Route
@@ -34,6 +34,7 @@ class App extends Component {
               path="/offers"
               render={props => <Grid filter="offers" {...props} />}
             />
+            <Route exact path="/part-two" component={ListingsPager} />
           </Switch>
         </main>
       </div>

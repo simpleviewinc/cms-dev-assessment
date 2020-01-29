@@ -1,0 +1,28 @@
+.NavLink {
+  background-color: #ececec;
+  border-radius: 3px;
+  padding: 8px;
+  margin-right: 12px;
+  text-decoration: none;
+  position: relative;
+}
+
+.NavLink.active {
+  background-color: #663399;
+  color: white;
+}
+.NavLink.active::after {
+  content: "";
+  border: 1.5px solid white;
+  border-radius: 3px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
+.nav-container {
+  display: flex;
+  margin: 5px 12px;
+}
