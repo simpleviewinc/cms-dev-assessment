@@ -8,7 +8,7 @@ Some listings will have broken images, please use the provided fallback image as
 
 # Solution Explanation of code by Timothy McGowen
 
-I decided to use React and Axios to complete this assignment. I will leverage functional components and hooks for assignment Part 1.
+I decided to use React and Axios to complete this assignment. 
 
 
 

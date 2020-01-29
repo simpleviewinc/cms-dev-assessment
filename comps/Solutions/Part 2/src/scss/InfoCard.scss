@@ -1,0 +1,175 @@
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin:4%;
+
+    button {
+        width: 4rem;
+        height: auto;
+        padding: .5rem;
+        margin: .25rem;
+        border-style: none;
+        border-radius: .25rem;
+    }
+    button:hover {
+        background-color: rgb(190, 190, 190);
+    }
+    .active {
+        border-width:5px;  
+        border-style:double;
+
+        color:white;
+        background-color: purple;
+    }
+}
+
+
+
+.data {
+    font-family: 'Lato', sans-serif;
+    color:rgb(56, 56, 56);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+        margin:1.1%;
+
+        height: 410px;
+        overflow: hidden;
+        h2 {
+            font-size: 1rem;
+            line-height: normal;
+            font-weight: 900;
+
+            margin-bottom: .5rem;
+        }
+        p {
+            font-size: 1rem;
+            line-height: normal;
+            font-weight: 400;
+        }
+
+    }
+    .textFade{
+        position: relative;
+        background: #fff;
+    }
+    .textFade:after {
+        position: absolute;
+        bottom: 0;  
+        height: 100%;
+        width: 100%;
+        content: "";
+        background: linear-gradient(to top,
+            rgba(255,255,255, 1) 20%, 
+            rgba(255,255,255, 0) 80%
+    );
+        pointer-events: none; /* so the text is still selectable */
+    }
+    .topLeft {
+        width: 46%;
+        img {
+
+            object-fit: cover;
+            width: 100%;
+ 
+            height: 250px;
+        }
+    }
+
+    .regular{
+        width: 21%;
+            img {
+
+                object-fit: cover;
+                max-width: 100%;
+                min-height: 250px;
+        }
+    }
+
+    .bottomRight{
+        display: flex;
+
+        width:46%;
+        section {
+            padding:1rem;
+        }
+            img {
+
+                object-fit: cover;
+                max-width: 50%;
+                max-height: 500px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1025px) { 
+    .data {
+        div {
+        height: 350px;
+        }
+
+        .topLeft {
+            width: 30%;
+        img {
+            height: 200px;
+        }
+        }
+        .regular {
+            width: 30%;
+        img {
+            min-height: 200px;
+        }
+        }
+        .bottomRight {
+            width: 30%;
+            flex-direction: column;
+            img {
+                object-fit: cover;
+                max-width: 100%;
+                min-height: 200px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 640px) { 
+    .data {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        div {
+            height: 350px;  
+        }
+        .topLeft {
+            width: 85%;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 200px;
+        }
+        }
+        .regular {
+        width: 85%;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 200px;
+        }
+        }
+        .bottomRight {
+            width: 85%;
+            flex-direction: column;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 200px;
+            }
+        }
+    }
+}
