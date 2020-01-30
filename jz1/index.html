@@ -1,0 +1,114 @@
+<!-- cms-assess.html -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CMS Assessment</title>
+
+	<!-- reset stylesheet-->
+  <link rel="stylesheet" href="./reset.css">
+  <!-- external stylesheet-->
+  <link rel="stylesheet" href="./style.css">
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+</header>
+
+<main>
+  <div class="card-display"></div>
+</main>
+
+<footer>
+
+</footer>
+
+<script type="text/javascript">
+
+$(document).ready(function() { // jQuery start
+
+$.ajax({
+  url: "https://sv-reqres.now.sh/api/listings",
+  method: "GET"
+}).then(function(response) {
+  var listings = response.data;
+
+  // loop over array of listings and create a card for each
+  for (var i of listings){
+
+    // div for card
+    var card = $("<div>").addClass("card");
+
+    // img tag for image with fallback image
+    var image = $("<img>")
+      .addClass("card-image")
+      .attr("src",i.mediaurl);
+
+    // h3 for card title
+    var title = $("<h3>")
+      .addClass("card-title")
+      .text(i.title);
+
+    // p tag for description
+    var description = $("<p>")
+      .addClass("card-description")
+      .text(i.description);
+
+		// button to expand truncated card content
+		var cardBtn = $("<button>")
+			.addClass("btn-read-more")
+			.text("Read More")
+			.hide();
+
+    // build card
+    card
+      .append(image)
+      .append(title)
+      .append(description)
+			.append(cardBtn);
+
+    // add card to page
+    $(".card-display").append(card);
+  }
+
+	// event listener to handle image load error by diplaying fallback image
+	// solution found here: https://stackoverflow.com/questions/3984287/how-to-show-alternate-image-if-source-image-is-not-found-onerror-working-in-ie
+	$(".card-image").on("error", function(){
+		$(this).attr("src", "./images/fallback.jpg");
+	});
+
+	// event listener to show "Read More" button when mouse hovers over card
+	$(".card").on("mouseover", function(){
+		$(this).children(".btn-read-more").show(100);
+	});
+
+	// event listener to hide button when mouse leaves
+	$(".card").on("mouseleave", function(){
+		$(this).children(".btn-read-more").hide(100);
+	});
+
+	// event listener to show truncated text when clicking "Read More" button
+	$(".btn-read-more").on("click",function(){
+		$(this).parent().css("height","auto");
+		$(this).parent().siblings().css("height","40em");
+	});
+});
+
+}); // jQuery end
+
+</script>
+</body>
+</html>
