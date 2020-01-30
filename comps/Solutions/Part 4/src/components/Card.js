@@ -19,11 +19,11 @@ function Card(props) {
     let srcImg = !imgLoader.error ? props.data.mediaurl : fallBack
     return (
         <div className={props.className}>
-            <div className="top-left">
+            <div className="top-left animations">
                 <p className="index">{`0${props.index + 1}.`}</p>
                 <p>{props.data.title}</p>
             </div>
-            <img src={srcImg} alt={props.data.title} onError={onImageError} width={200} />
+            <img className="animations" src={srcImg} alt={props.data.title} onError={onImageError} width={200} />
         </div>
     );
 }

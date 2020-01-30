@@ -31,7 +31,6 @@ function DataLoader() {
         }
 
         pageArr = shuffleArray(pageArr)
-        console.log(pageArr)
 
         Promise.all(pageArr).then(eventPromises => {
             // Takes the multi dimentional array and flattens it all into a useable array
