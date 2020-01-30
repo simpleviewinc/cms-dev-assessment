@@ -5,7 +5,7 @@ import Card from '../Card';
 import ButtonSwitch from '../ButtonSwitch';
 
 
-function StyleOne(props) {
+function StyleOne(props) { // Doing a check on the array and only using the index's that I need to display things right.
     return (
         <div>
             <div className="stylesGlobal">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import fallBack from "../fallback.jpg"; // Imported image
 // Component Imports
 
@@ -17,13 +18,15 @@ function Card(props) {
 
     // Checks if the image didn't render, if didn't it places fallBack image
     let srcImg = !imgLoader.error ? props.data.mediaurl : fallBack
+
     return (
         <div className={props.className}>
-            <div className="top-left">
+            <div className="top-left animations">
                 <p className="index">{`0${props.index + 1}.`}</p>
                 <p>{props.data.title}</p>
             </div>
-            <img src={srcImg} alt={props.data.title} onError={onImageError} width={200} />
+
+            <img className="animations" src={srcImg} alt={props.data.title} onError={onImageError} width={200} />
         </div>
     );
 }

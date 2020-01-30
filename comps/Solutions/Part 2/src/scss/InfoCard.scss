@@ -50,9 +50,6 @@
         background: #fff;
     }
     .textFade:after {
-        //Come back and use boxshadow inverse instead and see if it works better
-
-        // Trying to add the gradient fade at the bottom of each text div
         position: absolute;
         bottom: 0;  
         height: 100%;

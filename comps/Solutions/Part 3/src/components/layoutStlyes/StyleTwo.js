@@ -11,7 +11,7 @@ function StyleTwo(props) {
             <div className="styleTwo">
                 {props.data.map((value, index, key) => {
                     let classNam = 'columnTypeOne';
-                    if (props.check == 0) {
+                    if (props.check === 0) {
                         if ((index >= 15 && index <= 19) && (index % 15 === 0 || index % 16 === 0)) {
                             return (
                                 <Card className={classNam} key={shortid.generate()} data={value} index={index} />
@@ -28,7 +28,7 @@ function StyleTwo(props) {
             <div className="styleTwo">
                 {props.data.map((value, index, key) => {
                     let classNam = 'columnTypeOne';
-                    if (props.check == 0) {
+                    if (props.check === 0) {
                         if ((index >= 15 && index <= 19) && (index % 17 === 0 || index % 18 === 0)) {
                             return (
                                 <Card className={classNam} key={shortid.generate()} data={value} index={index} />
@@ -45,7 +45,7 @@ function StyleTwo(props) {
             <div className="styleTwo">
                 {props.data.map((value, index, key) => {
                     let classNam = 'columnTypeThree';
-                    if (props.check == 0) {
+                    if (props.check === 0) {
                         if ((index >= 15 && index <= 19) && (index % 19 === 0)) {
                             return (
                                 <Card className={classNam} key={shortid.generate()} data={value} index={index} />

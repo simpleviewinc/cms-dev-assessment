@@ -1,14 +1,10 @@
-**Part 1 - REST-API**
-Build the comped component found in `/comps/part 1-2/`.
-
-For content, use listings data returned from [our test API](https://sv-reqres.now.sh).
-
-Some listings will have broken images, please use the provided fallback image as needed to ensure an image is always rendered.
-
-
 # Solution Explanation of code by Timothy McGowen
 
-I decided to use React and Axios to complete this assignment. 
+I decided to use React, Hooks, Functional Components and the Axios Library. 
+
+Step one was very straight forward excluding the fallback image and repeating pattern of six found in the image gallery. I have used fallback images before but 100% of my experience has been when no link was provided, so I was happy to figure out a way to check if the image loaded and then inserting the fallback, very useful thing to learn! 
+
+My next hurdle came with the repeating pattern. It might be strange but up until this point I've never worked with a irregular repeating pattern such as that before, so that was another fun learning experience. I was able to figure a workable work around and I am pretty happy with how it turned out. 
 
 
 

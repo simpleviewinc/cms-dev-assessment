@@ -22,7 +22,7 @@ function DataLoader() {
             })
 
     }, [])
-
+    // Using a switch statement to route between the pages 
     switch (styleType) {
         case 1:
             return (
