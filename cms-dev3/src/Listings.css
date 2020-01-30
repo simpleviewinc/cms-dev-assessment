@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+.listings {
+  display: flex;
+  flex-direction: row; 
+}
+
+.listingsLeft, .listingsRight {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+}
+
+.media1 {
+  width: 98%;
+  height: 290px;
+  margin: 10px;
+}
+
+.media2 {
+  width: 98%;
+  height: 163px;
+  margin: 10px;
+}
+
+h2 {
+  position: relative;
+  text-align: left;
+  margin-left: 20px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}

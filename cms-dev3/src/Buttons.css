@@ -1,0 +1,16 @@
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+button {
+  border: 0;
+  margin: 0px 20px 0px 0px;
+}
+
+.arrow {
+  width: 15px;
+  height: 15px;
+  margin: 10px 5px 0px 5px;
+}
