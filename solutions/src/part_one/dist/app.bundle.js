@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../comps/fallback.jpg":
+/*!*****************************!*\
+  !*** ../comps/fallback.jpg ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"b1908e77b3017cda9e94496e6c2d927a.jpg\");\n\n//# sourceURL=webpack:///../comps/fallback.jpg?");
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -748,7 +760,7 @@ eval("var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/run
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/part_one/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n\nconst homeTemplate = __webpack_require__(/*! ./home.handlebars */ \"./src/part_one/home.handlebars\");\nconst listingTemplate = __webpack_require__(/*! ./listing.handlebars */ \"./src/part_one/listing.handlebars\");\nconst { getData } = __webpack_require__(/*! ./data */ \"./src/part_one/data.js\");\n\ndocument.addEventListener(\"DOMContentLoaded\", async () => {\n    const data = await getData();\n\n    const container = document.createElement('div');\n\n    container.setAttribute('class', 'container');\n\n    data.data.map((item, index) => {\n        const listing = document.createElement('div');\n        listing.setAttribute('class', `listings listing-${index}`);\n        // listing.setAttribute('style', `grid-area: ${index}`)\n        listing.innerHTML = listingTemplate({\n            image: item.mediaurl,\n            title: item.title,\n            description: item.description\n        });\n        container.appendChild(listing);\n    })\n\n\n    document.body.appendChild(container);\n})\n\n\n//# sourceURL=webpack:///./src/part_one/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/part_one/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _comps_fallback_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../comps/fallback.jpg */ \"../comps/fallback.jpg\");\n\n\nconst homeTemplate = __webpack_require__(/*! ./home.handlebars */ \"./src/part_one/home.handlebars\");\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\nconst listingTemplate = __webpack_require__(/*! ./listing.handlebars */ \"./src/part_one/listing.handlebars\");\nconst { getData } = __webpack_require__(/*! ./data */ \"./src/part_one/data.js\");\n\ndocument.addEventListener(\"DOMContentLoaded\", async () => {\n    const data = await getData();\n\n    const container = document.createElement('div');\n\n    container.setAttribute('class', 'container');\n\n    data.data.map(async (item, index) => {\n        let imageUrl = item.mediaurl.match(/[^http://|https://]\\w+\\D+/g).join('');\n        let image = await axios.get(`https://${imageUrl}`)\n            .then(res => {\n                console.log('response')\n                return `https://${imageUrl}`;\n            })\n            .catch(err => {\n                console.log(err, 'error')\n                return _comps_fallback_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\n            })\n        console.log(image)\n        const listing = document.createElement('div');\n        listing.setAttribute('class', `listings listing-${index}`);\n        listing.innerHTML = listingTemplate({\n            image: await image,\n            title: item.title,\n            description: item.description\n        });\n        container.appendChild(listing);\n    })\n\n\n    document.body.appendChild(container);\n})\n\n\n//# sourceURL=webpack:///./src/part_one/index.js?");
 
 /***/ }),
 
