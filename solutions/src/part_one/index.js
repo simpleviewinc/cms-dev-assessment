@@ -1,18 +1,27 @@
+import './styles.css';
 const homeTemplate = require('./home.handlebars');
-
+const listingTemplate = require('./listing.handlebars');
 const { getData } = require('./data');
 
 document.addEventListener("DOMContentLoaded", async () => {
     const data = await getData();
 
-    const div = document.createElement('div');
+    const container = document.createElement('div');
 
-    div.setAttribute('class', 'home');
+    container.setAttribute('class', 'container');
 
-    div.innerHTML = homeTemplate({
-        message: 'Handlebar works',
-        hello: 'welcome to the best'
-    });
+    data.data.map((item, index) => {
+        const listing = document.createElement('div');
+        listing.setAttribute('class', `listings listing-${index}`);
+        // listing.setAttribute('style', `grid-area: ${index}`)
+        listing.innerHTML = listingTemplate({
+            image: item.mediaurl,
+            title: item.title,
+            description: item.description
+        });
+        container.appendChild(listing);
+    })
 
-    document.body.appendChild(div);
+
+    document.body.appendChild(container);
 })

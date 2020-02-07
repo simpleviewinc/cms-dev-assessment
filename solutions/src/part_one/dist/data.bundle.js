@@ -416,7 +416,7 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getData\", function() { return getData; });\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\r\n\r\nconst getData = () => {\r\n    let response = axios.get('https://sv-reqres.now.sh/api/listings')\r\n        .then(res => {\r\n            return response = res.data;\r\n        })\r\n        .catch(err => {\r\n            return response = err;\r\n        })\r\n    return response;\r\n}\n\n//# sourceURL=webpack:///./src/part_one/data.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getData\", function() { return getData; });\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n\nconst getData = () => {\n    let response = axios.get('https://sv-reqres.now.sh/api/listings')\n        .then(res => {\n            return response = res.data;\n        })\n        .catch(err => {\n            return response = err;\n        })\n    return response;\n}\n\n//# sourceURL=webpack:///./src/part_one/data.js?");
 
 /***/ })
 
