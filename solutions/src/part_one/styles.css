@@ -2,13 +2,14 @@
 
 .container {
     margin: 0 auto;
+    padding-top: 20px;
     max-width: 1200px;
     display: grid;
     font-family: 'Lato', sans-serif;
     grid-gap: 20px;
     grid-template: 
-    [row1-start] "first first second third" 50% [row1-end]
-    [row1-start] "fourth fifth sixth sixth" 50% [row2-end]
+    [row1-start] "first first second third" 500px[row1-end]
+    [row1-start] "fourth fifth sixth sixth" 500px[row2-end]
     / auto;
 }
 
@@ -16,8 +17,6 @@
     display: grid;
     width: 100%;
     max-height: 100%;
-    position: relative;
-    overflow: hidden;
     grid-template: 
     [row1-start] "image" 60% [row1-end]
     [row2-start] "description" 40% [row2-end]
@@ -39,11 +38,16 @@
 }
 
 .listings .image {
+    align-items: end;
+    /* max-height: auto; */
     grid-area: image;
 }
 
 .listings .content {
+    position: relative;
+    overflow: hidden;
     grid-area: description;
+    line-height: 1.5;
 }
 
 .listings .image img {
