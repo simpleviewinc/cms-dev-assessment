@@ -5,7 +5,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = [{
     entry: {
         app: './src/part_one/index.js',
-        data: './src/part_one/data.js'
     },
     watch: true,
     mode: 'development',
@@ -26,5 +25,4 @@ module.exports = [{
             title: 'Rest API'
         })
     ]
-}
-];
+}];
