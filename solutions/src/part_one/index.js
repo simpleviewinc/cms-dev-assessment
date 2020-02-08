@@ -1,6 +1,5 @@
-import './styles.css';
 import { Listings } from './components/index';
 
 document.addEventListener("DOMContentLoaded", () => {
-    Listings();
+    Listings('https://sv-reqres.now.sh/api/listings');
 })

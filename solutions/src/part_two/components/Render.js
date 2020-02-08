@@ -4,7 +4,7 @@ import '../styles.css';
 const axios = require('axios');
 const listingTemplate = require('../templates/listing.handlebars');
 
-export default async function Listings(url) {
+export default async function Render(url) {
     const data = await getData(url);
     const container = document.createElement('div');
 
