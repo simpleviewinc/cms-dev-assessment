@@ -80,5 +80,31 @@ module.exports = [{
             }
         })
     ]
+}, {
+    entry: {
+        part_four: path.join(__dirname, "./src/part_four", 'index.js')
+    },
+    output: {
+        path: path.resolve(__dirname, './src/part_four/dist'),
+        filename: '[name].bundle.js',
+    },
+    watch: true,
+    mode: 'development',
+    module: {
+        rules: [
+            { test: /\.handlebars$/, loader: 'handlebars-loader' },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+            { test: /\.(png|jpg|svg)/, use: ['file-loader'] }
+        ]
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'Randomizing',
+            meta: {
+                'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
+            }
+        })
+    ]
 }
 ];

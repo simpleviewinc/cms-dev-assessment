@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     for (let i = 0; i <= 3; i++) {
         let url = '';
         if (i === 3) {
-            url = `https://sv-reqres.now.sh/api/listings?per_page=${2}&page=7`;
+            url = `https://sv-reqres.now.sh/api/listings?per_page=2&page=${Math.floor(Math.random() * 10) + 1}`;
         } else if (i === 2) {
-            url = `https://sv-reqres.now.sh/api/listings?per_page=${3}&page=4`;
+            url = `https://sv-reqres.now.sh/api/listings?per_page=3&page=${Math.floor(Math.random() * 7) + 1}`;
         } else {
-            url = `https://sv-reqres.now.sh/api/listings?per_page=5&page=${i + 1}`;
+            url = `https://sv-reqres.now.sh/api/listings?per_page=5&page=${Math.floor(Math.random() * 4) + 1}`;
         }
         const resData = await getData(url)
         data.push(resData.data);
@@ -51,4 +51,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.body.appendChild(carouselContainer);
 
     new Carousel(carouselContainer);
+
 });

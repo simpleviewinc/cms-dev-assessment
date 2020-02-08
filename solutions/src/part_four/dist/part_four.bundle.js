@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/part_three/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/part_four/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -409,14 +409,14 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/part_three/styles.css":
-/*!*************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/part_three/styles.css ***!
-  \*************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/part_four/styles.css":
+/*!************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/part_four/styles.css ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".carousel {\\n    width: 100vw;\\n    height: 100vh;\\n}\\n\\n.buttons {\\n    display: flex;\\n    position: fixed;\\n    bottom: 0;\\n}\\n\\n.imageContainer {\\n    width: 80%;\\n    height: 80%;\\n}\\n\\n.images img {\\n    width: 100%;\\n    height: 100%;\\n    max-width: 300px;\\n}\\n\\n.images span {\\n    position: absolute;\\n}\\n\\n.carousel .container0 {\\n    display: grid;\\n    grid-template: \\n    [row1-start] 'first third' [row1-end]\\n    [row2-start] 'none fourth' [row2-end]\\n    [row3-start] 'second fifth' [row3-end]\\n    /auto;\\n}\\n\\n.container0 .img0 {\\n    grid-area: first;\\n}\\n\\n.container0 .img1 {\\n    grid-area: second;\\n}\\n\\n.container0 .img2 {\\n    grid-area: third;\\n}\\n\\n.container0 .img3 {\\n    grid-area: fourth;\\n}\\n\\n.container0 .img4 {\\n    grid-area: fifth;\\n}\\n\\n.carousel .container1 {\\n    display: grid;\\n    grid-template: \\n    [row1-start] 'first second third' 50% [row1-end]\\n    [row2-start] 'fourth fifth third' 50% [row2-end]\\n    /auto;\\n}\\n\\n.container1 .img0{\\n    grid-area: first;\\n}\\n\\n.container1 .img1{\\n    grid-area: second;\\n}\\n\\n.container1 .img2{\\n    grid-area: third;\\n}\\n\\n.container1 .img3{\\n    grid-area: fourth;\\n}\\n\\n.container1 .img4{\\n    grid-area: fifth;\\n}\\n\\n.carousel .container2 {\\n    display: grid;\\n    grid-template: \\n    [row1-start] 'first third' 50% [row1-end]\\n    [row2-start] 'second third' 50% [row2-end]\\n    /auto;\\n}\\n\\n.container2 .img0{\\n    grid-area: first;\\n}\\n\\n.container2 .img1{\\n    grid-area: second;\\n}\\n\\n.container2 .img2{\\n    grid-area: third;\\n}\\n\\n.carousel .container3 {\\n    display: grid;\\n    grid-template: \\n    [row1-start] 'first second' 100% [row1-end]\\n    /auto;\\n}\\n\\n.container3 .img0 {\\n    grid-area: first;\\n}\\n\\n.container3 .img0 {\\n    grid-area: second;\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/part_three/styles.css?./node_modules/css-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".carousel {\\n    width: 100vw;\\n    height: 100vh;\\n}\\n\\n.buttons {\\n    display: flex;\\n    position: fixed;\\n    bottom: 0;\\n}\\n\\n.imageContainer {\\n    width: 80%;\\n    height: 80%;\\n}\\n\\n.images img {\\n    width: 100%;\\n    height: 100%;\\n    max-width: 300px;\\n}\\n\\n.images span {\\n    position: absolute;\\n}\\n\\n.carousel .container0 {\\n    display: grid;\\n    grid-template: \\n    [row1-start] 'first third' [row1-end]\\n    [row2-start] 'none fourth' [row2-end]\\n    [row3-start] 'second fifth' [row3-end]\\n    /auto;\\n}\\n\\n.container0 .img0 {\\n    grid-area: first;\\n}\\n\\n.container0 .img1 {\\n    grid-area: second;\\n}\\n\\n.container0 .img2 {\\n    grid-area: third;\\n}\\n\\n.container0 .img3 {\\n    grid-area: fourth;\\n}\\n\\n.container0 .img4 {\\n    grid-area: fifth;\\n}\\n\\n.carousel .container1 {\\n    display: grid;\\n    grid-template: \\n    [row1-start] 'first second third' 50% [row1-end]\\n    [row2-start] 'fourth fifth third' 50% [row2-end]\\n    /auto;\\n}\\n\\n.container1 .img0{\\n    grid-area: first;\\n}\\n\\n.container1 .img1{\\n    grid-area: second;\\n}\\n\\n.container1 .img2{\\n    grid-area: third;\\n}\\n\\n.container1 .img3{\\n    grid-area: fourth;\\n}\\n\\n.container1 .img4{\\n    grid-area: fifth;\\n}\\n\\n.carousel .container2 {\\n    display: grid;\\n    grid-template: \\n    [row1-start] 'first third' 50% [row1-end]\\n    [row2-start] 'second third' 50% [row2-end]\\n    /auto;\\n}\\n\\n.container2 .img0{\\n    grid-area: first;\\n}\\n\\n.container2 .img1{\\n    grid-area: second;\\n}\\n\\n.container2 .img2{\\n    grid-area: third;\\n}\\n\\n.carousel .container3 {\\n    display: grid;\\n    grid-template: \\n    [row1-start] 'first second' 100% [row1-end]\\n    /auto;\\n}\\n\\n.container3 .img0 {\\n    grid-area: first;\\n}\\n\\n.container3 .img0 {\\n    grid-area: second;\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/part_four/styles.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -729,83 +729,83 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./src/part_three/components/Carousel.js":
-/*!***********************************************!*\
-  !*** ./src/part_three/components/Carousel.js ***!
-  \***********************************************/
+/***/ "./src/part_four/components/Carousel.js":
+/*!**********************************************!*\
+  !*** ./src/part_four/components/Carousel.js ***!
+  \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Carousel; });\nclass Carousel {\n    constructor(element) {\n        this.element = element;\n        this.currentIndex = 1;\n        this.leftBtn = this.element.querySelector('.left-button');\n        this.rightBtn = this.element.querySelector('.right-button');\n        this.images = this.element.querySelectorAll('.imageContainer');\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'grid';\n        this.leftBtn.addEventListener('click', () => this.leftSelect());\n        this.rightBtn.addEventListener('click', () => this.rightSelect());\n    }\n\n    rightSelect() {\n        if (this.currentIndex < this.images.length) {\n            this.currentIndex += 1;\n        } else {\n            this.currentIndex = 1;\n        }\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'grid';\n    }\n    leftSelect() {\n        if (this.currentIndex == 1) {\n            this.currentIndex = this.images.length;\n        } else {\n            this.currentIndex -= 1;\n        }\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'grid';\n    }\n}\n\n//# sourceURL=webpack:///./src/part_three/components/Carousel.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Carousel; });\nclass Carousel {\n    constructor(element) {\n        this.element = element;\n        this.currentIndex = 1;\n        this.leftBtn = this.element.querySelector('.left-button');\n        this.rightBtn = this.element.querySelector('.right-button');\n        this.images = this.element.querySelectorAll('.imageContainer');\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'grid';\n        this.leftBtn.addEventListener('click', () => this.leftSelect());\n        this.rightBtn.addEventListener('click', () => this.rightSelect());\n    }\n\n    rightSelect() {\n        if (this.currentIndex < this.images.length) {\n            this.currentIndex += 1;\n        } else {\n            this.currentIndex = 1;\n        }\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'grid';\n    }\n    leftSelect() {\n        if (this.currentIndex == 1) {\n            this.currentIndex = this.images.length;\n        } else {\n            this.currentIndex -= 1;\n        }\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'grid';\n    }\n}\n\n//# sourceURL=webpack:///./src/part_four/components/Carousel.js?");
 
 /***/ }),
 
-/***/ "./src/part_three/components/data.js":
-/*!*******************************************!*\
-  !*** ./src/part_three/components/data.js ***!
-  \*******************************************/
+/***/ "./src/part_four/components/data.js":
+/*!******************************************!*\
+  !*** ./src/part_four/components/data.js ***!
+  \******************************************/
 /*! exports provided: getData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getData\", function() { return getData; });\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n\nconst getData = url => {\n    let response = axios.get(url)\n        .then(res => {\n            return response = res.data;\n        })\n        .catch(err => {\n            return response = err;\n        })\n\n    return response;\n}\n\n//# sourceURL=webpack:///./src/part_three/components/data.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getData\", function() { return getData; });\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n\nconst getData = url => {\n    let response = axios.get(url)\n        .then(res => {\n            return response = res.data;\n        })\n        .catch(err => {\n            return response = err;\n        })\n\n    return response;\n}\n\n//# sourceURL=webpack:///./src/part_four/components/data.js?");
 
 /***/ }),
 
-/***/ "./src/part_three/index.js":
-/*!*********************************!*\
-  !*** ./src/part_three/index.js ***!
-  \*********************************/
+/***/ "./src/part_four/index.js":
+/*!********************************!*\
+  !*** ./src/part_four/index.js ***!
+  \********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Carousel */ \"./src/part_three/components/Carousel.js\");\n/* harmony import */ var _comps_fallback_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../comps/fallback.jpg */ \"../comps/fallback.jpg\");\n/* harmony import */ var _components_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/data */ \"./src/part_three/components/data.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ \"./src/part_three/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\nconst { buttons, imageContainer } = __webpack_require__(/*! ./templates/index */ \"./src/part_three/templates/index.js\");\n\ndocument.addEventListener('DOMContentLoaded', async () => {\n    const data = [];\n    const carouselContainer = document.createElement('div');\n    const btns = document.createElement('div');\n\n    btns.setAttribute('class', 'buttons');\n    btns.innerHTML = buttons({});\n    carouselContainer.setAttribute('class', 'carousel');\n\n    for (let i = 0; i <= 3; i++) {\n        let url = '';\n        if (i === 3) {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=${2}&page=7`;\n        } else if (i === 2) {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=${3}&page=4`;\n        } else {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=5&page=${i + 1}`;\n        }\n        const resData = await Object(_components_data__WEBPACK_IMPORTED_MODULE_2__[\"getData\"])(url)\n        data.push(resData.data);\n    }\n\n    data.map((arr, index) => {\n        const div = document.createElement('div');\n        div.setAttribute('class', `imageContainer container${index}`);\n        arr.map(async (listing, index) => {\n            await axios.get(listing.mediaurl)\n                .catch(err => {\n                    return listing.mediaurl = _comps_fallback_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\n                })\n            const innerDiv = document.createElement('div');\n            innerDiv.setAttribute('class', `images img${index}`)\n            innerDiv.innerHTML = imageContainer({\n                message: listing.address1,\n                image: await listing.mediaurl,\n            })\n            div.appendChild(innerDiv);\n        })\n        carouselContainer.appendChild(div);\n    })\n\n    carouselContainer.appendChild(btns);\n    document.body.appendChild(carouselContainer);\n\n    new _components_Carousel__WEBPACK_IMPORTED_MODULE_0__[\"default\"](carouselContainer);\n});\n\n//# sourceURL=webpack:///./src/part_three/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Carousel */ \"./src/part_four/components/Carousel.js\");\n/* harmony import */ var _comps_fallback_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../comps/fallback.jpg */ \"../comps/fallback.jpg\");\n/* harmony import */ var _components_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/data */ \"./src/part_four/components/data.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ \"./src/part_four/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\nconst { buttons, imageContainer } = __webpack_require__(/*! ./templates/index */ \"./src/part_four/templates/index.js\");\n\ndocument.addEventListener('DOMContentLoaded', async () => {\n    const data = [];\n    const carouselContainer = document.createElement('div');\n    const btns = document.createElement('div');\n\n    btns.setAttribute('class', 'buttons');\n    btns.innerHTML = buttons({});\n    carouselContainer.setAttribute('class', 'carousel');\n\n    for (let i = 0; i <= 3; i++) {\n        let url = '';\n        if (i === 3) {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=2&page=${Math.floor(Math.random() * 10) + 1}`;\n        } else if (i === 2) {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=3&page=${Math.floor(Math.random() * 7) + 1}`;\n        } else {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=5&page=${Math.floor(Math.random() * 4) + 1}`;\n        }\n        const resData = await Object(_components_data__WEBPACK_IMPORTED_MODULE_2__[\"getData\"])(url)\n        data.push(resData.data);\n    }\n\n    data.map((arr, index) => {\n        const div = document.createElement('div');\n        div.setAttribute('class', `imageContainer container${index}`);\n        arr.map(async (listing, index) => {\n            await axios.get(listing.mediaurl)\n                .catch(err => {\n                    return listing.mediaurl = _comps_fallback_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\n                })\n            const innerDiv = document.createElement('div');\n            innerDiv.setAttribute('class', `images img${index}`)\n            innerDiv.innerHTML = imageContainer({\n                message: listing.address1,\n                image: await listing.mediaurl,\n            })\n            div.appendChild(innerDiv);\n        })\n        carouselContainer.appendChild(div);\n    })\n\n    carouselContainer.appendChild(btns);\n    document.body.appendChild(carouselContainer);\n\n    new _components_Carousel__WEBPACK_IMPORTED_MODULE_0__[\"default\"](carouselContainer);\n\n});\n\n//# sourceURL=webpack:///./src/part_four/index.js?");
 
 /***/ }),
 
-/***/ "./src/part_three/styles.css":
-/*!***********************************!*\
-  !*** ./src/part_three/styles.css ***!
-  \***********************************/
+/***/ "./src/part_four/styles.css":
+/*!**********************************!*\
+  !*** ./src/part_four/styles.css ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/part_three/styles.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\nvar exported = content.locals ? content.locals : {};\n\n\n\nmodule.exports = exported;\n\n//# sourceURL=webpack:///./src/part_three/styles.css?");
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/part_four/styles.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\nvar exported = content.locals ? content.locals : {};\n\n\n\nmodule.exports = exported;\n\n//# sourceURL=webpack:///./src/part_four/styles.css?");
 
 /***/ }),
 
-/***/ "./src/part_three/templates/buttons.handlebars":
-/*!*****************************************************!*\
-  !*** ./src/part_three/templates/buttons.handlebars ***!
-  \*****************************************************/
+/***/ "./src/part_four/templates/buttons.handlebars":
+/*!****************************************************!*\
+  !*** ./src/part_four/templates/buttons.handlebars ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    return \"<div class=\\\"left-button\\\"><button>Prev</button></div>\\n<div class=\\\"right-button\\\"><button>Next</button></div>\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_three/templates/buttons.handlebars?");
+eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    return \"<div class=\\\"left-button\\\"><button>Prev</button></div>\\n<div class=\\\"right-button\\\"><button>Next</button></div>\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_four/templates/buttons.handlebars?");
 
 /***/ }),
 
-/***/ "./src/part_three/templates/imageContainer.handlebars":
-/*!************************************************************!*\
-  !*** ./src/part_three/templates/imageContainer.handlebars ***!
-  \************************************************************/
+/***/ "./src/part_four/templates/imageContainer.handlebars":
+/*!***********************************************************!*\
+  !*** ./src/part_four/templates/imageContainer.handlebars ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3=\"function\", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {\n        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {\n          return parent[propertyName];\n        }\n        return undefined\n    };\n\n  return \"<span>\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"message\") || (depth0 != null ? lookupProperty(depth0,\"message\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"message\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":1,\"column\":6},\"end\":{\"line\":1,\"column\":17}}}) : helper)))\n    + \"</span>\\n<img src='\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"image\") || (depth0 != null ? lookupProperty(depth0,\"image\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"image\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":2,\"column\":10},\"end\":{\"line\":2,\"column\":19}}}) : helper)))\n    + \"' />\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_three/templates/imageContainer.handlebars?");
+eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3=\"function\", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {\n        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {\n          return parent[propertyName];\n        }\n        return undefined\n    };\n\n  return \"<span>\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"message\") || (depth0 != null ? lookupProperty(depth0,\"message\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"message\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":1,\"column\":6},\"end\":{\"line\":1,\"column\":17}}}) : helper)))\n    + \"</span>\\n<img src='\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"image\") || (depth0 != null ? lookupProperty(depth0,\"image\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"image\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":2,\"column\":10},\"end\":{\"line\":2,\"column\":19}}}) : helper)))\n    + \"' />\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_four/templates/imageContainer.handlebars?");
 
 /***/ }),
 
-/***/ "./src/part_three/templates/index.js":
-/*!*******************************************!*\
-  !*** ./src/part_three/templates/index.js ***!
-  \*******************************************/
+/***/ "./src/part_four/templates/index.js":
+/*!******************************************!*\
+  !*** ./src/part_four/templates/index.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const buttons = __webpack_require__(/*! ./buttons.handlebars */ \"./src/part_three/templates/buttons.handlebars\");\nconst carousel = __webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module './carousel.handlebars'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\nconst imageContainer = __webpack_require__(/*! ./imageContainer.handlebars */ \"./src/part_three/templates/imageContainer.handlebars\");\n\nmodule.exports = {\n    buttons,\n    carousel,\n    imageContainer\n}\n\n//# sourceURL=webpack:///./src/part_three/templates/index.js?");
+eval("const buttons = __webpack_require__(/*! ./buttons.handlebars */ \"./src/part_four/templates/buttons.handlebars\");\nconst imageContainer = __webpack_require__(/*! ./imageContainer.handlebars */ \"./src/part_four/templates/imageContainer.handlebars\");\n\nmodule.exports = {\n    buttons,\n    imageContainer\n}\n\n//# sourceURL=webpack:///./src/part_four/templates/index.js?");
 
 /***/ })
 
