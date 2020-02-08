@@ -1,6 +1,10 @@
 import Carousel from './components/Carousel';
+import fallbackImage from '../../../comps/fallback.jpg';
 import { getData } from './components/data';
-const { buttons, carousel, imageContainer } = require('./templates/index');
+import './styles.css';
+
+const axios = require('axios');
+const { buttons, imageContainer } = require('./templates/index');
 
 document.addEventListener('DOMContentLoaded', async () => {
     const data = [];
@@ -23,22 +27,33 @@ document.addEventListener('DOMContentLoaded', async () => {
         const resData = await getData(url)
         data.push(resData.data);
     }
-    console.log(data)
 
-    data.map(arr => {
-        arr.map(listing => {
-            const div = document.createElement('div');
-            div.setAttribute('class', `imageContainer img${i}`);
-            div.innerHTML = imageContainer({
+    data.map((arr, index) => {
+        const div = document.createElement('div');
+        div.setAttribute('class', `imageContainer container${index}`);
+        arr.map(async (listing, index) => {
+            await axios.get(listing.mediaurl)
+                .then(res => {
+                    console.log(res.status)
+                })
+                .catch(err => {
+                    return listing.mediaurl = fallbackImage;
+                })
+            const innerDiv = document.createElement('div');
+            innerDiv.setAttribute('class', `images img${index}`)
+            innerDiv.innerHTML = imageContainer({
                 message: listing.address1,
-                image: listing.mediaurl,
+                image: await listing.mediaurl,
             })
-
+            div.appendChild(innerDiv);
         })
+        carouselContainer.appendChild(div);
     })
 
     carouselContainer.appendChild(btns);
     document.body.appendChild(carouselContainer);
+    console.log(carouselContainer)
 
     new Carousel(carouselContainer);
+
 });

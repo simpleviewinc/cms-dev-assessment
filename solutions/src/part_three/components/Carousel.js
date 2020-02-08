@@ -6,11 +6,11 @@ export default class Carousel {
         this.rightBtn = this.element.querySelector('.right-button');
         this.images = this.element.querySelectorAll('.imageContainer');
         this.images.forEach(container => container.style.display = 'none');
-        this.images[this.currentIndex - 1].style.display = 'block';
+        this.images[this.currentIndex - 1].style.display = 'grid';
         this.leftBtn.addEventListener('click', () => this.leftSelect());
         this.rightBtn.addEventListener('click', () => this.rightSelect());
-
     }
+
     rightSelect() {
         if (this.currentIndex < this.images.length) {
             this.currentIndex += 1;
@@ -18,7 +18,7 @@ export default class Carousel {
             this.currentIndex = 1;
         }
         this.images.forEach(container => container.style.display = 'none');
-        this.images[this.currentIndex - 1].style.display = 'block';
+        this.images[this.currentIndex - 1].style.display = 'grid';
     }
     leftSelect() {
         if (this.currentIndex == 1) {
@@ -27,6 +27,6 @@ export default class Carousel {
             this.currentIndex -= 1;
         }
         this.images.forEach(container => container.style.display = 'none');
-        this.images[this.currentIndex - 1].style.display = 'block';
+        this.images[this.currentIndex - 1].style.display = 'grid';
     }
 }
