@@ -4,11 +4,12 @@ import '../styles.css';
 const axios = require('axios');
 const listingTemplate = require('../templates/listing.handlebars');
 
-export default async function Render(url) {
+export default async function Render(url, dataset) {
     const data = await getData(url);
     const container = document.createElement('div');
 
     container.setAttribute('class', 'container');
+    container.setAttribute('data-tab', dataset);
 
     data.data.map(async (item, index) => {
         let imageUrl = item.mediaurl.match(/[^http://|https://]\w+\D+/g).join('');
@@ -20,7 +21,7 @@ export default async function Render(url) {
                 return fallbackImage;
             })
         const listing = document.createElement('div');
-        listing.setAttribute('class', `listings listing-${index}`);
+        listing.setAttribute('class', `cards card-${index}`);
         listing.innerHTML = listingTemplate({
             image: await image,
             title: item.title,
@@ -29,7 +30,7 @@ export default async function Render(url) {
         container.appendChild(listing);
 
         listing.addEventListener('mouseenter', e => {
-            if (e.target.className.includes('listings')) {
+            if (e.target.className.includes('cards')) {
                 const btn = e.target.lastElementChild.lastElementChild.firstElementChild;
                 btn.classList.remove('removeAnimation');
                 btn.classList.add('addAnimation');
@@ -37,7 +38,7 @@ export default async function Render(url) {
         })
 
         listing.addEventListener('mouseleave', e => {
-            if (e.target.className.includes('listings')) {
+            if (e.target.className.includes('cards')) {
                 const btn = e.target.lastElementChild.lastElementChild.firstElementChild;
                 btn.classList.remove('addAnimation');
                 btn.classList.add('removeAnimation');

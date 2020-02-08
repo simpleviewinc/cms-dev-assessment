@@ -17,7 +17,7 @@
     / auto;
 }
 
-.listings{
+.cards{
     display: grid;
     padding: 5px;
     width: 100%;
@@ -47,7 +47,7 @@
     animation: btnRemove 1s ease-in-out;
 }
 
-.listings .readmore {
+.cards .readmore {
     height: 3rem;
     position: absolute;
     margin: 0;
@@ -58,7 +58,7 @@
     background-image: linear-gradient(to bottom, transparent, white);
 }
 
-.listings .readmore button{
+.cards .readmore button{
     position: relative;
     bottom: -3rem;
     width: 100px;
@@ -71,45 +71,45 @@
     cursor: pointer;
 }
 
-.listings .image {
+.cards .image {
     align-items: end;
     /* max-height: auto; */
     grid-area: image;
 }
 
-.listings .content {
+.cards .content {
     position: relative;
     overflow: hidden;
     grid-area: description;
     line-height: 1.5;
 }
 
-.listings .image img {
+.cards .image img {
     width: 100%;
     height: 100%;
 }
 
-.listing-0 { 
+.card-0 { 
     grid-area: first;
 }
 
-.listing-1 { 
+.card-1 { 
     grid-area: second;
 }
 
-.listing-2 { 
+.card-2 { 
     grid-area: third;
 }
 
-.listing-3 { 
+.card-3 { 
     grid-area: fourth;
 }
 
-.listing-4 { 
+.card-4 { 
     grid-area: fifth;
 }
 
-.listing-5 { 
+.card-5 { 
     display: grid;
     grid-area: sixth;
     grid-gap: 10px;
@@ -128,7 +128,7 @@
         /1fr 1fr 1fr;
     }
 
-    .listing-5 {
+    .card-5 {
         grid-gap: 0;
         grid-template: 
         [row1-start] "image" 60%[row1-end]
@@ -140,10 +140,11 @@
 @media screen and (max-width: 640px) {
     .container {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
 
-    .listings {
+    .cards {
+        grid-area: none;
         padding: 20px;
         grid-template: 
         [row1-start] "image" 250px[row1-end]
