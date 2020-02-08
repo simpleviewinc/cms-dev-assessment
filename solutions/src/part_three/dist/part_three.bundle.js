@@ -81,22 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/part_two/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/part_three/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "../comps/fallback.jpg":
-/*!*****************************!*\
-  !*** ../comps/fallback.jpg ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"b1908e77b3017cda9e94496e6c2d927a.jpg\");\n\n//# sourceURL=webpack:///../comps/fallback.jpg?");
-
-/***/ }),
 
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
@@ -409,40 +397,6 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/part_two/filterBtns.css":
-/*!***************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/part_two/filterBtns.css ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".filterBtns {\\n    font-family: 'Lato', sans-serif;\\n    max-width: 1200px;\\n    margin: 4rem auto 0;\\n}\\n\\n.filterBtns .tabs {\\n    display: flex;\\n}\\n\\n.tab {\\n    padding: 2px;\\n    margin-right: 15px;\\n    border: 2px solid transparent;\\n    cursor: pointer;\\n}\\n\\n.tab p {\\n    font-family: 'Lato', sans-serif;\\n    background-color: lightgray;\\n    font-weight: 400;\\n    border-radius: 5%;\\n    margin: 0;\\n    padding: 8px 20px;\\n}\\n\\n.active-tab {\\n    background-color: transparent;\\n    color: white;\\n    border: 2px solid #663399;\\n    border-radius: 5px;\\n}\\n\\n.active-tab p {\\n    background-color: #663399;\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/part_two/filterBtns.css?./node_modules/css-loader/dist/cjs.js");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/part_two/styles.css":
-/*!***********************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/part_two/styles.css ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nexports.push([module.i, \"@import url(https://fonts.googleapis.com/css?family=Lato&display=swap);\"]);\n// Module\nexports.push([module.i, \"* {\\n    box-sizing: border-box;\\n}\\n\\n.container {\\n    margin: 0 auto;\\n    padding-top: 20px;\\n    max-width: 1200px;\\n    display: grid;\\n    font-family: 'Lato', sans-serif;\\n    grid-gap: 20px;\\n    grid-template: \\n    [row1-start] \\\"first first second third\\\" 500px[row1-end]\\n    [row1-start] \\\"fourth fifth sixth sixth\\\" 500px[row2-end]\\n    / auto;\\n}\\n\\n.cards{\\n    display: grid;\\n    padding: 5px;\\n    width: 100%;\\n    max-height: 100%;\\n    grid-template: \\n    [row1-start] \\\"image\\\" 60% [row1-end]\\n    [row2-start] \\\"description\\\" 40% [row2-end]\\n    / auto;\\n}\\n\\n@keyframes btnAdd {\\n    0% {bottom: -3rem;}\\n    100% {bottom: 1rem;}\\n}\\n\\n@keyframes btnRemove {\\n    0% {bottom: 1rem;}\\n    100% {bottom: -3rem;}\\n}\\n\\n.addAnimation {\\n    animation: btnAdd 1s ease-in-out;\\n    bottom: 1rem !important;\\n}\\n\\n.removeAnimation {\\n    animation: btnRemove 1s ease-in-out;\\n}\\n\\n.cards .readmore {\\n    height: 3rem;\\n    position: absolute;\\n    margin: 0;\\n    bottom: 0;\\n    left: 0;\\n    width: 100%;\\n    text-align: center;\\n    background-image: linear-gradient(to bottom, transparent, white);\\n}\\n\\n.cards .readmore button{\\n    position: relative;\\n    bottom: -3rem;\\n    width: 100px;\\n    font-size: 0.8rem;\\n    height: 40px;\\n    background-color: red;\\n    color: white;\\n    border-radius: 5px;\\n    outline: none;\\n    cursor: pointer;\\n}\\n\\n.cards .image {\\n    align-items: end;\\n    /* max-height: auto; */\\n    grid-area: image;\\n}\\n\\n.cards .content {\\n    position: relative;\\n    overflow: hidden;\\n    grid-area: description;\\n    line-height: 1.5;\\n}\\n\\n.cards .image img {\\n    width: 100%;\\n    height: 100%;\\n}\\n\\n.card-0 { \\n    grid-area: first;\\n}\\n\\n.card-1 { \\n    grid-area: second;\\n}\\n\\n.card-2 { \\n    grid-area: third;\\n}\\n\\n.card-3 { \\n    grid-area: fourth;\\n}\\n\\n.card-4 { \\n    grid-area: fifth;\\n}\\n\\n.card-5 { \\n    display: grid;\\n    grid-area: sixth;\\n    grid-gap: 10px;\\n    grid-template: \\n    [row1-start] \\\"image description\\\" [row1-end]\\n    [row2-start] \\\"image description\\\" [row2-end]\\n    / 50% 50%;\\n}\\n\\n/* media queries */\\n@media screen and (max-width: 1024px) {\\n    .container {\\n        grid-template: \\n        [row1-start] \\\"first second third\\\" 500px[row1-end]\\n        [row2-start] \\\"fourth fifth sixth\\\" 500px[row2-end]\\n        /1fr 1fr 1fr;\\n    }\\n\\n    .card-5 {\\n        grid-gap: 0;\\n        grid-template: \\n        [row1-start] \\\"image\\\" 60%[row1-end]\\n        [row2-start] \\\"description\\\" 40%[row2-end]\\n        /auto;\\n    } \\n}\\n\\n@media screen and (max-width: 640px) {\\n    .container {\\n        display: flex;\\n        flex-direction: column;\\n    }\\n\\n    .cards {\\n        grid-area: none;\\n        padding: 20px;\\n        grid-template: \\n        [row1-start] \\\"image\\\" 250px[row1-end]\\n        [row2-start] \\\"description\\\" 250px[row2-end]\\n        /auto;\\n    }\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/part_two/styles.css?./node_modules/css-loader/dist/cjs.js");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot || '').concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/api.js?");
-
-/***/ }),
-
 /***/ "./node_modules/handlebars/dist/cjs/handlebars.runtime.js":
 /*!****************************************************************!*\
   !*** ./node_modules/handlebars/dist/cjs/handlebars.runtime.js ***!
@@ -717,18 +671,6 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function memorize() {\n    if (typeof memo === 'undefined') {\n      // Test for IE <= 9 as proposed by Browserhacks\n      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805\n      // Tests for existence of standard globals is to allow style-loader\n      // to operate correctly into non-standard environments\n      // @see https://github.com/webpack-contrib/style-loader/issues/177\n      memo = Boolean(window && document && document.all && !window.atob);\n    }\n\n    return memo;\n  };\n}();\n\nvar getTarget = function getTarget() {\n  var memo = {};\n  return function memorize(target) {\n    if (typeof memo[target] === 'undefined') {\n      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself\n\n      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n        try {\n          // This will throw an exception if access to iframe is blocked\n          // due to cross-origin restrictions\n          styleTarget = styleTarget.contentDocument.head;\n        } catch (e) {\n          // istanbul ignore next\n          styleTarget = null;\n        }\n      }\n\n      memo[target] = styleTarget;\n    }\n\n    return memo[target];\n  };\n}();\n\nvar stylesInDom = [];\n\nfunction getIndexByIdentifier(identifier) {\n  var result = -1;\n\n  for (var i = 0; i < stylesInDom.length; i++) {\n    if (stylesInDom[i].identifier === identifier) {\n      result = i;\n      break;\n    }\n  }\n\n  return result;\n}\n\nfunction modulesToDom(list, options) {\n  var idCountMap = {};\n  var identifiers = [];\n\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var count = idCountMap[id] || 0;\n    var identifier = \"\".concat(id, \" \").concat(count);\n    idCountMap[id] = count + 1;\n    var index = getIndexByIdentifier(identifier);\n    var obj = {\n      css: item[1],\n      media: item[2],\n      sourceMap: item[3]\n    };\n\n    if (index !== -1) {\n      stylesInDom[index].references++;\n      stylesInDom[index].updater(obj);\n    } else {\n      stylesInDom.push({\n        identifier: identifier,\n        updater: addStyle(obj, options),\n        references: 1\n      });\n    }\n\n    identifiers.push(identifier);\n  }\n\n  return identifiers;\n}\n\nfunction insertStyleElement(options) {\n  var style = document.createElement('style');\n  var attributes = options.attributes || {};\n\n  if (typeof attributes.nonce === 'undefined') {\n    var nonce =  true ? __webpack_require__.nc : undefined;\n\n    if (nonce) {\n      attributes.nonce = nonce;\n    }\n  }\n\n  Object.keys(attributes).forEach(function (key) {\n    style.setAttribute(key, attributes[key]);\n  });\n\n  if (typeof options.insert === 'function') {\n    options.insert(style);\n  } else {\n    var target = getTarget(options.insert || 'head');\n\n    if (!target) {\n      throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n    }\n\n    target.appendChild(style);\n  }\n\n  return style;\n}\n\nfunction removeStyleElement(style) {\n  // istanbul ignore if\n  if (style.parentNode === null) {\n    return false;\n  }\n\n  style.parentNode.removeChild(style);\n}\n/* istanbul ignore next  */\n\n\nvar replaceText = function replaceText() {\n  var textStore = [];\n  return function replace(index, replacement) {\n    textStore[index] = replacement;\n    return textStore.filter(Boolean).join('\\n');\n  };\n}();\n\nfunction applyToSingletonTag(style, index, remove, obj) {\n  var css = remove ? '' : obj.media ? \"@media \".concat(obj.media, \" {\").concat(obj.css, \"}\") : obj.css; // For old IE\n\n  /* istanbul ignore if  */\n\n  if (style.styleSheet) {\n    style.styleSheet.cssText = replaceText(index, css);\n  } else {\n    var cssNode = document.createTextNode(css);\n    var childNodes = style.childNodes;\n\n    if (childNodes[index]) {\n      style.removeChild(childNodes[index]);\n    }\n\n    if (childNodes.length) {\n      style.insertBefore(cssNode, childNodes[index]);\n    } else {\n      style.appendChild(cssNode);\n    }\n  }\n}\n\nfunction applyToTag(style, options, obj) {\n  var css = obj.css;\n  var media = obj.media;\n  var sourceMap = obj.sourceMap;\n\n  if (media) {\n    style.setAttribute('media', media);\n  } else {\n    style.removeAttribute('media');\n  }\n\n  if (sourceMap && btoa) {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  } // For old IE\n\n  /* istanbul ignore if  */\n\n\n  if (style.styleSheet) {\n    style.styleSheet.cssText = css;\n  } else {\n    while (style.firstChild) {\n      style.removeChild(style.firstChild);\n    }\n\n    style.appendChild(document.createTextNode(css));\n  }\n}\n\nvar singleton = null;\nvar singletonCounter = 0;\n\nfunction addStyle(obj, options) {\n  var style;\n  var update;\n  var remove;\n\n  if (options.singleton) {\n    var styleIndex = singletonCounter++;\n    style = singleton || (singleton = insertStyleElement(options));\n    update = applyToSingletonTag.bind(null, style, styleIndex, false);\n    remove = applyToSingletonTag.bind(null, style, styleIndex, true);\n  } else {\n    style = insertStyleElement(options);\n    update = applyToTag.bind(null, style, options);\n\n    remove = function remove() {\n      removeStyleElement(style);\n    };\n  }\n\n  update(obj);\n  return function updateStyle(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {\n        return;\n      }\n\n      update(obj = newObj);\n    } else {\n      remove();\n    }\n  };\n}\n\nmodule.exports = function (list, options) {\n  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>\n  // tags it will allow on a page\n\n  if (!options.singleton && typeof options.singleton !== 'boolean') {\n    options.singleton = isOldIE();\n  }\n\n  list = list || [];\n  var lastIdentifiers = modulesToDom(list, options);\n  return function update(newList) {\n    newList = newList || [];\n\n    if (Object.prototype.toString.call(newList) !== '[object Array]') {\n      return;\n    }\n\n    for (var i = 0; i < lastIdentifiers.length; i++) {\n      var identifier = lastIdentifiers[i];\n      var index = getIndexByIdentifier(identifier);\n      stylesInDom[index].references--;\n    }\n\n    var newLastIdentifiers = modulesToDom(newList, options);\n\n    for (var _i = 0; _i < lastIdentifiers.length; _i++) {\n      var _identifier = lastIdentifiers[_i];\n\n      var _index = getIndexByIdentifier(_identifier);\n\n      if (stylesInDom[_index].references === 0) {\n        stylesInDom[_index].updater();\n\n        stylesInDom.splice(_index, 1);\n      }\n    }\n\n    lastIdentifiers = newLastIdentifiers;\n  };\n};\n\n//# sourceURL=webpack:///./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
-
-/***/ }),
-
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -737,6 +679,18 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, exports) {
 
 eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn this;\n})();\n\ntry {\n\t// This works if eval is allowed (see CSP)\n\tg = g || new Function(\"return this\")();\n} catch (e) {\n\t// This works if the window reference is available\n\tif (typeof window === \"object\") g = window;\n}\n\n// g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\nmodule.exports = g;\n\n\n//# sourceURL=webpack:///(webpack)/buildin/global.js?");
+
+/***/ }),
+
+/***/ "./src/part_three/components/Carousel.js":
+/*!***********************************************!*\
+  !*** ./src/part_three/components/Carousel.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Carousel; });\nclass Carousel {\n    constructor(element) {\n        this.element = element;\n        this.currentIndex = 1;\n        this.leftBtn = this.element.querySelector('.left-button');\n        this.rightBtn = this.element.querySelector('.right-button');\n        this.images = this.element.querySelectorAll('.imageContainer');\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'block';\n        this.leftBtn.addEventListener('click', () => this.leftSelect());\n        this.rightBtn.addEventListener('click', () => this.rightSelect());\n\n    }\n    rightSelect() {\n        if (this.currentIndex < this.images.length) {\n            this.currentIndex += 1;\n        } else {\n            this.currentIndex = 1;\n        }\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'block';\n    }\n    leftSelect() {\n        if (this.currentIndex == 1) {\n            this.currentIndex = this.images.length;\n        } else {\n            this.currentIndex -= 1;\n        }\n        this.images.forEach(container => container.style.display = 'none');\n        this.images[this.currentIndex - 1].style.display = 'block';\n    }\n}\n\n//# sourceURL=webpack:///./src/part_three/components/Carousel.js?");
 
 /***/ }),
 
@@ -752,95 +706,59 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/part_two/components/Render.js":
-/*!*******************************************!*\
-  !*** ./src/part_two/components/Render.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Render; });\n/* harmony import */ var _comps_fallback_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../comps/fallback.jpg */ \"../comps/fallback.jpg\");\n/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index */ \"./src/part_two/components/index.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles.css */ \"./src/part_two/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\nconst listingTemplate = __webpack_require__(/*! ../templates/listing.handlebars */ \"./src/part_two/templates/listing.handlebars\");\n\nasync function Render(url, dataset) {\n    const data = await Object(_index__WEBPACK_IMPORTED_MODULE_1__[\"getData\"])(url);\n    const container = document.createElement('div');\n\n    container.setAttribute('class', 'container');\n    container.setAttribute('data-tab', dataset);\n\n    data.data.map(async (item, index) => {\n        let imageUrl = item.mediaurl.match(/[^http://|https://]\\w+\\D+/g).join('');\n        let image = await axios.get(`https://${imageUrl}`)\n            .then(res => {\n                return `https://${imageUrl}`;\n            })\n            .catch(err => {\n                return _comps_fallback_jpg__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\n            })\n        const listing = document.createElement('div');\n        listing.setAttribute('class', `cards card-${index}`);\n        listing.innerHTML = listingTemplate({\n            image: await image,\n            title: item.title,\n            description: item.description\n        });\n        container.appendChild(listing);\n\n        listing.addEventListener('mouseenter', e => {\n            if (e.target.className.includes('cards')) {\n                const btn = e.target.lastElementChild.lastElementChild.firstElementChild;\n                btn.classList.remove('removeAnimation');\n                btn.classList.add('addAnimation');\n            }\n        })\n\n        listing.addEventListener('mouseleave', e => {\n            if (e.target.className.includes('cards')) {\n                const btn = e.target.lastElementChild.lastElementChild.firstElementChild;\n                btn.classList.remove('addAnimation');\n                btn.classList.add('removeAnimation');\n            }\n        })\n    })\n\n    document.body.appendChild(container);\n}\n\n//# sourceURL=webpack:///./src/part_two/components/Render.js?");
-
-/***/ }),
-
-/***/ "./src/part_two/components/index.js":
-/*!******************************************!*\
-  !*** ./src/part_two/components/index.js ***!
-  \******************************************/
-/*! exports provided: Render, getData */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Render */ \"./src/part_two/components/Render.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Render\", function() { return _Render__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* harmony import */ var _part_three_components_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../part_three/components/data */ \"./src/part_three/components/data.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getData\", function() { return _part_three_components_data__WEBPACK_IMPORTED_MODULE_1__[\"getData\"]; });\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/part_two/components/index.js?");
-
-/***/ }),
-
-/***/ "./src/part_two/components/tabsFilter.js":
-/*!***********************************************!*\
-  !*** ./src/part_two/components/tabsFilter.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return tabsFilter; });\nfunction tabsFilter() {\n    const resize = window.matchMedia('(max-width: 640px)').matches ? 'flex' : 'grid';\n    const tabs = Array.from(document.querySelectorAll('.tab'));\n    let filter = '';\n    let containers = Array.from(document.querySelectorAll('.container'));\n    for (let i = 0; i < tabs.length; i++) {\n        if (tabs[i].classList.value.includes('active-tab')) {\n            filter = tabs[i].children[0].dataset.tab;\n        }\n    }\n    if (filter === 'all') {\n        containers.map(container => {\n            container.style.display = resize;\n        })\n    } else {\n        containers.map(container => {\n            container.style.display = 'none';\n        })\n        containers = Array.from(document.querySelectorAll(`.container[data-tab=${filter}]`))\n        containers.map(container => {\n            container.style.display = resize;\n        })\n    }\n}\n\n//# sourceURL=webpack:///./src/part_two/components/tabsFilter.js?");
-
-/***/ }),
-
-/***/ "./src/part_two/filterBtns.css":
-/*!*************************************!*\
-  !*** ./src/part_two/filterBtns.css ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./filterBtns.css */ \"./node_modules/css-loader/dist/cjs.js!./src/part_two/filterBtns.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\nvar exported = content.locals ? content.locals : {};\n\n\n\nmodule.exports = exported;\n\n//# sourceURL=webpack:///./src/part_two/filterBtns.css?");
-
-/***/ }),
-
-/***/ "./src/part_two/index.js":
-/*!*******************************!*\
-  !*** ./src/part_two/index.js ***!
-  \*******************************/
+/***/ "./src/part_three/index.js":
+/*!*********************************!*\
+  !*** ./src/part_three/index.js ***!
+  \*********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_tabsFilter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/tabsFilter */ \"./src/part_two/components/tabsFilter.js\");\n/* harmony import */ var _components_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/index */ \"./src/part_two/components/index.js\");\n/* harmony import */ var _filterBtns_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filterBtns.css */ \"./src/part_two/filterBtns.css\");\n/* harmony import */ var _filterBtns_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_filterBtns_css__WEBPACK_IMPORTED_MODULE_2__);\nconst filterTemplates = __webpack_require__(/*! ./templates/filters.handlebars */ \"./src/part_two/templates/filters.handlebars\");\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    const nav = document.createElement('div');\n    nav.setAttribute('class', 'filterBtns');\n    nav.innerHTML = filterTemplates();\n    document.body.prepend(nav);\n\n    window.addEventListener('resize', () => {\n        Object(_components_tabsFilter__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    })\n\n    nav.firstChild.addEventListener('click', e => {\n        if (e.target.classList.value !== 'tabs') {\n            let target;\n\n            if (e.target.classList.value === '') {\n                target = e.target.parentElement;\n            } else {\n                target = e.target;\n            }\n\n            if (target.classList.value === 'tab') {\n                const tabs = Array.from(document.querySelectorAll('.tab'));\n\n                tabs.forEach(tab => {\n                    tab.classList.remove('active-tab');\n                })\n\n                target.classList.add('active-tab');\n                Object(_components_tabsFilter__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n            }\n        }\n    })\n\n    Object(_components_index__WEBPACK_IMPORTED_MODULE_1__[\"Render\"])('https://sv-reqres.now.sh/api/listings', 'listings');\n    Object(_components_index__WEBPACK_IMPORTED_MODULE_1__[\"Render\"])('https://sv-reqres.now.sh/api/events', 'events');\n    Object(_components_index__WEBPACK_IMPORTED_MODULE_1__[\"Render\"])('https://sv-reqres.now.sh/api/offers', 'offers');\n})\n\n//# sourceURL=webpack:///./src/part_two/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Carousel */ \"./src/part_three/components/Carousel.js\");\n/* harmony import */ var _components_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/data */ \"./src/part_three/components/data.js\");\n\n\nconst { buttons, carousel, imageContainer } = __webpack_require__(/*! ./templates/index */ \"./src/part_three/templates/index.js\");\n\ndocument.addEventListener('DOMContentLoaded', async () => {\n    const data = [];\n    const carouselContainer = document.createElement('div');\n    const btns = document.createElement('div');\n\n    btns.setAttribute('class', 'buttons');\n    btns.innerHTML = buttons({});\n    carouselContainer.setAttribute('class', 'carousel');\n\n    for (let i = 0; i <= 3; i++) {\n        let url = '';\n        if (i === 3) {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=${2}&page=7`;\n        } else if (i === 2) {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=${3}&page=4`;\n        } else {\n            url = `https://sv-reqres.now.sh/api/listings?per_page=5&page=${i + 1}`;\n        }\n        const resData = await Object(_components_data__WEBPACK_IMPORTED_MODULE_1__[\"getData\"])(url)\n        data.push(resData.data);\n    }\n    console.log(data)\n\n    data.map(arr => {\n        arr.map(listing => {\n            const div = document.createElement('div');\n            div.setAttribute('class', `imageContainer img${i}`);\n            div.innerHTML = imageContainer({\n                message: listing.address1,\n                image: listing.mediaurl,\n            })\n\n        })\n    })\n\n    carouselContainer.appendChild(btns);\n    document.body.appendChild(carouselContainer);\n\n    new _components_Carousel__WEBPACK_IMPORTED_MODULE_0__[\"default\"](carouselContainer);\n});\n\n//# sourceURL=webpack:///./src/part_three/index.js?");
 
 /***/ }),
 
-/***/ "./src/part_two/styles.css":
-/*!*********************************!*\
-  !*** ./src/part_two/styles.css ***!
-  \*********************************/
+/***/ "./src/part_three/templates/buttons.handlebars":
+/*!*****************************************************!*\
+  !*** ./src/part_three/templates/buttons.handlebars ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/part_two/styles.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\nvar exported = content.locals ? content.locals : {};\n\n\n\nmodule.exports = exported;\n\n//# sourceURL=webpack:///./src/part_two/styles.css?");
+eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    return \"<div class=\\\"left-button\\\"></div>\\n<div class=\\\"right-button\\\"></div>\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_three/templates/buttons.handlebars?");
 
 /***/ }),
 
-/***/ "./src/part_two/templates/filters.handlebars":
-/*!***************************************************!*\
-  !*** ./src/part_two/templates/filters.handlebars ***!
-  \***************************************************/
+/***/ "./src/part_three/templates/carousel.handlebars":
+/*!******************************************************!*\
+  !*** ./src/part_three/templates/carousel.handlebars ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    return \"<div class=\\\"tabs\\\">\\n    <div class=\\\"tab active-tab\\\">\\n        <p data-tab=\\\"all\\\">All</p>\\n    </div>\\n    <div class=\\\"tab\\\">\\n        <p data-tab=\\\"listings\\\">Listings</p>\\n    </div>\\n    <div class=\\\"tab\\\">\\n        <p data-tab=\\\"events\\\">Events</p>\\n    </div>\\n    <div class=\\\"tab\\\">\\n        <p data-tab=\\\"offers\\\">Offers</p>\\n    </div>\\n</div>\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_two/templates/filters.handlebars?");
+eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    return \"<div class=\\\"imageContainer\\\">\\n</div>\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_three/templates/carousel.handlebars?");
 
 /***/ }),
 
-/***/ "./src/part_two/templates/listing.handlebars":
-/*!***************************************************!*\
-  !*** ./src/part_two/templates/listing.handlebars ***!
-  \***************************************************/
+/***/ "./src/part_three/templates/imageContainer.handlebars":
+/*!************************************************************!*\
+  !*** ./src/part_three/templates/imageContainer.handlebars ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3=\"function\", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {\n        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {\n          return parent[propertyName];\n        }\n        return undefined\n    };\n\n  return \"<div class=\\\"image\\\">\\n    <img src=\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"image\") || (depth0 != null ? lookupProperty(depth0,\"image\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"image\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":2,\"column\":13},\"end\":{\"line\":2,\"column\":22}}}) : helper)))\n    + \" />\\n</div>\\n<div class=\\\"content\\\">\\n    <h2>\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"title\") || (depth0 != null ? lookupProperty(depth0,\"title\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"title\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":5,\"column\":8},\"end\":{\"line\":5,\"column\":17}}}) : helper)))\n    + \"</h2>\\n    <p>\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"description\") || (depth0 != null ? lookupProperty(depth0,\"description\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"description\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":6,\"column\":7},\"end\":{\"line\":6,\"column\":22}}}) : helper)))\n    + \"</p>\\n    <p class=\\\"readmore\\\">\\n        <button>Read More</button>\\n    </p>\\n</div>\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_two/templates/listing.handlebars?");
+eval("var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ \"./node_modules/handlebars/runtime.js\");\nfunction __default(obj) { return obj && (obj.__esModule ? obj[\"default\"] : obj); }\nmodule.exports = (Handlebars[\"default\"] || Handlebars).template({\"compiler\":[8,\">= 4.3.0\"],\"main\":function(container,depth0,helpers,partials,data) {\n    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3=\"function\", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {\n        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {\n          return parent[propertyName];\n        }\n        return undefined\n    };\n\n  return \"<span>\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"message\") || (depth0 != null ? lookupProperty(depth0,\"message\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"message\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":1,\"column\":6},\"end\":{\"line\":1,\"column\":17}}}) : helper)))\n    + \"</span>\\n<img src='\"\n    + alias4(((helper = (helper = lookupProperty(helpers,\"image\") || (depth0 != null ? lookupProperty(depth0,\"image\") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{\"name\":\"image\",\"hash\":{},\"data\":data,\"loc\":{\"start\":{\"line\":2,\"column\":10},\"end\":{\"line\":2,\"column\":19}}}) : helper)))\n    + \"' />\";\n},\"useData\":true});\n\n//# sourceURL=webpack:///./src/part_three/templates/imageContainer.handlebars?");
+
+/***/ }),
+
+/***/ "./src/part_three/templates/index.js":
+/*!*******************************************!*\
+  !*** ./src/part_three/templates/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const buttons = __webpack_require__(/*! ./buttons.handlebars */ \"./src/part_three/templates/buttons.handlebars\");\nconst carousel = __webpack_require__(/*! ./carousel.handlebars */ \"./src/part_three/templates/carousel.handlebars\");\nconst imageContainer = __webpack_require__(/*! ./imageContainer.handlebars */ \"./src/part_three/templates/imageContainer.handlebars\");\n\nmodule.exports = {\n    buttons,\n    carousel,\n    imageContainer\n}\n\n//# sourceURL=webpack:///./src/part_three/templates/index.js?");
 
 /***/ })
 

@@ -1,5 +1,5 @@
 import Render from './Render';
-import { getData } from './data';
+import { getData } from '../../part_three/components/data';
 
 export {
     Render,
