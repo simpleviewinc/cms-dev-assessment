@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../assets/css/Listings.css';
+import fallback from '../comps/fallback.jpg'
 
 export class Listings extends Component {
     // eslint-disable-next-line no-useless-constructor
@@ -7,7 +8,7 @@ export class Listings extends Component {
         super(props)
     }
     ifNA(a){
-        a.target.src = 'https://github.com/simpleviewinc/cms-dev-assessment/blob/master/comps/fallback.jpg'
+        a.target.src = fallback
     }
 
     // repeat(){
