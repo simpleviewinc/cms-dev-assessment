@@ -69,63 +69,63 @@ export class Listings extends Component {
                     <h5>{listingTitle[5]}</h5>
                     <p>{listingDescription[5]}</p>
                 </div>
-                <div className='listing6'>
-                    <img className='image6' src={listingImage[6]} alt='listing' onError={this.ifNA}/>
+                <div className='listing0'>
+                    <img className='image0' src={listingImage[6]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[6]}</h5>
                     <p>{listingDescription[6]}</p>
                 </div>
-                <div className='listing7'>
-                    <img className='image7' src={listingImage[7]} alt='listing' onError={this.ifNA}/>
+                <div className='listing1'>
+                    <img className='image1' src={listingImage[7]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[7]}</h5>
                     <p>{listingDescription[7]}</p>
                 </div>
-                <div className='listing8'>
-                    <img className='image8' src={listingImage[8]} alt='listing' onError={this.ifNA}/>
+                <div className='listing2'>
+                    <img className='image2' src={listingImage[8]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[8]}</h5>
                     <p>{listingDescription[8]}</p>
                 </div>
-                <div className='listing9'>
-                    <img className='image9' src={listingImage[9]} alt='listing' onError={this.ifNA}/>
+                <div className='listing3'>
+                    <img className='image3' src={listingImage[9]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[9]}</h5>
                     <p>{listingDescription[9]}</p>
                 </div>
-                <div className='listing10'>
-                    <img className='image10' src={listingImage[10]} alt='listing' onError={this.ifNA}/>
+                <div className='listing4'>
+                    <img className='image4' src={listingImage[10]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[10]}</h5>
                     <p>{listingDescription[10]}</p>
                 </div>
-                <div className='listing11'>
-                    <img className='image11' src={listingImage[11]} alt='listing' onError={this.ifNA}/>
+                <div className='listing5'>
+                    <img className='image5' src={listingImage[11]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[11]}</h5>
                     <p>{listingDescription[11]}</p>
                 </div>
-                <div className='listing12'>
-                    <img className='image12' src={listingImage[12]} alt='listing' onError={this.ifNA}/>
+                <div className='listing0'>
+                    <img className='image0' src={listingImage[12]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[12]}</h5>
                     <p>{listingDescription[12]}</p>
                 </div>
-                <div className='listing13'>
-                    <img className='image13' src={listingImage[13]} alt='listing' onError={this.ifNA}/>
+                <div className='listing1'>
+                    <img className='image1' src={listingImage[13]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[13]}</h5>
                     <p>{listingDescription[13]}</p>
                 </div>
-                <div className='listing14'>
-                    <img className='image14' src={listingImage[14]} alt='listing' onError={this.ifNA}/>
+                <div className='listing2'>
+                    <img className='image2' src={listingImage[14]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[14]}</h5>
                     <p>{listingDescription[14]}</p>
                 </div>
-                <div className='listing15'>
-                    <img className='image15' src={listingImage[15]} alt='listing' onError={this.ifNA}/>
+                <div className='listing3'>
+                    <img className='image3' src={listingImage[15]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[15]}</h5>
                     <p>{listingDescription[15]}</p>
                 </div>
-                <div className='listing16'>
-                    <img className='image16' src={listingImage[16]} alt='listing' onError={this.ifNA}/>
+                <div className='listing4'>
+                    <img className='image4' src={listingImage[16]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[16]}</h5>
                     <p>{listingDescription[16]}</p>
                 </div>
-                <div className='listing17'>
-                    <img className='image17' src={listingImage[17]} alt='listing' onError={this.ifNA}/>
+                <div className='listing5'>
+                    <img className='image5' src={listingImage[17]} alt='listing' onError={this.ifNA}/>
                     <h5>{listingTitle[17]}</h5>
                     <p>{listingDescription[17]}</p>
                 </div>

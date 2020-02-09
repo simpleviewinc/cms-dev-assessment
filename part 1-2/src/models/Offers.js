@@ -56,63 +56,63 @@ export class Offers extends Component {
                     <h5>{offerTitle[5]}</h5>
                     <p>{offerDescription[5]}</p>
                 </div>
-                <div className='offer6'>
-                    <img className='image6' src={offerImage[6]} alt='offer' onError={this.ifNA}/>
+                <div className='offer0'>
+                    <img className='image0' src={offerImage[6]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[6]}</h5>
                     <p>{offerDescription[6]}</p>
                 </div>
-                <div className='offer7'>
-                    <img className='image7' src={offerImage[7]} alt='offer' onError={this.ifNA}/>
+                <div className='offer1'>
+                    <img className='image1' src={offerImage[7]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[7]}</h5>
                     <p>{offerDescription[7]}</p>
                 </div>
-                <div className='offer8'>
-                    <img className='image8' src={offerImage[8]} alt='offer' onError={this.ifNA}/>
+                <div className='offer2'>
+                    <img className='image2' src={offerImage[8]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[8]}</h5>
                     <p>{offerDescription[8]}</p>
                 </div>
-                <div className='offer9'>
-                    <img className='image9' src={offerImage[9]} alt='offer' onError={this.ifNA}/>
+                <div className='offer3'>
+                    <img className='image3' src={offerImage[9]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[9]}</h5>
                     <p>{offerDescription[9]}</p>
                 </div>
-                <div className='offer10'>
-                    <img className='image10' src={offerImage[10]} alt='offer' onError={this.ifNA}/>
+                <div className='offer4'>
+                    <img className='image4' src={offerImage[10]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[10]}</h5>
                     <p>{offerDescription[10]}</p>
                 </div>
-                <div className='offer11'>
-                    <img className='image11' src={offerImage[11]} alt='offer' onError={this.ifNA}/>
+                <div className='offer5'>
+                    <img className='image5' src={offerImage[11]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[11]}</h5>
                     <p>{offerDescription[11]}</p>
                 </div>
-                <div className='offer12'>
-                    <img className='image12' src={offerImage[12]} alt='offer' onError={this.ifNA}/>
+                <div className='offer0'>
+                    <img className='image0' src={offerImage[12]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[12]}</h5>
                     <p>{offerDescription[12]}</p>
                 </div>
-                <div className='offer13'>
-                    <img className='image13' src={offerImage[13]} alt='offer' onError={this.ifNA}/>
+                <div className='offer1'>
+                    <img className='image1' src={offerImage[13]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[13]}</h5>
                     <p>{offerDescription[13]}</p>
                 </div>
-                <div className='offer14'>
-                    <img className='image14' src={offerImage[14]} alt='offer' onError={this.ifNA}/>
+                <div className='offer2'>
+                    <img className='image2' src={offerImage[14]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[14]}</h5>
                     <p>{offerDescription[14]}</p>
                 </div>
-                <div className='offer15'>
-                    <img className='image15' src={offerImage[15]} alt='offer' onError={this.ifNA}/>
+                <div className='offer3'>
+                    <img className='image3' src={offerImage[15]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[15]}</h5>
                     <p>{offerDescription[15]}</p>
                 </div>
-                <div className='offer16'>
-                    <img className='image16' src={offerImage[16]} alt='offer' onError={this.ifNA}/>
+                <div className='offer4'>
+                    <img className='image4' src={offerImage[16]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[16]}</h5>
                     <p>{offerDescription[16]}</p>
                 </div>
-                <div className='offer17'>
-                    <img className='image17' src={offerImage[17]} alt='offer' onError={this.ifNA}/>
+                <div className='offer5'>
+                    <img className='image5' src={offerImage[17]} alt='offer' onError={this.ifNA}/>
                     <h5>{offerTitle[17]}</h5>
                     <p>{offerDescription[17]}</p>
                 </div>

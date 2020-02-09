@@ -4,7 +4,7 @@ import Listings from './models/Listings.js';
 import Events from './models/Events.js';
 import Offers from './models/Offers.js';
 // import logo from './logo.svg';
-import './App.css';
+import './assets/css/App.css';
 
 export class App extends Component {
   constructor(){
