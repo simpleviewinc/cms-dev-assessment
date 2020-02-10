@@ -1,5 +1,5 @@
 // On load run
-document.onload = sendAjaxRequest();
+document.onload = sendAjaxRequest(1, 5);
 
 function generateCards(imageURL, title, description) {
   // We pass the data from GET method result and store it in a variable as a HTML string
@@ -23,47 +23,9 @@ function addCellIndex() {
   });
 }
 
-function generateButtons() {
-  // Created buttons using JQuery added 'individual and btn' classes and data-field attribute for onClick
-  let allBtn = $("<btn>All</btn>")
-    .addClass("allBtn btn")
-    .attr("data-field", "listings");
-  let listingsBtn = $("<button>Listings</button>")
-    .addClass("listingsBtn btn")
-    .attr("data-field", "listings");
-  let eventsBtn = $("<button>Events</button>")
-    .addClass("eventsBtn btn")
-    .attr("data-field", "events");
-  let offersBtn = $("<button>Offers</button>")
-    .addClass("offersBtn btn")
-    .attr("data-field", "offers");
-  // Append buttons to filtes-btns div
-  $("#filter-btns").append(allBtn, listingsBtn, eventsBtn, offersBtn);
-}
-function handleOnClick() {
-  // Saved click button event in function
-  $(".btn").click(function(event) {
-    event.preventDefault();
-    // Clear cards div to replace each time clicked
-    $("#cards").empty();
-    // Get data-field from button when clicked
-    query = $(this).attr("data-field");
-    // Run AJAX requeste passing data field as parameter
-    sendAjaxRequest(query, 1, 12);
-    toggleCardClass("grid");
-  });
-}
-
-function sendAjaxRequest(query, page, elements) {
-  // Saved AJAX GET request in function
-  // If no query use listings as default
-  if (query == null && page == null && elements == null) {
-    query = "listings";
-    page = 1;
-    elements = 12;
-  }
+function sendAjaxRequest(page, elements) {
   // Saved query in variable passed query parameter
-  let queryURL = `https://sv-reqres.now.sh/api/${query}/?page${page}&per_page=${elements}`;
+  let queryURL = `https://sv-reqres.now.sh/api/listings/?page=${page}&per_page=${elements}`;
   console.log(queryURL)
   // AJAX call with GET method
   $.ajax({
@@ -72,6 +34,7 @@ function sendAjaxRequest(query, page, elements) {
   }).then(function(response) {
     // GET array of results store in data variable
     let data = response.data;
+    console.log(data);
     // This method allow us to generateCards() and addCellINdex() on each result
     data.forEach(element => {
       generateCards(element.mediaurl, element.title, element.description);
@@ -107,7 +70,7 @@ function handlePageChange() {
     toggleCardClass(name);
     console.log(page, elements);
     // Run AJAX requeste passing data field as parameter
-    sendAjaxRequest("listings", page, elements);
+    sendAjaxRequest(page, elements);
   });
 }
 
@@ -117,7 +80,5 @@ function toggleCardClass(name) {
   $("#cards").addClass(name);
 }
 
-generateButtons();
-handleOnClick();
 generatePagesButtons();
 handlePageChange();
