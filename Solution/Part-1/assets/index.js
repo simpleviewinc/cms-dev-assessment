@@ -10,7 +10,7 @@ $.ajax({
   // This method allow us to use the function generateCards() on each result
   data.forEach(element => {
     generateCards(element.mediaurl, element.title, element.description);
-    addIndex()
+    addCellIndex()
   });
 
 });
@@ -28,27 +28,10 @@ function generateCards(imageURL, title, description) {
   $("#cards").append(divCard);
 }
 
-function addIndex(){
+function addCellIndex(){
 $(".card").each(function(index) {
-  if(index==0){
-  $(this).attr("dataset",index);
+  {
+  $(this).addClass("cell-"+(index+1));
   }
 });
-}
-
-012
-633
-345
-336
-
-678
-633
-
-911
-336
-
-111
-633
-
-111
-336
+};
