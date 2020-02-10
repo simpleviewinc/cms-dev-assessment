@@ -10,6 +10,7 @@ function generateCards(imageURL, title, description) {
                 <image class=image  src=${imageURL} alt=${title}
                 onerror="this.onerror=null;this.src='./assets/images/fallback.jpg';"></image>
                 <h2 class=header>${title}</h2>
+                <button class='hidden'>Read more</button>
                 <p class=description>${description}</p>
                 </div>`;
   // After creating each card we append it to 'id=cards'
@@ -44,6 +45,8 @@ $(".btn").click(function(event) {
   $('#cards').empty()
   // Get data-field from button when clicked
   query = $(this).attr("data-field");
+  $('.btn.active').removeClass('active')
+  $(this).addClass('active');
   // Run AJAX requeste passing data field as parameter
   sendAjaxRequest(query);
 });

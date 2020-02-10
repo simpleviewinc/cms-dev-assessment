@@ -65,8 +65,10 @@ function handlePageChange() {
     let page = $(this).attr("page");
     let elements = $(this).attr("data-field");
     let name =  $(this).attr("id");
+    // Remove active class from unselected and added to clicked element
+    $('a.active').removeClass('active')
+    $(this).addClass('active');
     toggleCardClass(name);
-    console.log(page, elements);
     // Run AJAX requeste passing data field as parameter
     sendAjaxRequest(page, elements);
   });
@@ -81,7 +83,6 @@ function toggleCardClass(name) {
 function shuffleArray(array){
   //Shuffle array using D Knuth Shuffle
   var currentIndex = array.length, temporaryValue, randomIndex;
-  console.log(currentIndex);
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
 

@@ -26,7 +26,6 @@ function addCellIndex() {
 function sendAjaxRequest(page, elements) {
   // Saved query in variable passed query parameter
   let queryURL = `https://sv-reqres.now.sh/api/listings/?page=${page}&per_page=${elements}`;
-  console.log(queryURL)
   // AJAX call with GET method
   $.ajax({
     url: queryURL,
@@ -34,7 +33,6 @@ function sendAjaxRequest(page, elements) {
   }).then(function(response) {
     // GET array of results store in data variable
     let data = response.data;
-    console.log(data);
     // This method allow us to generateCards() and addCellINdex() on each result
     data.forEach(element => {
       generateCards(element.mediaurl, element.title, element.description);
@@ -67,8 +65,10 @@ function handlePageChange() {
     let page = $(this).attr("page");
     let elements = $(this).attr("data-field");
     let name =  $(this).attr("id");
+    // Remove active class from unselected and added to clicked element
+    $('a.active').removeClass('active')
+    $(this).addClass('active');
     toggleCardClass(name);
-    console.log(page, elements);
     // Run AJAX requeste passing data field as parameter
     sendAjaxRequest(page, elements);
   });

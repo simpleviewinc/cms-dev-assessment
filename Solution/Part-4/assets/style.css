@@ -52,7 +52,10 @@ ul li:first-child a {
 ul li:last-child a {
   border-radius: 0 0 20px 20px;
 }
-ul li a:active,
+#pages-btns ul li a.active{
+  background: #ff006a;
+  color: #fff;
+}
 ul li a:hover {
   background: #ff006a;
   color: #fff;
