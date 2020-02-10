@@ -88,6 +88,19 @@ ul li a:hover{
   color: #fff;
 }
 /*  */
+#cards.one {
+  border:dashed red;
+}
+#cards.two {
+  border:dashed yellow;
+}
+#cards.three {
+  border:dashed blue;
+}
+#cards.four {
+  border:dashed green;
+}
+/*  */
 /* Media Queries Break Points */
 /* For mobile phones: */
 [class*="col-"] {
