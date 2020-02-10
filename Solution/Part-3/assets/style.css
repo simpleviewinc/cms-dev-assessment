@@ -1,0 +1,163 @@
+/* All fonts are Lato */
+/* Set Max-Width */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: "Lato", sans-serif;
+  max-width: 1200px;
+  /* Applying border-box the padding and border are included in the total width and height */
+  box-sizing: border-box;
+}
+
+html {
+  padding-left: 1%;
+}
+#filter-btns {
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  background: linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+  background-color: #dfbdfa;
+  border-radius: 6px;
+  border: 1px solid #c584f3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #9752cc;
+  margin: 3px;
+}
+.btn:hover {
+  background: linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+  background-color: #bc80ea;
+}
+.btn:active {
+  position: relative;
+  top: 1px;
+  border: 2px solid #380a58;
+}
+
+.grid {
+  grid-template-columns: 100%;
+  grid-gap: 15px;
+  row-gap: 15px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j"
+    "k";
+}
+
+.cell-1 {
+  grid-area: a;
+}
+.cell-2 {
+  grid-area: b;
+}
+.cell-3 {
+  grid-area: c;
+}
+.cell-4 {
+  grid-area: d;
+}
+.cell-5 {
+  grid-area: e;
+}
+.cell-6 {
+  grid-area: f;
+}
+.cell-7 {
+  grid-area: g;
+}
+.cell-8 {
+  grid-area: h;
+}
+.cell-9 {
+  grid-area: i;
+}
+.cell-10 {
+  grid-area: j;
+}
+.cell-11 {
+  grid-area: k;
+}
+.cell-12 {
+  grid-area: l;
+}
+
+img {
+  overflow: hidden;
+
+  width: 100%;
+  height: auto;
+}
+.card {
+  overflow: hidden;
+}
+.description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*  */
+/* Media Queries Break Points */
+/* For mobile phones: */
+[class*="col-"] {
+  grid-template-columns: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+  /*Medium For tablets: */
+  .grid {
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas:
+      "a b c"
+      "d e f"
+      "g h i"
+      "j k l";
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  /*Large For desktop: */
+  .grid {
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-rows: auto auto auto auto;
+    grid-template-areas:
+      "a a b c"
+      "d e f f"
+      "g g h i"
+      "j k l l";
+  }
+  /* .cell-6.image {
+    grid-area: f;
+  }
+  .cell-6 .description{
+    grid-area: f;
+  } */
+  img {
+    height: 500px;
+  }
+}
