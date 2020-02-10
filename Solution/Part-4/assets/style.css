@@ -1,0 +1,187 @@
+/* All fonts are Lato */
+/* Set Max-Width */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: "Lato", sans-serif;
+  max-width: 1200px;
+  /* Applying border-box the padding and border are included in the total width and height */
+  box-sizing: border-box;
+}
+
+html {
+  padding-left: 1%;
+}
+
+/* Pages */
+ul {
+  position: absolute;
+  top: 0%;
+  left: 97%;
+  transform: translate(-50%, 42%);
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5), 0 0 0 4px #b4004e;
+}
+ul li {
+  list-style: none;
+}
+ul li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: #fff;
+  color: #262626;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 5px;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5 px rgba(0, 0, 0, 0.5);
+}
+ul li:first-child a {
+  border-radius: 20px 20px 0 0;
+}
+ul li:last-child a {
+  border-radius: 0 0 20px 20px;
+}
+ul li a:active,
+ul li a:hover {
+  background: #ff006a;
+  color: #fff;
+}
+
+/*  */
+/* Media Queries Break Points */
+/* For mobile phones: */
+[class*="col-"] {
+  grid-template-columns: 100%;
+}
+.grid {
+  grid-template-columns: 100%;
+  grid-gap: 15px;
+  row-gap: 15px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e";
+}
+
+.cell-1 {
+  grid-area: a;
+}
+.cell-2 {
+  grid-area: b;
+}
+.cell-3 {
+  grid-area: c;
+}
+.cell-4 {
+  grid-area: d;
+}
+.cell-5 {
+  grid-area: e;
+}
+
+img {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 640px) {
+  /*Medium For tablets: */
+  #cards {
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas:
+      "a b c"
+      "d e f"
+      "g h i"
+      "j k l";
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  /*Large For desktop: */
+/* Pages classes */
+#cards.one {
+  grid-gap: 15px;
+  row-gap: 15px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas:
+    "a a c c"
+    "a a c c"
+    "a a d d"
+    "b b d d"
+    "b b e e"
+    "b b e e";
+}
+#cards.one .card img.image {
+  height: 93.5%;
+}
+#cards.two {
+  grid-gap: 15px;
+  row-gap: 15px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-areas:
+    "a b c"
+    "d e c";
+}
+#cards.two .card img.image {
+  height: 87%;
+}
+#cards.two .card.cell-3{
+  height: 107.5%;
+}
+#cards.three {
+  grid-gap: 15px;
+  row-gap: 15px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    "a c"
+    "b c";
+}
+#cards.three .card img.image {
+  height: 94.5%;
+}
+#cards.three .card.cell-3{
+  height: 100.5%;
+}
+#cards.four {
+  grid-gap: 15px;
+  row-gap: 15px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "a b";
+}
+#cards.four .card img.image {
+  height: 92%;
+}
