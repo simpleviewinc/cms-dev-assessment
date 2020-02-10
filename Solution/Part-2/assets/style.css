@@ -17,11 +17,11 @@
 html {
   padding-left: 1%;
 }
+/* Buttons */
 #filter-btns {
   padding-top: 20px;
   margin-bottom: 20px;
 }
-
 .btn {
   box-shadow: inset 0px 1px 0px 0px #efdcfb;
   background: linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
@@ -48,7 +48,12 @@ html {
   top: 1px;
   border: 2px solid #380a58;
 }
-
+/*  */
+/* Media Queries Break Points */
+/* For mobile phones: */
+[class*="col-"] {
+  grid-template-columns: 100%;
+}
 .grid {
   grid-template-columns: 100%;
   grid-gap: 15px;
@@ -119,13 +124,6 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/*  */
-/* Media Queries Break Points */
-/* For mobile phones: */
-[class*="col-"] {
-  grid-template-columns: 100%;
 }
 
 @media only screen and (min-width: 640px) {

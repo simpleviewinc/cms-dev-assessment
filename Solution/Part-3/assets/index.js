@@ -71,3 +71,18 @@ function sendAjaxRequest(query) {
     });
   });
 }
+
+function generatePagesButtons() {
+  // Created buttons using JQuery added 'individual and btn' classes and data-field attribute for onClick 
+  let pagesBtns = `<ul>
+  <li><a href="#"><<</a></li>
+  <li><a href="#" class="active">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">>></a></li>
+</ul>`
+  // Append buttons to pages-btns div
+  $("#pages-btns").append(pagesBtns);
+}
+generatePagesButtons();
