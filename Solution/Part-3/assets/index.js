@@ -64,6 +64,7 @@ function sendAjaxRequest(query, page, elements) {
   }
   // Saved query in variable passed query parameter
   let queryURL = `https://sv-reqres.now.sh/api/${query}/?page${page}&per_page=${elements}`;
+  console.log(queryURL)
   // AJAX call with GET method
   $.ajax({
     url: queryURL,
