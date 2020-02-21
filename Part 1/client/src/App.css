@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+p {font-family: 'Lato',}
+
+h2 {font-family: 'Lato'}
+
+
+.bigCard {
+  overflow: hidden;
+  max-width: 45%;
+  position: relative;
+  max-height: 65vh;
+  margin-bottom: 50px;
+}
+
+.learnMore {
+  position: absolute;
+  display: inline-block;
+  bottom: 10%;
+  background-color: red;
+  border: none;
+  transition: all .4s;
+  border-radius: 15px;
+  height: 40px;
+  width: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: visible;
+  z-index: 2;
+}
+
+.headButtons {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  padding: 15px
+}
+
+.headButtons button {
+  background: lightgray;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid white;
+}
+
+.buttonSelect {
+  color: white;
+  background: rebeccapurple!important;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid white;
+}
+
+.headButtons button:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.buttonSelected {
+  border: 3px solid rebeccapurple;
+  border-radius: 12px;
+}
+
+.learnMore:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.learnMoreHidden {
+  position: absolute;
+  z-index: 2;
+  background-color: red;
+  border: none;
+  bottom: 0;
+  left: 50%;
+  border-radius: 15px;
+  height: 40px;
+  width: 100px;
+  transition: all .4s;
+  transform: translateX(-50%);
+  visibility: hidden;
+}
+
+.learnMoreHidden:hover {
+  opacity: .5;
+}
+
+.fadeout {
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  bottom: 0;
+  background: -webkit-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    ); 
+    background-image: -moz-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -o-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+
+    
+}
+
+.bigCard img {
+  max-width: 100%;
+}
+
+.smallCard {
+  max-width: 25%;
+  overflow: hidden;
+  position: relative;
+  max-height: 48vh;
+  margin-bottom: 50px;
+  height: 50%;
+  padding-top: 159px;
+
+}
+
+.smallCard img {
+  max-width: 100%;
+}
+
+.bigCard2 {
+  max-width: 45%;
+  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+  max-height: 65vh;
+
+}
+
+.bigCard2 img {
+  max-width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+@media(min-width: 1025px){
+    .bigCard {
+      overflow: hidden;
+      max-width: 45%;
+      position: relative;
+      max-height: 65vh;
+      margin-bottom: 50px;
+    }
+
+    .fadeout {
+      width: 100%;
+      height: 15%;
+      position: absolute;
+      bottom: 0;
+      background: -webkit-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        ); 
+        background-image: -moz-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+        background-image: -o-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+    
+
+    }
+
+    .bigCard img {
+      max-width: 100%;
+    }
+
+    .smallCard {
+      max-width: 25%;
+      overflow: hidden;
+      position: relative;
+      max-height: 48vh;
+      margin-bottom: 50px;
+      height: 50%;
+      padding-top: 159px;
+    
+    }
+
+    .smallCard img {
+      max-width: 100%;
+    }
+
+    .bigCard2 {
+      max-width: 45%;
+      margin-bottom: 50px;
+      overflow: hidden;
+      position: relative;
+      max-height: 65vh;
+      display: flex;
+      
+    
+    }
+
+    .bigCard2 img {
+      max-width: 50%;
+      max-height: 100%;
+      z-index: 1;
+    }
+
+    .App {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+
+@media(min-width: 625px) and (max-width: 1025px){
+  .bigCard {
+    max-width: 250px;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 159px;
+  }
+
+  .fadeout {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    background: -webkit-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      ); 
+      background-image: -moz-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: -o-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+  
+
+  }
+
+  .headButtons {
+    width: 60%
+  }
+
+  .bigCard img {
+    max-width: 100%;
+  }
+
+  .smallCard {
+    max-width: 250px;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 159px;
+  
+  }
+
+  .smallCard img {
+    max-width: 100%;
+  }
+
+  .bigCard2 {
+    max-width: 250px;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 159px;
+  
+  }
+
+  .bigCard2 img {
+    max-width: 100%;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media(max-width: 625px){
+  .bigCard {
+    max-width: 95%;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 0;
+  }
+
+  .fadeout {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    background: -webkit-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      ); 
+      background-image: -moz-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: -o-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+  
+
+  }
+
+  .bigCard img {
+    max-width: 100%;
+  }
+
+  .headButtons {
+    width: 80%
+  }
+
+  .smallCard {
+    max-width: 95%;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 0;
+  
+  }
+
+  .smallCard img {
+    max-width: 100%;
+  }
+
+  .bigCard2 {
+    max-width: 95%;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 0;
+  
+  }
+
+  .bigCard2 img {
+    max-width: 100%;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
