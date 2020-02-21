@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+p {font-family: 'Lato',}
+
+h2 {font-family: 'Lato'}
+
+
+.cover {
+  width: 100%;
+  height: 110%;
+  position: absolute;
+  background: white;
+  z-index: 2;
+  transition: all 1s;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 101% 0, 101% 91%, 0 100%);
+  
+}
+
+.coverHidden {
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  background: white;
+  z-index: 2;
+  transition: all 1s;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 91%, 0 100%);
+}
+
+.bigCard {
+  overflow: hidden;
+  max-width: 95%;
+  min-width: 95%;
+  position: relative;
+  height: 45%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.leftColumn2 {
+  max-width: 70%;
+    min-width: 70%;
+    max-height: 89vh;
+    justify-content: space-between;
+    align-content: space-around;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.infoHidden {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  transition: all .4s;
+  visibility: visible;
+  z-index: 2;
+  height: 0;
+  width: 100%;
+}
+
+.infoHidden p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .4s;
+  visibility: visible;
+  z-index: 2;
+  max-height: 66px;
+  max-width: 90%;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.infoShown {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  transition: all .4s;
+  visibility: visible;
+  z-index: 2;
+  height: 116px;
+  width: 100%;
+}
+
+.infoShown p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .4s;
+  visibility: visible;
+  z-index: 2;
+  max-height: 66px;
+  max-width: 90%;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leftColumn {
+  max-width: 50%;
+  min-width: 50%;
+  min-height: 83vh;
+  max-height: 83vh;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightColumn {
+  min-width: 50%;
+  min-height: 83vh;
+  max-height: 83vh;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightColumn2 {
+  max-width: 30%;
+  min-width: 30%;
+  min-height: 83vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.longCard {
+  overflow: hidden;
+  min-width: 100%;
+  position: relative;
+  min-height: 31%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.tallCard {
+  overflow: hidden;
+  min-width: 100%;
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.learnMore {
+  position: absolute;
+  display: inline-block;
+  bottom: 10%;
+  background-color: red;
+  border: none;
+  transition: all .4s;
+  border-radius: 15px;
+  height: 40px;
+  width: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: visible;
+  z-index: 2;
+}
+
+.paginationButtons{
+  bottom: 20px;
+  position: absolute;
+  display: flex;
+  width: 200px;
+  right: 400px;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.paginationButtons button {
+  background-color: white;
+  border: none;
+  outline: none;
+  width: 50%;
+}
+
+.paginationButtons button h2 {
+  
+  font-weight: lighter;
+}
+
+.paginationButtons button h2:active {
+  font-weight: bolder;
+}
+
+.paginationButtons button:hover {
+  cursor: pointer;
+}
+
+.headButtons {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  padding: 15px
+}
+
+.nameCard {
+  width: 53%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.headButtons button {
+  background: lightgray;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid white;
+}
+
+.buttonSelect {
+  color: white;
+  background: rebeccapurple!important;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid white;
+}
+
+.headButtons button:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.buttonSelected {
+  border: 3px solid rebeccapurple;
+  border-radius: 12px;
+}
+
+.learnMore:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.learnMoreHidden {
+  position: absolute;
+  z-index: 2;
+  background-color: red;
+  border: none;
+  bottom: 0;
+  left: 50%;
+  border-radius: 15px;
+  height: 40px;
+  width: 100px;
+  transition: all .4s;
+  transform: translateX(-50%);
+  visibility: hidden;
+}
+
+.learnMoreHidden:hover {
+  opacity: .5;
+}
+
+.fadeout {
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  bottom: 0;
+  background: -webkit-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    ); 
+    background-image: -moz-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -o-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+
+    
+}
+
+
+
+.smallCard {
+  min-width: 42%;
+  overflow: hidden;
+  position: relative;
+  min-height: 45%;
+  max-height: 45%;
+  /* height: 50%; */
+  background-size: cover;
+  box-shadow: 1px 1px 1px 1px;
+
+}
+
+.smallCard img {
+  max-width: 100%;
+}
+
+.bigCard2 {
+  overflow: hidden;
+  min-width: 95%;
+  max-width: 95%;
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 1px 1px;
+
+}
+
+.bigCard2 img {
+  max-width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/* @media(min-width: 1025px){
+    .bigCard {
+      overflow: hidden;
+      max-width: 45%;
+      position: relative;
+      max-height: 65vh;
+      margin-bottom: 50px;
+    }
+
+    .fadeout {
+      width: 100%;
+      height: 15%;
+      position: absolute;
+      bottom: 0;
+      background: -webkit-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        ); 
+        background-image: -moz-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+        background-image: -o-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+    
+
+    }
+
+    .bigCard img {
+      max-width: 100%;
+    }
+
+    .smallCard {
+      max-width: 25%;
+      overflow: hidden;
+      position: relative;
+      max-height: 48vh;
+      margin-bottom: 50px;
+      height: 50%;
+      padding-top: 159px;
+    
+    }
+
+    .smallCard img {
+      max-width: 100%;
+    }
+
+    .bigCard2 {
+      max-width: 45%;
+      margin-bottom: 50px;
+      overflow: hidden;
+      position: relative;
+      max-height: 65vh;
+      display: flex;
+      
+    
+    }
+
+    .bigCard2 img {
+      max-width: 50%;
+      max-height: 100%;
+      z-index: 1;
+    }
+
+    .App {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+
+@media(min-width: 625px) and (max-width: 1025px){
+  .bigCard {
+    max-width: 250px;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 159px;
+  }
+
+  .fadeout {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    background: -webkit-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      ); 
+      background-image: -moz-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: -o-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+  
+
+  }
+
+  .headButtons {
+    width: 60%
+  }
+
+  .bigCard img {
+    max-width: 100%;
+  }
+
+  .smallCard {
+    max-width: 250px;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 159px;
+  
+  }
+
+  .smallCard img {
+    max-width: 100%;
+  }
+
+  .bigCard2 {
+    max-width: 250px;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 159px;
+  
+  }
+
+  .bigCard2 img {
+    max-width: 100%;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media(max-width: 625px){
+  .bigCard {
+    max-width: 95%;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 0;
+  }
+
+  .fadeout {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    background: -webkit-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      ); 
+      background-image: -moz-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: -o-linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+      );
+  
+
+  }
+
+  .bigCard img {
+    max-width: 100%;
+  }
+
+  .headButtons {
+    width: 80%
+  }
+
+  .smallCard {
+    max-width: 95%;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 0;
+  
+  }
+
+  .smallCard img {
+    max-width: 100%;
+  }
+
+  .bigCard2 {
+    max-width: 95%;
+    overflow: hidden;
+    position: relative;
+    max-height: 48vh;
+    margin-bottom: 50px;
+    height: 50%;
+    padding-top: 0;
+  
+  }
+
+  .bigCard2 img {
+    max-width: 100%;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+} */
