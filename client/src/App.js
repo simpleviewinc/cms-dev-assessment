@@ -10,13 +10,18 @@ class App extends Component{
     
     this.state={
 
-      data: []
+      data: [],
+      focused: 'All'
 
 
     }
   }
   
 componentDidMount(){
+  this.getAll()
+}
+
+getAll = () => {
   let num = 0
   let data = []
   Axios.get("https://sv-reqres.now.sh/api/listings")
@@ -50,15 +55,22 @@ componentDidMount(){
     }
     console.log(data)
     this.setState({data: data})
-  },500)
+  }, 100)
+}
+
+filter = (selected) => {
+  if(selected === 'All'){
+    this.getAll()
+  }
+
+  this.setState({focused: selected})
 }
 
 
   render(){
   return (
     <div className="App">
-      <header>Test</header>
-      <ListingBox state={this.state} />
+      <ListingBox filter={this.filter} state={this.state} />
     </div>
   );}
 }

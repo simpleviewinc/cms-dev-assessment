@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+p {font-family: 'Lato',}
+
+h2 {font-family: 'Lato'}
+
+
 .bigCard {
   overflow: hidden;
   max-width: 45%;
@@ -20,6 +28,41 @@
   transform: translateX(-50%);
   visibility: visible;
   z-index: 2;
+}
+
+.headButtons {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  padding: 15px
+}
+
+.headButtons button {
+  background: lightgray;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid white;
+}
+
+.buttonSelect {
+  color: white;
+  background: rebeccapurple!important;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid white;
+}
+
+.headButtons button:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.buttonSelected {
+  border: 3px solid rebeccapurple;
+  border-radius: 12px;
 }
 
 .learnMore:hover {
@@ -224,6 +267,10 @@
 
   }
 
+  .headButtons {
+    width: 60%
+  }
+
   .bigCard img {
     max-width: 100%;
   }
@@ -303,6 +350,10 @@
 
   .bigCard img {
     max-width: 100%;
+  }
+
+  .headButtons {
+    width: 80%
   }
 
   .smallCard {

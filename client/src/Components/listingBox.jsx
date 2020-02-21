@@ -2,15 +2,18 @@ import React from 'react'
 import Big from './big'
 import Big2 from './big2'
 import Small from './small'
+import HeadButton from './headButtons'
 
 
 
 let styles = {
     main: {
+        maxWidth: '1200px'
+    },
+    display: {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
-        maxWidth: '1200px'
     }
 }
 
@@ -18,6 +21,14 @@ let styles = {
 export default (props) => {
     return(
         <div style={styles.main}>
+                            <div className='headButtons'>
+                    <HeadButton state={props.state} filter={props.filter} name={'All'}/>
+                    <HeadButton state={props.state} filter={props.filter} name={'Listings'}/>
+                    <HeadButton state={props.state} filter={props.filter} name={'Events'}/>
+                    <HeadButton state={props.state} filter={props.filter} name={'Offers'}/>
+                </div>
+            <div style={styles.display}>
+
             {
                 props.state.data.map(
                     row=>(
@@ -44,6 +55,7 @@ export default (props) => {
                     )
                 )
             }
+            </div>
         </div>
     )
 }
