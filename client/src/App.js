@@ -17,17 +17,40 @@ class App extends Component{
   }
   
 componentDidMount(){
+  let num = 0
+  let data = []
   Axios.get("https://sv-reqres.now.sh/api/listings")
   .then((res)=>{
-    let num = 0
-    for(let i=0;i<res.data.data.length; i++){
+    
+    
+    data = res.data.data
+    
+  })
+  Axios.get("https://sv-reqres.now.sh/api/events")
+  .then((res)=>{
+    
+    
+    data = data.concat(res.data.data)
+    
+  })  
+  Axios.get("https://sv-reqres.now.sh/api/offers")
+  .then((res)=>{
+    
+    
+    data = data.concat(res.data.data)
+    
+  })
+  
+
+  setTimeout(()=>{
+    for(let i=0;i<data.length; i++){
       if(num === 6){num=0}
-      res.data.data[i].number = num + 1
+      data[i].number = num + 1
       num++
     }
-    console.log(res.data.data)
-    this.setState({data: res.data.data})
-  })
+    console.log(data)
+    this.setState({data: data})
+  },500)
 }
 
 

@@ -10,7 +10,7 @@ let styles = {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
-        width: '1200px'
+        maxWidth: '1200px'
     }
 }
 
