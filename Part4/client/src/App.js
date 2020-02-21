@@ -25,6 +25,17 @@ componentDidMount(){
 
 }
 
+shuffle = (array) => {
+  let index = null;
+  let array2 = []
+  while (array.length !== 0) {
+      index = Math.floor(Math.random() * array.length);
+      array2.push(array[index])
+      array.splice(index, 1)
+  }
+  return array2;
+}
+
 animatedCover = () => {
   setTimeout(()=>this.setState({show: false}), 100)
   setTimeout(()=>this.setState({show: true}), 1200)
@@ -68,13 +79,15 @@ getAll = () => {
     data = data.concat(res2.data.data)
   })
   )
-
+  
+  setTimeout(()=>data = this.shuffle(data),500)
 
   setTimeout(()=>{
     for(let i=0;i<data.length; i++){
       data[i].number = num + 1
       num++
     }
+    console.log(data)
 
     this.setState({data: data})
     if(data.length <= 17){this.getAll()} 
