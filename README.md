@@ -35,7 +35,7 @@ Some listings will have broken images, please use the provided fallback image as
 **Part 2 - Filtering**
 Build the component a final time with data from the API. Include listings, events, and offers data as well as a buttons that will enable a user to see all data, only listings data, only events data, or only offers data.
 
-Some listings/evensts/offers will have broken images, please use the provided fallback image as needed to ensure an image is always rendered.
+Some listings/events/offers will have broken images, please use the provided fallback image as needed to ensure an image is always rendered.
 
 **Part 3 - Paging & Dynamic Layouts**
 See the demo in `/comps/part 3-4/demo.mp4`. You need will need to build this component.
