@@ -8,7 +8,7 @@ Although each part builds off the previous, you are expected (unless otherwise d
 
 Requirements
 ------
-In the `/comps/` folder you will find different screenshots and demo videos for the components you will be responsible for building. Each feature a grid of items in a repeatable pattern. You will be working with an API for 4 parts and it some parts you will need to manipulate the data in some way.
+In the `/comps/` folder you will find different screenshots and demo videos for the components you will be responsible for building. Each feature a grid of items in a repeatable pattern. You will be working with an API for 4 parts and in some parts you will need to manipulate the data in some way.
 
 **Brand Fonts**
 Google Fonts
