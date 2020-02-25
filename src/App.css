@@ -35,6 +35,28 @@
   height: 50%;
 }
 
+.button-list button {
+  text-transform: capitalize;
+  background-color: lightgray;
+  border-style: double;
+}
+
+.button-list button.selected {
+  background-color: rebeccapurple;
+  color: white;
+  border-color: white;
+  border-width: 5px;
+}
+
+.article-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+
 @media (min-width: 1025px) {
   .vertical-card {
     height: 100%;
@@ -57,3 +79,4 @@
     max-width: 33.333333%;
   }
 }
+
