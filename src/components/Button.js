@@ -15,4 +15,4 @@ const FilterButton = ({filterName, filter, setFilter}) => {
 		)
 }
 
-export default FilterButton; 
+export default FilterButton;

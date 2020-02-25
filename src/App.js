@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setArticles } from './actions';
 import { loadData } from './api/api';
-
 import ArticleList from './components/ArticleList';
 import ButtonList from './components/ButtonList';
-
 import './App.css';
 
 // parameter state comes from index.js provider store state(rootReducers)
