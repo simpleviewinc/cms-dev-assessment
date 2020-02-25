@@ -9,7 +9,13 @@
 	styles.css
 */
 
-html, body { height: 100%; width: 100%; margin: 0; }
+html, body 
+{ 
+	height: 100%; 
+	width: 100%; 
+	margin: 0; 
+	font-family:"Lato"; 
+}
 
 #main
 {
@@ -17,17 +23,22 @@ html, body { height: 100%; width: 100%; margin: 0; }
 	
 	height:100%;
 	margin:auto;
-	
-	font-family:"Lato 400", "Lato 900";
 }
 
 .item
 {
 	height:50%;
 	width:100%;
-	padding:1%;
+	padding:14px;
 	
 	overflow:hidden;
+}
+
+img
+{
+	width:100%;
+	max-height: 66%;
+	object-fit: cover;
 }
 
 @media only screen and (min-width: 641px)
@@ -43,35 +54,36 @@ html, body { height: 100%; width: 100%; margin: 0; }
 {
 	.item-largeVert
 	{
-		width:48%;
+		width:46%;
+	}
+	
+	.item-largeVert > img
+	{
+		width:100%;
 	}
 	
 	.item-smallVert
 	{
-		width:23%;
+		width:21%;
 	}
 	
 	.item-smallVert > img
 	{
-		width:none;
+		width:auto;
 	}
 	
 	.item-largeHoriz
 	{
-		width:48%;
+		width:46%;
 	}
 	
 	.item-largeHoriz > *
 	{
 		float:left;
+		
+		max-height:100%;
 		height:100%;
-		width:50%;
+		width:48%;
+		padding:1%;
 	}
-}
-
-img
-{
-	width:100%;
-	height: 50%;
-	object-fit: cover;
 }
