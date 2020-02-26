@@ -1,0 +1,72 @@
+@charset "ISO-8859-1";
+
+/* 
+	@author: John Yang
+	@date: 2020/02/24
+	
+	Simpleview CMS Developer Assessment
+	Part 3: Paging & Dynamic Layouts
+	styles.css
+*/
+
+html, body 
+{ 
+	height: 100%; 
+	width: 100%; 
+	margin: 0; 
+	font-family:"Lato"; 
+}
+
+.main
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	
+	position: relative;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.item
+{
+	height: 100px;
+	width: 100px;
+	margin: 5px;
+	
+	position: relative;
+	overflow: hidden;
+}
+
+.title
+{
+	display: flex;
+	flex-direction: row;
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.footer
+{
+	display: flex;
+	
+	position: fixed;
+	right: 10px;
+	bottom:10px;
+	
+}
+
+.footer > button
+{
+	border: none;
+	margin: 5px;
+	
+	background-color: white;
+}
+
+.footer > button:hover
+{
+	cursor: pointer;
+}
