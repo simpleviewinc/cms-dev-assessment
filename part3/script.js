@@ -1,6 +1,6 @@
 /**
  * @author: John Yang
- * @date: 2020/02/24
+ * @date: 2020/02/25
  * 
  * Simpleview CMS Developer Assessment
  * Part 3: Paging & Dynamic Layouts
@@ -145,6 +145,7 @@ function processResponse(response, type)
 		// add item to main page
 		page.children[colNum].appendChild(item);
 		
+		// update which row, column, page we are on
 		rowNum++;
 		if (rowNum >= pageItemCount[pageType][colNum])
 		{
