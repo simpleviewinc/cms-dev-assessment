@@ -98,7 +98,7 @@ function processResponse(response, type)
 		
 		// add image
 		var img = document.createElement("IMG");
-		img.src = response.data[i].src
+		img.src = response.data[i].mediaurl;
 		img.onerror = function()
 			{
 				this.src = fallbackURL;
