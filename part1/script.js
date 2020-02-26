@@ -13,14 +13,16 @@ const breakpoints = {
 						large: 1024,
 						medium: 640,
 					};
-const newDivClasses = 
-{
-	largeVert: "item item-largeVert",
-	smallVert: "item item-smallVert",
-	largeHoriz: "item item-largeHoriz"
-}
+const newDivClasses = {
+						largeVert: "item item-largeVert",
+						smallVert: "item item-smallVert",
+						largeHoriz: "item item-largeHoriz"
+					}
 
 /**
+ * 
+ * Sends a (get, post ...) request to given url
+ * 	Parses response as a JSON object and passes it into the given function
  * 
  * @param method "GET", "POST", "PUT", "DELETE"
  * @param url 
@@ -41,24 +43,25 @@ function doXMLHttpRequest(method, url, async, processResponse)
 	ajax.send();
 }
 
+/**
+ * Sets up the page
+ */
 function loadPage()
 {
 	doXMLHttpRequest("GET", contentURL + "/listings", true, processListings);
-	window.onresize = function ()
-	{
-		if (window.innerWidth <= 640)
-		{
-			
-		}
-	}
 }
-
+/**
+ * Processes the listings for the page
+ * @param response JSON object containing details for page
+ */
 function processListings(response)
 {
-	console.log(response);
+	// console.log(response);
 	
+	//go through each piece of data and creates divs for each
 	for (var i = 0; i < response["data"].length; i++)
 	{
+		// create as div with classes
 		var newDiv = document.createElement("div");
 		if (i % 6 == 0)
 		{
@@ -73,6 +76,7 @@ function processListings(response)
 			newDiv.className = newDivClasses.smallVert;
 		}
 		
+		// add image
 		var img = document.createElement("IMG");
 		img.src = response.data[i].src
 		img.onerror = function()
@@ -81,6 +85,8 @@ function processListings(response)
 			}
 		newDiv.appendChild(img);
 		
+		
+		// add title, description
 		var text = document.createElement("div");
 		
 		var h3 = document.createElement("h3");
@@ -93,9 +99,7 @@ function processListings(response)
 		
 		newDiv.append(text);
 		
+		// add item to main page
 		document.getElementById("main").appendChild(newDiv);
 	}
-	//document.getElementById("div").innerHTML = response;
-	
-	
 }
