@@ -1,0 +1,168 @@
+@charset "ISO-8859-1";
+
+/* 
+	@author: John Yang
+	@date: 2020/02/24
+	
+	Simpleview CMS Developer Assessment
+	Part 2: Filtering 
+	styles.css
+*/
+
+html, body 
+{ 
+	height: 100%; 
+	width: 100%; 
+	margin: 0; 
+	font-family:"Lato"; 
+}
+
+.tabdiv
+{
+	height:10%;
+}
+
+.tabdiv button
+{
+	float: left;
+	
+	margin: 5px;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 16px;
+	
+	background-color: #eee;
+	
+}
+
+/* Change background color of buttons on hover */
+.tabdiv button:hover 
+{
+	background-color: #ccc;
+}
+
+/* Button purple on active*/
+.tabdiv button.active 
+{
+	background-color: #9932CC;		/*make darker*/
+}
+
+#main
+{
+	max-width: 1200px;
+	
+	height:100%;
+	margin:auto;
+}
+
+.listings
+{
+	display:auto;
+}
+
+.events
+{
+	display:auto;
+}
+
+.offers
+{
+	display:auto;
+}
+
+.item
+{
+	position:relative;
+	height:80%;
+	width:100%;
+	padding:14px;
+	margin:1px;
+	
+	overflow:hidden;
+}
+
+.item > div
+{
+	position:relative;
+	max-height:50%;
+	max-width:100%;
+	overflow:hidden;
+}
+
+.item > div
+{
+	height:100%;	
+}
+
+img
+{
+	width:100%;
+	object-fit: cover;
+}
+
+@media only screen and (min-width: 641px)
+{
+	.item
+	{
+		float:left;
+		height:60%;
+		width:28%;
+	}
+}
+
+@media only screen and (min-width: 1025px)
+{
+	.item
+	{
+		height:500px;
+	}
+	.item-largeVert
+	{
+		width:46%;
+	}
+	
+	.item-largeVert > img
+	{
+		width:100%;
+		max-height:66%;
+	}
+	
+	.item-smallVert
+	{
+		width:21%;
+	}
+	
+	.item-smallVert > img
+	{
+		width:auto;
+		max-height:66%;
+	}
+	
+	.item-largeHoriz
+	{
+		width:46%;
+	}
+	
+	.item.item-largeHoriz > *
+	{
+		float:left;
+		
+		max-height:100%;
+		height:100%;
+		width:48%;
+		padding:1%;
+	}
+}
+
+[class*="item"] > div:before
+{
+	content:'';
+	
+	width:100%;
+	height:100%;    
+	position:absolute;
+	left:0;
+	top:0;
+	
+	background:linear-gradient(transparent 50%, 70%, white 90%);
+}
