@@ -20,37 +20,101 @@ html, body
 .main
 {
 	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
+	flex-direction: row;
+	flex-align: flex-start;
 	
 	position: relative;
 	max-height: 100%;
-	max-width: 100%;
+	max-width: 1200px;
 }
 
-.item
+.page
 {
-	height: 100px;
-	width: 100px;
-	margin: 5px;
-	
-	position: relative;
-	overflow: hidden;
-}
-
-.title
-{
+	visibility: hidden;
 	display: flex;
 	flex-direction: row;
 	
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	
+	height: 100%;
+}
+
+.column
+{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	
+	position: relative;
+	
+	height: 100%;
+	
+}
+
+.item
+{
+	flex-grow: 1;
+	position: relative;
+	
+	margin: 5px;
+	
+	position: relative;
+}
+
+.descr
+{
+	visibility: hidden;
+	z-index: 4;
+	
+	position: absolute;
+	bottom: 0px;
+	margin: 5px;
+	height: 20%;
+	
+	color: white;
+	whitespace: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.item:hover .descr
+{
+	visibility: visible;
+}
+
+.title
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	z-index: 3;
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 0px 5px;
+	
+	background-color: white;
+}
+
+.item > img
+{
+	z-index: 0;
+	
+	position: relative;
+	top: 0px;
+	left: 0px;
+	
+	height: 100%;
+	width: 100%;
 }
 
 .footer
 {
 	display: flex;
+	z-index: 9;
 	
 	position: fixed;
 	right: 10px;
@@ -62,6 +126,7 @@ html, body
 {
 	border: none;
 	margin: 5px;
+	padding: 0px 0px 20px 10px;
 	
 	background-color: white;
 }
@@ -69,4 +134,9 @@ html, body
 .footer > button:hover
 {
 	cursor: pointer;
+}
+
+.active
+{
+	visibility: visible;
 }

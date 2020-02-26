@@ -10,6 +10,12 @@
 const fallbackURL = "window.location/../../comps/fallback.jpg";
 const contentURL = "https://sv-reqres.now.sh/api";
 const contentTypes = ["listings"];
+const pageItemCount = [
+						[2, 3],
+						[2, 2, 1],
+						[2, 1],
+						[1, 1]
+					]
 
 /**
  * 
@@ -58,27 +64,47 @@ function loadPage()
 function processResponse(response, type)
 {
 	var i, j;
-	console.log(response);
+	//console.log(response);
+	
+	var pageType = 0;
+	var pageNum = 0;
+	var colNum = 0;
+	var rowNum = 0;
+	var page;
 	
 	//go through each piece of data and creates divs for each
 	for (i = 0; i < response["data"].length; i++)
 	{
-		// create as div with classes
-		var newDiv = document.createElement("div");
-		newDiv.className = "item";
-		//newDiv.style.background = "url(\"" + response.data[i].mediaurl + "\"), url(\"" + fallbackURL + "\")";
+		if (colNum == 0 && rowNum == 0)
+		{
+			// create as div with classes
+			page = document.createElement("div");
+			page.className = "page";
+			page.id = pageNum;
+			pageNum++;
+			
+			console.log(pageNum);
+			
+			if (i == 0)
+			{
+				page.className += " active";
+			}
+			
+			for (j = 0; j < pageItemCount[pageType].length; j++)
+			{
+				var column = document.createElement("div");
+				column.className = "column";
+				column.style.width = Math.floor((1/pageItemCount[pageType].length) * 100).toString() + "%";
+				page.appendChild(column);
+			}
+			
+			document.getElementById("main").appendChild(page);
+		}
+		
+		var item = document.createElement("div");
+		item.className = "item";
+		//page.style.background = "url(\"" + response.data[i].mediaurl + "\"), url(\"" + fallbackURL + "\")";
 		//console.log(newDiv.style.backgroundImage);
-		
-		var title = document.createElement("div");
-		title.className = "title";
-		
-		var num = document.createTextNode(i.toString() + ".");
-		title.appendChild(num);
-		
-		var name = document.createTextNode(response.data[i].title);
-		title.appendChild(name);
-		
-		newDiv.appendChild(title);
 		
 		// add image
 		var img = document.createElement("IMG");
@@ -87,10 +113,95 @@ function processResponse(response, type)
 			{
 				this.src = fallbackURL;
 			}
-		newDiv.appendChild(img);
+		item.appendChild(img);
+		
+		var title = document.createElement("div");
+		title.className = "title";
+		
+		
+		// add title
+		var num = (i + 1).toString() + ". ";
+		
+		while (num.length < 4)
+		{
+			num = "0" + num;
+		}
+		num = document.createTextNode(num);
+		title.appendChild(num);
+		
+		var name = document.createElement("h3");
+		name.innerHTML = response.data[i].title;
+		title.appendChild(name);
+		
+		item.appendChild(title);
+		
+		// add description
+		var descr = document.createElement("p");
+		descr.className = "descr";
+		descr.appendChild(document.createTextNode(response.data[i].description));
+		item.appendChild(descr);
 		
 		
 		// add item to main page
-		document.getElementById("main").appendChild(newDiv);
+		page.children[colNum].appendChild(item);
+		
+		rowNum++;
+		if (rowNum >= pageItemCount[pageType][colNum])
+		{
+			rowNum = 0;
+			colNum++;
+		}
+		
+		if (colNum >= pageItemCount[pageType].length)
+		{
+			colNum = 0;
+			pageType++;
+			if (pageType >= pageItemCount.length)
+			{
+				pageType = 0;
+			}
+		}
 	}
+}
+
+/**
+ * Changes the current page on button click (next or prev.)
+ * @param event button click event
+ */
+function changePage(event)
+{
+	// deactivate current page
+	var active = document.getElementsByClassName("active")[0];
+	active.className = active.className.replace(" active", "");
+
+	// identify page to switch to
+	var newActive;
+	var totalPages = document.getElementsByClassName("page").length;
+	//console.log(totalPages);
+	if (event.target.id == "Next")
+	{
+		var newId = parseInt(active.id) + 1;
+		if (newId >= totalPages)
+		{
+			newId = 0;
+		}
+		
+		newActive = document.getElementById(newId.toString());
+	}
+	else if (event.target.id == "Prev.")
+	{
+		var newId = parseInt(active.id) - 1;
+		if (newId < 0)
+		{
+			newId = totalPages - 1;
+		}
+		newActive = document.getElementById(newId.toString());
+	}
+	else
+	{
+		// shouldn't reach this code
+	}
+	
+	// activate page
+	newActive.className += " active";
 }
