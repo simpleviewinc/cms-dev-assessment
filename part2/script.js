@@ -122,7 +122,7 @@ function processResponse(response, type)
 		button.className = "readMoreButton";
 		button.innerHTML = "Read More";
 		/*button.onclick = function () {};*/
-		descr.appendChild(button);
+		text.appendChild(button);
 		
 		newDiv.appendChild(text);
 		
