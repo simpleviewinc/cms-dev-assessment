@@ -58,6 +58,7 @@ function loadPage()
 /**
  * Processes the data for the page
  * 	paramater type to determine which type of data to process
+ * 	randomizes which items show on which pages per refresh
  * @param response JSON object containing details for page
  * @param type string "listings", "events", "offers"
  */
