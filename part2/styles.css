@@ -51,52 +51,76 @@ html, body
 {
 	max-width: 1200px;
 	
-	height:100%;
-	margin:auto;
-}
-
-.listings
-{
-	display:auto;
-}
-
-.events
-{
-	display:auto;
-}
-
-.offers
-{
-	display:auto;
+	height: 100%;
+	margin: auto;
 }
 
 .item
 {
-	position:relative;
-	height:80%;
-	width:100%;
-	padding:14px;
-	margin:1px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	
-	overflow:hidden;
+	position: relative;
+	height: 80%;
+	width: 100%;
+	margin: 1px;
+	padding: 14px;
+	
+	overflow: hidden;
+}
+
+.readMoreButton
+{
+	display: none;
+	align-self: center;
+	
+	position: relative;
+	bottom:100px;
+	
+	margin: auto;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	
+	color: white;
+	
+	background-color: red;
+	
+	transition: transform 2s;
+	transform: translate(0px, 100px);
+}
+
+.readMoreButton:hover
+{
+	cursor: pointer;	
+}
+
+.item:hover button
+{
+	display: flex;
+	
 }
 
 .item > div
 {
-	position:relative;
-	max-height:50%;
-	max-width:100%;
-	overflow:hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-front;
+	
+	max-height: 100%;
+	max-width: 100%;
+	overflow: hidden;
 }
 
-.item > div
+.item > div > p
 {
-	height:100%;	
+	height: 100%;
 }
 
 img
 {
-	width:100%;
+	width: 100%;
 	object-fit: cover;
 }
 
@@ -104,9 +128,9 @@ img
 {
 	.item
 	{
-		float:left;
-		height:60%;
-		width:28%;
+		float: left;
+		height: 60%;
+		width: 28%;
 	}
 }
 
@@ -114,43 +138,44 @@ img
 {
 	.item
 	{
-		height:500px;
+		height: 500px;
 	}
 	.item-largeVert
 	{
-		width:46%;
+		width: 46%;
 	}
 	
 	.item-largeVert > img
 	{
-		width:100%;
-		max-height:66%;
+		width: 100%;
+		max-height: 66%;
 	}
 	
 	.item-smallVert
 	{
-		width:21%;
+		width: 21%;
 	}
 	
 	.item-smallVert > img
 	{
-		width:auto;
-		max-height:66%;
+		width: auto;
+		max-height: 66%;
 	}
 	
 	.item-largeHoriz
 	{
-		width:46%;
+		display: flex;
+		flex-direction: row;
+		
+		width: 46%;
 	}
 	
 	.item.item-largeHoriz > *
 	{
-		float:left;
-		
-		max-height:100%;
-		height:100%;
-		width:48%;
-		padding:1%;
+		max-height: 100%;
+		height: 100%;
+		width: 48%;
+		padding: 1%;
 	}
 }
 
@@ -158,11 +183,26 @@ img
 {
 	content:'';
 	
-	width:100%;
-	height:100%;    
-	position:absolute;
-	left:0;
-	top:0;
+	width: 100%;
+	height: 100%;    
+	position: absolute;
+	left: 0;
+	top: 0;
 	
-	background:linear-gradient(transparent 50%, 70%, white 90%);
+	background: linear-gradient(transparent 70%, 80%, white 90%);
+}
+
+.listings
+{
+	display: flex;
+}
+
+.events
+{
+	display: flex;
+}
+
+.offers
+{
+	display: flex;
 }

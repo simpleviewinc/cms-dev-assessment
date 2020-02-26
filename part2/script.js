@@ -117,7 +117,14 @@ function processResponse(response, type)
 		descr.innerHTML = response.data[i].description;
 		text.appendChild(descr);
 		
-		newDiv.append(text);
+		// add Read More button
+		var button = document.createElement("button");
+		button.className = "readMoreButton";
+		button.innerHTML = "Read More";
+		/*button.onclick = function () {};*/
+		descr.appendChild(button);
+		
+		newDiv.appendChild(text);
 		
 		// add item to main page
 		document.getElementById("main").appendChild(newDiv);
@@ -125,15 +132,16 @@ function processResponse(response, type)
 }
 
 /**
+ * Shows items depending on the filter
  * 
- * @param event
- * @param filter
+ * @param event button click event
+ * @param filter string "all", "listings", "events", "offers" 
  * @returns
  */
 function showItems(event, filter)
 {
 	var i, j;
-	console.log("showing " + filter);
+	//console.log("showing " + filter);
 	
 	var tabbuttons = document.getElementsByClassName("tabbutton");
 	for (i = 0; i < tabbuttons.length; i++) {
@@ -154,11 +162,11 @@ function showItems(event, filter)
 			{
 				if (filter == contentTypes[j] || filter == "all")
 				{
-					cssRules[i].style.display = "initial";
+					cssRules[i].style.display = "flex";
 				}
 				else
 				{
-					cssRules[i].style.display = "None";
+					cssRules[i].style.display = "none";
 				}
 				
 				done++;
@@ -168,10 +176,7 @@ function showItems(event, filter)
 	}
 	
 	/*
+	// Select each item individually to show/hide
 	items = document.getElementsByClassName("item");
-	for (i = 0; i < tabbuttons.length; i++) {
-		tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
-	}
-	event.currentTarget.className += " active";
 	*/
 }
