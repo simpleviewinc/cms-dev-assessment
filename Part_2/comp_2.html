@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Assessment Part 2</title>
+
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+
+    <!-- Import Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Import jQuery, Popper & Bootstrap Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- include accompanying stylesheet & javascript-->
+    <link rel="stylesheet" href="styles.css">
+    <script src="comp_2.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <nav class="navbar" role="navigation">
+        <!-- Nav Buttons (Pills) -->
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <!-- All button -->
+            <li class="nav-item">
+                <button type="button" class="btn text-light" id="showAll">All</button>
+            </li>
+            <!-- Listings button -->
+            <li class="nav-item">
+                <button type="button" class="btn text-light" id="showListings">Listings</button>
+            </li>
+            <!-- Events button -->
+            <li class="nav-item">
+                <button type="button" class="btn text-light" id="showEvents">Events</button>
+            </li>
+            <!-- Offers button -->
+            <li class="nav-item">
+                <button type="button" class="btn text-light" id="showOffers">Offers</button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- content will be displayed here among 3 containers -->
+    <div class="container" id="onlyListings">
+        <!-- container for ONLY listings -->
+    </div>
+    <div class="container" id="onlyEvents">
+        <!-- container for ONLY events -->
+    </div>
+    <div class="container" id="onlyOffers">
+        <!-- container for ONLY offers -->
+    </div>
+    
+
+    <!-- container for error messages -->
+    <div class="text-danger" id="error"></div>
+  </body>
+</html>
