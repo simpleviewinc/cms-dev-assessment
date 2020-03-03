@@ -1,5 +1,5 @@
 import React from 'react'
-import theme from '../css/theme.css'
+import '../css/theme.css'
 
 const fallbackImg = require('../assets/comps/fallback.jpg');
 
