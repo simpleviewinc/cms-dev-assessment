@@ -7,37 +7,65 @@ class SecondHalf extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-          listings: [],
-          activePage: 1
+        allData: [],
+        activePage: 1
       };
     }
   
     componentDidMount() {
-        this.getListings();
+        this.getAll();
     }
 
-    getListings(pageIndex = 1) {
-        var perPage;
-        if ( pageIndex === 1 ) {
-            perPage = 5;
-        } else if ( pageIndex === 2 ) {
-            perPage = 5;
-        } else if ( pageIndex === 3 ) {
-            perPage = 3;
-        } else if ( pageIndex === 4 ) {
-            perPage = 2;
-        }
-        fetch('https://sv-reqres.now.sh/api/listings?page=' + pageIndex + '&per_page=' + perPage)
+    getAll() {
+        fetch('https://sv-reqres.now.sh/api/listings?page=1&per_page=-1')
         .then(response => response.json())
         .then(data => {
-            this.setState({listings: data})
+            const { allData } = this.state;
+            let thisAllData = allData;
+            data.data.map((listing) => {
+                thisAllData.push(listing);
+            }, this)
+            this.setState({allData: thisAllData})
+        });
+        fetch('https://sv-reqres.now.sh/api/events?page=1&per_page=-1')
+        .then(response => response.json())
+        .then(data => {
+            const { allData } = this.state;
+            let thisAllData = allData;
+            data.data.map((event) => {
+                thisAllData.push(event);
+            }, this)
+            this.setState({allData: thisAllData})
+        });
+        fetch('https://sv-reqres.now.sh/api/offers?page=1&per_page=-1')
+        .then(response => response.json())
+        .then(data => {
+            const { allData } = this.state;
+            let thisAllData = allData;
+            data.data.map((offer) => {
+                thisAllData.push(offer);
+            }, this)
+            
+            this.setState({allData: thisAllData})
         });
     }
 
     setFallback(index) {
-        const { listings } = this.state;
-        listings.data[index].mediaurl = fallbackImg;
-        this.setState({listings: listings});
+        const { allData } = this.state;
+        allData[index].mediaurl = fallbackImg;
+        this.setState({allData: allData});
+    }
+
+    shuffleArray() {
+        const { allData } = this.state;
+        var thisAllData = allData;
+        for (var i = thisAllData.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = thisAllData[i];
+            thisAllData[i] = thisAllData[j];
+            thisAllData[j] = temp;
+        }
+        this.setState({allData: thisAllData});
     }
 
     onNext() {
@@ -49,7 +77,7 @@ class SecondHalf extends React.Component {
             thisActivePage++;
         }
         this.setState({activePage: thisActivePage})
-        this.getListings(thisActivePage)
+        this.shuffleArray()
     }
 
     onPrev() {
@@ -61,18 +89,18 @@ class SecondHalf extends React.Component {
             thisActivePage--;
         }
         this.setState({activePage: thisActivePage})
-        this.getListings(thisActivePage)
+        this.shuffleArray()
     }
   
     render() {
-        const { listings, activePage } = this.state;
+        const { allData, activePage } = this.state;
         var left = [];
-        var center = [];
         var right = [];
+        var center = [];
 
         if ( activePage === 1 ) {
 
-                typeof listings !== 'undefined' && typeof listings.data !== 'undefined' && listings.data.map((thisItem, index) => {
+                typeof allData !== 'undefined' && allData.map((thisItem, index) => {
 
                     if ( index < 2 ) {
                     
@@ -110,7 +138,7 @@ class SecondHalf extends React.Component {
 
         } else if ( activePage === 2 ) {
 
-            typeof listings !== 'undefined' && typeof listings.data !== 'undefined' && listings.data.map((thisItem, index) => {
+            typeof allData !== 'undefined' && allData.map((thisItem, index) => {
                 console.log(thisItem.mediaurl)
                 if ( index < 2 ) {
                     
@@ -163,7 +191,7 @@ class SecondHalf extends React.Component {
 
     } else if ( activePage === 3 ) {
 
-        typeof listings !== 'undefined' && typeof listings.data !== 'undefined' && listings.data.map((thisItem, index) => {
+        typeof allData !== 'undefined' && allData.map((thisItem, index) => {
             
             if ( index < 2 ) {
                     
@@ -201,7 +229,7 @@ class SecondHalf extends React.Component {
 
 } else if ( activePage === 4 ) {
 
-    typeof listings !== 'undefined' && typeof listings.data !== 'undefined' && listings.data.map((thisItem, index) => {
+    typeof allData !== 'undefined' && allData.map((thisItem, index) => {
         
         if ( index === 0 ) {
                     
