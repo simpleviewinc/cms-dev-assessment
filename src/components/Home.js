@@ -36,7 +36,6 @@ class Home extends React.Component {
 
     setFallback(type, index) {
         const { allData } = this.state;
-        console.log(allData[type], type, allData, index);
         if ( typeof allData[type] !== 'undefined' ) {
             allData[type].data[index].mediaurl = fallbackImg;
             this.setState({allData: allData});

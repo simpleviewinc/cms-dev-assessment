@@ -139,7 +139,7 @@ class SecondHalf extends React.Component {
         } else if ( activePage === 2 ) {
 
             typeof allData !== 'undefined' && allData.map((thisItem, index) => {
-                console.log(thisItem.mediaurl)
+                
                 if ( index < 2 ) {
                     
                     left.push(
