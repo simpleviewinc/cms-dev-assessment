@@ -1,39 +1,46 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import { Route, NavLink } from 'react-router-dom';
+import All from './components/all';
+import Events from './components/events';
+import Listings from './components/listings';
+import Offers from './components/offers';
 
-import axios from 'axios';
-import{ Route, NavLink } from 'react-router-dom';
+class App extends Component {
 
-function App() {
-
-
-  return (
-    <div className="background">
-      <nav className="navbar">
-        <NavLink to="/all">
-          <div> All </div>
-        </NavLink>
-        <NavLink to="/listings">
-          <div> Listings </div>
-        </NavLink>
-        <NavLink to="/events">
-          <div> Events </div>
-        </NavLink>
-        <NavLink to="/offers">
-          <div> Offers </div>
-        </NavLink>
-      </nav>
+  render() {
+    return (
       <div className="App">
-        <Route path="/all"/>
 
-        <Route path="/listings"/>
+        <nav className="nav">
+          <NavLink to="/" className="link"> All </NavLink>
+          <NavLink to="/listings" className="link"> Listings </NavLink>
+          <NavLink to="/events" className="link"> Events </NavLink>
+          <NavLink to="/offers" className="link"> Offers </NavLink>
+        </nav>
 
-        <Route path="/events"/>
+        <div>
+          <Route 
+            exact path="/" 
+            render={props => <All  {...props} />}
+          />
+          <Route 
+            path="/listings" 
+            render={props => <Events  {...props} />}
+          />
+          <Route 
+            path="/events" 
+            render={props => <Listings  {...props} />}
+          />
+          <Route 
+            path="/offers" 
+            render={props => <Offers {...props} />}
+          />
+        </div>
 
-        <Route path="/offers"/>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
