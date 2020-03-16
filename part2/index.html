@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Giphy-App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')">Show All</button>
+            <button class="btn" onclick="filterSelection('listings')">Listings</button>
+            <button class="btn" onclick="filterSelection('events')">Events</button>
+            <button class="btn" onclick="filterSelection('offers')">Offers</button>
+        </div>
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="filterDiv listings">
+                            <div class="item1">
+                                <img class="item1img" src="./fallback.jpg">
+                                <div class="item1Title"></div>
+                                <div class="item1url"></div>
+                                <button type="button" class="btn btn-info" data-toggle="collapse"
+                                    data-target="#item1Description">Read More</button>
+                                <div id="item1Description" class="collapse"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-3">
+                        <div class="filterDiv listings">
+                            <div class="item2">
+                                <img class="item2img" src="./fallback.jpg">
+                                <div class="item2Title"></div>
+                                <div class="item2url"></div>
+                                <button type="button" class="btn btn-info" data-toggle="collapse"
+                                    data-target="#item2Description">Read More</button>
+                                <div id="item2Description" class="collapse"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-3">
+                        <div class="filterDiv listings">
+                            <div class="item3">
+                                <img class="item3img" src="./fallback.jpg">
+                                <div class="item3Title"></div>
+                                <div class="item3url"></div>
+                                <button type="button" class="btn btn-info" data-toggle="collapse"
+                                    data-target="#item3Description">Read More</button>
+                                <div id="item3Description" class="collapse"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="filterDiv listings">
+                        <div class="item4">
+                            <img class="item4img" src="./fallback.jpg">
+                            <div class="item4Title"></div>
+                            <div class="item4url"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item4Description">Read More</button>
+                            <div id="item4Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv listings">
+                        <div class="item6">
+                            <img class="item6img" src="./fallback.jpg">
+                            <div class="item6Title"></div>
+                            <div class="item6url"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item6Description">Read More</button>
+                            <div id="item6Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv listings">
+                        <div class="item5">
+                            <img class="item5img" src="./fallback.jpg">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv listings">
+                        <div class="item5Title"></div>
+                        <div class="item5url"></div>
+                        <button type="button" class="btn btn-info" data-toggle="collapse"
+                            data-target="#item5Description">Read More</button>
+                        <div id="item5Description" class="collapse"></div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="filterDiv events">
+                        <div class="item7">
+                            <img class="item7img" src="./fallback.jpg">
+                            <div class="item7Title"></div>
+                            <div class="item7url"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item7Description">Read More</button>
+                            <div id="item7Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv events">
+                        <div class="item8">
+                            <img class="item8img" src="./fallback.jpg">
+                            <div class="item8Title"></div>
+                            <div class="item8url"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item8Description">Read More</button>
+                            <div id="item8Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv events">
+                        <div class="item9">
+                            <img class="item9img" src="./fallback.jpg">
+                            <div class="item9Title"></div>
+                            <div class="item9url"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item9Description">Read More</button>
+                            <div id="item9Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="filterDiv events">
+                        <div class="item10">
+                            <img class="item10img" src="./fallback.jpg">
+                            <div class="item10Title"></div>
+                            <div class="item10url"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item10Description">Read More</button>
+                            <div id="item10Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv events">
+                        <div class="item11">
+                            <img class="item11img" src="./fallback.jpg">
+                            <div class="item11Title"></div>
+                            <div class="item11url"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item11Description">Read
+                                More</button>
+                            <div id="item11Description" class="collapse"></div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv events">
+                        <div class="item12">
+                            <img class="item12img" src="./fallback.jpg">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv events">
+                        <div class="item12Title"></div>
+                        <div class="item12url"></div>
+                        <button type="button" class="btn btn-info" data-toggle="collapse"
+                            data-target="#item12Description">Read
+                            More</button>
+                        <div id="item12Description" class="collapse"></div>
+    
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="filterDiv offers">
+                        <div class="item13">
+                            <img class="item13img" src="./fallback.jpg">
+                            <div class="item13Title"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item13Description">Read
+                                More</button>
+                            <div id="item13Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="filterDiv offers">
+                        <div class="item14">
+                            <img class="item14img" src="./fallback.jpg">
+                            <div class="item14Title"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item14Description">Read
+                                More</button>
+                            <div id="item14Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv offers">
+                        <div class="item15">
+                            <img class="item15img" src="./fallback.jpg">
+                            <div class="item15Title"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item15Description">Read More</button>
+                            <div id="item15Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="filterDiv offers">
+                        <div class="item16">
+                            <img class="item16img" src="./fallback.jpg">
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item16Description">Read More</button>
+                            <div id="item16Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv offers">
+                        <div class="item17">
+                            <img class="item17img" src="./fallback.jpg">
+                            <div class="item17Title"></div>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#item17Description">Read More</button>
+                            <div id="item17Description" class="collapse"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="filterDiv offers">
+                        <div class="item18">
+                            <img class="item18img" src="./fallback.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="filterDiv offers">
+                        <div class="item18Title"></div>
+                        <button type="button" class="btn btn-info" data-toggle="collapse"
+                            data-target="#item18Description">Read
+                            More</button>
+                        <div id="item18Description" class="collapse"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./app.js"></script>
+    
+      
+</script>
+</body >

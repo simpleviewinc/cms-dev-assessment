@@ -1,0 +1,41 @@
+.body{
+    max-width: 1200px;
+}
+
+  
+    .show {
+        display: block;
+    }
+
+    .container {
+        margin-top: 20px;
+        overflow: hidden;
+        float: left;
+        margin: auto;
+        width: 100%;
+    }
+
+
+    img {
+        height: 200px;
+        width: 100%;
+    }
+
+    .item1Title {
+        font-weight: bold;
+        font-size: medium;
+    }
+.item5img{
+    height: 400px;
+}
+
+.item12img{
+    height: 400px;
+}
+
+.item18img{
+    height:400px
+}
+.row{
+    margin-bottom: 20px;
+}

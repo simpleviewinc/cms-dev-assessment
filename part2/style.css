@@ -1,0 +1,57 @@
+.body{
+    max-width: 1200px;
+}
+
+    .item1Description {
+        padding: 0 18px;
+        height: auto;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    }
+
+    .filterDiv {
+        float: left;
+        color: black;
+        margin: 2px;
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .container {
+        margin-top: 20px;
+        overflow: hidden;
+        float: left;
+        margin: auto;
+        width: 100%;
+    }
+
+    .btn:hover {
+        background-color: #706F81;
+    }
+
+    .col-sm-6 {
+        float: left;
+    }
+
+    .col-sm-6 {
+        float: left;
+    }
+
+    img {
+        height: 200px;
+        width: 100%;
+    }
+
+    .item1Title {
+        font-weight: bold;
+        font-size: medium;
+    }
+
+    .toggle-text-button {
+        background-color: red;
+        color: white;
+        text-align: center;
+    }
