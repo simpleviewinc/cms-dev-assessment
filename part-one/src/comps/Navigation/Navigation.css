@@ -1,0 +1,28 @@
+nav{
+    display: flex;
+    margin: 20px 0 0 10px;
+}
+
+.nav-button{
+    margin: 0 6px;
+    padding: 6px 12px;    
+    text-decoration: none;
+    background: #E4E4E4;
+    color: #000;
+    border-radius: 6px;
+    border: 3px solid #E4E4E4;
+}
+
+.nav-button:hover, .nav-button:active{
+    background: #AEAEAE;
+    border: 3px solid #AEAEAE;
+}
+
+.nav-button:focus{
+    background: #782BA7;
+    color: #FFF;
+    border: 3px solid #782BA7;
+    box-shadow: inset 0px 0px 0px 2px #FFF;
+    outline: none;
+
+}
