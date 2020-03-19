@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 
-import Header from './Components/Header/Header'
+import Header from "./Components/Header/Header";
 import SingleListing from "./Components/SingleListing/SingleListing";
 
 class App extends Component {
@@ -39,29 +39,11 @@ class App extends Component {
     });
   };
 
-  filterAll = () => {
+  filterDisplay = value => {
     this.setState({
-      selected: "All"
-    })
-  }
-
-  filterListings = () => {
-    this.setState({
-      selected: "Listings"
-    })
-  }
-
-  filterEvents = () => {
-    this.setState({
-      selected: "Events"
-    })
-  }
-
-  filterOffers = () => {
-    this.setState({
-      selected: "Offers"
-    })
-  }
+      selected: value
+    });
+  };
 
   render() {
     /* map props to single listing component. includes id so first and last
@@ -69,25 +51,24 @@ class App extends Component {
 
     const { allItems, listings, events, offers, selected } = this.state;
     // var items = "All"
-    if(selected === "All"){
-     var items = allItems
-    }else if(selected == "Listings"){
-    var items = listings
-    }else if(selected == "Events"){
-    var items = events
-    }else if(selected == "Offers"){
-      var items = offers
+    if (selected === "All") {
+      var items = allItems;
+    } else if (selected == "Listings") {
+      var items = listings;
+    } else if (selected == "Events") {
+      var items = events;
+    } else if (selected == "Offers") {
+      var items = offers;
     }
-    const allListings = 
-    items.map((item, i) => {
+    const allListings = items.map((item, i) => {
       console.log(items);
 
       return (
         <SingleListing
           id={i}
-          image={item[i].mediaurl}
-          title={item[i].title}
-          description={item[i].description}
+          image={item.mediaurl}
+          title={item.title}
+          description={item.description}
         />
       );
     });
@@ -95,15 +76,15 @@ class App extends Component {
     return (
       <>
         <Header
-        filterEvents = {this.filterEvents}
-        filterOffers = {this.filterOffers}
-        filterAll = {this.filterAll}
-        filterListings = {this.filterListings}
+          filterEvents={this.filterEvents}
+          filterOffers={this.filterOffers}
+          filterAll={this.filterAll}
+          filterDisplay={this.filterDisplay}
         />
-      <div className="app">
-        {/* all listings are rendered */}
-        <div className="grid-items">{allListings}</div>
-      </div>
+        <div className="app">
+          {/* all listings are rendered */}
+          <div className="grid-items">{allListings}</div>
+        </div>
       </>
     );
   }
