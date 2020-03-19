@@ -1,0 +1,107 @@
+/* listings can scale down for mobile */
+.listing-container {
+  max-width: 500px;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-height: 600px;
+  /* discription fades out at bottome of component */
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  margin-bottom: 10px;
+}
+
+/* keeps the image at an even x to y ratio when re-sizing */
+img {
+  width: 100%;
+  height: auto;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.t-d-container {
+  height: 270px;
+  overflow: hidden;
+}
+
+p {
+  margin-top: 5px;
+  height: 100%;
+  font-family: "Lato:400", sans-serif;
+  font-size: large;
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+h1 {
+  margin-top: 7px;
+  margin-bottom: 5px;
+  font-family: "Lato:900", sans-serif;
+}
+
+/* class for first listing displayed at min. width of 1025px */
+.long-listing {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 450px;
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  margin-bottom: 10px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+/* class for last listing displayed at min. width of 1025px */
+.tall-listing {
+  display: flex;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+/* forced styling for last img at min. width 1025px */
+.tall-listing .image-container {
+  margin-right: 10px;
+  height: 100%;
+}
+
+.tall-listing .t-d-container {
+  overflow: visible;
+}
+
+.tall-listing p {
+  height: 100%;
+}
+/* media queries for breakpoints. I wasn't sure if 
+I could bootstrap and I wanted just the three views to display */
+@media (min-width: 641px) {
+  .listing-container {
+    margin-right: 0px;
+    margin-left: 0px;
+    height: 450px;
+    width: 300px;
+  }
+
+  .image-container {
+    height: fit-content;
+  }
+
+  img {
+    height: auto;
+    width: 300px;
+  }
+}
+/* media query for large view */
+@media (min-width: 1025px) {
+  .t-d-container {
+    max-height: 250px;
+  }
+  .listing-container {
+    width: 100%;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}

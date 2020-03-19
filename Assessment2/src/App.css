@@ -1,0 +1,36 @@
+.app {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+}
+@media (min-width: 640px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+    overflow-x: hidden;
+  }
+}
+/* display changes from flex to grid with media queries*/
+@media (min-width: 641px) {
+  .grid-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
+  }
+}
+@media (min-width: 1025px) {
+  .grid-items {
+    padding: 20px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
