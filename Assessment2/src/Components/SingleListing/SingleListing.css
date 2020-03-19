@@ -1,5 +1,6 @@
 /* listings can scale down for mobile */
 .listing-container {
+  z-index: 0;
   max-width: 500px;
   margin-left: 20px;
   margin-right: 20px;
@@ -73,6 +74,36 @@ h1 {
 .tall-listing p {
   height: 100%;
 }
+.button-container {
+  z-index: 5;
+  float: bottom;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.rm-button {
+  z-index: 5;
+  color: white;
+  z-index: 1;
+  background-color: red;
+  display: none;
+}
+/*this doesn't work perfectly but it appears on hover most of the time.
+with more time I would have perfected but I wanted to move on
+to next assessment.
+I know it has to do with the listing-container height and also the z-index*/
+.listing-container:hover .rm-button {
+  
+  float: bottom;
+  display: block;
+  position: absolute;
+  /* margin-left: 100px;
+margin-top:120px; */
+  text-align: center;
+}
+
 /* media queries for breakpoints. I wasn't sure if 
 I could bootstrap and I wanted just the three views to display */
 @media (min-width: 641px) {

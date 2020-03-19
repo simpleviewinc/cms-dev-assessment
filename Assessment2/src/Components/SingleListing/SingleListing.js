@@ -3,39 +3,25 @@ import "./SingleListing.css";
 import fallback from "../../assets/fallback.jpg";
 
 class SingleListing extends Component {
-  constructor() {
-    super();
-    this.state = {
-      windowWidth: ""
-    };
-  }
-  //event listener updates state with window dimensions upon resize
-  componentDidMount() {
-    window.addEventListener("resize", this.updateWindowDimensions.bind(this));
-  }
-  //keeps track of window dimensions so classnames can change accordingly
-  updateWindowDimensions = () => {
-    this.setState({ windowWidth: window.innerWidth });
-  };
-
   render() {
-    const { windowWidth } = this.state;
-    const { id } = this.props;
+
+    const { windowWidth, id } = this.props;
+
     return (
       <div
         className={
-          /* checks for window width and first/last id to change className
+          /* checks for window width and id to change className
              for 1025px view */
-          id === 0 && windowWidth > 1025
+          (id === 0 || id === 6 || id === 12 || id ===18) && windowWidth >= 1025
             ? "long-listing"
-            : id === 5 && windowWidth > 1025
+            : (id === 5 || id === 11 || id === 17) && windowWidth >= 1025
             ? "tall-listing"
             : "listing-container"
         }
       >
         <div className="image-container">
           {/*props are passed from App component and fallback is
-          imported if media url is broken */}
+          used if media url is broken */}
           <img
             src={this.props.image}
             onError={e => {
@@ -46,7 +32,13 @@ class SingleListing extends Component {
         </div>
         <div className={"t-d-container"}>
           <h1>{this.props.title}</h1>
-          <p>{this.props.description}</p>
+         
+         
+          <p>{this.props.description}
+          <div className={"button-container"}>
+          <button className={"rm-button"}>Read More</button>
+          </div>
+          </p>
         </div>
       </div>
     );

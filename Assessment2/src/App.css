@@ -1,10 +1,11 @@
 .app {
+  max-width: 1200px;
   margin-top: 40px;
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100vw;
 }
@@ -30,7 +31,16 @@
 }
 @media (min-width: 1025px) {
   .grid-items {
+    max-width: 1200px;
     padding: 20px;
     grid-template-columns: repeat(4, 1fr);
+  }
+  .extended-grid {
+    max-width: 1200px;
+    padding: 20px;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(4, 4fr);
   }
 }
