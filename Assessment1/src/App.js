@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 
-import SingleListing from "./Components/SingleListing";
+import SingleListing from "./Components/SingleListing/SingleListing";
 
 class App extends Component {
   constructor() {
@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount() {
     this.getlistings();
   }
-
+  //http request to api and response is stored in state
   getlistings = () => {
     axios.get(`https://sv-reqres.now.sh/api/listings`).then(res => {
       console.log(res);
@@ -26,6 +26,8 @@ class App extends Component {
   };
 
   render() {
+    /* map props to single listing component. includes id so first and last
+    listings can change styling on large view*/
     const { listings } = this.state;
     const allListings = listings.map((lItem, i) => {
       console.log(lItem.mediaurl);
@@ -39,11 +41,12 @@ class App extends Component {
         />
       );
     });
-    return <div className="app">
-      <div className="grid-items">
-      {allListings}
+    return (
+      <div className="app">
+        {/* all listings are rendered */}
+        <div className="grid-items">{allListings}</div>
       </div>
-      </div>;
+    );
   }
 }
 export default App;
