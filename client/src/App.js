@@ -1,12 +1,27 @@
 import React, {Component} from 'react';
 import './App.css';
+import axios from 'axios';
 import { Route, NavLink } from 'react-router-dom';
+
 import All from './components/all';
 import Events from './components/events';
 import Listings from './components/listings';
 import Offers from './components/offers';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      listings: []
+    };
+  }
+
+  componentDidMount() {
+    axios
+    .get("https://sv-reqres.now.sh/api/listings")
+    .then(res => this.setState({ listings: res.data.data }))
+    .catch(err => console.log(err))
+  }
 
   render() {
     return (
@@ -22,7 +37,7 @@ class App extends Component {
         <div>
           <Route 
             exact path="/" 
-            render={props => <All  {...props} />}
+            render={props => <All listings={this.state.listings} {...props} />}
           />
           <Route 
             path="/listings" 
@@ -30,7 +45,7 @@ class App extends Component {
           />
           <Route 
             path="/events" 
-            render={props => <Listings  {...props} />}
+            render={props => <Listings {...props} />}
           />
           <Route 
             path="/offers" 
