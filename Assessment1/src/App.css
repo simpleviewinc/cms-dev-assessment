@@ -26,9 +26,16 @@
     display: grid;
 
 grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(2, 1fr);
+
 grid-column-gap: 15px;
 grid-row-gap: 20px;
 
   }
 }
+ @media (min-width: 1025px) {
+   
+   .grid-items{
+     padding:20px;
+    grid-template-columns: repeat(4, 1fr);
+   }
+ }

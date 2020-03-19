@@ -35,8 +35,10 @@ class SingleListing extends Component {
             }}
           />
         </div>
+        <div className={"t-d-container"}>
         <h1>{this.props.title}</h1>
         <p>{this.props.description}</p>
+        </div>
       </div>
     );
   }
