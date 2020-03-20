@@ -1,32 +1,24 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import './all.css';
 import Listing from './listing';
+import { Row, Col } from 'react-simple-flex-grid';
+import "react-simple-flex-grid/lib/main.css";
 
 class Events extends Component {
-  constructor() {
-    super();
-    this.state = {
-      events: []
-    }
-  }
-
-  async componentDidMount() {
-    await axios
-    .get("https://sv-reqres.now.sh/api/events")
-    .then(res => this.setState({ events: res.data.data }))
-    .catch(err => console.log(err))
+  constructor(props) {
+    super(props);
   }
 
   render() {
-  return (
-    <div>
-      <ul>
-        {this.state.events.map(event => (
-          <Listing listing={event} key={event.recid}/>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+      <Row gutter={40}>
+      {this.props.listings.map(listing => 
+          <Col xs={{ span: 12 }} sm={{ span: 4 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+              <Listing listing={listing} key={listing.recid}/>
+          </Col>
+      )}
+      </Row>
+    );
   }
 }
 

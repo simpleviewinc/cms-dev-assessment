@@ -1,32 +1,24 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import './all.css';
 import Listing from './listing';
+import { Row, Col } from 'react-simple-flex-grid';
+import "react-simple-flex-grid/lib/main.css";
 
 class Listings extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-        listings: []
-    };
-}
-
-async componentDidMount() {
-  await axios
-  .get("https://sv-reqres.now.sh/api/listings")
-  .then(res => this.setState({ listings: res.data.data }))
-  .catch(err => console.log(err))
-}
+  }
 
   render() {
-  return (
-    <div>
-      <ul>
-        {this.state.listings.map(listing => (
-          <Listing listing={listing} key={listing.recid}/>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+      <Row gutter={40}>
+      {this.props.listings.map(listing => 
+          <Col xs={{ span: 12 }} sm={{ span: 4 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+              <Listing listing={listing} key={listing.recid}/>
+          </Col>
+      )}
+      </Row>
+    );
   }
 }
 
