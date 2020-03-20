@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Post from './post';
+import Listing from './listing';
 
 class Offers extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Offers extends Component {
     <div>
       <ul>
         {this.state.offers.map(offer => (
-          <Post listing={offer} key={offer.recid}/>
+          <Listing listing={offer} key={offer.recid}/>
         ))}
       </ul>
     </div>

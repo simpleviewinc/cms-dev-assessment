@@ -9,6 +9,8 @@
 .link {
     background-color: lightgrey;
     color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
     margin-right: 20px;
     padding: 10px;
     text-decoration: none;

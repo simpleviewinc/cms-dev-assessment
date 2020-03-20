@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
+import './listing.css';
 import fallback from '../img/fallback.jpg'
 
-class Post extends Component {
+class Listing extends Component {
   constructor(props) {
       super(props);
   }
 
   render() {
     return (
-      <div>
-        <img src={fallback} alt="Fallback Image" /> 
+      <div className="grid">
+        <img src={fallback} alt="Fallback Image" className="image"/> 
         {this.props.listing.title}
         {this.props.listing.description}
       </div>
@@ -17,4 +18,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default Listing;
