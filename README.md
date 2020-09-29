@@ -2,12 +2,16 @@ Simpleview CMS Developer Assessment
 ======
 Welcome to the Simpleview Developer Assessment.
 
-The assessment is in four (4) parts that increase in complexity and scope. You may use any approach you feel comfortable with to complete each section. The assessment period is two (2) days; at the end of the assessment period turn in any and all work including any incomplete work for review.
+The assessment is in four (4) parts that increase in complexity and scope. The assessment period is two (2) days; at the end of the assessment period turn in any and all work including any incomplete work for review.
 
 Although each part builds off the previous, you are expected (unless otherwise directed) to turn in four (4) sets of solutions; one for each part.
 
 Requirements
 ------
+### Technical
+This assessment must be completed using HTML, CSS, JavaScript (vanilla JS or jQuery). If you need templates, we recommend using [ES6 template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) or a [templating engine like Goatee](https://github.com/simpleviewinc/goatee).
+
+### Design
 In the `/comps/` folder you will find different screenshots and demo videos for the components you will be responsible for building. Each feature a grid of items in a repeatable pattern. You will be working with an API for 4 parts and it some parts you will need to manipulate the data in some way.
 
 **Brand Fonts**
