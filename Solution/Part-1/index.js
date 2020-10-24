@@ -17,9 +17,11 @@ async function fetchAndDisplay() {
     .map(
       (item, index) => `
       <div class=" card data-card-${index}">
-          <img onerror='this.src="../../comps/fallback.jpg"' src=${item.mediaurl} alt="item photo" class="card-img img-${index}"></img>
+          <div class="img-div-${index}">
+              <img onerror='this.src="../../comps/fallback.jpg"' src=${item.mediaurl} alt="item photo" class="card-img img-${index}"></img>
+          </div>      
           <div class="container c-${index}">
-                <h3><b>${item.title}</b><h3>
+                <h3><b>${item.title}</b></h3>
                 <p>${item.description}</p>
           </div>
        </div> 
@@ -30,4 +32,9 @@ async function fetchAndDisplay() {
   console.log(data);
 }
 
-fetchAndDisplay();
+// Handle Error function
+function handleError(err) {
+  console.log(`Looks like there was an error: ${err}`);
+}
+
+fetchAndDisplay().catch(handleError);
