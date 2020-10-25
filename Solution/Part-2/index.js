@@ -1,18 +1,20 @@
 // Select cards div for display and set variable for end point url
 const cardsDiv = document.querySelector(".cards");
-const endPoint = `https://sv-reqres.now.sh/api/listings/?per_page=18`;
-
+const baseEndPoint = `https://sv-reqres.now.sh/api`;
+const itemsPerPage = `?per_page=18`;
+// Select Nav Buttons
+const navBtns = document.querySelectorAll(".nav-btns");
 // Get data from end point
-async function getData() {
+async function getData(query = "listings") {
   cardsDiv.innerHTML = `<h1>loading..</h1>`;
-  const response = await fetch(endPoint);
+  const response = await fetch(`${baseEndPoint}/${query}/${itemsPerPage}`);
   const data = await response.json();
   return data.data;
 }
 
 // Display data
-async function fetchAndDisplay() {
-  const data = await getData();
+async function fetchAndDisplay(query) {
+  const data = await getData(query);
   const html = data
     .map(
       (item, index) => `
@@ -35,4 +37,15 @@ function handleError(err) {
   console.log(`Looks like there was an error: ${err}`);
 }
 
+// Handle Nav Buttons click
+function handleClick(event) {
+  console.log(event.target.value);
+  cardsDiv.innerHTML = "";
+  fetchAndDisplay(event.target.value).catch(handleError);
+}
+
+// Add on click Event listener to all Nav Buttons
+navBtns.forEach((btn) => btn.addEventListener("mousedown", handleClick));
+// navBtns.forEach((btn) => btn.addEventListener("keyup", handleClick));
+// On load get data and populate cards
 fetchAndDisplay().catch(handleError);
