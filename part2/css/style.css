@@ -1,0 +1,197 @@
+body {
+    margin:0 auto;
+    max-width: 1200px;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    /* padding: 20px 0; */
+    margin: 15px;
+    position: relative;
+}
+
+.imgDiv {
+    height: 50%;
+}
+
+.textDiv {
+    height: 50%;
+}
+
+.tallTextDiv {
+    display: none;
+}
+
+.cardImg {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.cardTitle {
+    font-weight: 900;
+    text-align: left;
+}
+
+
+
+.cardText {
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    height:  180px;
+    overflow-y: hidden;
+
+}
+
+
+/* Button styles */
+
+.btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px;
+    background-color: #EF310E;
+    /* -webkit-box-shadow: 1px 1px 5px 0 #000000;
+    -moz-box-shadow: 1px 1px 5px 0 #000000;
+    box-shadow: 1px 1px 5px 0 #000000; */
+    text-shadow: 1px 1px 20px #000000;
+    border: solid #000000 1px;
+    text-decoration: none;
+}
+
+.toggleBtn {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #000000;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: lightgrey;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border-width: 0px;
+}
+
+.toggleBtn:hover {
+    background: purple;
+    color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+ }
+
+
+.card:hover .btn {
+    display: inline-block;
+}
+
+
+  /* largest screen size */
+@media only screen and (min-width: 1025px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        height: 500px;
+        margin: 5px;
+    }
+
+    .tallImgDiv {
+        height: 100%;
+    }
+
+
+    .tallCardText {
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        height:  450px;
+        /* width: 300px; */
+        overflow-y: hidden;
+    }
+
+    .card1 {
+        grid-column: 1 / span 2;
+    }
+    
+    .card6 {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+    }
+    
+    .card7 {
+        grid-column: 4 / span 1;
+        grid-row: 2 / span 1;
+    }
+
+    #cardTitle6 {
+        margin: 0px;
+    }
+    
+    #btn6 {
+        display: none;
+    }
+}
+
+/* medium screen size */
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        grid-template-rows: auto auto auto;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        height: 500px;
+        margin: 5px;
+    }
+
+    .tallImgDiv {
+        height: 50%;
+    }
+
+    .tallTextDiv {
+        display: inline-block;
+        height: 50%;
+    }
+
+    .tallCardText {
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        height:  180px;
+        overflow-y: hidden;
+    }
+
+    .card7 {
+        display: none;
+    }
+}
