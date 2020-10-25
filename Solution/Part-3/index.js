@@ -1,7 +1,7 @@
 // Select cards div for display and set variable for end point url
 const cardsDiv = document.querySelector(".cards");
 const baseEndPoint = `https://sv-reqres.now.sh/api`;
-const itemsPerPage = `?per_page=18`;
+const itemsPerPage = `?per_page=15`;
 // Select Nav Buttons
 const navBtns = document.querySelectorAll(".nav-btns");
 // Get data from end point set listings as default query
@@ -18,7 +18,7 @@ async function fetchAndDisplay(query) {
   const html = data
     .map(
       (item, index) => `
-      <div class=" card data-card-${index}">
+      <div class="card data-card-${index} slide">
               <img onerror='this.src="../../comps/fallback.jpg"' src=${item.mediaurl} alt="item photo" class="card-img img-${index}"></img>
           <div class="container c-${index}">
                 <h3><b>${item.title}</b></h3>
