@@ -17,9 +17,7 @@ async function fetchAndDisplay() {
     .map(
       (item, index) => `
       <div class=" card data-card-${index}">
-          <div class="img-div-${index}">
               <img onerror='this.src="../../comps/fallback.jpg"' src=${item.mediaurl} alt="item photo" class="card-img img-${index}"></img>
-          </div>      
           <div class="container c-${index}">
                 <h3><b>${item.title}</b></h3>
                 <p>${item.description}</p>
