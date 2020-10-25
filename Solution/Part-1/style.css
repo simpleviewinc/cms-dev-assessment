@@ -30,6 +30,14 @@ img {
   max-height: 100%;
 }
 
+/* Container */
+.description {
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  height: 150px;
+  overflow-y: scroll;
+}
+
 /* Media Break Points */
 /* Medium devices (landscape tablets, 641px and up) */
 @media only screen and (min-width: 641px) {
@@ -47,7 +55,9 @@ img {
       "a a b c"
       "d e f f"
       "g g h i"
-      "j k l l";
+      "j k l l"
+      "m m n o"
+      "p q r r";
   }
   .data-card-0 {
     grid-area: a;
@@ -85,26 +95,54 @@ img {
   .data-card-11 {
     grid-area: l;
   }
-  /* 5th 11th child */
+  .data-card-12 {
+    grid-area: m;
+  }
+  .data-card-13 {
+    grid-area: n;
+  }
+  .data-card-14 {
+    grid-area: o;
+  }
+  .data-card-15 {
+    grid-area: p;
+  }
+  .data-card-16 {
+    grid-area: q;
+  }
+  .data-card-17 {
+    grid-area: r;
+  }
+  /* 5th 11th 17th child */
   .data-card-5,
-  .data-card-11 {
+  .data-card-11,
+  .data-card-17 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "a b";
   }
   img.img-5,
-  img.img-11 {
+  img.img-11,
+  img.img-17 {
     height: 100%;
     grid-area: a;
   }
   .c-5,
-  .c-11 {
+  .c-11,
+  .c-17 {
     grid-area: b;
     padding-left: 1em;
   }
   /* Image */
   img {
     width: 100%;
+  }
+  /* Container */
+  .d-5,
+  .d-7,
+  .d-17 {
+    height: 100%;
+    overflow-y: auto;
   }
 }

@@ -1,0 +1,35 @@
+/* Navbar */
+ul {
+  list-style-type: none;
+  margin: 10px;
+}
+
+li {
+  display: inline;
+}
+/* Navbar Buttons */
+button {
+  color: black;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 6px;
+  margin-left: 5px;
+  border-radius: 5px;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background: rgb(211, 211, 211);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 2px solid rgb(211, 211, 211);
+  display: inline-block;
+}
+button:hover,
+button:active {
+  background: rgb(165, 8, 255);
+  border: 2px solid rgb(165, 8, 255);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
