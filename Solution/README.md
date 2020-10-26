@@ -45,6 +45,6 @@ Acknowledgements
 ------
 **Thank you!**
 
-Thanks for taking the time to review the assessment, I learnt a lot going over this assessment, please if you have any feedback I will be more than happy to hear it. 
+Thanks for taking the time to review the assessment, I learnt a lot going over this assessment, please if you have any feedback I will be more than happy to hear it.
 
 ### submitted by: Jesus Esquer (https://github.com/jm27) on 10/26/2020 
