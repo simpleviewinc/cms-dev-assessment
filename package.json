@@ -1,0 +1,22 @@
+{
+  "name": "cms-dev-assessment",
+  "version": "1.0.0",
+  "description": "Simpleview CMS Developer Assessment ====== Welcome to the Simpleview Developer Assessment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simpleviewinc/cms-dev-assessment.git"
+  },
+  "author": "Jennifer Hedgcock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simpleviewinc/cms-dev-assessment/issues"
+  },
+  "homepage": "https://github.com/simpleviewinc/cms-dev-assessment#readme",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

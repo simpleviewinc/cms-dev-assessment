@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+.pageContainer {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+.filters ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.filtersList__item {
+  cursor: pointer;
+  background: lightblue;
+  border-radius: 3px;
+  list-style-type: none;
+  margin: 0 3%;
+  padding: 3%;
+  width: 100px;
+  text-align: center;
+}
+
+.filtersList__item--active {
+  background: #9370db;
+  color: #fff;
+}
+
+
+.listingsSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.listingsCard {
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.listingsCard__contentWrap {
+  overflow: hidden;
+}
+
+.listingsCard__img {
+  width: 100%;
+}
+
+.listingsCard__title,
+.listingsCard__copy,
+.listingsCard__link {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+.listingsCard__copy {
+  max-height: 150px;
+}
+
+.listingsCard__copy:before {
+  content:'';
+  width:100%;
+  height:100%;    
+  position:absolute;
+  left:0;
+  top:0;
+  background:linear-gradient(transparent 450px, white);
+}
+
+.listingsCard__link  {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .listingsSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .listingsCard {
+    margin: 0 auto;
+    width: 30%;
+    max-height: 350px;
+  }
+
+  .listingsCard__copy:before {
+    background:linear-gradient(transparent 290px, white);
+  }
+
+  .listingsCard__link a {
+    text-decoration: none;
+  }
+
+  .listingsCard:hover  {
+    display: block;
+    cursor: pointer;
+  }
+
+  .listingsCard:hover .listingsCard__link {
+    display: block;
+  }
+
+  .listingsCard__link  {
+    display: none;
+    background-color: red;
+    border-radius: 3px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 auto;
+    text-decoration: none;
+    text-align: center;
+    width: 150px;
+    position: absolute;
+    top: 200px;
+    left: 20%;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .listingsSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .listingsCard {
+    max-height: 500px;
+    margin: 0 1%;
+   }
+
+   .listingsCard:nth-child(1){
+     flex-basis: 50%;
+   }
+
+  .listingsCard:nth-child(2),
+  .listingsCard:nth-child(3),
+  .listingsCard:nth-child(4),
+  .listingsCard:nth-child(5){
+      flex-basis: 22%
+  }
+
+  .listingsCard:nth-child(6) {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .listingsCard:nth-child(6) .listingsCard__innerWrap {
+    display: flex;
+  }
+
+   .listingsCard:nth-child(6) .listingsCard__img {
+    max-width: 50%;
+    margin-right: 1%;
+  }
+
+  .listingsCard__title {
+    font-size: 1.25em;
+    font-weight: 900;
+    line-height: 1;
+    margin-top: 0;
+  }
+
+  .listingsCard__copy,
+  .listingsCard__link {
+    font-size: 1em;
+    font-weight: 400;
+  }
+
+   .listingsCard__copy {
+    line-height: 1.25;
+  }
+
+  .listingsCard__copy:before {
+    background:linear-gradient(transparent 450px, white);
+  }
+
+  .listingsCard__link  {
+    top: 250px;
+    right: 10%;
+  }
+}
