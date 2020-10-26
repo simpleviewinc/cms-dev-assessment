@@ -43,6 +43,12 @@ button:active {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.rm-btn {
+  display: inline;
+}
+.rm-btn:hover {
+  display: inline;
+}
 /* Cards */
 .cards {
   display: grid;
@@ -72,7 +78,11 @@ img {
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   height: 150px;
-  overflow-y: scroll;
+}
+.description.show{
+  -webkit-mask-image: none;
+  mask-image: none;
+  height: auto;
 }
 
 /* Media Break Points */

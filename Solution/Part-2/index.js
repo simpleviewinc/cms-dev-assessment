@@ -47,7 +47,10 @@ async function fetchAndDisplay(query) {
               <img onerror='this.src="../../comps/fallback.jpg"' src=${item.mediaurl} alt="item photo" class="card-img img-${index}"></img>
           <div class="container c-${index}">
                 <h3><b>${item.title}</b></h3>
-                <p class="description d-${index}">${item.description}</p>
+                <p class="description d-${index}">
+                ${item.description}
+                </p>
+                <button onclick='handleReadMore(this)' class='rm-btn rm-${index}'>Read more</button>
           </div>
        </div> 
       `
@@ -65,6 +68,20 @@ function handleError(err) {
 function handleClick(event) {
   cardsDiv.innerHTML = "";
   fetchAndDisplay(event.target.value).catch(handleError);
+}
+
+// Handle Read more click
+function handleReadMore(element) {
+  // Select description from element
+  let description = element.previousElementSibling;
+  // Toggle class show
+  if (!description.classList.contains('show')) {
+    description.classList.add('show')
+    element.innerText = "Read less"; 
+  } else {
+    description.classList.remove('show')
+    element.innerHTML = "Read More"; 
+  }
 }
 
 // Add on click Event listener to all Nav Buttons

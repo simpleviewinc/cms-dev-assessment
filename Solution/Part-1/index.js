@@ -27,7 +27,6 @@ async function fetchAndDisplay() {
     )
     .join("");
   cardsDiv.innerHTML = html;
-  console.log(data);
 }
 
 // Handle Error function
