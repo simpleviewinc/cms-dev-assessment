@@ -1,7 +1,8 @@
-// Select cards div for display and set variable for end point url
+// Set variable for end point URL API
 const baseEndPoint = `https://sv-reqres.now.sh/api`;
 // Get all items from each page
 const itemsPerPage = `?per_page=20`;
+// Select slides content
 const slideContent = document.querySelectorAll(".slide-content");
 
 // Get data from end point set listings as default query
@@ -11,14 +12,27 @@ async function getData(query = "listings") {
   return data.data;
 }
 
+async function fetchURLs() {
+  let merged;
+  try {
+    // Promise.all() lets us call multiple promises to run parallel into a single super-promise
+    let data = await Promise.all([
+      getData(),
+      getData("events"),
+      getData("offers"),
+    ]);
+    merged = [].concat(...data);
+  } catch (error) {
+    console.log(error);
+  }
+  return merged;
+}
 
 // Shuffle Data
+
 async function randomizeItems() {
-  const listings = await getData();
-  const events = await getData("events");
-  const offers = await getData("offers");
   // Spread API data into random data Array
-  const data = [...listings, ...events, ...offers];
+  const data = await fetchURLs();
 
   let shuffled = data
     .map((a) => ({ sort: Math.random(), value: a }))
@@ -35,15 +49,12 @@ async function randomizeItems() {
   // For large arrays you should certainly use Fischer Yates
   // source https://stackoverflow.com/a/46545530/11757474
   */
-
-  return shuffled
+  return shuffled;
 }
-
 
 // Display data
 async function fetchAndDisplay() {
   const data = await randomizeItems();
-  console.log(data);
   // Populate each slide div with content from API
   slideContent.forEach(
     (div, index) =>
@@ -67,5 +78,3 @@ function handleError(err) {
 
 // On load get data and populate cards
 fetchAndDisplay().catch(handleError);
-
-randomizeItems();

@@ -1,20 +1,45 @@
 // Select cards div for display and set variable for end point url
 const cardsDiv = document.querySelector(".cards");
 const baseEndPoint = `https://sv-reqres.now.sh/api`;
-const itemsPerPage = `?per_page=18`;
+const itemsPerPage = `18`;
 // Select Nav Buttons
 const navBtns = document.querySelectorAll(".nav-btns");
+
 // Get data from end point set listings as default query
-async function getData(query = "listings") {
+async function getData(query = "listings", queryItemsPerPage = "18") {
   cardsDiv.innerHTML = `<h1>loading..</h1>`;
-  const response = await fetch(`${baseEndPoint}/${query}/${itemsPerPage}`);
+  const response = await fetch(
+    `${baseEndPoint}/${query}/?per_page=${queryItemsPerPage}`
+  );
   const data = await response.json();
   return data.data;
 }
 
+// Get data from all Listings
+async function fetchURLs() {
+  let merged;
+  try {
+    // Promise.all() lets us call multiple promises to run parallel into a single super-promise
+    let data = await Promise.all([
+      getData("listings", 6),
+      getData("events", 6),
+      getData("offers", 6),
+    ]);
+    merged = [].concat(...data);
+  } catch (error) {
+    console.log(error);
+  }
+  return merged;
+}
+
 // Display data
 async function fetchAndDisplay(query) {
-  const data = await getData(query);
+  let data;
+  if (query == "all") {
+    data = await fetchURLs();
+  } else {
+    data = await getData(query);
+  }
   const html = data
     .map(
       (item, index) => `
@@ -29,7 +54,6 @@ async function fetchAndDisplay(query) {
     )
     .join("");
   cardsDiv.innerHTML = html;
-  console.log(data);
 }
 
 // Handle Error
@@ -39,7 +63,6 @@ function handleError(err) {
 
 // Handle Nav Buttons click
 function handleClick(event) {
-  console.log(event.target.value);
   cardsDiv.innerHTML = "";
   fetchAndDisplay(event.target.value).catch(handleError);
 }
