@@ -1,6 +1,7 @@
 // Select cards div for display and set variable for end point url
 const baseEndPoint = `https://sv-reqres.now.sh/api`;
-const itemsPerPage = `?per_page=15`;
+// Get all items from each page
+const itemsPerPage = `?per_page=20`;
 const slideContent = document.querySelectorAll(".slide-content");
 
 // Get data from end point set listings as default query
@@ -27,6 +28,14 @@ async function fetchAndDisplay(query) {
           <p class="description d-${index}">${data[index].description}</p>
       </div>`)
   );
+}
+
+// Shuffle Data
+async function randomizeItems() {
+  let randomData = [];
+  await getData("listings");
+  await getData("events");
+  await getData("offers");
 }
 
 // Handle Error
