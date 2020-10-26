@@ -24,7 +24,6 @@ async function Slider(slider) {
     prev = current.previousElementSibling || slides.lastElementChild;
     // Next slide if last slide get first slide
     next = current.nextElementSibling || slides.firstElementChild;
-    console.log(current, prev, next);
   }
 
   // Apply classes to slides

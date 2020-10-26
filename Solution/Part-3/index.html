@@ -11,160 +11,55 @@
     <!-- Normalize CSS -->
     <link href="../normalize.css" rel="stylesheet" />
     <!-- Our CSS Part-3 -->
-    <!-- <link href="./style.css" rel="stylesheet" /> -->
-    <style>
-      /* Body */
-      body {
-        max-width: 1200px;
-        font-family: "Lato", sans-serif;
-        /* Background remove before submit! */
-        background: orange;
-      }
-
-      /* Navbar */
-      ul {
-        list-style-type: none;
-        margin: 10px;
-      }
-
-      li {
-        display: inline;
-      }
-      /* Navbar Buttons */
-      button {
-        color: black;
-        font-size: 16px;
-        line-height: 16px;
-        padding: 10px;
-        margin-left: 5px;
-        border-radius: 5px;
-        font-family: "Lato", sans-serif;
-        font-weight: normal;
-        text-decoration: none;
-        font-style: normal;
-        font-variant: normal;
-        text-transform: none;
-        background: rgb(211, 211, 211);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        border: 2px solid rgb(211, 211, 211);
-        display: inline-block;
-      }
-      button:hover,
-      button:active {
-        background: #32276f;
-        color: white;
-        border: 2px solid#32276f;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      /* Sliders */
-      .slides {
-        background: aqua;
-        height: 65vh;
-        width: 100vw;
-        position: absolute;
-        left: 0;
-        border: 2px solid black;
-        margin: 0 auto;
-        overflow: hidden;
-      }
-
-      .slide {
-        position: absolute;
-        background: var(--pink);
-        height: 100%;
-        width: 100%;
-        display: grid;
-        align-content: center;
-        font-family: sans-serif;
-        border: 5px solid white;
-        transition: all 0.25s;
-        transform: translateX(-200%);
-      }
-
-      .slide.next + .slide {
-        transform: translateX(200%);
-      }
-
-      .slide.prev {
-        z-index: 10;
-        transform: translateX(-100%);
-      }
-      .slide.current {
-        z-index: 10;
-        transform: translateX(0);
-      }
-      .slide.next {
-        z-index: 10;
-        transform: translateX(100%);
-      }
-
-      .controls {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-        gap: 2rem;
-        justify-content: center;
-        padding: 2rem;
-        width: 100vw;
-        position: absolute;
-        /* top: 0; */
-        left: 0;
-        bottom: 0;
-      }
-      /* Cards */
-      .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        padding: 10px;
-      }
-      .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      /* Images */
-      img {
-        width: 500px;
-        max-width: 100%;
-        height: 500px;
-        max-height: 100%;
-      }
-      /* Container */
-      .description {
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          black 50%,
-          transparent 100%
-        );
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        height: 150px;
-        overflow-y: scroll;
-      }
-    </style>
+    <link href="./style.css" rel="stylesheet" />
     <title>SV Part-3</title>
   </head>
   <body>
     <!-- Header -->
-    <h1>Hello World!</h1>
+    <!-- <h1>Hello World!</h1> -->
     <!-- NavBar -->
-    <nav>
+    <!-- <nav>
       <ul>
         <li><button class="nav-btns" value="listings">All</button></li>
         <li><button class="nav-btns" value="listings">Listings</button></li>
         <li><button class="nav-btns" value="events">Events</button></li>
         <li><button class="nav-btns" value="offers">Offers</button></li>
       </ul>
-    </nav>
+    </nav> -->
     <!-- Cards -->
     <div class="slider">
-      <div class="cards slides"></div>
+      <div class="slides">
+        <div class="slide-0 slide">
+          <div class="slide-content sc-0">1</div>
+          <div class="slide-content sc-1">2</div>
+          <div class="slide-content sc-2">3</div>
+          <div class="slide-content sc-3">4</div>
+          <div class="slide-content sc-4">5</div>
+        </div>
+        <div class="slide-1 slide">
+          <div class="slide-content sc-0">6</div>
+          <div class="slide-content sc-1">7</div>
+          <div class="slide-content sc-2">8</div>
+          <div class="slide-content sc-3">9</div>
+          <div class="slide-content sc-4">10</div>
+        </div>
+        <div class="slide-2 slide">
+          <div class="slide-content sc-0">11</div>
+          <div class="slide-content sc-1">12</div>
+          <div class="slide-content sc-2">13</div>
+        </div>
+        <div class="slide-3 slide">
+          <div class="slide-content sc-0">14</div>
+          <div class="slide-content sc-1">15</div>
+        </div>
+      </div>
       <div class="controls">
         <button class="goToPrev">← Prev</button>
         <button class="goToNext">Next →</button>
       </div>
     </div>
     <!-- JS -->
-    <!-- <script src="./index.js"></script> -->
+    <script src="./index.js"></script>
     <script src="./slider.js"></script>
   </body>
 </html>
