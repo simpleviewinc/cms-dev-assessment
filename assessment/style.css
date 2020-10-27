@@ -1,0 +1,276 @@
+
+
+ * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin-left: 50px;
+    font-size: 18px;
+    line-height: 27px;
+    max-width: 1200px;
+    margin-right: 50px;
+    font-family: 'Lato', sans-serif;
+  }
+
+  ul#menu li{
+    
+        display:inline;
+  }
+
+
+ .horizontal {
+   padding-bottom: 100px;
+ }
+
+ #image-one{
+   width: 500px;
+   height: 200px;
+ }
+
+ #image-tall{
+  width: 200px;
+  height: 600px;
+  float: left;
+  padding-right: 5px;
+}
+
+ #image{
+  width: 200px;
+  height: 200px;
+}
+
+ .left, .right, .center {
+    float: left;
+    padding: 10px;
+    height: 500px;
+    text-align: left;
+ }
+
+ .left {
+    width: 50%;
+ }
+ .right {
+    width: 25%;
+ }
+ .center {
+    width: 25%;
+ }
+ 
+
+ .buttom-left,  .buttom-center {
+  float: left;
+  padding: 10px;
+  height: 500px;
+  text-align: left;
+}
+
+.buttom-right{
+  height: 800px;
+}
+.buttom-left {
+  width: 25%;
+}
+
+.buttom-center {
+  width: 25%;
+}
+
+.buttom-right {
+  width: 50%;
+}
+
+ .button {
+    display: none;
+  }
+
+  .paragraphZero, .paragraphOne, .paragraphTwo, .paragraphThree, .paragraphFour {
+    position: relative;
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  .paragraphZero:before, .paragraphOne:before, .paragraphTwo:before , .paragraphThree:before, .paragraphFour:before{
+    content:'';
+    width:100%;
+    height:100%;    
+    position:absolute;
+    left:0;
+    top:0;
+    background:linear-gradient(transparent 20px, white);
+  }
+
+
+ .paragraphZero:hover + .button {
+    display: block;
+    color: white;
+  }
+
+  .paragraphOne:hover + .button {
+    display: block;
+    color: white;
+  }
+  .paragraphTwo:hover + .button {
+    display: block;
+    color: white;
+  }
+  .paragraphThree:hover + .button {
+    display: block;
+    color: white;
+  }
+  .paragraphFour:hover + .button {
+    display: block;
+    color: white;
+  }
+
+  .paragraph-tall {
+    position: relative;
+    max-height: 500px;
+    overflow: hidden;
+  }
+
+  .paragraph-tall:before {
+    content:'';
+    width:100%;
+    height:100%;    
+    position:absolute;
+    left:0;
+    top:0;
+    /* background:linear-gradient(transparent 20px, white); */
+  }
+
+
+ .paragraph-tall:hover + .button {
+    display: block;
+    color: white;
+  }
+
+
+  .navbtn {
+    padding: 5px;
+    margin: 5px;
+    width: 70px;
+    border: none;
+    border-radius: 10%;
+    font-weight: bold;
+  }
+  .navbtn:hover {
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-style:  double ;
+  }
+
+  .left {
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+ 
+  .center {
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .right {
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .buttom-left {
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+ 
+  .buttom-center {
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .buttom-right {
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button { 
+    position: absolute; 
+    bottom: 0; 
+    left: 40%;
+    
+    background-color: red;
+   
+    height: 30px;
+    text-align: center; 
+   
+    cursor: pointer;
+    border-radius: 10%;  
+    border: 0;
+  }
+  
+
+  
+  
+  /* Media queries for different screen size */
+@media (max-width: 1025px) {
+  #image-one, #image{
+    width: 200px;
+    height: 200px;
+  }
+  
+  #image-tall {
+    float: none;
+    width: 200px;
+    height: 200px;
+    padding: 0;
+  }
+
+  .left, .buttom-left {
+    width: 33.33%;
+ }
+ .right, .buttom-right {
+    width: 33.33%;
+ }
+ .center, .buttom-center {
+    width: 33.33%;
+ }
+
+.paragraph-tall {
+ position: relative;
+    max-height: 100px;
+    overflow: hidden;
+}
+ .paragraph-tall:before {
+  
+ width:100%;
+ height:100%;    
+ background:linear-gradient(transparent 20px, white);
+ }
+ 
+}
+
+@media (max-width: 641px) {
+  #image-one, #image {
+    width: 100%;
+    height: auto;
+  }
+  .left, .right, .center, .buttom-left, .buttom-center, .buttom-right{
+    width: 100%;
+ }
+ 
+ #image-tall {
+  float: none;
+  width: 100%;
+  height: auto;
+}
+}
+
+
+
