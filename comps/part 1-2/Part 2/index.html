@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/stylesheet.css" />
+
+    <title>Part 2</title>
+  </head>
+  <body>
+    <div class="tabBox">
+      <div class="btnContainer">
+        <input
+          onclick="activateTab(this)"
+          type="button"
+          value="All"
+          name="all"
+          class="btn active"
+        />
+        <input
+          onclick="activateTab(this)"
+          type="button"
+          value="Listings"
+          name="listings"
+          class="btn"
+        />
+        <input
+          onclick="activateTab(this)"
+          type="button"
+          value="Events"
+          name="events"
+          class="btn"
+        />
+        <input
+          onclick="activateTab(this)"
+          type="button"
+          value="Offers"
+          name="offers"
+          class="btn"
+        />
+      </div>
+      <div class="paneContainer">
+        <div class="tab-pane gridContainer activeTab" id="all"></div>
+        <div class="tab-pane gridContainer" id="listings"></div>
+        <div class="tab-pane gridContainer" id="events"></div>
+        <div class="tab-pane gridContainer" id="offers"></div>
+      </div>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
