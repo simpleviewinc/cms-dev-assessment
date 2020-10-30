@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>CMS Dev Assessment</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="content">
+                <nav class="filters">
+                    <div class="radio-container">
+                        <input checked id="filter-all" aria-hidden="true" name="filter" type="radio" value="all" />
+                        <label for="filter-all" class="radio-button">All</label>
+                    </div>
+                    <div class="radio-container">
+                        <input id="filter-listings" aria-hidden="true" name="filter" type="radio" value="listings" />
+                        <label for="filter-listings" class="radio-button">Listings</label>
+                    </div>
+                    <div class="radio-container">
+                        <input id="filter-events" aria-hidden="true" name="filter" type="radio" value="events" />
+                        <label for="filter-events" class="radio-button">Events</label>
+                    </div>
+                    <div class="radio-container">
+                        <input id="filter-offers" aria-hidden="true" name="filter" type="radio" value="offers" />
+                        <label for="offers" class="radio-button">Offers</label>
+                    </div>
+                </nav>
+                <div class="cards"></div>
+                <div>
+                  <button data-action="previous-page">Previous Page</button>
+                  <button data-action="next-page">Next Page</button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <template name="listing">
+        <div class=" card">
+            <img onerror='this.src="./fallback.jpg"' src="" alt="item photo" class="card-img" />
+            <div class="container">
+                <h3 data-role="title"></h3>
+                <p class="description"></p>
+            </div>
+        </div> 
+    </template>
+
+    </template>
+    <script src="render.js" type="text/javascript"></script>
+    <script src="radios.js" type="text/javascript"></script>
+    <script src="state.js" type="text/javascript"></script>
+    <script src="app.js"></script>
+</body>
+</html>
