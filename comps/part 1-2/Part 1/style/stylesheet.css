@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* grid */
+.gridContainer {
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 10px;
+  margin: 20px 10px;
+}
+.element {
+  height: 550px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.element div {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.element:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(
+    0deg,
+    #ffffff 45.64%,
+    rgba(255, 255, 255, 0) 116.8%
+  );
+}
+.readMoreBtn {
+  opacity: 0;
+  position: absolute;
+  bottom: -40px;
+  background: #E9442E;
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  width: 130px;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 0.3em;
+  border: none;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+.readMoreBtn:hover {
+  background-color: #c43926;
+}
+/* slide up effect on hover */
+.slideUp {
+  opacity: 1;
+  bottom: 0px;
+}
+.element img {
+  max-width: 100%;
+}
+
+/* grid pattern */
+.element:nth-child(1),
+.element:nth-child(6),
+.element:nth-child(7) {
+  grid-column-end: span 2;
+}
+.element:nth-child(6) {
+  display: flex;
+  flex-direction: row;
+}
+.element:nth-child(6) .img {
+  min-width: 290px;
+  margin-right: 15px;
+}
+.element:nth-child(6) .element-content {
+  position: relative;
+}
+.element:nth-child(6):after {
+  display: none;
+}
+
+/* Tab buttons */
+.tab-pane {
+  margin-top: 10px;
+  display: grid;
+}
+
+@media screen and (max-width: 1025px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .element {
+    height: 400px;
+  }
+  .element:nth-child(1),
+  .element:nth-child(6),
+  .element:nth-child(7) {
+    grid-column-end: inherit;
+    display: inline;
+  }
+  .element:nth-child(6) .img {
+    min-width: auto;
+    margin-right: 0;
+  }
+  .element:nth-child(6) .element-content {
+    position: initial;
+  }
+
+  .element div {
+    background-position: center bottom !important;
+    background-size: contain !important;
+  }
+  .img {
+    min-height: 200px !important;
+  }
+}
+@media screen and (max-width: 641px) {
+  .gridContainer {
+    grid-template-columns: 1fr !important;
+  }
+  .element div {
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+  .img {
+    min-height: 250px !important;
+  }
+} ;
