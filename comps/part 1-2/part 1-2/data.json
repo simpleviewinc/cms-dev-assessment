@@ -1,0 +1,44 @@
+{
+    "page": 1,
+    "per_page": "2",
+    "total": 20,
+    "total_pages": 10,
+    "data": [
+      {
+        "zip": "85719",
+        "address1": "303 University Blvd.",
+        "region": "East",
+        "description": "Located just north of Scottsdale in the scenic foothills of Carefree, Arizona, is the Carefree Resort and Villas. This 400+ room resort features spacious guest rooms, casitas and luxuriously appointed one-and two-bedroom vacation villas, all with private patios or balconies. In addition, the Resort offers more than 30,000 square feet of meeting and event space including the Grand Opera House, a highlight among the many unique meeting venues offered by the Resort. The Grand Opera House is ideal for catered events, meetings and convention groups, and features a combination Santa Fe-style architecture of Arizona's territorial days with the technical features of a modern studio sound stage. Carefree's very own western-themed venue, Stagecoach Pass, is located just outside the Opera House and provides a wonderful opportunity to experience the \"Old West\" in a historic frontier town setting. The Resort offers an abundance of recreation options including three sparkling pools, a full service spa, 5 tennis courts, all lit for night play, three restaurants and an authentic 1800's saloon with billiards, darts and big-screen TV. The Carefree Resort & Villas is partnered with the Legend Trail Golf Club and Golf Digest School only minutes from the Resort with golf packages and golf school vacations. and and and",
+        "city": "Tucson",
+        "state": "AZ",
+        "recid": 313,
+        "weburl": "http://www.starwoodhoteleast.com",
+        "phone": "520-897-7371",
+        "title": "Starwood Hotel East",
+        "category": {
+          "subcatname": "Guest Ranch",
+          "catname": "Accommodations"
+        },
+        "mediaurl": "http://crm.rd.simpleviewinc.com/images/listings/original_Trident0.JPG",
+        "qualityScore": -4
+      },
+      {
+        "zip": "85711",
+        "address1": "445 S. Alvernon Way",
+        "region": "Downtown",
+        "description": "In the heart of Scottsdale, within walking distance to great shopping, restaurants, entertainment, golf, Chaparral Suites Resort offers 311 two-room suites. Each suite has a private bedroom, spacious living room and includes two vanities, two remotecontrol TVs, microwave, refrigerator, coffee maker, iron/board, hair dryer, safe, voice messaging, complimentary in-room high-speed Internet, in-room movies. Play tennis, swim in two oversized pools, enjoy a whirlpool, or workout in our fitness center. Signature amenities include complimentary full cooked-to-order breakfast, evening reception, airport transportation, USA Today delivered to your room. Restaurant, Concierge Desk, car rental desk, gift shop, business center, laundry services.",
+        "city": "Tucson",
+        "state": "AZ",
+        "recid": 360,
+        "weburl": "http://www.thistlehoteldowntown.com",
+        "phone": "520-567-8582",
+        "title": "Thistle Hotel Downtown",
+        "category": {
+          "subcatname": "Apparel",
+          "catname": "Shopping"
+        },
+        "mediaurl": "http://crm.rd.simpleviewinc.com/images/listings/thumb_simpleview-Logo15010.jpg",
+        "qualityScore": -4
+      }
+    ]
+  }
