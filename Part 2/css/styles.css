@@ -1,0 +1,181 @@
+/* CSS RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1200px;
+    padding: 10px;
+    font-family: "Lato", sans-serif;
+}
+
+/* navigation buttons styles */
+.buttons {
+    padding-bottom: 20px;
+}
+
+.allBtn,
+.listingsBtn,
+.eventBtn,
+.offersBtn {
+    padding: 6px 12px;
+    border: none;
+    margin-left: 5px;
+    outline: none;
+}
+
+.allBtn:hover,
+.listingsBtn:hover,
+.eventBtn:hover,
+.offersBtn:hover {
+    background-color: lightgray;
+}
+
+.active--button {
+    outline: none;
+    background-color: #8e44ad;
+    border-radius: 4px;
+    color: #fff;
+    border: 3px double #fff;
+}
+
+.active--button:hover {
+    background-color: #8e44ad;
+}
+
+/* Cards styles */
+.card {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 50px;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 35%,
+        rgba(255, 255, 255, 0.6516981792717087) 100%
+    );  
+}
+
+.description_title,
+.description_text,
+.card_image {
+    padding: 5px 0;
+    width: 100%;
+}
+
+.card_image-container {
+    background-image: url('../img/fallback.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+/* 'read more' button styles */
+.read_more-btn-wrapper {
+    position: absolute;
+    top: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 2;
+    width: 100%;
+    transform: translateY(160px);
+    transition: all 0.5s ease;
+}
+
+.read_more-btn {
+    padding: 5px 8px;
+    border: none;
+    background-color: red;
+    border-radius: 4px;
+    color: #ffff;
+    cursor: pointer;
+}
+
+.card:hover .read_more-btn-wrapper {
+    transform: translateY(-150px);
+}
+
+/* SETTING BREAKPOINTS FOR RESPONSIVE DESIGN (LARGE) */
+@media (min-width: 1025px) {
+    .grid_container {
+        padding: 10px;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* first card's positioning */
+    .card:nth-of-type(1),
+    .card:nth-of-type(7),
+    .card:nth-of-type(13) {
+        grid-column: 1/3;
+    }
+
+    /* last card's positioning */
+    .card:nth-child(6),
+    .card:nth-child(12),
+    .card:nth-child(18) {
+        width: 100%;
+        gap: 15px;
+        grid-column: 3/5;
+        display: flex;
+    }
+
+    .card:nth-child(6) .description,
+    .card:nth-child(12) .description,
+    .card:nth-child(18) .description {
+       width: 50%;
+    }
+
+    .card:nth-child(6) .card_image-container,
+    .card:nth-child(12) .card_image-container,
+    .card:nth-child(18) .card_image-container {
+       width: 50%;
+       height: 100%;
+    }
+
+    .card:nth-child(6) .card_image,
+    .card:nth-child(12) .card_image,
+    .card:nth-child(18) .card_image {
+        height: 100%;
+    }
+}
+
+/* BREAKPOINT FOR RESPONSIVE DESIGN (MEDIUM) */
+@media (min-width: 641px) and (max-width: 1025px) {
+    .grid_container {
+        display: grid;
+        padding: 10px;
+        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* BREAKPOINT FOR RESPONSIVE DESIGN (SMALL) */
+@media (max-width: 640px) {
+    .card {
+        height: 650px;
+        padding: 8px;
+    }
+
+    .card::after {
+        height: 80px;
+    }
+}
