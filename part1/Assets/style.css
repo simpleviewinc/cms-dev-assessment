@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.item1 {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+}
+.item2 {
+
+}.item3 {
+
+}.item4 {
+
+}
