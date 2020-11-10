@@ -52,6 +52,10 @@ $(document).ready(function(){
         });
     };
 
+    let all = document.createElement('button');
+    all.textContent = 'All';
+    $('.navbar').append(all);
+
     let list = document.createElement('button');
     list.textContent = 'Listings';
     $('.navbar').append(list);
@@ -63,10 +67,6 @@ $(document).ready(function(){
     let offer = document.createElement('button');
     offer.textContent = 'Offers';
     $('.navbar').append(offer);
-
-    let all = document.createElement('button');
-    all.textContent = 'All';
-    $('.navbar').append(all);
 
     list.addEventListener('click', function () {
         $('.grid-container').empty();

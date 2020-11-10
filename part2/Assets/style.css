@@ -5,6 +5,20 @@
     gap: 1.5rem;
 }
 
+button {
+    margin: 5px;
+    padding: 10px 24px;
+    border: none;
+    text-align: center;
+}
+
+button:focus {
+    background-color: #5a0080;
+    color: whitesmoke;
+    border-radius: 8px;
+    border: 5px solid #5a0080; 
+}
+
 img {
      object-fit: cover;
      height: 200px;
