@@ -18,6 +18,12 @@ button:focus {
     border-radius: 8px;
     border: 5px solid #5a0080; 
 }
+.readMore:hover {
+    background-color: #e40101;
+    color: whitesmoke;
+    padding: 5px;
+    text-align: center;
+}
 
 img {
      object-fit: cover;

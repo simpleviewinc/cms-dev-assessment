@@ -16,6 +16,28 @@ $(document).ready(function(){
         gridItem.append(img);
         gridItem.append(title);
         gridItem.append(text);
+
+        let readMore = document.createElement('button');
+        readMore.setAttribute('class', 'readMore');
+        readMore.textContent = 'Read More';
+        gridItem.append(readMore);
+        text.setAttribute('class', 'text');
+        let height = 20;
+        let pHeight = $('.text')[0].scrollHeight;
+        $('.text').css({"max-height": height, "overflow": "hidden"});
+
+        readMore.addEventListener('click', function () {
+            let newHeight = 0;
+            if ($('.text').hasClass('active')) {
+                newHeight = height;
+                $('.text').removeClass('active');
+            } else {
+                newHeight = pHeight;
+                $('.text').addClass('active');
+            } $('.text').animate({
+                'max-height': newHeight
+            }, 500);
+        });
     };
 
     let listingUrl= "https://sv-reqres.now.sh/api/listings";
