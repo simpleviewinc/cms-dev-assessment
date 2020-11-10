@@ -50,7 +50,6 @@ $(document).ready(function(){
             method: 'GET'
         }).then(function (res) {
             res.data.forEach(createCard);
-            console.log(res.data);
         });
     };
 
@@ -60,7 +59,6 @@ $(document).ready(function(){
             method: 'GET'
         }).then(function (res) {
             res.data.forEach(createCard);
-            console.log(res.data);
         });
     };
 
@@ -70,7 +68,6 @@ $(document).ready(function(){
             method: 'GET'
         }).then(function (res) {
             res.data.forEach(createCard);
-            console.log(res.data);
         });
     };
 

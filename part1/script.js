@@ -7,7 +7,6 @@ $(document).ready(function(){
             method: 'GET'
         }).then(function (res) {
             res.data.forEach(createCard);
-            console.log(res.data);
         });
 
         function createCard (item) {

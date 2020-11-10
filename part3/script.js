@@ -34,6 +34,7 @@
                 }
             });
         };
+
         listings(1);
         let pageNum = 1;
 
@@ -57,8 +58,8 @@
             pageNum++;
             listings(pageNum);
         }
-
     }
+    
         let btnNext = document.getElementById('btnNext');
         let btnPrev = document.getElementById('btnPrev');
 
