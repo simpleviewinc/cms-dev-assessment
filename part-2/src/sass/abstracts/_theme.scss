@@ -1,0 +1,195 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                       BASE                       //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+/*===========================
+    Color Scheme
+===========================*/
+$colorScheme:(
+    primaryColor: map-get($grays, gray05),
+    secondaryColor: map-get($grays, gray20),
+    accentColor: rgb(183, 69, 56),
+    purple: #8743ac
+);
+
+/*Background Colors*/
+$bgColors:(
+    bodyBg: map-get($colorScheme, primaryColor),
+    lightBg: $white, //this must be lighter than the bodyBg
+    medBg: map-get($colorScheme, secondaryColor),
+    darkBg: map-get($colorScheme, primaryColor) //this must be darker than the bodyBg
+);
+
+$contentBg: map-get($bgColors, lightBg);
+
+/*Type Colors*/
+$lightTextColor: map-get($grays, gray05);
+$medTextColor: map-get($grays, gray45);
+$darkTextColor: map-get($grays, gray95);
+$successGreen: #30d5a9;
+
+/*===========================
+    Transitions
+===========================*/
+$transitionDur: .3s;
+$transitionEase: ease;
+
+$shortTransition: all ($transitionDur / 3) $transitionEase;
+$transition: all $transitionDur $transitionEase;
+$longTransition: all $transitionDur * 2 $transitionEase;
+
+
+/*===========================
+    Borders
+===========================*/
+$borderRadius: .5em;
+
+$borderThickness: .2rem;
+$thickBorderThickness: .35rem; //should be less than .4rem, ideally
+
+$darkBorderColor: rgba($darkTextColor, .35);
+$medBorderColor: rgba($medTextColor, .35);
+$lightBorderColor: rgba($lightTextColor, .35);
+
+/*===========================
+    Type
+===========================*/
+
+/*Heading Font*/
+$headingFont: 'Lato', sans-serif;
+$headingTextTransform: none;
+$headingFontWeight:900;
+$headingBold:900;
+$headingLight:400;
+$headingLetterSpacing:.02em;
+$headingLineHeight:1.2;
+$headingTypeMargin:2.25em 0 .25em;
+$headingFontStyle:normal;
+$headingItalic: italic;
+
+/*Main Font*/
+$primaryFont: 'Lato', sans-serif;
+$primaryTextTransform: none;
+$primaryFontWeight:400;
+$primaryBold: 900;
+$primaryLight: 400;
+$primaryLetterSpacing:.02em;
+$primaryLineHeight:1.5;
+$primaryTypeMargin:1em 0 1.3em 0;
+$primaryFontStyle:normal;
+$primaryItalic: italic;
+
+$listTypeMargin: .5em 0;
+
+/*General Type Settings*/
+$baseFontSize: .9em;
+$typeScaleMultiplier:nth($typeScales, 3);
+
+$smallFontSize:$baseFontSize * .8;
+$largeFontSize:$baseFontSize * 1.2;
+
+/*===========================
+    Links
+===========================*/
+
+$linkColor:map-get($colorScheme, accentColor);
+$linkTextDecoration:none;
+$linkFontWeight:$primaryBold;
+
+$linkHoverTextDecoration:none;
+
+/*===========================
+    Shadows
+===========================*/
+/*Text Shadows*/
+$textShadowColor: rgba($black, .5);
+$whiteTextShadowColor: rgba($white, .5);
+
+$textShadow: 1px 1px $textShadowColor;
+$whiteTextShadow: 1px 1px $whiteTextShadowColor;
+
+/*Box Shadows*/
+$softShadowColor:rgba($darkTextColor, .15);
+$shadowColor:rgba($darkTextColor, .2);
+$mediumShadowColor:rgba($darkTextColor, .25);
+$darkShadowColor: rgba($darkTextColor,0.5);
+$accentShadowColor: rgba(map-get($colorScheme, accentColor), .6);
+
+$shadowOffset: 3px;
+$medShadowOffset: 6px;
+$longShadowOffset: 12px;
+
+$softShadow: 0 $medShadowOffset ($medShadowOffset * 4) $softShadowColor;
+
+$boxShadow: 0 $shadowOffset ($shadowOffset * 2) $shadowColor;
+$mediumShadow: 0 $medShadowOffset ($medShadowOffset * 2) $mediumShadowColor;
+$longShadow: 0 $longShadowOffset ($longShadowOffset * 2) 2px $darkShadowColor;
+
+$boxShadowLeft: -$shadowOffset 0 $shadowOffset $shadowColor;
+$boxShadowRight: $shadowOffset 0 $shadowOffset $shadowColor;
+$boxShadowUp:0 -$shadowOffset $shadowOffset $shadowColor;
+
+$mediumShadowLeft:-$medShadowOffset 0 ($medShadowOffset * 2) $mediumShadowColor;
+$mediumShadowRight:$medShadowOffset 0 ($medShadowOffset * 2) $mediumShadowColor;
+$mediumShadowUp:0 -$medShadowOffset ($medShadowOffset * 2) $mediumShadowColor;
+
+$longShadowLeft: -$longShadowOffset 0 ($longShadowOffset * 2) $darkShadowColor;
+$longShadowRight: $longShadowOffset 0 ($longShadowOffset * 2) $darkShadowColor;
+$longShadowUp:0 -$longShadowOffset ($longShadowOffset * 2) $darkShadowColor;
+
+$softShadowLeft: -$medShadowOffset 0 ($medShadowOffset * 4) $softShadowColor;
+$softShadowRight: $medShadowOffset 0 ($medShadowOffset * 4) $softShadowColor;
+$softShadowUp: 0 ($medShadowOffset * -1) ($medShadowOffset * 4) $softShadowColor;
+
+$accentShadow: 0 $medShadowOffset ($medShadowOffset * 4) $accentShadowColor;
+
+$insetShadowRight:inset -$shadowOffset 0 $shadowOffset $shadowColor;
+$insetShadowLeft: $shadowOffset 0 $shadowOffset $shadowColor;
+
+
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                    COMPONENTS                    //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+/*===========================
+    Toast
+===========================*/
+$warningToastBg: desaturate(map-get($colorScheme, accentColor), 20%);
+
+/*===========================
+    Lightbox
+===========================*/
+$lightboxPadding: 2em;
+$lightboxBg: bg-color(map-get($bgColors, bodyBg));
+
+/*===========================
+    Buttons
+===========================*/
+/*---------- Button Variables ----------*/
+/*General*/
+$buttonBorderRadius:.25em;
+$buttonBorder:none;
+$buttonPadding: .5em 1em;
+$buttonTextTrans:$primaryTextTransform;
+$buttonLineHeight: $primaryLineHeight;
+$buttonFontSize: 1em;
+$buttonFont: $primaryFont;
+$buttonLetterSpacing: $primaryLetterSpacing;
+$buttonFontWeight: $primaryFontWeight;
+
+/*Cross Button*/
+$crossBtnDiam:40px;
+
+/*Arrow Buttons*/
+$arrowBtnDiam: 50px;
+
+/*Circle Buttons*/
+$circleBtnDiam: 40px;
+
+/*Image Button*/
+$imageBtnBorderColor: $successGreen;
+$imageBtnBg: white-or-black(map-get($bgColors, bodyBg));

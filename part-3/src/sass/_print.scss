@@ -1,0 +1,196 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                   PRINT QUERIES                  //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+@media print{
+    /*==========----------==========*/
+    /*            GENERAL           */
+    /*==========----------==========*/
+
+    *:not(.icon)::before,
+    *:not(.icon)::after,
+    nav,
+    .scrollIcon,
+    .load,
+    .button,
+    .circleBtn,
+    iframe,
+    video,
+    .video,
+    .social,
+    .toTopBtn,
+    img,
+    hr,
+    form{
+        display:none !important;
+    }
+
+    *{
+        background:none !important;
+        color:$black !important;
+        text-shadow:none !important;
+        box-shadow:none !important;
+        filter:none !important;
+        backdrop-filter: none !important;
+        column-count: unset !important;
+        column-gap: unset !important;
+        column-span: none !important;
+    }
+
+    /*==========----------==========*/
+    /*             BASE             */
+    /*==========----------==========*/
+
+    html{
+        font-size:12px;
+    }
+
+    .logo{
+        img,
+        svg,
+        &__img,
+        &--icon{
+            display:none;
+        }
+
+        &__img--print{
+            display:block !important;
+        }
+    }
+
+    .section{
+        padding:4em 0 !important;
+        border-bottom:$borderThickness solid $medBorderColor;
+    }
+
+    .box{
+        padding:1em;
+    }
+
+    .largeText{
+        font-size:1.2em;
+    }
+
+    /*==========----------==========*/
+    /*            LAYOUT            */
+    /*==========----------==========*/
+
+    /*======---- HEADER ----======*/
+
+    .header{
+        padding:0 !important;
+        position:relative;
+
+        &__navWrp{
+            display:none;
+        }
+    }
+
+    /*======---- FOOTER ----======*/
+
+    .footer{
+        margin:0;
+        padding:0;
+    }
+
+    /*======---- HERO ----======*/
+
+    .hero{
+        $hero: &;
+
+        display:block;
+        min-height:0 !important;
+        margin:0;
+
+        &__bgWrp,
+        &__arrows,
+        &__dots{
+            display:none;
+        }
+
+        &__content{
+            padding:0 !important;
+            max-width:none !important;
+        }
+    }
+
+    /*======---- FORMS ----======*/
+
+    .form{
+        &,
+        &__box{
+            display:none;
+        }
+    }
+
+    /*==========----------==========*/
+    /*          COMPONENTS          */
+    /*==========----------==========*/
+
+    /*======---- FAQS ----======*/
+
+    .faqs{
+        &__wrapper{
+            margin-top:1em;
+        }
+
+        &__search{
+            display:none;
+        }
+
+        &__item{
+            &:last-child{
+                border-bottom:none;
+            }
+        }
+
+        &__question{
+            pointer-events:none;
+        }
+
+        &__answer{
+            display:block !important;
+            padding:1em 0 !important;
+        }
+    }
+
+    /*======---- TESTIMONIALS ----======*/
+
+    .testimonials{
+        &__arrows,
+        &__dots{
+            display:none;
+        }
+
+        &__slide{
+            padding:0 0 2em 0 !important;
+        }
+    }
+
+    /*==========----------==========*/
+    /*      VENDORS EXTENSIONS      */
+    /*==========----------==========*/
+
+    /*======---- SLICK ----======*/
+
+    .slick-track{
+        display:block !important;
+        width:100% !important;
+    }
+
+    .slick-slide{
+        width:100% !important;
+        float:none;
+        height:auto;
+        position:static !important;
+        opacity:1 !important;
+    }
+
+    /*==========----------==========*/
+    /*            PAGES             */
+    /*==========----------==========*/
+
+    
+}

@@ -1,0 +1,328 @@
+﻿/*===========================
+    Icons
+===========================*/
+
+//----- FONT AWESOME 5 ICONS -----//
+// In Font Awesome 5, you must specify which icon library you are pulling from.
+// Each gets its own font weight and font family.
+// Please ensure that you are placing the icon code in the correct map.
+//////////////////////////////////////////////////////////////////////////
+////-- These are in ALPHABETICAL ORDER -- PLEASE keep them that way --////
+//////////////////////////////////////////////////////////////////////////
+$icons: (
+    brands: (
+        //////////////////////////////////////////////////////
+        font-weight: 400,
+        font-family: "Font Awesome 5 Brands",
+        ///// ^^^ Please do not move or modify these ^^^ /////
+        facebook: "\f39e",
+        foursquare: "\f180",
+        google: "\f1a0",
+        google-plus: "\f0d5",
+        instagram: "\f16d",
+        tumblr: "\f173",
+        twitter: "\f099",
+        yelp: "\f1e9",
+        youtube: "\f167" 
+    ),
+    solid: (
+        //////////////////////////////////////////////////////
+        font-weight: 900, 
+        font-family: "Font Awesome 5 Free",
+        ///// ^^^ Please do not move or modify these ^^^ /////
+        angle-double-down:"\f103",
+        angle-double-left: "\f100",
+        angle-double-right: "\f101",
+        angle-double-up: "\f102",
+        angle-down: "\f107",
+        angle-left: "\f104",
+        angle-right:"\f105",
+        angle-up:"\f106",
+        arrow-circle-down: "\f0ab",
+        arrow-circle-left: "\f0a8",
+        arrow-circle-right: "\f0a9",
+        arrow-circle-up: "\f0aa",
+        arrow-down: "\f063",
+        arrow-left: "\f060",
+        arrow-right: "\f061",
+        arrow-up: "\f062",
+        at: "\f1fa",
+        bars: "\f0c9",
+        briefcase: "\f0b1",
+        calendar: "\f133",
+        caret-down: "\f0d7",
+        caret-left: "\f0d9",
+        caret-right: "\f0da",
+        caret-up: "\f0d8",
+        check-circle:"\f058",
+        clock: "\f017",
+        closed-captioning: "\f20a",
+        credit-card:"\f09d",
+        comment-bubble: "\f27a",
+        comments: "\f086",
+        dollar: "\f155",
+        dot: "\f111",
+        envelope: "\f0e0",
+        fax: "\f1ac",
+        file-alt: "\f15c",
+        file-pdf: "\f1c1",
+        file-word: "\f1c2",
+        film:"\f008",
+        fullscreen: "\f0b2",
+        gift:"\f06b",
+        grid: "\f00a",
+        home: "\f015",
+        info:"\f129",
+        leaf:"\f06c",
+        link: "\f0c1",
+        list: "\f00b",
+        location-pin: "\f041",
+        location-pin-alt: "\f3c5",
+        minus: "\f068",
+        minus-circle: "\f056",
+        mobile: "\f3cd",
+        money-bill: "\f0d6",
+        paper-plane: "\f1d8",
+        pencil: "\f303",
+        pencil-square: "\f044",
+        people: "\f0c0",
+        person: "\f007",
+        phone: "\f095",
+        play:"\f04b",
+        play-circle: "\f144",
+        plus: "\f067",
+        plus-circle: "\f055",
+        print: "\f02f",
+        question-mark: "\f128",
+        reply: "\f3e5",
+        search: "\f002",
+        share-square: "\f14d",
+        shopping-bag: "\f290",
+        shopping-cart: "\f07a",
+        smile-face: "\f118",
+        star:"\f005",
+        tag: "\f02b",
+        ticket: "\f3ff",
+        times: "\f00d",
+        times-circle: "\f057",
+        video-camera: "\f03d",
+        wheelchair: "\f193",
+        zoom:"\f00e"
+    ),
+    regular: (
+        //////////////////////////////////////////////////////
+        font-weight: 400,
+        font-family: "Font Awesome 5 Free",
+        ///// ^^^ Please do not move or modify these ^^^ /////
+        calendar: "\f133",
+        check-circle:"\f058",
+        clock: "\f017",
+        closed-captioning: "\f20a",
+        credit-card:"\f09d",
+        comment-bubble: "\f27a",
+        comments: "\f086",
+        dot: "\f111",
+        envelope: "\f0e0",
+        file-alt: "\f15c",
+        file-pdf: "\f1c1",
+        file-word: "\f1c2",
+        paper-plane: "\f1d8",
+        pencil-square: "\f044",
+        person: "\f007",
+        play-circle: "\f144",
+        share-square: "\f14d",
+        smile-face: "\f118",
+        star:"\f005",
+        times-circle: "\f057"
+    )
+);
+
+.icon {
+    position: relative;
+
+    &::before,
+    &::after {
+        @include icon(null, null);
+    }
+
+    &__wrapper {
+        @include flexWrap(row, nowrap, center, center);
+    }
+
+    &--before::before {
+        margin-right: .5em;
+    }
+
+    &--after {
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            margin-left: .5em;
+        }
+    }
+
+    &--block {
+        &::before,
+        &::after {
+            display: block;
+        }
+
+        &::before {
+            margin-bottom: 1em;
+        }
+
+        &::after {
+            margin-top: 1em;
+        }
+    }
+}
+
+@each $position in $absolute-positions {
+    $position: to-lower-case($position);
+    $posString: to-upper-case(str-slice($position, 1, 1)) + str-slice($position, 2);
+    $icon: ".icon";
+
+    @if $position != center {
+        #{$icon}--absolute#{$posString} {
+            display: block;
+            padding-#{$position}: 1.5em !important;
+
+            &::before {
+                @include icon(null, null, block, inherit, 100%);
+                #{$position}: 0;
+            }
+
+            @if ($position == left or $position == right) {
+                &::before{
+                    @include absolute(center-vertical);
+                }
+
+                &#{$icon}--absoluteTop::before {
+                    top: 0;
+                    transform: none;
+                }
+
+                &#{$icon}--absoluteBottom::before {
+                    top: auto;
+                    bottom: 0;
+                    transform: none;
+                }
+            }
+            @else {
+                &::before{
+                    @include absolute(center-horizontal);
+                }
+
+                &#{$icon}--absoluteLeft::before {
+                    left: 0;
+                    transform: none;
+                }
+
+                &#{$icon}--absoluteRight::before {
+                    left: auto;
+                    right: 0;
+                    transform: none;
+                }
+            }
+
+            &#{$icon}--svg {
+                &::before {
+                    display: none;
+                }
+
+                svg {
+                    #{$position}: 0;
+
+                    @if ($position == left or $position == right) {
+                        @include absolute(center-vertical);
+
+                        &#{$icon}--absoluteTop {
+                            top: 0;
+                            transform: none;
+                        }
+
+                        &#{$icon}--absoluteBottom {
+                            top: auto;
+                            bottom: 0;
+                            transform: none;
+                        }
+                    }
+                    @else {
+                        @include absolute(center-horizontal);
+
+                        &#{$icon}--absoluteLeft {
+                            left: 0;
+                            transform: none;
+                        }
+
+                        &#{$icon}--absoluteRight {
+                            left: auto;
+                            right: 0;
+                            transform: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @else {
+        #{$icon}--absolute#{$posString} {
+            display: block;
+            padding: 15px !important;
+
+            &::before {
+                @include absolute(center);
+                @include icon(null, null, block, inherit, 100%);
+            }
+
+            &#{$icon}--svg {
+                &::before {
+                    display: none;
+                }
+
+                svg {
+                    @include absolute(center);
+                }
+            }
+        }
+    }
+}
+
+@each $key, $library in $icons {
+    @each $icon, $char in $library {
+        .icon--#{$icon}::before,
+        .icon--after.icon--#{$icon}::after {
+            @if ($key != brands) {
+                font-family: "Font Awesome 5 Free";
+            }
+            @else {
+                font-family: "Font Awesome 5 Brands";
+            }
+
+            font-weight: map-get($library, font-weight);
+            content: $char;
+        }
+    }
+}
+
+/*===========================
+    Media Queries
+===========================*/
+
+/*---------- $gridBreakpoint WIDTH ----------*/
+
+@media only screen and (max-width:$gridBreakpoint) {
+    .icon__wrapper {
+        @include flexWrap(row, nowrap);
+    }
+}
+
+/*---------- 400PX WIDTH ----------*/
+
+@media only screen and (max-width:400px) {
+    .icon__wrapper {
+        @include flexWrap(column, nowrap, center, center);
+    }
+}

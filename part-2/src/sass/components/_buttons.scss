@@ -1,0 +1,221 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                     BUTTONS                      //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+button,
+.button {
+    cursor: pointer;
+    appearance:none;
+}
+
+.button {
+    /*==========----------==========*/
+    /*           GENERAL            */
+    /*==========----------==========*/
+
+    $button: &;
+
+    @include button;
+    opacity: 1;
+    visibility: visible;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &__wrapper {
+        @include flexWrap(row, wrap, flex-start, center);
+        padding: 1em 0;
+
+        &--justifyRight {
+            justify-content: flex-end;
+        }
+
+        &--justifyCenter {
+            justify-content: center;
+        }
+
+        &--justifyBetween {
+            justify-content: space-between;
+        }
+
+        &--justifyAround {
+            justify-content: space-around;
+        }
+
+        #{$button} {
+            margin: .5em 0 .5em 1em;
+        }
+    }
+
+    &:disabled,
+    &.disabled,
+    &--disabled {
+        filter: grayscale(100%);
+        opacity: .5;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    &--small {
+        padding: .25em .5em;
+        font-size: 1em;
+    }
+
+    &--displayNone {
+        display: none;
+    }
+
+    &--next {
+        z-index: 2;
+    }
+
+    /*==========----------==========*/
+    /*        PRIMARY BUTTON        */
+    /*==========----------==========*/
+    &--primary {
+        background: $linkColor;
+        color: text-color($linkColor);
+
+        @media (any-hover:hover) {
+            &:hover {
+                background: lighten-or-darken($linkColor);
+                border-color: lighten-or-darken(lighten-or-darken($linkColor));
+                color: text-color(lighten-or-darken($linkColor));
+            }
+        }
+    }
+
+    /*==========----------==========*/
+    /*         FILTER BUTTON        */
+    /*==========----------==========*/
+    &--filter {
+        background: map-get($grays, gray15);
+        color: text-color(map-get($grays, gray15));
+
+        @media (any-hover:hover) {
+            &:hover {
+                background: map-get($colorScheme, purple);
+                border-color: map-get($colorScheme, purple);
+                color: text-color(map-get($colorScheme, purple));
+            }
+        }
+
+        // active
+        &.active{
+            pointer-events: none;
+            background: map-get($colorScheme, purple);
+            color: text-color(map-get($colorScheme, purple));
+        
+            &::before{
+                border-color:map-get($colorScheme, purple);
+            }
+        }
+    }
+
+    /*==========----------==========*/
+    /*       SECONDARY BUTTON       */
+    /*==========----------==========*/
+    &--secondary {
+        background: transparent;
+        border: $borderThickness solid $linkColor;
+        color: $linkColor;
+
+        @media (any-hover:hover) {
+            &:hover {
+                background: $linkColor;
+                color: text-color($linkColor);
+                border-color: $linkColor;
+            }
+        }
+    }
+    /*==========----------==========*/
+    /*       TERTIARY BUTTON        */
+    /*==========----------==========*/
+    &--tertiary {
+        background: transparent;
+        border: $borderThickness solid $medTextColor;
+        color: $medTextColor;
+
+        @media (any-hover:hover) {
+            &:hover {
+                background: $linkColor;
+                color: text-color($linkColor);
+                border-color: $linkColor;
+            }
+        }
+    }
+    /*==========----------==========*/
+    /*      LIGHT BORDER BUTTON     */
+    /*==========----------==========*/
+    &--lightBorder {
+        background: transparent;
+        border: $borderThickness solid $lightTextColor;
+        color: $lightTextColor;
+
+        @media (any-hover:hover) {
+            &:hover {
+                background: $lightTextColor;
+                color: $darkTextColor;
+            }
+        }
+    }
+    /*==========----------==========*/
+    /*         TOAST BUTTON         */
+    /*==========----------==========*/
+    &--toastBtn{
+        font-size:$smallFontSize;
+    }
+    /*==========----------==========*/
+    /*         IMAGE BUTTON         */
+    /*==========----------==========*/
+    &--imageBtn {
+        box-shadow: $softShadow;
+        background: $imageBtnBg;
+        border: $thickBorderThickness solid $imageBtnBorderColor;
+        color: text-color($imageBtnBg);
+
+        #{$button}__text {
+            @include heading(null, 1em 0 0 0);
+            display: block;
+        }
+
+        #{$button}__img,
+        svg {
+            width: auto;
+            max-width: 4em;
+            max-height: 4em;
+            margin: 0 auto;
+        }
+
+        @media (any-hover:hover) {
+            &:hover {
+                background: $imageBtnBorderColor;
+                color: text-color($imageBtnBorderColor);
+            }
+        }
+    }
+    /*==========----------==========*/
+    /*         INFO BUTTON          */
+    /*==========----------==========*/
+    &--info {
+        padding: .5em 1em;
+        background: bg-color(map-get($bgColors, bodyBg));
+        color: text-color(bg-color(map-get($bgColors, bodyBg)));
+
+        &::before {
+            @include icon(solid, info);
+            margin-right: .5em;
+            vertical-align: bottom;
+        }
+
+        @media (any-hover:hover) {
+            &:hover {
+                background: lighten-or-darken(bg-color(map-get($bgColors, bodyBg)));
+                color: text-color(lighten-or-darken(bg-color(map-get($bgColors, bodyBg))));
+            }
+        }
+    }
+}

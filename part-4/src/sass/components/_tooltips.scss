@@ -1,0 +1,72 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                     TOOLTIPS                     //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+.tooltip{
+    pointer-events: none;
+    width: 100px;
+    padding: .5em !important;
+    background: bg-color(map-get($bgColors, bodyBg));
+    border-radius:$borderRadius;
+    box-shadow: $mediumShadow;
+    color: text-color(bg-color(map-get($bgColors, bodyBg)));
+    text-transform: none;
+    font-size: $smallFontSize;
+    font-weight:$primaryBold;
+    letter-spacing: $primaryLetterSpacing;
+    position: absolute !important;
+    left: 50%;
+    bottom: -20px;
+    transform: translate(-50%, 100%);
+    transition: $transition;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        border: 10px solid transparent;
+        border-bottom-color:bg-color(map-get($bgColors, bodyBg));
+        position: absolute;
+        left: 50%;
+        top: -19px;
+        transform:translateX(-50%);
+    }
+
+    hr,
+    &__hr{
+        background:$medBorderColor;
+        margin:.5em auto;
+    }
+
+    &--left,
+    &--right{
+        &::before{
+            transform:none;
+        }
+    }
+
+    &--left{
+        left:-12px;
+        transform:translateY(-100%) scale(.95);
+        transform-origin:left bottom;
+
+        &:before{
+            left:18px;
+        }
+    }
+
+    &--right{
+        left:auto;
+        right:-12px;
+        transform:translateY(-100%) scale(.95);
+        transform-origin:right bottom;
+
+        &:before{
+            left:auto;
+            right:18px;
+        }
+    }
+}

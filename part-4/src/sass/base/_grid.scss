@@ -1,0 +1,207 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                     FLEX GRID                    //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+/*==========----------==========*/
+/*        GENERIC CLASSES       */
+/*==========----------==========*/
+
+.flex{
+    $flex: &;
+
+    display:flex;
+
+    /*==========----------==========*/
+    /*       COLUMN SETTINGS        */
+    /*==========----------==========*/
+
+    &__item{
+        padding:1em;
+        margin:auto;
+        flex:0 1 auto;
+        min-height:4px;
+
+        @each $grow in $flex-growths{
+            &--#{$grow}{
+                flex-grow: $grow;
+            }
+        }
+    }
+
+    /*==========----------==========*/
+    /*         ROW SETTINGS         */
+    /*==========----------==========*/
+
+    &__container{
+        @include flexWrap(row, wrap);
+        padding:1em 0;
+        width:100%;
+
+        &--vert{
+            @include flexWrap(column, nowrap);
+        }
+
+        &--equalCols{
+            #{$flex}__item{
+                margin:0;
+                flex: 1 1 auto;
+            }
+        }
+
+        &--noWrap{
+            flex-wrap:nowrap;
+
+            #{$flex}__item{
+                padding:0 1em;
+
+                &:first-child{
+                    padding-left:0;
+                }
+
+                &:last-child{
+                    padding-right:0;
+                }
+            }
+
+            @each $grow in $flex-growths{
+                #{$flex}__item--#{$grow}{
+                    flex-basis:100%;
+                }
+            }
+
+            &#{$flex}__container--equalCols{
+                #{$flex}__item{
+                    flex-basis:100%;
+                }
+            }
+        }
+
+        /*---------- Alignments ----------*/
+        @each $alignment, $align in $flex-alignments{
+            &--flex-align-#{$alignment}{
+                align-items: $align;
+
+                #{$flex}__item{
+                    margin:0;
+                }
+            }
+        }
+
+        @each $contentAlignment, $align in $flex-content-alignments{
+            &--flex-align-content-#{$contentAlignment}{
+                align-content: $align;
+
+                #{$flex}__item{
+                    margin:0;
+                }
+            }
+        }
+
+        /*---------- Justifications ----------*/
+        @each $justification, $just in $flex-justifications{
+            &--flex-justify-#{$justification}{
+                justify-content: $just;
+
+                #{$flex}__item{
+                    margin:0;
+                }
+            }
+        }
+    }
+}
+
+/*==========----------==========*/
+/*         MEDIA QUERIES        */
+/*==========----------==========*/
+@media only screen and (max-width:$gridBreakpoint),
+print{
+    .flex{
+        $flex: &;
+
+        display:block;
+
+        &__container--respond{
+            padding:0;
+            display:block;
+
+            #{$flex}__item{
+                padding:1em 0;
+            }
+        }
+    }
+}
+
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//              RESPONSIVE FLOAT GRID               //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+/*==========----------==========*/
+/*             ROW              */
+/*==========----------==========*/
+.row{
+    @include clearfix;
+    display:block;
+    width:100%;
+    padding:1em 0;
+}
+
+/*==========----------==========*/
+/*           COLUMNS            */
+/*==========----------==========*/
+.col{
+    @include col;
+
+    &--100{
+        @include colWidth(12, 12);
+    }
+
+    &--75{
+        @include colWidth(9, 12);
+    }
+
+    &--66{
+        @include colWidth(8, 12);
+    }
+
+    &--50{
+        @include colWidth(6, 12);
+    }
+
+    &--40{
+        @include colWidth(2, 5);
+    }
+
+    &--33{
+        @include colWidth(4, 12);
+    }
+
+    &--25{
+        @include colWidth(3, 12);
+    }
+}
+
+/*==========----------==========*/
+/*         MEDIA QUERIES        */
+/*==========----------==========*/
+@media only screen and (max-width:$gridBreakpoint),
+print{
+    .row--respond{ 
+        padding:0;
+
+        &:before,
+        &:after{ 
+            display:none;
+        }
+
+        .col{
+            width:100%;
+            max-width:none;
+            float:none;
+            padding:1em 0;
+        }
+    }
+}

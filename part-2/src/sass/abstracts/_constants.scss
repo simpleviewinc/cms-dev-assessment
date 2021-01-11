@@ -1,0 +1,180 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                       GRID                       //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+$gridBreakpoint: 900px;
+
+$flex-alignments:(
+    top: flex-start,
+    center: center,
+    bottom: flex-end,
+    stretch: stretch,
+    baseline: baseline
+);
+
+$flex-content-alignments:(
+    top: flex-start,
+    bottom: flex-end,
+    center: center,
+    stretch: stretch,
+    between: space-between,
+    around: space-around
+);
+
+$flex-justifications:(
+    left: flex-start,
+    center: center,
+    right: flex-end,
+    between: space-between,
+    around: space-around,
+    inherit: inherit
+);
+
+$flex-growths:(
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+);
+
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                      GLOBAL                      //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+/*===========================
+    Golden Ratio
+===========================*/
+
+$golden-ratio: (
+    small: 38.2%,
+    large: 61.8%
+);
+
+/*===========================
+    Wrappers
+===========================*/
+$superWide: 2200px;
+$wide:1600px;
+$sectionWidth: 1200px;
+$contentWidth: 900px;
+$narrowWidth:600px;
+$superNarrowWidth: 30em;
+
+/*===========================
+    Margin and Padding
+===========================*/
+
+$gaps: 0, 1em, 2em, 4em;
+$edges: top, right, bottom, left;
+
+$sectionPadding: 4em 2em;
+
+/*===========================
+    Positions
+===========================*/
+
+$positions:static, relative, absolute, fixed;
+$absolute-positions:left, right, top, bottom, center;
+
+/*===========================
+    Alignments
+===========================*/
+$alignments:(
+    right,
+    left,
+    center
+);
+
+/*===========================
+    Device Breakpoints
+===========================*/
+/*These are maximum widths*/
+$tablet: 1025px;
+$phone: 640px;
+
+/*===========================
+    Colors
+===========================*/
+
+$white: #ffffff;
+$black: #000000;
+
+/*Grays*/
+$grays:(
+    gray05: #f2f2f2,
+    gray10: #e6e6e6,
+    gray15: #d9d9d9,
+    gray20: #cccccc,
+    gray25: #bfbfbf,
+    gray30: #b3b3b3,
+    gray35: #a6a6a6,
+    gray40: #999999,
+    gray45: #8c8c8c,
+    gray50: #808080,
+    gray55: #737373,
+    gray60: #666666,
+    gray65: #595959,
+    gray70: #4d4d4d,
+    gray75: #404040,
+    gray80: #333333,
+    gray85: #262626,
+    gray90: #1a1a1a,
+    gray95: #0d0d0d
+);
+
+/*Cool Grays*/
+$coolGrays:(
+    coolGray1: #f2f3f4,
+    coolGray2: #dadedf,
+    coolGray3: #c1c7c9,
+    coolGray4: #a7afb2,
+    coolGray5: #8c979a,
+    coolGray6: #6f7c80,
+    coolGray7: #555f61,
+    coolGray8: #373d3f,
+    coolGray9: #131516 
+);
+
+/*Warm Grays*/
+$warmGrays:(
+    warmGray1: #f2f0ef,
+    warmGray2: #d8d4d1,
+    warmGray3: #bfb8b4,
+    warmGray4: #a59994,
+    warmGray5: #8a7d79,
+    warmGray6: #6e635f,
+    warmGray7: #524947,
+    warmGray8: #332d2b,
+    warmGray9: #17110f
+);
+
+/*===========================
+    Typography
+===========================*/
+$typeScales:(
+    perfect-fifth: 1.5,
+    augmented-fourth: 1.414,
+    perfect-fourth: 1.333,
+    major-third: 1.25,
+    minor-third: 1.2,
+    major-second: 1.125,
+    minor-second: 1.067
+);
+
+$typeBreakpoint1: 1025px;
+$typeBreakpoint2: 800px;
+$typeBreakpoint3: 640px;
+
+$typeScales:(1.618, 1.5, 1.414, 1.333, 1.25, 1.2, 1.125, 1.067);

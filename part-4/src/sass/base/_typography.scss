@@ -1,0 +1,242 @@
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                    TYPOGRAPHY                    //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+/*===========================
+    General
+===========================*/
+
+html {
+    font-size: $baseFontSize;
+    line-height: $primaryLineHeight;
+}
+
+body{
+    @include bodyText();
+    color: text-color(map-get($bgColors, bodyBg));
+}
+
+.hiddenText{
+    display:none;
+}
+
+i{
+    font-style:normal;
+}
+
+/*===========================
+    Alignments
+===========================*/
+
+@each $align in $alignments{
+    $alignString: to-upper-case(str-slice($align, 1, 1)) + str-slice($align, 2);
+
+    .align#{$alignString}{
+        text-align:$align;
+    }
+}
+
+/*===========================
+    Colors
+===========================*/
+
+@each $colorName, $color in $colorScheme{
+    .#{$colorName}Text{
+        color:$color;
+    }
+}
+
+/*===========================
+    Styles
+===========================*/
+
+.underline{
+    text-decoration:underline;
+}
+
+em,
+.em,
+.italic{
+    font-style:$primaryItalic;
+}
+
+/*===========================
+    Size Variations
+===========================*/
+.largeText{
+    font-size:$largeFontSize;
+    font-weight:$primaryBold;
+}
+
+small,
+.smallText {
+    font-size: $smallFontSize;
+}
+
+/*===========================
+    Links
+===========================*/
+a,
+.a{
+    cursor:pointer;
+    color: $linkColor;
+    text-decoration: $linkTextDecoration;
+    font-weight: $linkFontWeight;
+    transition: $transition;
+    
+    &:before,
+    &:after{
+        color:inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: $headingBold;
+    }
+
+    @media (any-hover:hover){
+        &:hover{
+            color: lighten-or-darken($linkColor);
+            text-decoration: $linkHoverTextDecoration;
+        }
+    }
+}
+
+/*===========================
+    Weights
+===========================*/
+strong {
+    font-weight: $primaryBold;
+}
+
+.lightText{
+    font-weight:$primaryLight;
+}
+
+/*===========================
+    Headings
+===========================*/
+
+h1, h2, h3, h4 {
+    @include heading;
+}
+
+h1 {
+    @include headingTag(h1);
+}
+
+h2 {
+    @include headingTag(h2);
+}
+
+h3 {
+    @include headingTag(h3);
+}
+
+h4 {
+    @include headingTag(h4);
+}
+
+/*===========================
+    Paragraphs
+===========================*/
+
+p {
+    margin: $primaryTypeMargin;
+}
+
+span{
+    font-style:$primaryFontStyle;
+}
+
+/*===========================
+    Columned Text
+===========================*/
+
+.textCols {
+    column-gap: 2em;
+
+    h1, h2 {
+        column-span: all;
+
+        & + *:not(hr) {
+            margin-top: 0;
+        }
+    }
+
+    img, div, picture {
+        column-span: all;
+        margin: 2em auto 1em auto;
+    }
+
+    hr {
+        column-span: all;
+
+        & + * {
+            margin-top: 0;
+        }
+    }
+
+    &--2 {
+        column-count: 2;
+    }
+
+    &--3 {
+        column-count: 3;
+    }
+
+    &--4 {
+        column-count: 4;
+    }
+}
+
+
+/*===========================
+    Lists
+===========================*/
+
+li {
+    margin: $listTypeMargin;
+}
+
+.listStyleNone{
+    &,
+    & > li{
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+}
+
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                  MEDIA QUERIES                   //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+/*==========----------==========*/
+/*         1200PX WIDTH         */
+/*==========----------==========*/
+@media only screen and (max-width:1200px) {
+    .textCols {
+        column-count: unset !important;
+        column-gap: unset;
+
+        h1, h2, img, div, picture, hr {
+            column-span: none;
+        }
+    }
+}
+
+/*==========----------==========*/
+/*          600PX WIDTH         */
+/*==========----------==========*/
+@media only screen and (max-width:600px) {
+    .largeText{
+        font-size:1.2em;
+    }
+}

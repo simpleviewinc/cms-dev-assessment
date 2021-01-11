@@ -1,0 +1,618 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                     GLOBAL                       //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+@mixin gradient($colors, $orientation)
+ {
+    $colorList: null;
+
+    @for $i from 1 through length($colors){
+        $ix: $i - 1;
+        $percent: 0;
+
+        @if $i > 1 and $i < length($colors){
+            $percent: (100% / (length($colors) - 1)) * $ix;
+        }
+        @else if $i == length($colors){
+            $percent: 100%;
+        }
+
+        $colorList: append($colorList, nth($colors, $i) $percent, "comma");
+    }
+
+    background: nth($colors, 1);
+
+    @if $orientation == vertical
+    {
+       // vertical
+       background: linear-gradient(to bottom, $colorList);
+    }
+    @else if $orientation == horizontal
+    {
+        // horizontal
+        background: linear-gradient(to right, $colorList);
+    }
+    // radial
+    @else if $orientation == radial
+    {
+        background: radial-gradient(circle at center, $colorList);
+    }
+    @else if ($orientation == radial-from-bottom-left){
+        background: radial-gradient(circle at left bottom, $colorList);
+    }
+    @else if ($orientation == radial-from-top-left){
+        background: radial-gradient(circle at left top, $colorList);
+    }
+    @else if ($orientation == radial-from-bottom-right){
+        background: radial-gradient(circle at right bottom, $colorList);
+    }
+    @else if ($orientation == radial-from-top-right){
+        background: radial-gradient(circle at right top, $colorList);
+    }
+
+    @else if $orientation == diagonal-up{
+        //diagonal up
+        background: linear-gradient(45deg, $colorList);
+    }
+    @else if $orientation == diagonal-down{
+        //diagonal down
+        background: linear-gradient(135deg, $colorList);
+    }
+ }
+
+@mixin gradientLine($color, $direction: horizontal){
+    @include gradient((rgba($color, .8), rgba($color, 0)), radial);
+    display:block;
+    content:'';
+
+    @if ($direction == horizontal){
+        height:$borderThickness;
+        width:100%;
+    }
+    @else{
+        width:$borderThickness;
+        height:100%;
+    }
+}
+
+@mixin iconContent($iconGroup: solid, $icon: null){
+    font-family:map-deep-get($icons, $iconGroup, font-family);
+    font-weight:map-deep-get($icons, $iconGroup, font-weight);
+
+    @if ($icon != null){
+        content:map-deep-get($icons, $iconGroup, $icon);
+    }
+}
+
+@mixin icon($iconGroup: solid, $icon: null, $display: inline-block, $size: inherit, $lineHeight: inherit, $color: inherit, $verticalAlign: bottom){
+    @if ($iconGroup != null){
+        @include iconContent($iconGroup, $icon);
+    }
+
+    display:$display;
+    vertical-align:$verticalAlign;
+    text-decoration:none !important;
+    line-height:$lineHeight;
+    font-size:$size;
+    color:$color;
+    font-style:normal;
+}
+
+@mixin animation($name, $duration, $timing-function:$transitionEase, $delay:0s, $direction:normal, $iteration-count:1, $fill-mode:none, $play-state:running) {
+    animation-name:$name;
+    animation-duration: $duration;
+    animation-timing-function:$timing-function;
+    animation-delay:$delay;
+    animation-direction:$direction;
+    animation-iteration-count:$iteration-count;
+    animation-fill-mode:$fill-mode;
+    animation-play-state:$play-state;
+}
+
+@mixin clearfix{
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+        float:none;
+    }
+}
+
+@mixin absolute($position: cover, $zIndex: 1){
+    position:absolute;
+    z-index:$zIndex;
+
+    @if ($position == center){
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+    }
+    @else if ($position == center-vertical){
+        top:50%;
+        transform:translateY(-50%);
+    }
+    @else if ($position == center-horizontal){
+        left:50%;
+        transform:translateX(-50%);
+    }
+    @else if ($position == cover){
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+    }
+}
+
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                      BASE                        //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+@mixin underlineText{
+    padding-bottom: .25em;
+    border-bottom: $borderThickness solid $medBorderColor;
+}
+
+@mixin bodyText {
+    font-family: $primaryFont;
+    font-weight: $primaryFontWeight;
+    letter-spacing:$primaryLetterSpacing;
+    text-transform:$primaryTextTransform;
+    font-style:$primaryFontStyle;
+}
+
+@mixin headingTag($tag){
+    $newScale: null !default;
+
+    @if ($tag == h1){
+        font-size: $baseFontSize * pow($typeScaleMultiplier, 4);
+    }
+    @else if ($tag == h2){
+        font-size: $baseFontSize * pow($typeScaleMultiplier, 3);
+    }
+    @else if ($tag == h3){
+        font-size: $baseFontSize * pow($typeScaleMultiplier, 2);
+    }
+    @else if ($tag == h4){
+        font-size: $baseFontSize * $typeScaleMultiplier;
+    }
+
+    @media only screen and (max-width:$typeBreakpoint1),
+    only screen and (max-height:$typeBreakpoint1) {
+        // let's switch type scales
+        $curScaleIndex: index($typeScales, $typeScaleMultiplier);
+        $newScale: if(length($typeScales) > $curScaleIndex, nth($typeScales, ($curScaleIndex + 1)), $typeScaleMultiplier);
+
+        @if ($tag == h1){
+            font-size: $baseFontSize * pow($newScale, 4);
+        }
+        @else if ($tag == h2){
+            font-size: $baseFontSize * pow($newScale, 3);
+        }
+        @else if ($tag == h3){
+            font-size: $baseFontSize * pow($newScale, 2);
+        }
+        @else if ($tag == h4){
+            font-size: $baseFontSize * $newScale;
+        }
+    }
+
+    @media only screen and (max-width:$typeBreakpoint2),
+    only screen and (max-height:$typeBreakpoint2),
+    print{
+        // let's switch type scales
+        $curScaleIndex: index($typeScales, $newScale);
+        $newScale: if(length($typeScales) > $curScaleIndex, nth($typeScales, ($curScaleIndex + 1)), $newScale);
+
+        @if ($tag == h1){
+            font-size: $baseFontSize * pow($newScale, 4);
+        }
+        @else if ($tag == h2){
+            font-size: $baseFontSize * pow($newScale, 3);
+        }
+        @else if ($tag == h3){
+            font-size: $baseFontSize * pow($newScale, 2);
+        }
+        @else if ($tag == h4){
+            font-size: $baseFontSize * $newScale;
+        }
+    }
+
+    @media only screen and (max-width:$typeBreakpoint3),
+    only screen and (max-height:$typeBreakpoint3) {
+        // let's switch type scales
+        $curScaleIndex: index($typeScales, $newScale);
+        $newScale: if(length($typeScales) > $curScaleIndex, nth($typeScales, ($curScaleIndex + 1)), $newScale);
+
+        @if ($tag == h1){
+            font-size: $baseFontSize * pow($newScale, 4);
+        }
+        @else if ($tag == h2){
+            font-size: $baseFontSize * pow($newScale, 3);
+        }
+        @else if ($tag == h3){
+            font-size: $baseFontSize * pow($newScale, 2);
+        }
+        @else if ($tag == h4){
+            font-size: $baseFontSize * $newScale;
+        }
+    }
+}
+
+@mixin heading($tag: null, $margin:$headingTypeMargin){
+    @if ($tag != null){
+        @include headingTag($tag);
+    }
+    margin: $margin;
+    font-family: $headingFont;
+    font-weight: $headingFontWeight;
+    text-transform: $headingTextTransform;
+    letter-spacing: $headingLetterSpacing;
+    line-height: $headingLineHeight;
+    position: relative;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    strong,
+    a,
+    a:visited,
+    .largeText,
+    &.largeText{
+        font-weight: $headingBold;
+    }
+
+    .lightText,
+    &.lightText{
+        font-weight:$headingLight;
+    }
+
+    em,
+    .em,
+    .italic,
+    &.em,
+    &.italic{
+        font-style:$headingItalic;
+    }
+}
+
+/*===========================
+    Responsive Grid
+===========================*/
+@mixin col($gap: 1em){
+    display:block;
+    float:left;
+    padding: 0 $gap;
+    &:first-child{
+        padding-left:0;
+    }
+    &:last-child{
+        padding-right:0;
+    }
+}
+@mixin colWidth($col, $sum){
+    width: percentage($col/$sum);
+}
+
+/*===========================
+    Flex Mixins
+===========================*/
+
+@mixin flexWrap($direction: row, $wrap: nowrap, $justify: flex-start, $alignItems: flex-start, $alignContent: normal){
+    display: flex;
+    flex-direction:$direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $alignItems;
+    align-content: $alignContent;
+}
+
+
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                      LAYOUT                      //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+@mixin activeSubnav {
+    $nav: ".nav";
+
+    &::before {
+        opacity: 1;
+        bottom: -.5em;
+    }
+
+    #{$nav}__a {
+        opacity: 1;
+    }
+
+    #{$nav}__ul--subnav {                
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+        bottom: 0;
+    }
+}
+
+@mixin activeMobileNavItem {
+    color: text-color($mobileNavBg);
+
+    .nav__text::before{
+        width: 100%;
+    }
+}
+
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                   COMPONENTS                     //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+@mixin label {
+    display: block;
+    margin-bottom: .25em;
+    font-size:$inputLabelFontSize;
+    font-family: $inputLabelFont;
+    font-weight: $inputLabelWeight;
+    text-transform: $inputLabelTextTrans;
+
+    &.input__label--check,
+    &.input__label--radio,
+    &.form__label--check,
+    &.form__label--radio{
+        cursor:pointer;
+        display:inline-block;
+        margin-bottom: 0;
+        margin-left:.5rem;
+    }
+
+    &.input__label--checkboxHeading,
+    &.input__label--file,
+    &.form__label--checkboxHeading,
+    &.form__label--file{
+        font-size:$largeFontSize;
+        font-weight:$primaryBold;
+        margin-bottom:.25em;
+    }
+
+    &.input__label--helpTextFollows,
+    &.form__label--helpTextFollows{
+        margin-bottom:0;
+    }
+}
+
+@mixin inputError{
+    border:$errorBorder;
+    background-color:$errorBg;
+    color:$errorTextColor;
+}
+
+@mixin date{
+    background-image:url('/images/calendar-icon.svg');
+    background-size:auto 1em;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1em) center;
+    padding-right: 36px;
+}
+
+@mixin search{
+    background-image:url('/images/search-icon.svg');
+    background-size:auto 1em;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1em) center;
+    padding-right: 36px;
+}
+
+@mixin select {
+    background-image: url('/images/caret-down.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1em) center;
+    background-size:10px auto;
+    padding-right: 36px;
+}
+
+@mixin option{
+    background:map-get($bgColors, lightBg);
+    color:$darkTextColor;
+}
+
+@mixin textarea {
+    height:auto;
+    resize:none;
+    min-height:10em;
+}
+
+@mixin checkbox {
+    cursor:pointer;
+    width:16px;
+    height:16px;
+    padding:0;
+    background:none;
+    border:$checkboxBorder;
+    background:none;
+
+    @if ($inputBorderRadius > 0 or $inputBorderRadius != 0){
+        border-radius:4px;
+    }
+
+    &:checked{
+        background-image:url('/images/check-mark.svg');
+        background-repeat: no-repeat;
+        background-position:center center;
+        background-size:100% auto;
+        background-color:$linkColor;
+        border-color:$linkColor;
+    }
+
+    &.input-validation-error,
+    &.error{
+        @include inputError;
+    }
+}
+
+@mixin radio {
+    cursor:pointer;
+    width:16px;
+    height:16px;
+    padding:0;
+    background:none;
+    border:$checkboxBorder;
+    border-radius:50%;
+    background:none;
+
+    &:checked{
+        background:$linkColor;
+        border-color:$linkColor;
+    }
+
+    &.input-validation-error,
+    &.error{
+        @include inputError;
+    }
+}
+
+@mixin input{
+    display:block;
+    appearance:none;
+    width:100%;
+    padding:1em;
+    background-color:$inputBg;
+    border:$inputBorder;
+    border-radius:$inputBorderRadius;
+    font-family:$inputFont;
+    font-size:16px;
+    color:$inputTextColor;
+    font-weight:$inputTextWeight;
+    letter-spacing:$inputLetterSpacing;
+    position:relative;
+    z-index:1;
+    transition:$transition;
+
+    &.error,
+    &.input-validation-error{
+        @include inputError;
+    }
+
+    &[readonly],
+    &[disabled]{
+        background-color:$readOnlyInputBg;
+        border:$readOnlyInputBorder;
+        color:$readOnlyInputColor;
+    }
+
+    &:focus{
+        outline:none;
+        border-color:$inputFocusBorderColor;
+        box-shadow:0 0 ($medShadowOffset * 2) rgba($linkColor, .35);
+
+        &[readonly],
+        &[disabled]{
+            border-color:$readOnlyInputBorderColor;
+            box-shadow:none;
+        }
+    }
+}
+
+@mixin tooltipReveal {
+    $tooltip: ".tooltip";
+
+    visibility:visible;
+    opacity:1;
+    transform:translate(-50%, -100%) scale(1);
+
+    &#{$tooltip}--left,
+    &#{$tooltip}--right{
+        transform:translateY(-100%) scale(1);
+    }
+
+    &.inactive{
+        visibility:hidden;
+        opacity:0;
+        transform:translate(-50%, -100%) scale(.95);
+
+        &#{$tooltip}--left,
+        &#{$tooltip}--right{
+            transform:translateY(-100%) scale(.95);
+        }
+    }
+}
+
+@mixin button($margin: .5em, $padding: $buttonPadding, $fontSize: $buttonFontSize) {
+    display: inline-block;
+    padding: $padding;
+    margin: $margin;
+    vertical-align: middle;
+    border: $buttonBorder;
+    border-radius: #{$buttonBorderRadius};
+    font-family: $buttonFont;
+    text-align: center;
+    text-transform: $buttonTextTrans;
+    text-decoration: none;
+    text-shadow: none;
+    letter-spacing: $buttonLetterSpacing;
+    font-size: $fontSize;
+    font-weight: $buttonFontWeight;
+    line-height: $buttonLineHeight;
+    transition: $transition;
+    appearance: none;
+    position: relative;
+    z-index: 1;
+
+    @media (any-hover:hover){
+        &:hover{
+            text-decoration:none;
+        }
+    }
+}
+
+@mixin circleBtn{
+    cursor: pointer;
+    display: block;
+    width: $circleBtnDiam;
+    height: $circleBtnDiam;
+    min-width: $circleBtnDiam;
+    min-height: $circleBtnDiam;
+    border-radius: 50%;
+    position: relative;
+    transition: $transition;
+
+    &::before,
+    svg {
+        @include absolute(center);
+    }
+
+    &::before {
+        @include icon(null, null, block, $circleBtnDiam * .5, 1);
+    }
+
+    svg {
+        width: $circleBtnDiam * .5;
+        height: $circleBtnDiam * .5;
+        fill: text-color(bg-color(map-get($bgColors, bodyBg)));
+        transition: $transition;
+
+        * {
+            fill:inherit;
+        }
+    }
+
+    @media (any-hover:hover) {
+        &:hover {
+            background: $linkColor;
+            border-color: $linkColor;
+            color: text-color($linkColor);
+
+            svg{
+                fill: text-color($linkColor);
+            }
+        }
+    }
+}

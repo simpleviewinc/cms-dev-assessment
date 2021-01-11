@@ -1,0 +1,184 @@
+﻿@function pow($number, $exponent) {
+    $value: 1;
+
+    @if $exponent > 0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $number;
+        }
+    }
+
+    @return $value;
+}
+
+@function str-split($string, $separator) {
+    // empty array/list
+    $split-arr: ();
+    // first index of separator in string
+    $index : str-index($string, $separator);
+    // loop through string
+    @while $index != null {
+        // get the substring from the first character to the separator
+        $item: str-slice($string, 1, $index - 1);
+        // push item to array
+        $split-arr: append($split-arr, $item);
+        // remove item and separator from string
+        $string: str-slice($string, $index + 1);
+        // find new index of separator
+        $index : str-index($string, $separator);
+    }
+    // add the remaining string to list (the last item)
+    $split-arr: append($split-arr, $string);
+
+    @return $split-arr;
+}
+
+@function number($value) {
+    @if type-of($value) == 'number' {
+        @return $value;
+    }
+    @else if type-of($value) != 'string' {
+        $_: log('Value for `to-number` should be a number or a string.');
+    }
+
+    $result: 0;
+    $digits: 0;
+    $minus: str-slice($value, 1, 1) == '-';
+    $numbers: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9);
+
+    @for $i from if($minus, 2, 1) through str-length($value) {
+        $character: str-slice($value, $i, $i);
+
+        @if not (index(map-keys($numbers), $character) or $character == '.') {
+            @return to-length(if($minus, -$result, $result), str-slice($value, $i))
+        }
+
+        @if $character == '.' {
+            $digits: 1;
+        }
+        @else if $digits == 0 {
+            $result: $result * 10 + map-get($numbers, $character);
+        }
+        @else {
+            $digits: $digits * 10;
+            $result: $result + map-get($numbers, $character) / $digits;
+        }
+    }
+
+    @return if($minus, -$result, $result);
+}
+
+@function to-length($number, $unit) {
+  $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw'
+    'vh' 'vmin' 'vmax';
+  $units: 1px 1cm 1mm 1% 1ch 1pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
+  $index: index($strings, $unit);
+
+  @if not $index {
+    @warn "Unknown unit `#{$unit}`.";
+    @return false;
+  }
+
+  @return $number * nth($units, $index);
+}
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@function text-color($bgColor) {
+    @if(lightness($bgColor) > 60) {
+        //if background is light
+        @return $darkTextColor;
+    }
+    @else {
+        //if background is dark
+        @return $lightTextColor;
+    }
+}
+
+@function border-color($bgColor) {
+    @if (lightness($bgColor) > 50 and lightness($bgColor) > 85){
+        //if background is light
+        @return $darkBorderColor;
+    }
+    @else if(lightness($bgColor) > 50 and lightness($bgColor) < 85) {
+        //if background is medium
+        @return $medBorderColor;
+    }
+    @else {
+        //if background is dark
+        @return $lightBorderColor;
+    }
+}
+
+@function bg-color($bgColor){
+    @if (lightness($bgColor) > 50 and lightness($bgColor) > 85){
+        //if background is light
+        @return map-get($bgColors, darkBg);
+    }
+    @else if (lightness($bgColor) > 50 and lightness($bgColor) < 85){
+        @return map-get($bgColors, medBg);
+    }
+    @else{
+        @return map-get($bgColors, lightBg);
+    }
+}
+
+@function white-or-black($color){
+    @if(lightness($color) > 60) {
+        //if color is light
+        @return $black;
+    }
+    @else {
+        //if color is dark
+        @return $white;
+    }
+}
+
+@function button-border-color($color){
+    @if (lightness($color) > 60){
+        @return $linkColor;
+    }
+    @else{
+        @return $lightTextColor;
+    }
+}
+
+@function button-bg($color){
+    @if (lightness($color) > 60){
+        @return $linkColor;
+    }
+    @else{
+        @return $lightTextColor;
+    }
+}
+
+@function button-color($bgColor){
+    @if (lightness($bgColor) > 60){
+        @return $linkColor;
+    }
+    @else{
+        @return $lightTextColor;
+    }
+}
+
+@function link-hover-color($bgColor){
+    @if (lightness($bgColor) > 50){
+        @return darken($linkColor, 15%);
+    }
+    @else{
+        @return lighten($linkColor, 20%);
+    }
+}
+
+@function lighten-or-darken($color, $percent: 20%){
+    @if (lightness($color) > 50){
+        @return darken($color, $percent);
+    }
+    @else{
+        @return lighten($color, $percent);
+    }
+}

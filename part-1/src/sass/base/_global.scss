@@ -1,0 +1,646 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                      GLOBAL                      //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: map-get($bgColors, bodyBg);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.section {
+    $this: &;
+
+    padding: $sectionPadding;
+    position: relative;
+    z-index: 1;
+
+    &--content {
+        background: $contentBg;
+        color: text-color($contentBg);
+    }
+
+    &--hasScrollIcon{
+        z-index: 3;
+    }
+}
+
+img,
+svg,
+iframe,
+video,
+picture{
+    display: block;
+}
+
+img,
+svg,
+picture{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+[onclick]{
+    cursor:pointer;
+}
+
+/*===========================
+    Logo
+===========================*/
+
+.logo {
+    position:relative;
+
+    &__wrp{
+        display: inline-block;
+    }
+
+    svg,
+    img {
+        display: block;
+        width: auto;
+        height: 4em;
+        transition: $transition;
+    }
+
+    /*---------- Hover Effects ----------*/
+    @media (any-hover:hover) {
+        opacity: .9;
+        transition:$transition;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+/*===========================
+    Content Wrappers
+===========================*/
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+    &--wide {
+        max-width: $wide;
+    }
+
+    &--section {
+        max-width: $sectionWidth;
+    }
+
+    &--content {
+        max-width: $contentWidth;
+    }
+
+    &--narrow {
+        max-width: $narrowWidth;
+    }
+
+    &--intro{
+        max-width:$superNarrowWidth;
+        margin-bottom:1em;
+        padding:.5em 0;
+        text-align:center;
+    }
+}
+
+.intro {
+    width: 100%;
+    max-width: $superNarrowWidth;
+    margin: 0 auto 1em auto;
+    padding: .5em 0;
+    text-align: center;
+    position: relative;
+}
+
+/*===========================
+    Overflowing Content
+===========================*/
+
+.overflow{
+    position:relative;
+
+    &--hasOverflow{
+        padding-top:0 !important;
+        padding-bottom:0 !important;
+        z-index:2;
+    }
+
+    &--before,
+    &--after{
+        z-index:1;
+    }
+
+    &--before{
+        padding-bottom:10em !important;
+    }
+
+    &--after{
+        padding-top:10em !important;
+    }
+
+    &--up{
+        transform:translateY(-8em);
+    }
+    
+    &--down{
+        transform:translateY(8em);
+    }
+}
+
+/*==========----------==========*/
+/*         SCROLL ICON          */
+/*==========----------==========*/
+
+.scrollIcon {
+    @include absolute(center-horizontal, -1);
+    width: 4em;
+    height: 4em;
+    cursor: pointer;
+    background: map-get($bgColors, lightBg);
+    box-shadow: $softShadow;
+    top: 0;
+    transform: translate(-50%, -100%);
+
+    &__mouse {
+        @include absolute(center);
+        width: 1.5em;
+        height: 2em;
+        border-radius: .625em;
+        border: 2px solid $linkColor;
+    }
+
+    &__ball {
+        @include absolute(center-horizontal);
+        @include animation(slide-down, 1.25s, linear, 0s, normal, infinite);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: $linkColor;
+        top: 25%;
+    }
+
+    @media (any-hover:none) {
+        &__mouse {
+            border-radius: .25em;
+        }
+
+        &__ball {
+            animation-name: slide-up;
+            top:auto;
+            bottom: 25%;
+        }
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 1;
+        top: 25%;
+    }
+
+    65% {
+        opacity: 1;
+        top: 52%;
+    }
+
+    75% {
+        opacity: 0;
+        top: 60%;
+    }
+
+    90% {
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 1;
+        bottom: 25%;
+    }
+
+    65% {
+        opacity: 1;
+        bottom: 52%;
+    }
+
+    75% {
+        opacity: 0;
+        bottom: 60%;
+    }
+
+    90% {
+        opacity: 0;
+        bottom: 25%;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 25%;
+    }
+}
+
+/*======--- ON ANDROID ----======*/
+
+.android .scrollIcon{
+    display:none;
+}
+
+/*===========================
+    Backgrounds
+===========================*/
+@each $color, $code in $grays {
+    .#{$color}Bg {
+        background: $code;
+        color: text-color($code);
+
+        hr {
+            background: border-color($code);
+        }
+
+        .input {
+            border-color: text-color($code);
+            color: text-color($code);
+        }
+
+        .dynamicInput {
+            color: text-color($code);
+            border-color: text-color($code);
+
+            &__input,
+            &__label{
+                color: inherit;
+            }
+
+            &__option {
+                background: bg-color($code);
+                color: text-color(bg-color($code));
+            }
+        }
+    }
+}
+
+@each $color, $code in $coolGrays {
+    .#{$color}Bg {
+        background: $code;
+        color: text-color($code);
+
+        hr {
+            background: border-color($code);
+        }
+
+        .input {
+            border-color: text-color($code);
+            color: text-color($code);
+        }
+
+        .dynamicInput {
+            color: text-color($code);
+            border-color: text-color($code);
+
+            &__input,
+            &__label{
+                color: inherit;
+            }
+
+            &__option {
+                background: bg-color($code);
+                color: text-color(bg-color($code));
+            }
+        }
+    }
+}
+
+@each $color, $code in $warmGrays {
+    .#{$color}Bg {
+        background: $code;
+        color: text-color($code);
+
+        hr {
+            background: border-color($code);
+        }
+
+        .input {
+            border-color: text-color($code);
+            color: text-color($code);
+        }
+
+        .dynamicInput {
+            color: text-color($code);
+            border-color: text-color($code);
+
+            &__input,
+            &__label{
+                color: inherit;
+            }
+
+            &__option {
+                background: bg-color($code);
+                color: text-color(bg-color($code));
+            }
+        }
+    }
+}
+
+@each $color, $code in $colorScheme {
+    .#{$color}Bg {
+        background: $code;
+        color: text-color($code);
+
+        hr {
+            background: border-color($code);
+        }
+
+        .input {
+            border-color: text-color($code);
+            color: text-color($code);
+        }
+
+        .dynamicInput {
+            color: text-color($code);
+            border-color: text-color($code);
+
+            &__input,
+            &__label{
+                color: inherit;
+            }
+
+            &__option {
+                background: bg-color($code);
+                color: text-color(bg-color($code));
+            }
+        }
+    }
+}
+
+@each $bg, $color in $bgColors {
+    .#{$bg} {
+        background: $color;
+        color: text-color($color);
+
+        hr {
+            background: border-color($color);
+        }
+
+        .input {
+            border-color: text-color($color);
+            color: text-color($color);
+        }
+
+        .dynamicInput {
+            color: text-color($color);
+            border-color: text-color($color);
+
+            &__input,
+            &__label{
+                color: inherit;
+            }
+
+            &__option {
+                background: bg-color($color);
+                color: text-color(bg-color($color));
+            }
+        }
+    }
+}
+
+.parallaxBg {
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &__container {
+        @include absolute(cover);
+        overflow: hidden;
+    }
+}
+
+/*===========================
+    Margin and Padding
+===========================*/
+
+.margin {
+    &--auto {
+        margin: auto;
+    }
+
+    &--0-auto {
+        margin: 0 auto;
+    }
+
+    &--auto-0 {
+        margin: auto 0;
+    }
+}
+
+@each $gap in $gaps {
+    .margin--#{$gap} {
+        margin: $gap !important;
+    }
+
+    .padding--#{$gap} {
+        padding: $gap !important;
+    }
+
+    @each $edge in $edges {
+        .margin--#{$edge}-#{$gap} {
+            margin-#{$edge}: $gap !important;
+        }
+
+        .padding--#{$edge}-#{$gap} {
+            padding-#{$edge}: $gap !important;
+        }
+    }
+}
+
+/*===========================
+    Positions
+===========================*/
+@each $position in $positions {
+    .#{$position} {
+        position: $position;
+    }
+}
+
+.absolute{
+    &--center{
+        @include absolute(center);
+    }
+
+    &--center-vertical{
+        @include absolute(center-vertical);
+    }
+
+    &--center-horizontal{
+        @include absolute(center-horizontal);
+    }
+
+    &--cover{
+        @include absolute(cover);
+    }
+}
+
+/*===========================
+    Borders
+===========================*/
+
+hr {
+    margin: 2em auto;
+    width: 75%;
+    max-width: 700px;
+    height: $borderThickness;
+    border: none;
+    background: $medBorderColor;
+}
+
+/*----- Flex Line -----*/
+.flexLine {
+    @include flexWrap(row, nowrap, flex-start, center);
+
+    &__content,
+    &__line{
+        display:block;
+    }
+
+    &__line {
+        flex:1 1 auto;
+        height: $borderThickness;
+        background: $medBorderColor;
+        margin: 0 1em;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__content{
+        flex:0 1 auto;
+    }
+}
+/*===========================
+    Animated Elements
+===========================*/
+.animatedEl {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    top: 40px;
+    transition: $transition;
+
+    &.animate {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+}
+
+/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                  MEDIA QUERIES                   //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+/*==========----------==========*/
+/*         1400PX WIDTH         */
+/*==========----------==========*/
+@media only screen and (max-width:1400px) {
+    .parallaxBg {
+        background-position: center center;
+        background-attachment: scroll;
+    }
+}
+
+/*==========----------==========*/
+/*         1000PX WIDTH         */
+/*==========----------==========*/
+@media only screen and (max-width:1000px) {
+    .section {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .scrollIcon{
+        width:3em;
+        height:3em;
+
+        &__mouse{
+            width:1.25em;
+            height:1.6667em;
+        }
+    }
+}
+
+/*==========----------==========*/
+/*         800PX WIDTH          */
+/*==========----------==========*/
+@media only screen and (max-width:800px) {
+    .overflow{
+        &--before{
+            padding-bottom: 6em !important;
+        }
+
+        &--after{
+            padding-top:6em !important;
+        }
+
+        &--up{
+            transform:translateY(-4em);
+        }
+        
+        &--down{
+            transform:translateY(4em);
+        }
+    }
+}
+
+/*==========----------==========*/
+/*  700PX WIDTH or 700PX HEIGHT */
+/*==========----------==========*/
+@media only screen and (max-width:700px),
+only screen and (max-height:700px) {
+    .box {
+        padding: 1em;
+    }
+}
+
+/*==========----------==========*/
+/*            PRINT             */
+/*==========----------==========*/
+
+@media print {
+    .wrapper {
+        max-width: none;
+    }
+}

@@ -1,0 +1,65 @@
+﻿/*//////////////////////////////////////////////////////*/
+/*//====================----------====================//*/
+/*//                  LOADING SCREEN                  //*/
+/*//====================----------====================//*/
+/*//////////////////////////////////////////////////////*/
+
+.load {
+    @include flexWrap(column, nowrap, center, center);
+    opacity:0;
+    visibility:hidden;
+    background:map-get($bgColors, bodyBg);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:1000;
+    transition:$transition;
+
+    &__circle{
+        width:4em;
+        height:4em;
+        position:relative;
+    }
+
+    &__icon{
+        @include absolute(center);
+        max-height:3em;
+        max-width:3em;
+    }
+
+    &__spinner{
+        @include absolute(cover);
+        @include animation(loadSpin, 1.2s, cubic-bezier(0.5, 0, 0.5, 1), 0s, normal, infinite);
+        border:2px solid transparent;
+        border-color:map-get($bgColors, medBg) transparent transparent transparent;
+        border-radius:50%;
+
+        &--1{
+            animation-delay: -.45s;
+        }
+
+        &--2{
+            animation-delay: -.3s;
+        }
+
+        &--3{
+            animation-delay: -.15s;
+        }
+    }
+
+    &--active{
+        opacity:1;
+        visibility:visible;
+    }
+}
+
+@keyframes loadSpin{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
