@@ -1,0 +1,53 @@
+#root{
+  max-width: 1025px;
+  padding: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+.btnHome{
+  background-color: rgb(154, 239, 241);
+  margin-bottom: 10px;
+}
+
+.image{
+  width: 500px;
+  height: 200px;
+}
+
+.text{
+width: 200px;
+height: 200px;
+font-size: 12px;
+
+}
+
+#app {
+padding: 5px;
+display: flex;
+flex-wrap: wrap;
+}
+.child{
+flex: 1 0 21%; /* explanation below */
+margin: 5px;
+height: 300px;
+}
+
+@media only screen and (min-width: 640px) {
+/* .container {} */
+}
+
+@media only screen and (min-width: 641px) {
+/* .container {} */
+} 
+
+@media only screen and (min-width: 1025px) {
+/* .container {} */
+} 
+
+div {
+ text-overflow: ellipsis;   
+  overflow:hidden;              
+  white-space:normal;           
+}
+
+
