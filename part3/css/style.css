@@ -25,12 +25,16 @@ h2 {
     padding: 1em;
 }
 
-/* Buttons */
+.hidden {
+    display: none;
+}
 
 .right {
     text-align: right;
     vertical-align: middle;
 }
+
+/* Buttons */
 
 .button {
     background-color: transparent;
