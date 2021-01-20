@@ -91,7 +91,7 @@ function initEventListeners() {
 
         // Show the new page
         $('.page' + currentPage).show();
-
+        
     });
 
     $("#next").click(function (e) {

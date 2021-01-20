@@ -22,7 +22,7 @@ h2 {
 }
 
 .section {
-    padding: 1em;
+    padding: 2em;
 }
 
 .hidden {
@@ -134,7 +134,7 @@ h2 {
     gap: 2em;
     grid-auto-flow: row;
     grid-auto-rows: auto;
-    min-height: 80vh;
+    min-height: 75vh;
 }
 
 /* Medium Screen  */
