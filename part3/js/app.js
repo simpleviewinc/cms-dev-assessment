@@ -62,6 +62,7 @@
             // If current page is 1, round-robin back to page 4, else nav to prev
             currentPage === 1 ? currentPage = 4 : currentPage--;
 
+            // Show the new page
             $('.page' + currentPage).show();
 
         });
@@ -73,6 +74,7 @@
             // If current page is 4, round-robin back to page 1, else nav to next
             currentPage === 4 ? currentPage = 1 : currentPage++;
 
+            // Show the new page
             $('.page' + currentPage).show();
         });
     }
