@@ -1,12 +1,10 @@
-(function() {
-
-    const apiURL = 'https://sv-reqres.now.sh/api/listings';
+const apiURL = 'https://sv-reqres.now.sh/api/listings';
 
     function newListing(data) {
         const markup = `
             <div class="listing">
                 <div class="listing_imageContainer">
-                    <img class="listing_image" src="${data.mediaurl}" alt="${data.title} image" onError="this.src = 'img/fallback.jpg';" />
+                    <img class="listing_image" src="${data.mediaurl}" alt="${data.title} image" onError="this.src = '../comps/fallback.jpg';" />
                 </div>
                 <div class="listing_content">
                     <h2 class="listing_title">${data.title}</h2>
@@ -34,5 +32,10 @@
             console.log(error);
         }
     }
-    getAndInsertData(apiURL);
-})();
+
+    function handleError(error)
+    {
+        console.log(error)
+    }
+    
+getAndInsertData(apiURL).catch(handleError);

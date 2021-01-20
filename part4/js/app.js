@@ -27,9 +27,23 @@ async function getAllData() {
     return allData;
 }
 
+// Returns a new array of truly-random items
+async function randomizedItems() {
+
+    const data = await getAllData();
+  
+    let randomized = data
+      .map((a) => ({ sort: Math.random(), value: a }))
+      .sort((a, b) => a.sort - b.sort)
+      .map((a) => a.value)
+      .slice(0, 15);
+    return randomized;
+  }
+
+// Display randomized items on page
 async function getAndDisplay() {
 
-    const data = await getData();
+    const data = await randomizedItems();
     let markup = ``;
     let itemNum = 0;
 
@@ -40,7 +54,7 @@ async function getAndDisplay() {
 
         // Populate grid with max number of results for each page
         for (let i = 0; i < pageLimits[p]; i++) {
-
+            
             // Total count of items used for itemNum text
             itemNum++;
 
