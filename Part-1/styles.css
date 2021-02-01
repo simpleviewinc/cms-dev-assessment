@@ -1,0 +1,29 @@
+/*designed mobile-first, 
+    these are generic settings as well as smallscreen*/
+*{ 
+    font-size: 20px;
+    background-color: pink;
+}
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+.titles {
+  font-weight: 900;
+}
+
+.content {
+    font-weight: 400;
+}
+
+@media (min-width: 641px){ /*medium width*/
+    * {
+        background-color: green;
+    }
+}
+
+@media (min-width: 1025px){/*max width*/
+    * {
+        background-color: blue;
+    }
+}
