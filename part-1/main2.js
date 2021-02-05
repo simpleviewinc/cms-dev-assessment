@@ -50,6 +50,7 @@ const createGrid = (data) => {
             <img src="${item.mediaurl}" 
                   onError="this.src = '../comps/fallback.jpg'"
             ></img>
+            <div class="col-3">
             <h1>${item.title}</h1>
             <p>${descriptionStart}</p>
             </div>
@@ -63,7 +64,7 @@ const createGrid = (data) => {
         uniqueId= "index-" + rowCount.toString();
         queryId = "#index-" + rowCount.toString();
         console.log("this is the query id ", queryId);
-        document.querySelector(queryId).insertAdjacentHTML("afterbegin", toInsert);
+        document.querySelector(queryId).insertAdjacentHTML("beforeend", toInsert);
     })
 }
 
