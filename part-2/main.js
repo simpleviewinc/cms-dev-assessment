@@ -16,8 +16,9 @@ const createGrid = (data) => {
     let rowCount = 0;
     let boxCount = 1;
     let buttonCount = 1;
-    var uniqueId = "index-1"
-    var queryId = "#index-1" 
+    var uniqueId = "index-1";
+    var queryId = "#index-1" ;
+    const mq = window.matchMedia( "(min-width: 1025px)" );
     data.map((item, index) => {
         const descriptionStart = item.description.substring(0, 150);
         const descriptionEnd = item.description.substring(150);
@@ -36,7 +37,7 @@ const createGrid = (data) => {
 
         if(boxCount === 1) {
             toInsert =  `
-            <div class="col-6">
+            <div class="col-6-lg col-4-md">
             <img src="${item.mediaurl}" 
                   onError="this.src = '../comps/fallback.jpg'"
             ></img>
@@ -47,23 +48,32 @@ const createGrid = (data) => {
         `;
         } else if(boxCount === 6){
                toInsert =  `
-                <div class="col-3">
-                  <div class="image-container">
+                <div class="col-3-lg" id="md-hack">
                     <img src="${item.mediaurl}" 
                         onError="this.src = '../comps/fallback.jpg'"
-                        height: 500px
+                        height="600"
+                        id="md-hack"
                         ></img>
-                  </div>
                 </div>
-                <div class="col-3">
+                <div class="col-3-lg" id="md-hack">
+                    <h4>${item.title}</h4>
+                    <p>${descriptionStart}<span class="more" id=${moreIndex}>${descriptionEnd}</span></p>
+                    <button onclick=readMore(${index}) id="${buttonIndex}">Read More</button>
+                </div>
+
+                <div class="col-4-md" id="lg-hack">
+                    <img src="${item.mediaurl}" id="lg-hack"
+                        onError="this.src = '../comps/fallback.jpg'"
+                    ></img>
                     <h4>${item.title}</h4>
                     <p>${descriptionStart}<span class="more" id=${moreIndex}>${descriptionEnd}</span></p>
                     <button onclick=readMore(${index}) id="${buttonIndex}">Read More</button>
                  </div>
             `;
+            
         } else {
             toInsert =  `
-            <div class="col-3">
+            <div class="col-3-lg col-4-md">
                 <img src="${item.mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                 ></img>
