@@ -37,6 +37,7 @@ const createGrid = (data) => {
                 <div class="col-3">
                     <img src="${item.mediaurl}" 
                         onError="this.src = '../comps/fallback.jpg'"
+                        height="500px"
                         ></img>
                 </div>
                 <div class="col-3">
@@ -50,7 +51,6 @@ const createGrid = (data) => {
             <img src="${item.mediaurl}" 
                   onError="this.src = '../comps/fallback.jpg'"
             ></img>
-            <div class="col-3">
             <h1>${item.title}</h1>
             <p>${descriptionStart}</p>
             </div>
