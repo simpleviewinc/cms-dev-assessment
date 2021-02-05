@@ -12,28 +12,22 @@
 <body>
   <script src="./main2.js"></script>
   <h1>Part 1 Loaded</h1>
-  <div class="other-container">
+  <div class="button-wrapper">
     <div class="row">
-        <div class="col-1">
-            <button class="listings">listings</button>
-        </div>
+    <div class="col-1">
+        <button class="listings" onclick="listingsTrigger()">listings</button>
+     </div>
+    <div class="col-1">
+        <button class="events" onclick="eventsTrigger()">events</button>
     </div>
-    <div class="row">
-        <div class="col-1">
-            <button class="events">events</button>
-        </div>
+     <div class="col-1">
+            <button class="offers" onclick="offersTrigger()">offers</button>
     </div>
-    <div class="row">
         <div class="col-1">
-            <button class="offers">offers</button>
+            <button class="all" onclick="allTrigger()">all</button>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-1">
-            <button class="all">all</button>
-        </div>
-    </div>
   </div>
+ </div>
     <div id="append">
     </div>
 </body>
