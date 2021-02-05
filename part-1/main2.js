@@ -1,9 +1,17 @@
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
-
-const createGrid = (data) => {
+const createGrid = (data, unnapend) => {
+    if(document.querySelector(".container") && unnapend===true){
+        removeAllChildNodes(document.querySelector(".container"));
+    }
     const numOfRows = Math.ceil(data.length/3);
     let container = document.createElement('div');
     container.className = 'container';
+ 
     document.querySelector("#append").appendChild(container);
     let theRow;
     let boxCount = 1;
@@ -35,10 +43,11 @@ const createGrid = (data) => {
         } else if(boxCount === 6){
                toInsert =  `
                 <div class="col-3">
+                  <div class="image-container">
                     <img src="${item.mediaurl}" 
                         onError="this.src = '../comps/fallback.jpg'"
-                        height="500px"
                         ></img>
+                  </div>
                 </div>
                 <div class="col-3">
                     <h1>${item.title}</h1>
@@ -48,11 +57,11 @@ const createGrid = (data) => {
         } else {
             toInsert =  `
             <div class="col-3">
-            <img src="${item.mediaurl}" 
-                  onError="this.src = '../comps/fallback.jpg'"
-            ></img>
-            <h1>${item.title}</h1>
-            <p>${descriptionStart}</p>
+                <img src="${item.mediaurl}" 
+                    onError="this.src = '../comps/fallback.jpg'"
+                ></img>
+                <h1>${item.title}</h1>
+                <p>${descriptionStart}</p>
             </div>
         `;
         }
@@ -68,14 +77,25 @@ const createGrid = (data) => {
     })
 }
 
-async function fetchApi(){
+async function fetchListings(unappend = true){
     const response = await fetch("https://sv-reqres.now.sh/api/listings", {mode: 'cors'});
     const toJson = await response.json();
     const data = toJson.data;
     console.log("this is the data async", data);
-    const toAppend = await createGrid(data);
+    //we need to change this to get all
+    const toAppend = await createGrid(data, unappend);
 
 }
 
-fetchApi();
+async function fetchEvents(){
+    const response = await fetch("https://sv-reqres.now.sh/api/events", {mode: 'cors'});
+    const toJson = await response.json();
+    const data = toJson.data;
+    console.log("this is the events", data);
+    const toAppend = await createGrid(data);
+
+}
+const unnapend = true;
+fetchListings();
+
 console.log("loaded");
