@@ -15,6 +15,7 @@ const createGrid = (data) => {
     let theRow;
     let rowCount = 0;
     let boxCount = 1;
+    let buttonCount = 1;
     var uniqueId = "index-1"
     var queryId = "#index-1" 
     data.map((item, index) => {
@@ -38,6 +39,7 @@ const createGrid = (data) => {
             ></img>
             <h1>${item.title}</h1>
             <p>${descriptionStart}</p>
+            <button onclick=readMore(${index})>Read More</button>
             </div>
         `;
         } else if(boxCount === 6){
@@ -52,6 +54,7 @@ const createGrid = (data) => {
                 <div class="col-3">
                     <h1>${item.title}</h1>
                     <p>${descriptionStart}</p>
+                    <button onclick=readMore(${index})>Read More</button>
                  </div>
             `;
         } else {
@@ -62,6 +65,7 @@ const createGrid = (data) => {
                 ></img>
                 <h1>${item.title}</h1>
                 <p>${descriptionStart}</p>
+                <button onclick=readMore(${index})>Read More</button>
             </div>
         `;
         }
@@ -126,6 +130,9 @@ fetchListings();
 
 console.log("loaded");
 
+function readMore(index){
+    console.log("this is the index readMore ", index);
+}
 
 function eventsTrigger(){
     fetchEvents();
