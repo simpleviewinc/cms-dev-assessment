@@ -49,9 +49,10 @@ const createGrid = (data) => {
         } else if(boxCount === 6){
                toInsert =  `
                 <div class="col-3-lg" id="md-hack">
+
                     <img src="${item.mediaurl}" 
                         onError="this.src = '../comps/fallback.jpg'"
-                        height="600"
+                        style="height:500px;"
                         id="md-hack"
                         ></img>
                 </div>
