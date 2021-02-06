@@ -18,7 +18,6 @@ const createGrid = (data) => {
     let buttonCount = 1;
     var uniqueId = "index-1";
     var queryId = "#index-1" ;
-    const mq = window.matchMedia( "(min-width: 1025px)" );
     data.map((item, index) => {
         const descriptionStart = item.description.substring(0, 150);
         const descriptionEnd = item.description.substring(150);
