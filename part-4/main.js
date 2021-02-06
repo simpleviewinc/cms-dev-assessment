@@ -33,20 +33,6 @@ const createGridFour = function(data){
         theRow.className = 'row'
         document.querySelector(".container").appendChild(theRow);
         console.log("the rowCount is incrementing " + rowCount);
-
-        // if(index === 0){
-        //     toInsert =  `
-        //     <p>grid four</p>
-        //     <div class="col-6-lg">
-        //         <div class="row-2-image-wrapper">
-        //         <img src="${item.mediaurl}" 
-        //             onError="this.src = '../comps/fallback.jpg'"
-        //             style="height:500px;"
-        //         ></img>
-        //         </div>
-        //     </div>
-        // `;
-        // } else {
             toInsert =  `
             <div class="col-6-lg">
                 <div class="row-2-image-wrapper">
@@ -92,7 +78,6 @@ const createGridThree = function(data){
 
         if(index === 0){
             toInsert =  `
-            <p>grid three</p>
             <div class="col-6-lg">
                 <div class="row-2-image-wrapper">
                 <div class="second-image-container">
@@ -174,7 +159,6 @@ const createGridTwo = function(data){
         console.log("this ")
         if(index === 0){
             toInsert =  `
-            <p>grid two</p>
             <div class="col-4-lg">
                 <div class="row-2-image-wrapper">
                 <div class="second-image-container">
@@ -273,7 +257,6 @@ const createGridOne = function(data){
 
         if(index === 0){
             toInsert =  `
-            <p>grid one</p>
             <div class="col-6-lg">
                 <div class="row-2-image-wrapper">
                 <div class="second-image-container">

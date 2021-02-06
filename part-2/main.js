@@ -42,7 +42,7 @@ const createGrid = (data) => {
             ></img>
             <h4>${item.title}</h4>
             <p>${descriptionStart}<span class="more" id=${moreIndex}>${descriptionEnd}</span></p>
-            <button onclick=readMore(${index}) id="${buttonIndex}">Read More</button>
+            <button onclick=readMore(${index}) class="my-button-2" id="${buttonIndex}">Read More</button>
             </div>
         `;
         } else if(boxCount === 6){
@@ -58,7 +58,7 @@ const createGrid = (data) => {
                 <div class="col-3-lg" id="md-hack">
                     <h4>${item.title}</h4>
                     <p>${descriptionStart}<span class="more" id=${moreIndex}>${descriptionEnd}</span></p>
-                    <button onclick=readMore(${index}) id="${buttonIndex}">Read More</button>
+                    <button onclick=readMore(${index}) class="my-button-2" id="${buttonIndex}">Read More</button>
                 </div>
 
                 <div class="col-4-md" id="lg-hack">
@@ -67,7 +67,7 @@ const createGrid = (data) => {
                     ></img>
                     <h4>${item.title}</h4>
                     <p>${descriptionStart}<span class="more" id=${moreIndex}>${descriptionEnd}</span></p>
-                    <button onclick=readMore(${index}) id="${buttonIndex}">Read More</button>
+                    <button onclick=readMore(${index}) class="my-button-2" id="${buttonIndex}">Read More</button>
                  </div>
             `;
             
@@ -79,7 +79,7 @@ const createGrid = (data) => {
                 ></img>
                 <h4>${item.title}</h4>
                 <p>${descriptionStart}<span class="more" id=${moreIndex}>${descriptionEnd}</span></p>
-                <button onclick=readMore(${index}) id="${buttonIndex}">Read More</button>
+                <button onclick=readMore(${index}) class="my-button-2" id="${buttonIndex}">Read More</button>
             </div>
         `;
         }
