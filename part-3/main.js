@@ -170,7 +170,7 @@ const createGridTwo = function(data){
         console.log("the rowCount is incrementing " + rowCount);
         console.log("this ")
         if(index === 0){
-            toInsert =  `my-button-1
+            toInsert =  `
             <div class="col-4-lg">
                 <div class="row-2-image-wrapper">
                 <div class="second-image-container">
