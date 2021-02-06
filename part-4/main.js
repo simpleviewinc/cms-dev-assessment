@@ -331,6 +331,8 @@ const createGridOne = function(data){
         document.querySelector(".row").insertAdjacentHTML("beforeend", toInsert);
     })
 };
+
+
 //pattern is 5, 5, 3, 2
 const createPagesArray = (data, count) => {
     console.log("create pages array firing ");
