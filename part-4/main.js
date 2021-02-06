@@ -12,7 +12,7 @@ function removeAllChildNodes(parent) {
 
 const createGridFour = function(data){
     if(document.querySelector(".container")){
-        removeAllChildNodes(document.querySelector(".container"));
+        removeAllChildNodes(document.querySelector("#append"));
     }
     let container = document.createElement('div');
     container.className = 'container';
@@ -50,10 +50,13 @@ const createGridFour = function(data){
             toInsert =  `
             <div class="col-6-lg">
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item.mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:500px;"
                 ></img>
+                <div class="top-left">${item.title}</div>
+                </div>
                 </div>
             </div>
         `
@@ -64,7 +67,7 @@ const createGridFour = function(data){
 
 const createGridThree = function(data){
     if(document.querySelector(".container")){
-        removeAllChildNodes(document.querySelector(".container"));
+        removeAllChildNodes(document.querySelector("#append"));
     }
     let container = document.createElement('div');
     container.className = 'container';
@@ -92,16 +95,22 @@ const createGridThree = function(data){
             <p>grid three</p>
             <div class="col-6-lg">
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[0].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:250px;"
                 ></img>
+                <div class="top-left">${item[0].title}</div>
+                </div>
                 </div>
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[1].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:250px;"
                 ></img>
+                <div class="top-left">${item[1].title}</div>
+                </div>
                 </div>
             </div>
         `;
@@ -109,10 +118,13 @@ const createGridThree = function(data){
             toInsert =  `
             <div class="col-6-lg">
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item.mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:500px;"
                 ></img>
+                <div class="top-left">${item.title}</div>
+                 </div>
                 </div>
             </div>
         `
@@ -126,7 +138,7 @@ const createGridThree = function(data){
 
 const createGridTwo = function(data){
     if(document.querySelector(".container")){
-        removeAllChildNodes(document.querySelector(".container"));
+        removeAllChildNodes(document.querySelector("#append"));
     }
     let container = document.createElement('div');
     container.className = 'container';
@@ -165,33 +177,45 @@ const createGridTwo = function(data){
             <p>grid two</p>
             <div class="col-4-lg">
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[0].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:250px;"
                 ></img>
+                <div class="top-left">${item[0].title}</div>
+                </div>
                 </div>
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[1].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:250px;"
                 ></img>
+                <div class="top-left">${item[1].title}</div>
+                </div>
                 </div>
             </div>
         `;
         } else if(index === 1){
             toInsert =  `
             <div class="col-4-lg">
-                <div class="row-2-image-wrapper">
+            <div class="row-2-image-wrapper">
+            <div class="second-image-container">
                 <img src="${item[0].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:250px;"
                 ></img>
+                <div class="top-left">${item[0].title}</div>
                 </div>
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[1].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:250px;"
                 ></img>
+                <div class="top-left">${item[1].title}</div>
+                </div>
+                </div>
                 </div>
             </div>
         `;
@@ -199,10 +223,13 @@ const createGridTwo = function(data){
             toInsert =  `
             <div class="col-4-lg">
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item.mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:500px;"
                 ></img>
+                <div class="top-left">${item.title}</div>
+                </div>
                 </div>
             </div>
         `
@@ -214,7 +241,7 @@ const createGridTwo = function(data){
 const createGridOne = function(data){
     console.log("create grid one firing ");
     if(document.querySelector(".container")){
-        removeAllChildNodes(document.querySelector(".container"));
+        removeAllChildNodes(document.querySelector("#append"));
     }
     let container = document.createElement('div');
     container.className = 'container';
@@ -249,16 +276,22 @@ const createGridOne = function(data){
             <p>grid one</p>
             <div class="col-6-lg">
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[0].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:250px;"
                 ></img>
+                <div class="top-left">${item[0].title}</div>
+                </div>
                 </div>
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[1].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:250px;"
                 ></img>
+                <div class="top-left">${item[1].title}</div>
+                </div>
                 </div>
             </div>
         `;
@@ -266,22 +299,31 @@ const createGridOne = function(data){
             toInsert =  `
             <div class="col-6-lg">
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[0].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:166px;"
                 ></img>
+                <div class="top-left">${item[0].title}</div>
+                </div>
                 </div>
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[1].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:166px;"
                 ></img>
+                <div class="top-left">${item[1].title}</div>
+                </div>
                 </div>
                 <div class="row-2-image-wrapper">
+                <div class="second-image-container">
                 <img src="${item[2].mediaurl}" 
                     onError="this.src = '../comps/fallback.jpg'"
                     style="height:166px;"
                 ></img>
+                <div class="top-left">${item[2].title}</div>
+                </div>
                 </div>
             </div>
         `;
@@ -315,18 +357,32 @@ const createPagesArray = (data, count) => {
 
 const createSubArray = (data, num) => {
     const subArray = [];
-     for(let i = 0; i < num; i++){
-        subArray.push(data[num]);
+     for(let i = 0; i <= num; i++){
+        subArray.push(data[i]);
      }
+     console.log("this is the subArray sub ", subArray);
      return subArray;
 }
 
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
 
 
-   fetchListings = async(count = 0) => {
+   fetchListings = async(count = 0, shuffle) => {
+       
         const response = await fetch("https://sv-reqres.now.sh/api/listings", {mode: 'cors'});
         const toJson = await response.json();
-        const data = toJson.data;
+        let data = toJson.data;
+        if(shuffle === true){
+            data = shuffleArray(data);
+        }
         console.log("this is the data async", data);
         //we need to change this to get all
         const pagesArray = await createPagesArray(data, count);
@@ -369,7 +425,8 @@ function next(){
     } else {
         state.count ++;
     }
-     const  grid = fetchListings(state.count);
+    let shuffle = false;
+     const  grid = fetchListings(state.count, shuffle);
 }
 
 function previous(){
@@ -378,6 +435,12 @@ function previous(){
     } else {
         state.count --;
     }
-     const grid = fetchListings(state.count);
+    let shuffle = false;
+     const grid = fetchListings(state.count, shuffle);
+}
+
+function shuffle(){
+    let shuffle = true;
+    const grid = fetchListings(state.count, shuffle);
 }
 
