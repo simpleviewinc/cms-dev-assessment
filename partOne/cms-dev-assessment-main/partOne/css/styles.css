@@ -1,0 +1,47 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Lato 400;
+  }
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #bdbdbd;
+    color: #000000;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    margin-block:20px ;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    width: 10%;
+    active {
+        background-color:#410070;
+        color:#ffffff;
+        border:double;
+    } /* When clicked (or clicked and held) the color will be blue */
+  }
+  
+  .tablink:hover {
+    background-color: #d4d2d2;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: rgb(5, 5, 5);
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  
+  /*table*/
+  .table{
+    border: single;
+    border-color: #000000;
+     
+  
+  }

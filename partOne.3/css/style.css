@@ -1,0 +1,80 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Lato 400;
+  }
+  .tab{
+      margin-left: 20px;
+  }
+  /* Style tab links */
+  .tablinks {
+    background-color: #bdbdbd;
+    color: #000000;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    margin-block:20px ;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    width: 10%;
+    active {
+        background-color:#410070;
+        color:#ffffff;
+        border:double;
+    } /* When clicked (or clicked and held) the color will be  */
+  }
+  
+  .tablinks:hover {
+    background-color: #d4d2d2;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: rgb(5, 5, 5);
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  .tablinks:on-click {
+	background-color:#9900ff;
+	border-radius:3px;
+	border:1px solid #9900ff;
+	color:#ffffff;
+}
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 80px;
+    margin-right: ;
+    margin-left: 10px;
+    
+  }
+  .grid-item{
+      padding: 20px;
+      width: ;
+  }
+ /* .gallery{
+      float: auto;
+      
+  }*/
+  /*.img1{
+      width: 500px;
+      height: 200px;
+  }
+  .img2{
+      width: 200px;
+      height: 200px;
+  }
+  .img3{
+      width: 200px;
+      height: 600px;
+  }
+  .img4{
+    margin-top: 200px;
+  }*/
+  @media (min-width: 640px) and (max-width: 1024px)
+  

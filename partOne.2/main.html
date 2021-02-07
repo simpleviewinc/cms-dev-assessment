@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Travel Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <!--<link rel="stylesheet" href="style.css">-->
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="test.js"></script>
+  <!--<script src="listings.js"></script>-->
+</head>
+
+<body>
+    <!--button-->
+        <input type="button" onclick="populateListings()" value="Load Listings" id="loadListingsButton">
+
+        <!--<input type="button" onclick="" value="Events" id="events">
+        <input type="button" onclick="" value="Offers" id="offers">
+        <input type="button" onclick="" value="Listings" id="listings">-->
+
+        <p id="dataContainer">This is the list of users<br> </p>
+        <div id="listings"></div>
+        <div>
+           <!-- <img src="../partOne/image/fallback.jpg" alt="fallback" style="width:400px;height:200px >-->
+        </div>
+
+        <script>
+            /*filler api*/
+            async function populateListings() {
+                clearPage();
+
+                let users = [];
+
+                try {
+                    const users = await getListings();
+                
+                    users.forEach(user => {
+                        appendUserElement(createUserElement(user));
+                    });
+                } catch (e) {
+                    console.log("Error occurred. Sadface :(")
+                    console.log(e);
+                }
+            }
+
+            function createUserElement(user) {
+                console.log("element created: " + user.name);
+                var element = document.createElement('p');
+                element.innerHTML = user.name;
+                return element;
+            }
+
+            function appendUserElement(element) {
+                $("#listings").append(element);
+                console.log("element appended")
+            }
+
+            function clearPage() {
+                $("#listings").empty();
+            }
+
+            function clearPage() {
+
+            }
+
+            /*need to connect api to dynamic table*/
+           /* var table = '';
+            var rows = 10;
+            var cols = 3;
+
+            /*need table to populate the images,articles*/
+           /* for(var r = 0; r < rows;r++){
+                table += '<tr>';
+                    for(var c = 1;c <= cols;c++){
+                        table += '<td>'+ c + '</td>';
+                    }
+                table += '</tr>';
+
+            }
+            document.write('<table>'+ table+ '</table>')*/
+
+        </script>
+
+    </body>
+</html>
