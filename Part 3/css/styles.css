@@ -34,7 +34,7 @@ strong {
     align-content: center;
     position: absolute;
     transition: all 0.25%;
-    transform: translateX(-200%);;
+    transform: translateX(-200%);
     margin: 0 auto;
 }
 
@@ -194,4 +194,7 @@ strong {
     color: rgb(10, 207, 207);
 }
 
+@media (max-width: 1025) {
+
+}
 
