@@ -1,9 +1,9 @@
 Simpleview CMS Developer Assessment
 ======
-### Asssessmnet
+### Assessmnet
 This assessment was completed following the requirements from: https://github.com/simpleviewinc/cms-dev-assessment/
 
-The assessment is separated into four (4) parts and each folder contains the soulution for it's respective part:
+The assessment is separated into four (4) parts and each folder contains the solution for it's respective part:
 Folder 1 - REST-API
 Folder 2 - Filtering with REST-API
 Folder 3 - Paging and Dynamic Layouts
