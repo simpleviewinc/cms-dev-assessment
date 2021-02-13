@@ -1,0 +1,101 @@
+body {
+    /* Lato - available in regular 400 or black 900 */
+    font-family: "Lato", sans-serif;
+}
+
+.wrapper {
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Initial styling for small media devices 640px or less */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-gap: 20px;
+}
+
+/* Image styling */
+img {
+    width: 500px;
+    max-width: 100%;
+    height: 500px;
+    max-height: 100%;
+}
+
+
+.listing-description {
+    height: 150px;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    overflow-y: hidden;
+}
+
+
+/* Media Breakpoints */
+/* Medium devices 641px and larger */
+@media (min-width: 641px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* large devices 1025px and larger */
+@media (min-width: 1025px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+        grid-template-areas: 
+        "a a b c"
+        "d e f f";
+    }
+
+    .data-listing-0 {
+        grid-area: a;
+    }
+
+    .data-listing-1 {
+        grid-area: b;
+    }
+
+    .data-listing-2 {
+        grid-area: c;
+    }
+
+    .data-listing-3 {
+        grid-area: d;
+    }
+
+    .data-listing-4 {
+        grid-area: e;
+    }
+
+    /* Split the last listing into another grid to allow for side-by-side photo and description */
+    .data-listing-5 {
+        grid-area: f;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 10px;
+        grid-template-areas: 
+        "photo description";
+    }
+
+    img.image-5 {
+        height: 100%;
+        grid-area: photo;
+    }
+
+    .container-5 {
+        grid-area: description;
+    }
+
+    .description-5 {
+        height: 43rem;
+        overflow-y: hidden;
+    }
+    img {
+        width: 100%;
+    }
+}
