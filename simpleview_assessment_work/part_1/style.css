@@ -1,0 +1,130 @@
+body {
+	font-family: Lato, sans-serif;
+}
+
+main {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+/* Misc */
+.readmore-button {
+	color: white;
+	background-color: red;
+	border-radius: 6px;
+	
+	position: relative;
+	left: 42%;
+	bottom: 20px;
+	padding: 10px 15px;
+	text-decoration: none;
+	opacity: 0;
+	
+	display: inline-block;
+	transition: all .2s ease;
+}
+
+.readmore-button:hover {
+	background-color: darkred;
+}
+
+/* Listings Large */
+.listings-container {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-template-rows: max-content;
+	grid-gap: 2em;
+	max-width: 1200px;
+	padding-right: 100px;
+}
+
+.grid-item {
+	height: auto;
+}
+
+.listings-container > div:first-child {
+	grid-column: span 2;
+}
+.listings-container > div:last-child {
+	grid-column: span 2;
+}
+
+.listings-item {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: auto;
+}
+
+.listing-description {
+	text-overflow: clip;
+	overflow: hidden;
+	height: 100px;
+}
+
+.listings-item::after {
+	background: linear-gradient(transparent 75%, rgba(255,255,255, .8));
+	display: block;
+	height: 100%;
+	width: 100%;
+	content: "";
+	position: absolute;
+	bottom: 0;
+}
+
+.listings-item:hover + .readmore-button, .readmore-button:hover {
+	opacity: 1;
+	transform: translateY(-30px);
+}
+
+.listing-img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* Medium */
+@media (max-width: 1025px) {
+	.listings-container {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto;
+		padding-right: 50px;
+		grid-gap: 1em;
+	}
+	.listings-container > div:first-child {
+		grid-column: span 1;
+	}
+	.listings-container > div:last-child {
+		grid-column: span 1;
+	}
+	
+	.listings-item {
+		height: 100%;
+		width: 100%;
+	}
+	
+	.grid-item {
+		min-width: 0;
+		min-height: 0;
+		height: auto;
+		width: auto;
+	}
+	
+	.listing-description {
+		max-height: 150px;
+		height: auto;
+	}
+}
+
+/* Small */
+@media (max-width: 640px) {
+	.listings-container {
+		grid-template-columns: repeat(1, 1fr);
+		padding-right: 70px;
+	}
+	
+	.listing-description {
+		height: 200px;
+	}
+}
