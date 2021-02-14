@@ -1,0 +1,113 @@
+body {
+  text-align: center;
+  background-color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+#main {
+  margin: 0px;
+  margin-top: 40px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .1fr 1fr 1fr;
+  grid-template-areas:
+    "nav nav nav"
+    "block1 block2 block3"
+    "block4 block5 block6";
+  grid-gap: .2rem;
+}
+
+@media only screen and (max-width: 640px) {
+  #main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "nav"
+      "block1"
+      "block2"
+      "block3"
+      "block4"
+      "block5"
+      "block6";
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  #main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .1fr 1fr 1fr;
+    grid-template-areas:
+      "nav nav nav nav"
+      "block1 block1 block2 block3"
+      "block4 block5 block6 block6";
+  }
+}
+
+.block {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+div.block:hover button.readButton {
+  top: 85%;
+  -webkit-transition: top 0.2s;
+}
+
+img {
+  width: 100%;
+}
+
+.whiteFader {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255,255,255, 1) 0%, rgba(255,255,255, 0) 100%);
+  width: 100%;
+  height: 10%;
+}
+
+nav {
+  text-align: left;
+  width:100%;
+  grid-area: "nav";
+}
+
+button {
+  width: auto;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12pt;
+}
+
+.navButton {
+  color: black;
+  background-color: #ebebeb;
+}
+
+.navButton:hover {
+  background-color: #dddddd;
+}
+
+.selected {
+  color: white;
+  background-color: #7141a4;
+}
+
+.readButton {
+  position: absolute;
+  height: 2.5rem;
+  width: fit-content;
+  border: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+  cursor: pointer;
+  color: white;
+  background-color: red;
+  -webkit-transition: top 0.2s;
+}
