@@ -120,15 +120,11 @@ strong {
     z-index: 100;
     transform: translateX(0);
 }
-.page.current.next {
-    z-index: 100;
-    transform: translateX(0);
-}
+
 .page.next {
     z-index: 100;
     transform: translateX(100%);
 }
-
 
 /* Image styling */
 .photo-img {
@@ -139,8 +135,7 @@ strong {
 
 .container {
     display: flexbox;
-    word-wrap: break-word;
-    word-break: break-all;
+    word-wrap: normal;
     position: absolute;
     top: 20px;
     z-index: 200;
@@ -193,5 +188,3 @@ strong {
 .blue-arrow {
     color: rgb(10, 207, 207);
 }
-
-
