@@ -23,7 +23,7 @@ async function displayData() {
         const htmlContent = data
         .map((listing, index) => 
             `<div class="listing data-listing-${index}">
-                <img onerror="this.src='/images/fallback.jpg'" src=${listing.mediaurl} alt="Listing photo" class="listing-image image-${index}"></img>
+                <img onerror="this.src='./images/fallback.jpg'" src="${listing.mediaurl}" alt="Listing photo" class="listing-image image-${index}"></img>
                 <div class="container container-${index}">
                     <h2><strong>${listing.title}</strong></h2>
                     <p class="listing-description description-${index}">${listing.description}</p>

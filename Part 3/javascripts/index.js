@@ -27,7 +27,7 @@ async function displayData(query) {
         const data = await getData(query);
         pageContent.forEach((photo, index) => 
             (photo.innerHTML = `
-            <img onerror="this.src='../images/fallback.jpg'"
+            <img onerror="this.src='./images/fallback.jpg'"
             src="${data[index].mediaurl}"
             alt="photo"
             class="photo-img img-${index}">

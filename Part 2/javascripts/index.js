@@ -47,7 +47,7 @@ async function displayData(query) {
         const htmlContent = data
         .map((listing, index) => 
             `<div class="listing data-listing-${index}" onMouseEnter="handleMouseEnter(${index})" onMouseLeave="handleMouseLeave(${index})">
-                <img onerror="this.src='/images/fallback.jpg'" src=${listing.mediaurl} alt="Listing photo" class="listing-image image-${index}"></img>
+                <img onerror="this.src='./images/fallback.jpg'" src=${listing.mediaurl} alt="Listing photo" class="listing-image image-${index}"></img>
                 <div class="container container-${index}">
                     <h2><strong>${listing.title}</strong></h2>
                     <p class="listing-description description-${index} show-less">${listing.description}</p>
