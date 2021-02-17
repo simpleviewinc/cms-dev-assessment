@@ -1,0 +1,74 @@
+.flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-flex-end {
+    align-items: flex-end;
+}
+
+.w-50-porcent {
+    width: 50%;
+}
+
+.w-25-porcent {
+    width: 25%;
+}
+
+.h-750 {
+    height: 750px;
+}
+
+.h-650 {
+    height: 650px;
+}
+
+.h-500 {
+    height: 500px;
+}
+
+.h-400 {
+    height: 400px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.mask-image-active {
+    -webkit-mask-image: linear-gradient(to bottom, #000 96%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 96%, transparent 100%);
+}
+
+.mask-image-desactived {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.hover-btn:hover > .data .btn {
+    opacity: 1;
+}
+
+.hover-btn:hover > .data .btn button {
+    transform: translateY(-20px);
+}
