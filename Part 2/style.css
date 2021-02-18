@@ -97,8 +97,8 @@ button {
   height: 5em;
 }
 
-/* readMoreBtn transitions in/out */
-.item:hover .readMoreBtn {
+/* readMoreLink transitions in/out */
+.item:hover .readMoreLink {
   bottom: 0;
 }
 
@@ -159,22 +159,23 @@ button {
 
 /* Read More Button */
 
-.readMoreBtn {
+.readMoreLink {
   font-family: inherit;
   position: absolute;
   left: 50%;
-  bottom: -50px;
+  bottom: -55px;
   transform: translate(-50%, -50%);
   color: #fff;
   border-radius: 5px;
   background-color: #f0453b;
   border: none;
+  text-decoration: none;
   padding: 8px 14px;
   cursor: pointer;
   transition: all 0.1s ease-out;
   z-index: 9;
 }
 
-.readMoreBtn:hover{
+.readMoreLink:hover{
   background-color: #ca2212;
 }

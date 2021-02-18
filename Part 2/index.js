@@ -14,6 +14,7 @@
       return res.json()
     }))
   }).then(data => {
+    console.log(data)
     container.innerHTML = 'Loading...';
     // render view
     container.innerHTML = renderSelectedInfo('all', data)
@@ -33,8 +34,9 @@
   })
 
   //create item view
+  // gray out link if no web url?
   const createItem = function(styleType, info){
-    return `<div class="item item-${styleType}"><div class="img-container"> <img src=${info.mediaurl} onerror="this.onerror=null;this.src='../comps/fallback.jpg'" alt="farmland"></div><div class="item-content"><h2 class="heading2">${info.title}</h2><p>${info.description}</p></div><button class="readMoreBtn" aria-label="Read more">Read More</button></div>`
+    return `<div class="item item-${styleType}"><div class="img-container"> <img src=${info.mediaurl} onerror="this.onerror=null;this.src='../comps/fallback.jpg'" alt="farmland"></div><div class="item-content"><h2 class="heading2">${info.title}</h2><p>${info.description}</p></div><a class="readMoreLink" href=${info.weburl ? info.weburl : "javascript:void(0)"} aria-label="Link to read more">Read More</a></div>`
   }
 
   //render info by selected info type
