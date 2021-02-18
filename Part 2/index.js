@@ -1,7 +1,6 @@
 "use strict";
 
 (function(){
-
   const container = document.querySelector('.container');
   const nav = document.querySelector('.nav-list');
 
@@ -15,7 +14,10 @@
       return res.json()
     }))
   }).then(data => {
+    container.innerHTML = 'Loading...';
+    // render view
     container.innerHTML = renderSelectedInfo('all', data)
+    // add click event for nav sorting
     nav.addEventListener('click', (event) => {
       let selectedButton = event.target;
       if(event.target.nodeName === 'BUTTON' && selectedButton ) {
@@ -35,7 +37,7 @@
     return `<div class="item item-${styleType}"><div class="img-container"> <img src=${info.mediaurl} onerror="this.onerror=null;this.src='../comps/fallback.jpg'" alt="farmland"></div><div class="item-content"><h2 class="heading2">${info.title}</h2><p>${info.description}</p></div><button class="readMoreBtn" aria-label="Read more">Read More</button></div>`
   }
 
-  //render all info
+  //render info by selected info type
   const renderSelectedInfo = function(infoType, data){
     let selectedInfoType = 'navAll';
     if(infoType === 'navListings'){
@@ -54,6 +56,7 @@
     return renderSingleInfo(selectedInfoType)
   }
 
+  //helper function for creating each info type
   const renderSingleInfo = function(selectedInfoType){
     let htmlRender = '';
     selectedInfoType.data.forEach((info, idx) => {
@@ -68,5 +71,4 @@
     })
     return htmlRender;
   }
-
 })()
