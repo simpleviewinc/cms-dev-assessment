@@ -15,7 +15,6 @@
       return res.json()
     }))
   }).then(data => {
-    console.log(data)
     let htmlRender = ""
     data.forEach(infoListings => {
       infoListings.data.forEach((info, idx) => {
