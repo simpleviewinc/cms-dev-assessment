@@ -30,32 +30,13 @@
       })
     })
     container.innerHTML = htmlRender
-
-    // at mouseover and mouseout events to show/hide button
-
-    container.addEventListener('mouseover', (event) => {
-      let item = event.target.closest('.item')
-      if(item) {
-        item.querySelector('button').style.display = "block"
-      }
-    })
-
-    container.addEventListener('mouseout', (event) => {
-      let item = event.target.closest('.item')
-      if(item) {
-        item.querySelector('button').style.display = "none"
-      }
-    })
-
-
-
   }).catch(err => {
     console.error(err)
   })
 
 
   const createItem = function(styleType, info){
-    return `<div class="item item-${styleType}"><div class="img-container"> <img src=${info.mediaurl} onerror="this.onerror=null;this.src='../comps/fallback.jpg'" alt="farmland"></div><div class="item-content"><h2>${info.title}</h2><p>${info.description}</p></div><button class="readMoreBtn" aria-label="Read more">Read More</button></div>`
+    return `<div class="item item-${styleType}"><div class="img-container"> <img src=${info.mediaurl} onerror="this.onerror=null;this.src='../comps/fallback.jpg'" alt="farmland"></div><div class="item-content"><h2 class="heading2">${info.title}</h2><p>${info.description}</p></div><button class="readMoreBtn" aria-label="Read more">Read More</button></div>`
   }
 
 })()
