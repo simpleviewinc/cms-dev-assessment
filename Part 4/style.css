@@ -73,11 +73,30 @@ main {
   cursor: pointer;
 }
 
+.arrow {
+  color: #59a2cf;
+}
+
 .heading {
   background-color: #fff;
   display: inline-block;
   padding: 10px;
+  margin: 0;
+  font-size: 0.875rem;
 }
+
+@media screen and (min-width: 641px) {
+  .heading {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}
+
 
 img {
   object-fit: cover;
