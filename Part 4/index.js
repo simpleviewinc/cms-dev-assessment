@@ -57,32 +57,35 @@
     return data;
   }
 
-//Slider
-  let slideIndex = 1;
-  showSlides(slideIndex);
-  // next/previous controls
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-  // change display of slides
-  function showSlides(n) {
-    var slides = document.querySelectorAll('.slide');
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
+// Slider function to create slider
+  const slider = function() {
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    // next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
     }
-    slides[slideIndex-1].style.display = 'block';
-  }
-  //add event to prev/next buttons
-  buttons.forEach(button => {
-    button.addEventListener('click', (event) => {
-      if(event.target.id === 'prev') {
-        plusSlides(-1)
-      } else {
-        plusSlides(1)
+    // change display of slides
+    function showSlides(n) {
+      var slides = document.querySelectorAll('.slide');
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
       }
+      slides[slideIndex-1].style.display = 'block';
+    }
+    //add event to prev/next buttons
+    buttons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        if(event.target.id === 'prev') {
+          plusSlides(-1)
+        } else {
+          plusSlides(1)
+        }
+      })
     })
-  })
+  }
+  slider();
 
 })()

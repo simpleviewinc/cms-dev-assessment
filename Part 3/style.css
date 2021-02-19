@@ -2,10 +2,13 @@ body {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
-.slideshow-container {
+main {
   max-width: 1200px;
-  position: relative;
   margin: 0 auto;
+}
+
+.slideshow-container {
+  position: relative;
 }
 
 .slideshow-container,
@@ -60,13 +63,20 @@ body {
   height: 10vh;
   float: right;
   margin-top: 10px;
-  margin-right: 10px;
 }
 
 .controllers > button {
   background-color: transparent;
   border: none;
   font-family: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+.heading {
+  background-color: #fff;
+  display: inline-block;
+  padding: 10px;
 }
 
 img {

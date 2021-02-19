@@ -34,7 +34,7 @@
     let gridItem = ''
     for(let i = 0; i < numOfRows; i++) {
       if(data.length > 0) {
-        gridItem += `<div class="grid-item"><h2>${data[0].title}</h2><img src=${data[0].mediaurl} onerror="this.onerror=null;this.src='../comps/fallback.jpg'" alt="farmland"></div>`
+        gridItem += `<div class="grid-item"><h2 class="heading">${data[0].title}</h2><img src=${data[0].mediaurl} onerror="this.onerror=null;this.src='../comps/fallback.jpg'" alt="farmland"></div>`
         data.shift()
       }
     }

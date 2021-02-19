@@ -7,11 +7,11 @@ main {
   margin: 0 auto;
 }
 
-.slideshow-container {
+.slider-container {
   position: relative;
 }
 
-.slideshow-container,
+.slider-container,
 .grid-container-2col,
 .grid-container-3col {
   height: 90vh;
@@ -69,6 +69,8 @@ main {
   background-color: transparent;
   border: none;
   font-family: inherit;
+  outline: none;
+  cursor: pointer;
 }
 
 .heading {

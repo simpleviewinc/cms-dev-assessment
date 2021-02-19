@@ -176,6 +176,12 @@ button {
   z-index: 9;
 }
 
+@media screen and (min-width: 1025px) {
+  .item-tall > .readMoreLink {
+    left: 75%;
+  }
+}
+
 .readMoreLink:hover{
   background-color: #ca2212;
 }
