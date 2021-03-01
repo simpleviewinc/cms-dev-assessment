@@ -1,0 +1,156 @@
+*,
+html,
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+h2 {
+  font-weight: 900;
+  line-height: 2;
+}
+
+.container {
+  margin: 20px;
+  max-width: 1200px;
+}
+
+.content {
+  margin-top: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 20px;
+  display: none;
+}
+
+.show {
+  display: grid;
+}
+
+.show-listings {
+  height: 400px;
+  overflow: hidden;
+}
+
+.show-events {
+  height: 400px;
+  overflow: hidden;
+}
+
+.show-offers {
+  height: 400px;
+  overflow: hidden;
+}
+
+#listings button {
+  position: absolute;
+  align-items: center;
+}
+
+#events {
+  margin-top: 20px;
+}
+
+#offers {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 11px 25px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin-right: 16px;
+  border: none;
+  outline: none;
+}
+
+.btn.active {
+  background-color: rgb(133, 22, 148);
+  color: white;
+  border: 1px solid white;
+  box-shadow: 0px 0px 0px 2px rgb(133, 22, 148);
+}
+
+img {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .div0 {
+    position: relative;
+    grid-column: 1 / span 3;
+  }
+  .div1 {
+    position: relative;
+    grid-column: 4 / span 3;
+  }
+  .div2 {
+    position: relative;
+    grid-column: 7 / span 3;
+  }
+  .div3 {
+    position: relative;
+    grid-row: 2;
+    grid-column: 1 / span 3;
+  }
+  .div4 {
+    position: relative;
+    grid-column: 4 / span 3;
+  }
+  .div5 {
+    position: relative;
+    grid-column: 7 / span 3;
+  }
+}
+
+@media (min-width: 1025px) {
+  .show-listings {
+    height: 430px;
+    overflow: hidden;
+  }
+
+  .show-events {
+    height: 430px;
+    overflow: hidden;
+  }
+
+  .show-offers {
+    height: 430px;
+    overflow: hidden;
+  }
+
+  .div0 {
+    grid-column: 1 / span 5;
+  }
+  .div1 {
+    grid-column: 6 / span 2;
+  }
+  .div2 {
+    grid-column: 8 / span 2;
+  }
+  .div3 {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+  }
+  .div4 {
+    grid-column: 3 / span 2;
+  }
+  .div5 {
+    grid-column: 5 / span 5;
+    display: flex;
+  }
+  .div5 img {
+    width: 50%;
+  }
+
+  .div5 div {
+    margin-left: 16px;
+  }
+}
