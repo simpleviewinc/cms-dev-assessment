@@ -1,0 +1,43 @@
+#card{
+    text-align: left;
+    align-content: left;
+}
+.card6{
+    text-align: left;
+}
+.card7{
+    text-align: left;
+}
+.card12{
+    text-align: left;
+}
+.card13{
+    text-align: left;
+}
+.card18{
+    text-align: left;
+}
+
+/* Right Aligned */
+#card2{
+    text-align: right;
+    align-content: left;
+}
+.card3{}
+.card4{}
+.card5{}
+.card8{}
+.card9{}
+.card10{}
+.card11{}
+.card14{}
+.card15{}
+.card16{}
+.card17{}
+
+
+
+.card-image{
+    display: inline-block;
+    width: 33%;
+}
