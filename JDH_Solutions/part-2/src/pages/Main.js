@@ -3,8 +3,10 @@ import Container from "../components/Container";
 import API from "../utils/API";
 import Button from 'react-bootstrap/Button'
 
-import placeholder from '../assets/fallback.jpg'
+import All from "../components/All";
 import Listings from "../components/Listings";
+import Events from "../components/Events";
+import Offers from "../components/Offers";
 
 function Main(props) {
 
@@ -14,17 +16,6 @@ function Main(props) {
     const [offers, setOffers] = useState([]);
 
     const [content, setContent] = useState('all');
-
-    useEffect(() => {
-        if (all.length === 0) {
-            getListings();
-            getEvents();
-            getOffers();
-        }
-        else {
-            return
-        }
-    }, [])
 
     const createListings = res => {
         const res2 = res
@@ -36,7 +27,7 @@ function Main(props) {
         });
         setListings(allListings, ...listings)
         const halfListings = allListings.slice(0, 6);
-        setAll(halfListings, ...all);
+        setAll(prev => [...prev, ...halfListings]);
     }
 
     const createEvents = res => {
@@ -49,7 +40,7 @@ function Main(props) {
         });
         setEvents(allEvents, ...events);
         const halfEvents = allEvents.slice(0, 6);
-        setAll(halfEvents, ...all);
+        setAll(prev => [...prev, ...halfEvents]);
     }
 
     const createOffers = res => {
@@ -58,11 +49,12 @@ function Main(props) {
         let allOffers = []
         doubleOffers.forEach((newOffer, index) => {
             newOffer.id = index;
-            allOfferss.push(newListing);
+            allOffers.push(newOffer);
         });
         setOffers(allOffers, ...offers)
         const halfOffers = allOffers.slice(0, 6);
-        setAll(halfOffers, ...all);
+        setAll(prev => [...prev, ...halfOffers]);
+
     }
 
     const getListings = () => {
@@ -83,15 +75,25 @@ function Main(props) {
             .catch(err => console.log(err));
     };
 
+    useEffect(() => {
+        if (all.length === 0) {
+            getListings();
+            getEvents();
+            getOffers();
+        }
+        else {
+            return
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [all])
+
     return (
-
-
         <Container>
             <Button id='all' onClick={() => setContent('all')}>All</Button>
             <Button id='listings' onClick={() => setContent('listings')}>Listings</Button>
             <Button id='events' onClick={() => setContent('events')}>Events</Button>
             <Button id='offers' onClick={() => setContent('offers')}>Offers</Button>
-            {content === 'all' ?
+            {content === 'all' && all.length === 18 ?
                 <All all={all}></All>
                 : content === 'listings' ?
                     <Listings listings={listings}></Listings>

@@ -22,10 +22,14 @@ function Events({events}) {
     const [row4, setRow4] = useState([]);
 
     const placeholders = [crow, dma, katy, klyde, meadow, nasher, perot, reunion];
-    const placeholder = placeholders[Math.floor(Math.random() * 8)];
+    const placeholder = () => {
+        let placehold = placeholders[Math.floor(Math.random() * 8)]
+        return placehold;
+    }
 
     useEffect(() => {
         template()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [events])
 
     let template = () => {
@@ -34,12 +38,12 @@ function Events({events}) {
             for (let index = 0; index < 3; index++) {
                 const item = events[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
-                    <img alt={''} src={placeholder} />
+                    <img style={{"maxWidth": "590px", "objectFit": "cover"}} alt={''} src={placeholder()} />
                     <div>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
                         <p className='read-more'>
-                            <a className="button" href="#">Read More</a>
+                            <a className="button" href=" /#">Read More</a>
                         </p>
                     </div>
                 </Col>);
@@ -51,12 +55,12 @@ function Events({events}) {
             for (let index = 3; index < 6; index++) {
                 const item = events[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
-                    <img alt={''} src={placeholder} />
+                    <img style={{"maxWidth": "590px", "objectFit": "cover"}} alt={''} src={placeholder()} />
                     <div>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
                         <p className='read-more'>
-                            <a className="button" href="#">Read More</a>
+                            <a className="button" href=" /#">Read More</a>
                         </p>
                     </div>
                 </Col>);
@@ -68,12 +72,12 @@ function Events({events}) {
             for (let index = 6; index < 9; index++) {
                 const item = events[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
-                    <img alt={''} src={placeholder} />
+                    <img style={{"maxWidth": "590px", "objectFit": "cover"}} alt={''} src={placeholder()} />
                     <div>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
                         <p className='read-more'>
-                            <a className="button" href="#">Read More</a>
+                            <a className="button" href=" /#">Read More</a>
                         </p>
                     </div>
                 </Col>);
@@ -85,12 +89,12 @@ function Events({events}) {
             for (let index = 9; index < 12; index++) {
                 const item = events[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
-                    <img alt={''} src={placeholder} />
+                    <img style={{"maxWidth": "590px", "objectFit": "cover"}} alt={''} src={placeholder()} />
                     <div>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
                         <p className='read-more'>
-                            <a className="button" href="#">Read More</a>
+                            <a className="button" href=" /#">Read More</a>
                         </p>
                     </div>
                 </Col>);

@@ -17,16 +17,20 @@ import vine from "../assets/food/vine.jpg"
 
 function Offers({offers}) {
 
-    const [row1.jpg, setRow1] = useState([]);
+    const [row1, setRow1] = useState([]);
     const [row2, setRow2] = useState([]);
     const [row3, setRow3] = useState([]);
     const [row4, setRow4] = useState([]);
 
     const placeholders = [boul, henry, cattleack, lock, mudhen, pecan, rise, slow, vine];
-    const placeholder = placeholders[Math.floor(Math.random() * 9)];
+    const placeholder = () => {
+        let placehold = placeholders[Math.floor(Math.random() * 9)]
+        return placehold;
+    }
 
     useEffect(() => {
         template()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [offers])
 
     let template = () => {
@@ -35,12 +39,12 @@ function Offers({offers}) {
             for (let index = 0; index < 3; index++) {
                 const item = offers[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
-                    <img alt={''} src={placeholder} />
+                    <img style={{"maxWidth": "590px", "objectFit": "cover"}} alt={''} src={placeholder()} />
                     <div>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
                         <p className='read-more'>
-                            <a className="button" href="#">Read More</a>
+                            <a className="button" href=" /#">Read More</a>
                         </p>
                     </div>
                 </Col>);
@@ -52,12 +56,12 @@ function Offers({offers}) {
             for (let index = 3; index < 6; index++) {
                 const item = offers[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
-                    <img alt={''} src={placeholder} />
+                    <img style={{"maxWidth": "590px", "objectFit": "cover"}} alt={''} src={placeholder()} />
                     <div>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
                         <p className='read-more'>
-                            <a className="button" href="#">Read More</a>
+                            <a className="button" href=" /#">Read More</a>
                         </p>
                     </div>
                 </Col>);
@@ -69,12 +73,12 @@ function Offers({offers}) {
             for (let index = 6; index < 9; index++) {
                 const item = offers[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
-                    <img alt={''} src={placeholder} />
+                    <img style={{"maxWidth": "590px", "objectFit": "cover"}} alt={''} src={placeholder()} />
                     <div>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
                         <p className='read-more'>
-                            <a className="button" href="#">Read More</a>
+                            <a className="button" href=" /#">Read More</a>
                         </p>
                     </div>
                 </Col>);
@@ -86,12 +90,12 @@ function Offers({offers}) {
             for (let index = 9; index < 12; index++) {
                 const item = offers[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
-                    <img alt={''} src={placeholder} />
+                    <img style={{"maxWidth": "590px", "objectFit": "cover"}} alt={''} src={placeholder()} />
                     <div>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
                         <p className='read-more'>
-                            <a className="button" href="#">Read More</a>
+                            <a className="button" href=" /#">Read More</a>
                         </p>
                     </div>
                 </Col>);
