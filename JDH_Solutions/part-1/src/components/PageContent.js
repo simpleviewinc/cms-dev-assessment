@@ -2,35 +2,13 @@ import React, {useState, useEffect} from "react";
 import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
-// import Card from "./Card";
-// import SearchForm from "./SearchForm";
-// import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
-import Button from "react-bootstrap/Button";
-import ListingModal from "./ListingModal"
 
 import placeholder from '../assets/fallback.jpg'
 
 function PageContent(props) {
 
   const [listings, setListings] = useState([]);
-  const [modalShow, setModalShow] = useState({});
-  const [currentListing, setCurrentListing] = useState({
-    address1: '',
-    category: '',
-    city: '',
-    description: '',
-    mediaurl: '',
-    phone: '',
-    qualityScore: 0,
-    recid: 0,
-    region: '',
-    state: '',
-    title: '',
-    weburl: '',
-    zip: '',
-    id: 0
-  })
 
   const [row1, setRow1] = useState([]);
   const [row2, setRow2] = useState([]);
@@ -40,31 +18,18 @@ function PageContent(props) {
   useEffect(() => {
     if (listings.length === 0) {
       getListings();
-      template();
     }
     if (listings.length > 0) {
-      console.log('looks like we made it!')
       template();
-    }
-    if (row1.length > 0) {
-      console.log('row row row your rows!')
-      console.log(row1[0])
     }
     else {
       return
     }
   }, [listings])
 
-  const setCurrListing = (id) => {
-    let listing = listings.filter((listing) => (listing.id === id))
-    setCurrentListing(listing[0])
-  }
-
   const createListings = res => {
     const res2 = res
     const doubleListings = res.data.data.concat(res2.data.data)
-    // let listingResults = res.data.data;
-    console.log(doubleListings);
     let allListings = []
     doubleListings.forEach((listing, index) => {
       let newListing = {
@@ -99,22 +64,13 @@ function PageContent(props) {
       let row = []
       for (let index = 0; index < 3; index++) {
         const item = listings[index];
-        console.log('row1: ' + index);
         row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
           <img alt={''} src={placeholder} />
           <div>
             <h1>{item.title}</h1>
             <p>{item.description}</p>
             <p className='read-more'>
-              <Button className="button" variant="primary"
-                onClick={() => {
-                  setModalShow({...modalShow, [index]: true})
-                  setCurrListing(item.id)
-                }}>
-                Read More
-              </Button>
-              <ListingModal key={item.id} listing={item} show={modalShow[index]}
-                onHide={() => setModalShow({...modalShow, [index]: false})} />
+              <a className="button" href="#">Read More</a>
             </p>
           </div>
         </Col>);
@@ -125,7 +81,7 @@ function PageContent(props) {
       let row = []
       for (let index = 3; index < 6; index++) {
         const item = listings[index];
-        row.push(<Col size="" col={'col-' + index % 6}>
+        row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
           <img alt={''} src={placeholder} />
           <div>
             <h1>{item.title}</h1>
@@ -140,9 +96,9 @@ function PageContent(props) {
     };
     if (listings.length > 6) {
       let row = []
-      for (let index = 0; index < 3; index++) {
+      for (let index = 6; index < 9; index++) {
         const item = listings[index];
-        row.push(<Col size="" col={'col-' + index % 6}>
+        row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
           <img alt={''} src={placeholder} />
           <div>
             <h1>{item.title}</h1>
@@ -157,9 +113,9 @@ function PageContent(props) {
     };
     if (listings.length > 9) {
       let row = []
-      for (let index = 3; index < 6; index++) {
+      for (let index = 9; index < 12; index++) {
         const item = listings[index];
-        row.push(<Col size="" col={'col-' + index % 6}>
+        row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
           <img alt={''} src={placeholder} />
           <div>
             <h1>{item.title}</h1>
@@ -178,10 +134,10 @@ function PageContent(props) {
     <Container>
       {row1.length > 0 ?
         <>
-          <Row>{row1}</Row>
-          <Row>{row2}</Row>
-          <Row>{row3}</Row>
-          <Row>{row4}</Row>
+          <Row key={"row1"}>{row1}</Row>
+          <Row key={"row2"}>{row2}</Row>
+          <Row key={"row3"}>{row3}</Row>
+          <Row key={"row4"}>{row4}</Row>
         </>
         : <div>'loading'</div>}
     </Container >
