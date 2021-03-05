@@ -2,13 +2,10 @@ import React, {useState, useEffect} from "react";
 import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
-import API from "../utils/API";
 
 import placeholder from '../assets/fallback.jpg'
 
 function Listings({listings}) {
-
-  // const [listings, setListings] = useState([]);
 
   const [row1, setRow1] = useState([]);
   const [row2, setRow2] = useState([]);

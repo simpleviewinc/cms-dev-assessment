@@ -6,12 +6,12 @@ import Button from 'react-bootstrap/Button'
 import placeholder from '../assets/fallback.jpg'
 import Listings from "../components/Listings";
 
-function PageContent(props) {
+function Main(props) {
 
     const [all, setAll] = useState([]);
     const [listings, setListings] = useState([]);
     const [events, setEvents] = useState([]);
-    const [offers, setoffers] = useState([]);
+    const [offers, setOffers] = useState([]);
 
     const [content, setContent] = useState('all');
 
@@ -35,11 +35,51 @@ function PageContent(props) {
             allListings.push(newListing);
         });
         setListings(allListings, ...listings)
+        const halfListings = allListings.slice(0, 6);
+        setAll(halfListings, ...all);
+    }
+
+    const createEvents = res => {
+        const res2 = res
+        const doubleEvents = res.data.data.concat(res2.data.data)
+        let allEvents = []
+        doubleEvents.forEach((newEvent, index) => {
+            newEvent.id = index;
+            allEvents.push(newEvent);
+        });
+        setEvents(allEvents, ...events);
+        const halfEvents = allEvents.slice(0, 6);
+        setAll(halfEvents, ...all);
+    }
+
+    const createOffers = res => {
+        const res2 = res
+        const doubleOffers = res.data.data.concat(res2.data.data)
+        let allOffers = []
+        doubleOffers.forEach((newOffer, index) => {
+            newOffer.id = index;
+            allOfferss.push(newListing);
+        });
+        setOffers(allOffers, ...offers)
+        const halfOffers = allOffers.slice(0, 6);
+        setAll(halfOffers, ...all);
     }
 
     const getListings = () => {
         API.listings()
             .then(createListings)
+            .catch(err => console.log(err));
+    };
+
+    const getEvents = () => {
+        API.events()
+            .then(createEvents)
+            .catch(err => console.log(err));
+    };
+
+    const getOffers = () => {
+        API.offers()
+            .then(createOffers)
             .catch(err => console.log(err));
     };
 
@@ -64,4 +104,4 @@ function PageContent(props) {
     );
 }
 
-export default PageContent;
+export default Main;
