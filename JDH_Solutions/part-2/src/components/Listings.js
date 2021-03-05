@@ -3,7 +3,20 @@ import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
 
-import placeholder from '../assets/fallback.jpg'
+import adolphus from "../assets/hotels/adolphus.jpg"
+import crescent from "../assets/hotels/crescent.jpg"
+import four from "../assets/hotels/four.jpg"
+import hall from "../assets/hotels/hall.jpg"
+import joule from "../assets/hotels/joule.jpg"
+import meriden from "../assets/hotels/meriden.jpg"
+import omni from "../assets/hotels/omni.jpg"
+import ritz from "../assets/hotels/ritz.jpg"
+import rosewood from "../assets/hotels/rosewood.jpg"
+import statler from "../assets/hotels/statler.jpg"
+import w from "../assets/hotels/w.jpg"
+import zaza from "../assets/hotels/zaza.jpg"
+
+// import placeholder from '../assets/fallback.jpg'
 
 function Listings({listings}) {
 
@@ -11,6 +24,9 @@ function Listings({listings}) {
   const [row2, setRow2] = useState([]);
   const [row3, setRow3] = useState([]);
   const [row4, setRow4] = useState([]);
+
+  const placeholders = [adolphus, crescent, four, hall, joule, meriden, omni, ritz, rosewood, statler, w, zaza];
+  const placeholder = placeholders[Math.floor(Math.random() * 12)];
 
   useEffect(() => {
     template()

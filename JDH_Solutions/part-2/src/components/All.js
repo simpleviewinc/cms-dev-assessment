@@ -3,24 +3,47 @@ import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
 
-import placeholder from '../assets/fallback.jpg'
+import lock from "../assets/food/lock.jpg"
+import mudhen from "../assets/food/mudhen.jpg"
+import pecan from "../assets/food/pecan.jpg"
+import rise from "../assets/food/rise.jpg"
+import slow from "../assets/food/slow.jpg"
+import vine from "../assets/food/vine.jpg"
+import katy from '../assets/museum/katy.jpg'
+import klyde from '../assets/museum/klyde.jpg'
+import meadow from '../assets/museum/meadow.jpg'
+import nasher from '../assets/museum/nasher.jpg'
+import perot from '../assets/museum/perot.jpg'
+import reunion from '../assets/museum/reunion.jpg'
+import adolphus from "../assets/hotels/adolphus.jpg"
+import crescent from "../assets/hotels/crescent.jpg"
+import four from "../assets/hotels/four.jpg"
+import hall from "../assets/hotels/hall.jpg"
+import joule from "../assets/hotels/joule.jpg"
+import meriden from "../assets/hotels/meriden.jpg"
+import omni from "../assets/hotels/omni.jpg"
 
-function Listings({listings}) {
+// import placeholder from '../assets/fallback.jpg'
+
+function All({all}) {
 
     const [row1, setRow1] = useState([]);
     const [row2, setRow2] = useState([]);
     const [row3, setRow3] = useState([]);
     const [row4, setRow4] = useState([]);
 
+    const placeholders = [lock, mudhen, pecan, rise, slow, vine, katy, klyde, meadow, nasher, perot, reunion, adolphus, crescent, four, hall, joule, meriden, omni];
+    const placeholder = placeholders[Math.floor(Math.random() * 19)];
+
     useEffect(() => {
         template()
-    }, [listings])
+    }, [all])
 
     let template = () => {
-        if (listings.length > 0) {
+        if (all.length > 0) {
             let row = []
             for (let index = 0; index < 3; index++) {
-                const item = listings[index];
+                const item = all[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -34,10 +57,10 @@ function Listings({listings}) {
             };
             setRow1(...row1, row);
         };
-        if (listings.length > 3) {
+        if (all.length > 3) {
             let row = []
             for (let index = 3; index < 6; index++) {
-                const item = listings[index];
+                const item = all[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -51,10 +74,10 @@ function Listings({listings}) {
             };
             setRow2(...row2, row);
         };
-        if (listings.length > 6) {
+        if (all.length > 6) {
             let row = []
             for (let index = 6; index < 9; index++) {
-                const item = listings[index];
+                const item = all[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -68,10 +91,10 @@ function Listings({listings}) {
             };
             setRow3(...row3, row);
         };
-        if (listings.length > 9) {
+        if (all.length > 9) {
             let row = []
             for (let index = 9; index < 12; index++) {
-                const item = listings[index];
+                const item = all[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -101,4 +124,4 @@ function Listings({listings}) {
     );
 }
 
-export default Listings;
+export default All;

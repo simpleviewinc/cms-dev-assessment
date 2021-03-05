@@ -3,24 +3,37 @@ import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
 
-import placeholder from '../assets/fallback.jpg'
+import boul from "../assets/food/boul.jpg"
+import cattleack from "../assets/food/cattleack.jpg"
+import henry from "../assets/food/henry.jpg"
+import lock from "../assets/food/lock.jpg"
+import mudhen from "../assets/food/mudhen.jpg"
+import pecan from "../assets/food/pecan.jpg"
+import rise from "../assets/food/rise.jpg"
+import slow from "../assets/food/slow.jpg"
+import vine from "../assets/food/vine.jpg"
 
-function Listings({listings}) {
+// import placeholder from '../assets/fallback.jpg'
 
-    const [row1, setRow1] = useState([]);
+function Offers({offers}) {
+
+    const [row1.jpg, setRow1] = useState([]);
     const [row2, setRow2] = useState([]);
     const [row3, setRow3] = useState([]);
     const [row4, setRow4] = useState([]);
 
+    const placeholders = [boul, henry, cattleack, lock, mudhen, pecan, rise, slow, vine];
+    const placeholder = placeholders[Math.floor(Math.random() * 9)];
+
     useEffect(() => {
         template()
-    }, [listings])
+    }, [offers])
 
     let template = () => {
-        if (listings.length > 0) {
+        if (offers.length > 0) {
             let row = []
             for (let index = 0; index < 3; index++) {
-                const item = listings[index];
+                const item = offers[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -34,10 +47,10 @@ function Listings({listings}) {
             };
             setRow1(...row1, row);
         };
-        if (listings.length > 3) {
+        if (offers.length > 3) {
             let row = []
             for (let index = 3; index < 6; index++) {
-                const item = listings[index];
+                const item = offers[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -51,10 +64,10 @@ function Listings({listings}) {
             };
             setRow2(...row2, row);
         };
-        if (listings.length > 6) {
+        if (offers.length > 6) {
             let row = []
             for (let index = 6; index < 9; index++) {
-                const item = listings[index];
+                const item = offers[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -68,10 +81,10 @@ function Listings({listings}) {
             };
             setRow3(...row3, row);
         };
-        if (listings.length > 9) {
+        if (offers.length > 9) {
             let row = []
             for (let index = 9; index < 12; index++) {
-                const item = listings[index];
+                const item = offers[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -101,4 +114,4 @@ function Listings({listings}) {
     );
 }
 
-export default Listings;
+export default Offers;

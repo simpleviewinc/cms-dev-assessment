@@ -3,24 +3,36 @@ import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
 
-import placeholder from '../assets/fallback.jpg'
+import crow from '../assets/museum/crow.jpg'
+import dma from '../assets/museum/dma.jpg'
+import katy from '../assets/museum/katy.jpg'
+import klyde from '../assets/museum/klyde.jpg'
+import meadow from '../assets/museum/meadow.jpg'
+import nasher from '../assets/museum/nasher.jpg'
+import perot from '../assets/museum/perot.jpg'
+import reunion from '../assets/museum/reunion.jpg'
 
-function Listings({listings}) {
+// import placeholder from '../assets/fallback.jpg'
+
+function Events({events}) {
 
     const [row1, setRow1] = useState([]);
     const [row2, setRow2] = useState([]);
     const [row3, setRow3] = useState([]);
     const [row4, setRow4] = useState([]);
 
+    const placeholders = [crow, dma, katy, klyde, meadow, nasher, perot, reunion];
+    const placeholder = placeholders[Math.floor(Math.random() * 8)];
+
     useEffect(() => {
         template()
-    }, [listings])
+    }, [events])
 
     let template = () => {
-        if (listings.length > 0) {
+        if (events.length > 0) {
             let row = []
             for (let index = 0; index < 3; index++) {
-                const item = listings[index];
+                const item = events[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -34,10 +46,10 @@ function Listings({listings}) {
             };
             setRow1(...row1, row);
         };
-        if (listings.length > 3) {
+        if (events.length > 3) {
             let row = []
             for (let index = 3; index < 6; index++) {
-                const item = listings[index];
+                const item = events[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -51,10 +63,10 @@ function Listings({listings}) {
             };
             setRow2(...row2, row);
         };
-        if (listings.length > 6) {
+        if (events.length > 6) {
             let row = []
             for (let index = 6; index < 9; index++) {
-                const item = listings[index];
+                const item = events[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -68,10 +80,10 @@ function Listings({listings}) {
             };
             setRow3(...row3, row);
         };
-        if (listings.length > 9) {
+        if (events.length > 9) {
             let row = []
             for (let index = 9; index < 12; index++) {
-                const item = listings[index];
+                const item = events[index];
                 row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
                     <img alt={''} src={placeholder} />
                     <div>
@@ -101,4 +113,4 @@ function Listings({listings}) {
     );
 }
 
-export default Listings;
+export default Events;
