@@ -35,7 +35,8 @@ Project Deployment - Part 1: [https://jdh-sv-frontend-part1.web.app/](https://jd
 
 ## About The Project
   
-[<img src=./JDH_Solutions/screenshots/folder-structure_import-images_random-placeholders_firebase-deployment.jpeg?raw=true" height="300"/>]./JDH_Solutions/screenshots/folder-structure_import-images_random-placeholders_firebase-deployment.jpeg?raw=true)
+[<img src="./JDH_Solutions/screenshots/part2_layot.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/part2_layot.jpeg?raw=true)
+<br><br>
 
 ### Description
 
