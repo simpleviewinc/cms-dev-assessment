@@ -41,25 +41,44 @@ Project Deployment - Part 1: [https://jdh-sv-frontend-part1.web.app/](https://jd
 ### Description
 
 ```
-The Assessment Challenge was to recreate an HTML layout using css grid responsive layout design, dynamically created and populated html using javascript, using data retrieved from an API. Their were 4 parts. I decided to take this assement in a slightly different direction. I made a React Application that accomplised the same effect. I used Hooks such as useState and useEffect. I used JSX components for my Container, Rows, Cols, Buttons, and more. I imported images and randomized their selection to each dynamically created column of data. I gave each listening, event and offer a unique id to track them by. I learned how to deploy to firebase, and created a firebase app and hosting site for part 1 and part 2.
+The Assessment Challenge was to recreate an HTML layout using css 
+grid responsive layout design, dynamically created and populated 
+html using javascript, using data retrieved from an API. Their were 
+4 parts. I decided to take this assement in a slightly different 
+direction. I made a React Application that accomplised the same 
+effect. I used Hooks such as useState and useEffect. I used JSX 
+components for my Container, Rows, Cols, Buttons, and more. 
+I imported images and randomized their selection to each dynamically 
+created column of data. I gave each listening, event and offer a 
+unique id to track them by. I learned how to deploy to firebase, 
+and created a firebase app and hosting site for part 1 and part 2.
 ```
 
 #### User Story
 
 ```
-As a company looking to hire a new Frontend Developer, I want see that you know your way around the basics, and get an idea of how advanced your knowledge of the programming languages is. I also want to see how quickly you solve a problem, and what you do once you have solved it.
+As a company looking to hire a new Frontend Developer, I want see 
+that you know your way around the basics, and get an idea of how 
+advanced your knowledge of the programming languages is. I also 
+want to see how quickly you solve a problem, and what you do once 
+you have solved it.
 ```
 
 #### More Details
 
 ```
-I hope I can help Simpleview achieve their goals, gain new customers, and advance their share of the web application market.
+I hope I can help Simpleview achieve their goals, gain new customers, 
+and advance their share of the web application market.
 ```
 
 ### Technologies Used
 
 ```
-* Reactjs.  * javascript.  * html.  * css.  * axios.  * firebase.  * github.  * compoonents.  * hooks.  * responsiveness..  
+* Reactjs.  * javascript.  
+* html.  * css.  
+* axios.  * firebase.  
+* github.  * compoonents.  
+* hooks.  * responsiveness..  
 ```
 
 
@@ -67,16 +86,21 @@ I hope I can help Simpleview achieve their goals, gain new customers, and advanc
 
 ### Prerequisites
 
-view on the firebase app site or have Nodejs installed on computer to clone the repo and run locally.
+view on the firebase app site or have Nodejs installed on computer 
+to clone the repo and run locally.
 
         
 ### Installation
 
-visit the website links above, or clone the repo to desktop, npm install the package.json, then run npm start in command line. view on local host 3000.
+visit the website links above, or clone the repo to desktop, npm install 
+the package.json, then run npm start in command line. view on local host 3000.
   
 ### Usage
   
-Navigate through different listings events and offers using the buttons, scroll down to see more, and shrink screen to see the columns adjust. the buttons link to /# take you to the top of the current page. if the buttons didn't have a functioning link react would throw many errors in the console.
+Navigate through different listings events and offers using the buttons, 
+scroll down to see more, and shrink screen to see the columns adjust. the 
+buttons link to /# take you to the top of the current page. if the buttons 
+didn't have a functioning link react would throw many errors in the console.
   
   
 
