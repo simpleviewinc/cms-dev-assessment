@@ -1,62 +1,164 @@
-Simpleview CMS Developer Assessment
-======
-Welcome to the Simpleview Developer Assessment.
+# Simplview Frontend Developer Assessment
 
-The assessment is in four (4) parts that increase in complexity and scope. The assessment period is two (2) days; at the end of the assessment period turn in any and all work including any incomplete work for review.
+[![github-follow](https://img.shields.io/github/followers/jdhprogrammer?label=Follow&logoColor=purple&style=social)](https://github.com/jdhprogrammer) [![project-languages-used](https://img.shields.io/github/languages/count/jdhprogrammer/cms-dev-assessment?color=important)](https://github.com/jdhprogrammer/cms-dev-assessment) [![project-top-language](https://img.shields.io/github/languages/top/jdhprogrammer/cms-dev-assessment?color=blueviolet)](https://github.com/jdhprogrammer/cms-dev-assessment) [![license](https://img.shields.io/badge/License-mit-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
 
-Although each part builds off the previous, you are expected (unless otherwise directed) to turn in four (4) sets of solutions; one for each part.
+## Developer
 
-Requirements
-------
-### Technical
-This assessment must be completed using HTML, CSS, JavaScript (vanilla JS or jQuery). If you need templates, we recommend using [ES6 template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) or a [templating engine like Goatee](https://github.com/simpleviewinc/goatee).
+### David Harris
 
-### Design
-In the `/comps/` folder you will find different screenshots and demo videos for the components you will be responsible for building. Each feature a grid of items in a repeatable pattern. You will be working with an API for 4 parts and it some parts you will need to manipulate the data in some way.
+Email: jdh.programmer@gmail.com  
+GitHub: https://github.com/jdhprogrammer  
+LinkedIn: https://www.linkedin.com/in/jdhprogrammer  
 
-**Brand Fonts**
-Google Fonts
-* Lato 400
-* Lato 900
+Project Repository: [https://github.com/jdhprogrammer/cms-dev-assessment](https://github.com/jdhprogrammer/cms-dev-assessment)  
+<br>
+Project Deployment - Part 2: [https://jdh-sv-frontend-part2.web.app/](https://jdh-sv-frontend-part2.web.app/)<br>
+Project Deployment - Part 1: [https://jdh-sv-frontend-part1.web.app/](https://jdh-sv-frontend-part1.web.app/)<br>
 
-**Breakpoints**
-Large - 1025px and up
-Medium - 641px and up
-Small - 640px and below
+## Table of Contents
 
-**Max Width**
-1200px
+* [About the Project](#about-the-project)
+  * [Description](#description)
+  * [User Story](#user-story)
+  * [More Details](#more-details)
+  * [Technologies](#technologies)
 
-Assessments
-------
-**Part 1 - REST-API**
-Build the comped component found in `/comps/part 1-2/`.
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+  * [Usage](#usage)
 
-For content, use listings data returned from [our test API](https://sv-reqres.now.sh).
+* [Contributing](#contributing)
+* [Acknowledgements](#acknowledgements)
+* [License](#license)
+* [Contact](#contact)
 
-Some listings will have broken images, please use the provided fallback image as needed to ensure an image is always rendered.
+## About The Project
+  
+[<img src=./JDH_Solutions/screenshots/folder-structure_import-images_random-placeholders_firebase-deployment.jpeg?raw=true" height="300"/>]./JDH_Solutions/screenshots/folder-structure_import-images_random-placeholders_firebase-deployment.jpeg?raw=true)
 
-**Part 2 - Filtering**
-Build the component a final time with data from the API. Include listings, events, and offers data as well as a buttons that will enable a user to see all data, only listings data, only events data, or only offers data.
+### Description
 
-Some listings/evensts/offers will have broken images, please use the provided fallback image as needed to ensure an image is always rendered.
+```
+The Assessment Challenge was to recreate an HTML layout using css grid responsive layout design, dynamically created and populated html using javascript, using data retrieved from an API. Their were 4 parts. I decided to take this assement in a slightly different direction. I made a React Application that accomplised the same effect. I used Hooks such as useState and useEffect. I used JSX components for my Container, Rows, Cols, Buttons, and more. I imported images and randomized their selection to each dynamically created column of data. I gave each listening, event and offer a unique id to track them by. I learned how to deploy to firebase, and created a firebase app and hosting site for part 1 and part 2.
+```
 
-**Part 3 - Paging & Dynamic Layouts**
-See the demo in `/comps/part 3-4/demo.mp4`. You need will need to build this component.
+#### User Story
 
-As the user pages through, the layout of the grid and the number of items in the grid changes. The layouts are in a repeatable pattern. When the user gets to the last page, clicking the next button takes the user back to the beginning of the list. Similarly, clicking the prev button when on the first page of the list takes the user to the last page of the list. Your component should have all that same functionality.
+```
+As a company looking to hire a new Frontend Developer, I want see that you know your way around the basics, and get an idea of how advanced your knowledge of the programming languages is. I also want to see how quickly you solve a problem, and what you do once you have solved it.
+```
 
-You should fill your component with listings data from the API you used in the previous parts.
+#### More Details
 
-You do **NOT** need to include the animation seen in the demo. That is a "nice-to-have" feature, but is not an expected part of the assessment. If you chose to include it, we advise you only do so after completing Part 4. Part 4 is an expected part of the assessment.
+```
+I hope I can help Simpleview achieve their goals, gain new customers, and advance their share of the web application market.
+```
 
-**Part 4 - Randomizing**
-Continuing with the component you built in Part 3, you will need to randomize the items retrieved from the API.
+### Technologies Used
 
-The API does not offer any randomized sorting options. It does support paging via the `page` and `per_page` properties, however merely getting a page of results and shuffling them is **NOT** sufficient. You randomization function should randomize items across all pages of data available via the API.
+```
+* Reactjs.  * javascript.  * html.  * css.  * axios.  * firebase.  * github.  * compoonents.  * hooks.  * responsiveness..  
+```
 
-Whenever the user refreshes the page, they should see a different set of items on each page of the component.
 
-Submitting Your Assessment For Review
-------
-When you've completed the assessment, submit your work via a Pull Request to this repo. Your Pull Request should contain four (4) folders that contain your solution; one (1) for each part of the assessment.
+## Getting Started
+
+### Prerequisites
+
+view on the firebase app site or have Nodejs installed on computer to clone the repo and run locally.
+
+        
+### Installation
+
+visit the website links above, or clone the repo to desktop, npm install the package.json, then run npm start in command line. view on local host 3000.
+  
+### Usage
+  
+Navigate through different listings events and offers using the buttons, scroll down to see more, and shrink screen to see the columns adjust. the buttons link to /# take you to the top of the current page. if the buttons didn't have a functioning link react would throw many errors in the console.
+  
+  
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. 
+Any contributions you make are **greatly appreciated**.
+
+1. Fork the Repo on GitHub @ [https://github.com/jdhprogrammer/cms-dev-assessment](https://github.com/jdhprogrammer/cms-dev-assessment) 
+2. Create your Feature Branch ('git checkout -b feature/AmazingFeature')
+3. Commit your Changes ('git commit -m "Add some AmazingFeature"')
+4. Push to the Branch ('git push origin feature/AmazingFeature")
+5. Open a Pull Request  
+  
+### Screenshots
+
+<br><br>
+Part 1
+
+[<img src="./JDH_Solutions/screenshots/part1_layot.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/part1_layot.jpeg?raw=true)
+<br><br>
+
+Part 2
+
+[<img src="./JDH_Solutions/screenshots/part2_layot.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/part2_layot.jpeg?raw=true)
+<br><br>
+Responsive Grid
+
+[<img src="./JDH_Solutions/screenshots/responsive_grid.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/responsive_grid.jpeg?raw=true)
+<br><br>
+Small Breakpoint
+
+[<img src="./JDH_Solutions/screenshots/small_breakpoint.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/small_breakpoint.jpeg?raw=true) 
+<br><br>
+React App UseState SetState
+
+[<img src="./JDH_Solutions/screenshots/react_app_useState.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/react_app_useState.jpeg?raw=true)
+<br><br>
+React UseEffect & Api Requests
+
+[<img src="./JDH_Solutions/screenshots/react_useEffect_render_Api_requests.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/react_useEffect_render_Api_requests.jpeg?raw=true)
+<br><br>
+Components - State - Effect
+
+[<img src="./JDH_Solutions/screenshots/react_useState_useEffect_components.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/react_useState_useEffect_components.jpeg?raw=true)
+<br><br>
+Folder Structure - Importing Images - Randomizing placeholder images
+
+[<img src="./JDH_Solutions/screenshots/folder-structure_import-images_random-placeholders_firebase-deployment.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/folder-structure_import-images_random-placeholders_firebase-deployment.jpeg?raw=true)
+<br><br>
+Javascript Dynamic JSX Component Creation with Data from API
+
+[<img src="./JDH_Solutions/screenshots/javascript_dynamic_JSX_creation_from_data.jpeg?raw=true" height="300"/>](./JDH_Solutions/screenshots/javascript_dynamic_JSX_creation_from_data.jpeg?raw=true)
+<br><br>
+
+  
+### Acknowledgements
+
+- Simplview
+- https://www.programiz.com/javascript/examples/add-key-object
+- https://create-react-app.dev/docs/deployment/
+- https://stackoverflow.com/questions/1733006/how-to-set-an-images-width-and-height-without-stretching-it
+- https://www.pluralsight.com/guides/importing-utility-functions-in-reactjs
+
+- and many more...
+  
+
+## License
+
+Distributed under the [MIT](https://choosealicense.com/licenses/mit/). See LICENSE for more information.
+  
+
+## Contact
+
+David Harris - jdh.programmer@gmail.com
+
+Project Link: [https://github.com/jdhprogrammer/cms-dev-assessment](https://github.com/jdhprogrammer/cms-dev-assessment)
+
+<br>
+
+Project Deployment: [https://jdh-sv-frontend-part2.web.app/](https://jdh-sv-frontend-part2.web.app/)<br>
+
+Copyright © 2021 [DAVID HARRIS](https://github.com/jdhprogrammer)
+  
+
+  
