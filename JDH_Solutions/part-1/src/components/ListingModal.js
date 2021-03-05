@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import Modal from "react-bootstrap/Modal";
 import {Container, Row, Col, Button} from "react-bootstrap";
-import API from "../../utils/API"
+
+import placeholder from '../assets/fallback.jpg'
 
 function ListingModal(props) {
     const [state, dispatch] = useState();

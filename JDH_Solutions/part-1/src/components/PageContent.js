@@ -6,13 +6,31 @@ import Col from "./Col";
 // import SearchForm from "./SearchForm";
 // import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
+import Button from "react-bootstrap/Button";
+import ListingModal from "./ListingModal"
 
-import placeholder from '../fallback.jpg'
-
+import placeholder from '../assets/fallback.jpg'
 
 function PageContent(props) {
 
   const [listings, setListings] = useState([]);
+  const [modalShow, setModalShow] = useState({});
+  const [currentListing, setCurrentListing] = useState({
+    address1: '',
+    category: '',
+    city: '',
+    description: '',
+    mediaurl: '',
+    phone: '',
+    qualityScore: 0,
+    recid: 0,
+    region: '',
+    state: '',
+    title: '',
+    weburl: '',
+    zip: '',
+    id: 0
+  })
 
   const [row1, setRow1] = useState([]);
   const [row2, setRow2] = useState([]);
@@ -36,6 +54,11 @@ function PageContent(props) {
       return
     }
   }, [listings])
+
+  const setCurrListing = (id) => {
+    let listing = listings.filter((listing) => (listing.id === id))
+    setCurrentListing(listing[0])
+  }
 
   const createListings = res => {
     const res2 = res
@@ -77,13 +100,21 @@ function PageContent(props) {
       for (let index = 0; index < 3; index++) {
         const item = listings[index];
         console.log('row1: ' + index);
-        row.push(<Col size="" col={'col-' + index % 6}>
+        row.push(<Col key={item.id} size="" col={'col-' + index % 6}>
           <img alt={''} src={placeholder} />
           <div>
             <h1>{item.title}</h1>
             <p>{item.description}</p>
             <p className='read-more'>
-              <a className="button" href="#">Read More</a>
+              <Button className="button" variant="primary"
+                onClick={() => {
+                  setModalShow({...modalShow, [index]: true})
+                  setCurrListing(item.id)
+                }}>
+                Read More
+              </Button>
+              <ListingModal key={item.id} listing={item} show={modalShow[index]}
+                onHide={() => setModalShow({...modalShow, [index]: false})} />
             </p>
           </div>
         </Col>);
