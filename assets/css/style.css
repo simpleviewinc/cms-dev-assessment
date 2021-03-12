@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Lato;
+}
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+/* Buttons */
+.btn {
+  background-color: #353835;
+  border: none;
+  border-radius: 27px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+/* Button Hover */
+.btn:hover {
+  background-color: rgb(206, 178, 20);
+  cursor: pointer;
+}
+
+/* Active Button */
+.btn.active {
+  background-color: rgb(206, 177, 16);
+  color: white;
+}
+.wrapper {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text {
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.row {
+  margin: 8px -16px;
+}
+/* columns */
+.column {
+  float: left;
+  width: 33.33%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: rgb(226, 201, 118);
+  padding: 10px;
+}
+
+/* Show */
+.show {
+  display: block;
+}
