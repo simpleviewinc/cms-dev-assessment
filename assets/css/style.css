@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #c7b2b2;
   padding: 20px;
   font-family: Lato;
 }
@@ -16,6 +16,10 @@ body {
   height: auto;
   transition: 0.5s ease;
   backface-visibility: hidden;
+}
+.container {
+  position: relative;
+  width: 100%;
 }
 h1 {
   font-size: 50px;
@@ -71,6 +75,7 @@ h1 {
 .column {
   float: left;
   width: 33.33%;
+  display: none;
 }
 .row:after {
   content: "";
