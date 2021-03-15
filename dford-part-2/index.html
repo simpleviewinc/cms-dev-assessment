@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CMS Dev Assessment</title>
+    <link rel="icon" href="https://www.azwebdev.pro/xfavicon-32x32.png,qv=790101ba3e3094c12ee40bae04dbe588.pagespeed.ic.j5ypeO8VGo.png" type="image/png">
+    <link rel='stylesheet' href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <div class="page_wrapper">
+      <div class="controls">
+        <button
+          id="showAllButton"
+          class="selected"
+          onclick="filterReducer(filterTypes.all)"
+        >
+          All
+        </button>
+        <button
+          id="showListingsButton"
+          onclick="filterReducer(filterTypes.listings)"
+        >
+          Listings
+        </button>
+        <button
+          id="showEventsButton"
+          onclick="filterReducer(filterTypes.events)"
+        >
+          Events
+        </button>
+        <button
+          id="showOffersButton"
+          onclick="filterReducer(filterTypes.offers)"
+        >
+          Offers
+        </button>
+      </div>
+      <div id="listings" class="card-table"></div>
+      <div id="events" class="card-table"></div>
+      <div id="offers" class="card-table"></div>
+      <script>
+        getListings().then(data => {
+          data.data.map((card, idx) => {
+            const type = 'LISTING'
+            const buttonId = `${type}-readMoreButton-${card.recid}`
+            const Card = document.createElement('div')
+            Card.innerHTML = createCard({
+              width: idx === 0 ? 48 : idx === 5 ? 48 : 23.25,
+              title: card.title,
+              content: card.description,
+              image: card.mediaurl,
+              isVertical: idx === 5,
+              buttonId,
+            })
+
+            document.getElementById('listings').appendChild(Card)
+            Card.addEventListener('mouseover', () => showButton(buttonId))
+            Card.addEventListener('mouseout', () => hideButton(buttonId))
+          })
+        })
+        getEvents().then(data => {
+          data.data.map((card, idx) => {
+            const type = 'EVENT'
+            const buttonId = `${type}-readMoreButton-${card.recid}`
+            const Card = document.createElement('div')
+            Card.innerHTML = createCard({
+              width: idx === 0 ? 48 : idx === 5 ? 48 : 23.25,
+              title: card.title,
+              content: card.description,
+              image: card.mediaurl,
+              isVertical: idx === 5,
+              buttonId,
+            })
+
+            document.getElementById('events').appendChild(Card)
+            Card.addEventListener('mouseover', () => showButton(buttonId))
+            Card.addEventListener('mouseout', () => hideButton(buttonId))
+          })
+        })
+        getOffers().then(data => {
+          data.data.map((card, idx) => {
+            const type = 'OFFER'
+            const buttonId = `${type}-readMoreButton-${card.recid}`
+            const Card = document.createElement('div')
+            Card.innerHTML = createCard({
+              width: idx === 0 ? 48 : idx === 5 ? 48 : 23.25,
+              title: card.title,
+              content: card.description,
+              image: card.mediaurl,
+              isVertical: idx === 5,
+              buttonId,
+            })
+
+            document.getElementById('offers').appendChild(Card)
+            Card.addEventListener('mouseover', () => showButton(buttonId))
+            Card.addEventListener('mouseout', () => hideButton(buttonId))
+          })
+        })
+      </script>
+    </div>
+  </body>
+</html>
